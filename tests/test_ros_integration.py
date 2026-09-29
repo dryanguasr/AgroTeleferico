@@ -24,9 +24,13 @@ def main():
     directory = Path('results/ros_integration').resolve()
     directory.mkdir(parents=True, exist_ok=True)
 
-    def wait(predicate, timeout=20):
+    def wait(predicate, timeout=20, publish=None):
         deadline = time.monotonic()+timeout
+        next_publish = 0
         while time.monotonic()<deadline:
+            if publish is not None and time.monotonic() >= next_publish:
+                publish()
+                next_publish = time.monotonic()+.2
             rclpy.spin_once(node, timeout_sec=.05)
             if state and predicate(state[-1]):
                 return state[-1]
@@ -41,25 +45,26 @@ def main():
             try:
                 wait(lambda d: len(d)==50 and d[0]>1)
                 if scenario == 'single':
-                    for _ in range(5):
-                        cart_pub.publish(Float64(data=12.0));rclpy.spin_once(node, timeout_sec=.1)
-                    wait(lambda d: abs(d[13]-12)<1e-6)
+                    # DDS and Gazebo discovery are independent: receiving telemetry
+                    # does not imply that the command bridge is already connected.
+                    wait(lambda d: abs(d[13]-12)<1e-6,
+                         publish=lambda: cart_pub.publish(Float64(data=12.0)))
                     previous=state[-1][24]
-                    for _ in range(5):
-                        cart_pub.publish(Float64(data=100.0));rclpy.spin_once(node, timeout_sec=.1)
-                    wait(lambda d: d[24]>previous and abs(d[13]-12)<1e-6)
+                    wait(lambda d: d[24]>previous and abs(d[13]-12)<1e-6,
+                         publish=lambda: cart_pub.publish(Float64(data=100.0)))
                 else:
                     goal=PoseStamped();goal.header.frame_id='world'
                     goal.pose.position.x=10.2;goal.pose.position.z=7.68;goal.pose.orientation.w=1.
-                    for _ in range(5):
-                        pose_pub.publish(goal);rclpy.spin_once(node, timeout_sec=.1)
-                    wait(lambda d: abs(d[13]-10.2)<1e-6)
+                    wait(lambda d: abs(d[13]-10.2)<1e-6,
+                         publish=lambda: pose_pub.publish(goal))
                     previous=state[-1][24]
                     goal.pose.position.x=100.
-                    for _ in range(5):
-                        pose_pub.publish(goal);rclpy.spin_once(node, timeout_sec=.1)
-                    wait(lambda d: d[24]>previous and abs(d[13]-10.2)<1e-6)
+                    wait(lambda d: d[24]>previous and abs(d[13]-10.2)<1e-6,
+                         publish=lambda: pose_pub.publish(goal))
                 print(scenario+': ROS telemetry, accepted goal and rejected goal passed', flush=True)
+            except Exception:
+                print((directory/f'{scenario}.log').read_text()[-8000:], flush=True)
+                raise
             finally:
                 os.killpg(process.pid, signal.SIGINT)
                 try:

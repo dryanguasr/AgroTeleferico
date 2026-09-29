@@ -21,18 +21,23 @@ jobs:
           source install/setup.bash
           colcon test --event-handlers console_direct+
           colcon test-result --verbose
+      - name: Integración ROS y saturación
+        shell: bash
+        run: |
+          source /opt/ros/jazzy/setup.bash
+          source install/setup.bash
+          python3 tests/test_ros_integration.py
+          python3 tests/test_saturation.py
       - name: Simulaciones y convergencia temporal
         shell: bash
         run: |
           source /opt/ros/jazzy/setup.bash
           source install/setup.bash
           python3 scripts/run_suite.py
-          python3 tests/test_ros_integration.py
-          python3 tests/test_saturation.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: resultados-gazebo
           path: |
-            results/suite/
+            results/
             log/
