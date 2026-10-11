@@ -64,3 +64,25 @@ ros2 topic echo /agro/feasible
 - El límite de tensión acota el comando; una perturbación puede producir sobretensión física, registrada sin recorte artificial.
 
 Ver [resultados medidos y escenas](docs/resultados.md), [modelo](docs/modelo.md), [referencias](docs/referencias.md) y [validación](docs/validacion.md). Código nuevo bajo MIT; no se ha incorporado código externo de las referencias.
+
+## Nuevo: circuito conceptual de seis carros
+
+Extensión independiente; no cambia la configuración ni el código físico de los tres escenarios anteriores. Dos carriles, cuatro portantes, tractor separado, terreno irregular, palets, paradas globales, ajuste local y viento. **Núcleo reducido probado; integración Gazebo y capturas pendientes de Codex.** No es validación física ni contacto rueda–cable.
+
+```bash
+cmake -S . -B build-loop -DAGRO_LOOP_STANDALONE=ON -DBUILD_TESTING=ON -DCMAKE_BUILD_TYPE=Release
+cmake --build build-loop -j2
+ctest --test-dir build-loop --output-on-failure
+python3 scripts/run_loop_suite.py --binary build-loop/agro_loop_cli --output results/loop_check_01
+python3 scripts/report_loop.py --summary results/loop_check_01/summary.json --output results/loop_check_01/report.md
+```
+
+Tras compilar con colcon y cargar `install/setup.bash`:
+
+```bash
+ros2 launch agro_teleferico loop.launch.py output:=results/loop_gui_01
+# Alternativa sin GUI; usar otra carpeta:
+ros2 launch agro_teleferico loop.launch.py gui:=false output:=results/loop_headless_01
+```
+
+Cada ejecución exige una carpeta nueva. Ver [instrucciones completas y captura](docs/demo_circuito.md), [arquitectura y límites](docs/concepto_circuito.md), [resultados reducidos](docs/informe_exploratorio_circuito.md) y [trabajo restante para Codex](docs/CODEX_LOOP_HANDOFF.md). El [goal original](docs/goals/loop_six_carriers.md) permanece como referencia, no como afirmación de cumplimiento total.

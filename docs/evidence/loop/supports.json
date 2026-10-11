@@ -1,0 +1,9 @@
+{
+  "origin": "static_reduced_model_screening",
+  "candidates": [
+    {"supports_per_segment":3,"unique_portals":9,"peak_tension_N":966.794106194,"max_sag_m":0.515869779719,"min_nominal_clearance_m":3.44221780291,"negative_vertical_end_reactions":8},
+    {"supports_per_segment":4,"unique_portals":13,"peak_tension_N":971.384018298,"max_sag_m":0.459848127406,"min_nominal_clearance_m":4.03320209877,"negative_vertical_end_reactions":12},
+    {"supports_per_segment":5,"unique_portals":17,"peak_tension_N":971.539719294,"max_sag_m":0.327354358207,"min_nominal_clearance_m":4.30837876498,"negative_vertical_end_reactions":16}
+  ],
+  "assumptions": "two full carriers per span tested separately; symmetric portantes; fixed natural lengths; retained supports; no structural rating or wind"
+}
