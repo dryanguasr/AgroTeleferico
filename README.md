@@ -67,6 +67,12 @@ Ver [resultados medidos y escenas](docs/resultados.md), [modelo](docs/modelo.md)
 
 ## Nuevo: circuito conceptual de seis carros
 
+La configuración actual incorpora **9 postes en T**, vanos de 6 m horizontales
+y carros con jaula inspirada en garruchas. El vídeo añade un recuadro que sigue
+al carro 0. Ver [cambios, pruebas y reproducción](docs/revision_garruchas.md).
+La evidencia nativa enlazada a continuación conserva la variante anterior de
+13 apoyos; no debe confundirse con los resultados de esta revisión.
+
 Extensión independiente; no cambia la configuración ni el código físico de los tres escenarios anteriores. Dos carriles, cuatro portantes, tractor separado, terreno irregular, palets, paradas globales, ajuste local y viento. **Cinco servicios nativos Harmonic/Jazzy, paridad CLI/plugin y grabación completa aprobados.** No es validación física ni contacto rueda–cable. Ver el [informe nativo](docs/informe_nativo_circuito.md) y los [CSV y gráficos empaquetados](docs/evidence/loop/native/manifest.json).
 
 ```bash
@@ -87,17 +93,17 @@ ros2 launch agro_teleferico loop.launch.py gui:=false output:=results/loop_headl
 
 Cada ejecución exige una carpeta nueva. Ver [instrucciones completas y captura](docs/demo_circuito.md), [arquitectura y límites](docs/concepto_circuito.md), [resultados reducidos](docs/informe_exploratorio_circuito.md) y [trabajo restante para Codex](docs/CODEX_LOOP_HANDOFF.md). El [goal original](docs/goals/loop_six_carriers.md) permanece como referencia, no como afirmación de cumplimiento total.
 
-Captura en este PC desde PowerShell 7, con vigilancia de RAM Windows y tres
-vistas de la misma ejecución (requiere el entorno ya compilado):
+Captura en este PC desde PowerShell 7, con vigilancia de RAM Windows y dos
+vistas simultáneas: general y seguimiento (requiere el entorno ya compilado):
 
 ```powershell
-./scripts/windows/run_guarded_loop.ps1 -RunName loop_capture_new -Case capture -View overview -Until 341 -AllViews
+./scripts/windows/run_guarded_loop.ps1 -RunName loop_capture_new -Case capture -View overview -Until 341 -NoGui -FollowCarrier
 ```
 
 El vídeo corresponde al sensor Gazebo en vivo, a 1280×800 y 4× de velocidad
 nominal; los CSV de tiempos permiten comprobar la cobertura real. El supervisor
 exige una carpeta nueva y conserva también intentos incompletos. El servicio
-headless nominal midió un factor de tiempo real de 0,5046; el rendimiento
+headless histórico de 13 apoyos midió un factor de tiempo real de 0,5046; el rendimiento
 gráfico se registra aparte. El control híbrido aumentó un 4,55 % el RMS
 longitudinal frente al central en el caso nominal con ráfaga: no se demuestra
 una mejora del control local.

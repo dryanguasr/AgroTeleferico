@@ -3,3 +3,4 @@
 *.mp4 binary
 # Preserve measured artifacts byte-for-byte, including original log whitespace.
 docs/evidence/loop/native/** -text -whitespace
+docs/evidence/loop/garruchas/** -text -whitespace

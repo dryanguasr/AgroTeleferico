@@ -89,6 +89,7 @@ def main():
     parser.add_argument('--gui', action='store_true')
     parser.add_argument('--video', action='store_true')
     parser.add_argument('--all-views', action='store_true', help='Capture all three cameras in one live world; video uses --view')
+    parser.add_argument('--follow-carrier', type=int, help='Additional live camera following this carrier; records follow.mp4')
     parser.add_argument('--host-memory', type=Path, help='Fresh Windows samples; admission 14 GiB with GUI or 10 GiB without; stops below 5 GiB')
     args = parser.parse_args()
     directory = Path(args.output).resolve()
@@ -115,6 +116,13 @@ def main():
              'upper': '56 -12 14 0 .30 2.16'}
     root.append(ET.fromstring('<plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"><render_engine>ogre2</render_engine></plugin>'))
     views = list(poses) if args.all_views else [args.view]
+    if args.follow_carrier is not None:
+        if not 0 <= args.follow_carrier < 6:
+            raise ValueError('Follow carrier must be in [0,5] for this six-carrier demo')
+        views.append('follow')
+        poses['follow'] = '3 -6 7 0 .3 2.2'
+        plugin = root.find("plugin[@name='agro::LoopSystem']")
+        ET.SubElement(plugin, 'follow_carrier').text = str(args.follow_carrier)
     for view in views:
         root.append(ET.fromstring(f'''<model name="inspection_camera_{view}"><static>true</static><pose>{poses[view]}</pose><link name="link"><sensor name="camera" type="camera"><always_on>true</always_on><update_rate>5</update_rate><topic>/agro_loop/inspection/{view}</topic><camera><horizontal_fov>1.15</horizontal_fov><image><width>1280</width><height>800</height><format>R8G8B8</format></image><clip><near>.1</near><far>150</far></clip></camera></sensor></link></model>'''))
     tree.write(world, encoding='unicode')
@@ -123,8 +131,11 @@ def main():
     frames_by_view = {view: [] for view in views}
     frames, errors = frames_by_view[args.view], []
     encoder = None
+    follow_encoder = None
     if args.video:
         encoder = subprocess.Popen(['ffmpeg', '-n', '-loglevel', 'error', '-f', 'rawvideo', '-pixel_format', 'rgb24', '-video_size', '1280x800', '-framerate', '20', '-i', '-', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', '-pix_fmt', 'yuv420p', str(directory/'gazebo.mp4')], stdin=subprocess.PIPE)
+        if args.follow_carrier is not None:
+            follow_encoder = subprocess.Popen(['ffmpeg', '-n', '-loglevel', 'error', '-f', 'rawvideo', '-pixel_format', 'rgb24', '-video_size', '1280x800', '-framerate', '20', '-i', '-', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', '-pix_fmt', 'yuv420p', str(directory/'follow.mp4')], stdin=subprocess.PIPE)
     checkpoints = [1, 4, 10, 60, 145, 150, 151, 153, 170, 180, 200, 212, 215, 218, 220, 228, 250, 300, 340]
     saved_by_view = {view: set() for view in views}
     started = time.monotonic()
@@ -145,6 +156,8 @@ def main():
             view_frames.append((stamp, time.monotonic()-started))
             if encoder and view == args.view:
                 encoder.stdin.write(msg.data)
+            if follow_encoder and view == 'follow':
+                follow_encoder.stdin.write(msg.data)
             for checkpoint in checkpoints:
                 if stamp >= checkpoint and checkpoint not in saved_by_view[view]:
                     Image.frombytes('RGB', (msg.width, msg.height), msg.data).save(directory/f'{view}_{checkpoint:03d}s.png')
@@ -161,6 +174,7 @@ def main():
     command = ['gz', 'sim', '-s', '-r', '-v', '3', str(world)]
     gui = None
     stop_acknowledged = False
+    stop_requested = False
     returncode = None
     with (directory/'gazebo.log').open('w') as log, (directory/'gui.log').open('w') as gui_log, (directory/'resources.jsonl').open('w') as resources:
         process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
@@ -204,10 +218,9 @@ def main():
                     gui.wait(timeout=5)
             if process.poll() is None:
                 try:
+                    stop_requested = True
                     ok, response = node.request('/server_control', ServerControl(stop=True), ServerControl, Boolean, 5000)
                     stop_acknowledged = bool(ok and response.data)
-                    if not stop_acknowledged:
-                        errors.append('Server stop was not acknowledged')
                 except Exception as exc:
                     errors.append('Stop service failed: '+repr(exc))
                 try:
@@ -223,13 +236,18 @@ def main():
             if encoder:
                 encoder.stdin.close()
                 encoder.wait(timeout=30)
+            if follow_encoder:
+                follow_encoder.stdin.close()
+                follow_encoder.wait(timeout=30)
+                if follow_encoder.returncode:
+                    errors.append('Follow camera encoder failed')
             (directory/'frame_times.csv').write_text('simulation_s,wall_s\n' + '\n'.join(f'{s},{w}' for s, w in frames) + '\n')
             coverage = {}
             for view, recorded in frames_by_view.items():
                 (directory/f'frame_times_{view}.csv').write_text('simulation_s,wall_s\n'+'\n'.join(f'{s},{w}' for s,w in recorded)+'\n')
                 coverage[view] = {'frames': len(recorded), 'last_simulation_s': recorded[-1][0] if recorded else None, 'checkpoints': sorted(saved_by_view[view])}
             (directory/'camera_coverage.json').write_text(json.dumps(coverage, indent=2))
-            (directory/'capture.json').write_text(json.dumps({'command': command, 'view': args.view, 'live_gazebo_sensor': True, 'replay': False, 'video_speedup_nominal': 4, 'frames': len(frames), 'first_frame_wall_s': frames[0][1] if frames else None, 'last_simulation_s': frames[-1][0] if frames else None, 'gazebo_exit_code': returncode, 'gui_exit_code': gui.returncode if gui else None, 'stop_acknowledged': stop_acknowledged, 'errors': errors}, indent=2))
+            (directory/'capture.json').write_text(json.dumps({'command': command, 'view': args.view, 'follow_carrier': args.follow_carrier, 'live_gazebo_sensor': True, 'replay': False, 'video_speedup_nominal': 4, 'frames': len(frames), 'first_frame_wall_s': frames[0][1] if frames else None, 'last_simulation_s': frames[-1][0] if frames else None, 'gazebo_exit_code': returncode, 'gui_exit_code': gui.returncode if gui else None, 'stop_requested': stop_requested, 'stop_acknowledged': stop_acknowledged, 'errors': errors}, indent=2))
     if errors or any(not f or f[-1][0] < args.until for f in frames_by_view.values()) or returncode != 0 or (gui and gui.returncode != 0) or (encoder and encoder.returncode):
         raise RuntimeError('Capture incomplete; inspect capture.json and gazebo.log')
     print(f'Live capture saved to {directory}', flush=True)

@@ -17,7 +17,16 @@ Extensión aislada del piloto en `52298bf5935575e80fc20c975e34cd020b4249c5`. Los
 
 Perfil suave cosenoidal: `(0,0), (12,6), (24,1), (36,9), (48,3)` m. Tres valles, dos picos de distinta altura; la estación final queda 3 m por encima de la inicial. Los nombres subida/bajada indican destino, no el signo instantáneo del movimiento vertical.
 
-Cuatro apoyos por intervalo entre extremos topográficos, INCLUYENDO extremos, resultan en 13 pórticos únicos. Se compararon 9, 13 y 17 pórticos mediante un barrido estático con dos carros llenos por vano, ensayando cada vano por separado. Ver `evidence/loop/supports.json`. Con 13 se conserva flecha apreciable y más holgura nominal que con 9; no es una optimización global ni prueba de resistencia.
+La configuración actual usa tres apoyos por intervalo entre hitos topográficos,
+incluidos los extremos: **9 postes en T únicos**, separados 6 m horizontalmente.
+Las guías de transición tienen 1.4 m por lado. Es la revisión solicitada por el
+usuario para reducir apoyos y aproximar la apariencia a un teleférico con
+garruchas; ver [revisión y pruebas](revision_garruchas.md).
+
+La versión anterior usó 13 pórticos y guías de 0.8 m por lado. Se conservan
+su validación nativa y el barrido estático de 9/13/17 apoyos en
+`evidence/loop/supports.json`. Ese barrido no es una optimización global ni
+una prueba de resistencia; la revisión de nueve postes se ensaya por separado.
 
 Los cálculos muestran reacciones verticales negativas en algunos extremos. Por eso la hipótesis es de **anclajes/retenciones capaces de sujetar en ambos sentidos**, no de cables apoyados libremente sobre postes ordinarios. Cada vano tiene longitud natural propia y extremos retenidos. No se modela deslizamiento del portante a través de una torre ni transferencia automática de longitud entre vanos. La construcción de esas retenciones debe revisarse antes de afirmar viabilidad mecánica real.
 

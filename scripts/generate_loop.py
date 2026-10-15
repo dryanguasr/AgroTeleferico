@@ -137,9 +137,11 @@ def generate(config, directory, mode="central_local", gust=True, stop_at_end=Fal
     items = [model("terrain_three_valleys_two_peaks", "0 0 0 0 0 0", visual("surface", f'<mesh><uri>{escape(str(out/"terrain.dae"))}</uri></mesh>', green))]
     for i, x in enumerate(xs):
         z = ground(c, x)
-        shapes = [visual("crossbeam", box(.22, 9, .18), steel, f"0 0 {h+1.25} 0 0 0")]
-        for side in (-1, 1):
-            shapes.append(visual(f"column_{side}", box(.2, .2, h+1.25), steel, f"0 {side*4.4} {(h+1.25)/2} 0 0 0"))
+        # Central T mast leaves the two carrier lanes clear. The retained
+        # support model is unchanged; these are not structurally sized towers.
+        shapes = [visual("crossbeam", box(.3, 6, .24), steel, f"0 0 {h+1.25} 0 0 0"),
+                  visual("central_mast", cylinder(.22,h+1.25), steel, f"0 0 {(h+1.25)/2} 0 0 0"),
+                  visual("foundation", box(.9,.9,.3), ".4 .42 .4 1", "0 0 .15 0 0 0")]
         # All supports explicitly have a retention/guide assembly in this conceptual topology.
         for lane, y in enumerate((-r, r)):
             for rail, dy in enumerate((-gauge/2,gauge/2)):
@@ -188,14 +190,27 @@ def generate(config, directory, mode="central_local", gust=True, stop_at_end=Fal
                     name=f"flex_{lane}_{k}_{rail}_{j}"
                     items.append(model(name,"0 0 -50 0 0 0",visual("cable",cylinder(.025,1.05*L/c['cable_segments']),dark)))
     for i in range(2*int(c['carriers_per_lane'])):
-        shapes=[visual("chassis",box(.8,gauge+.14,.16),orange),visual("local_motor",box(.22,.2,.2),".1 .4 .7 1","0 0 .20 0 0 0"),visual("traction_mast",box(.08,.08,.65),steel,"0 0 .37 0 0 0")]
+        shapes=[visual("chassis",box(.8,.12,.12),orange),visual("local_motor",box(.22,.2,.2),".1 .4 .7 1","0 0 .20 0 0 0"),visual("traction_mast",box(.08,.08,.65),steel,"0 0 .37 0 0 0")]
         for x in (-.25,.25):
+            shapes.append(visual(f"axle_{x}",box(.08,gauge+.14,.08),steel,f"{x} 0 0 0 0 0"))
             for y in (-gauge/2,gauge/2):
                 shapes.append(visual(f"wheel_{x}_{y}",cylinder(.11,.10),dark,f"{x} {y} -.015 {math.pi/2} 0 0"))
+                for flange in (-.055,.055):
+                    shapes.append(visual(f"flange_{x}_{y}_{flange}",cylinder(.135,.015),steel,f"{x} {y+flange} -.015 {math.pi/2} 0 0"))
         items.append(model(f"bogie_{i}","0 0 -50 0 0 0",''.join(shapes)))
         pallet=visual("base",box(1.2,1,.12),".58 .38 .16 1")
         for y in (-.35,.35):
             pallet+=visual(f"runner_{y}",box(1.2,.12,.10),".45 .27 .10 1",f"0 {y} -.09 0 0 0")
+        # Open agricultural garrucha cage, rigidly attached to the existing
+        # suspended pallet. Its mass remains included in the assumed tare.
+        for x in (-.56,.56):
+            for y in (-.46,.46):
+                pallet+=visual(f"cage_post_{x}_{y}",box(.045,.045,.65),orange,f"{x} {y} .385 0 0 0")
+            for z in (.12,.70):
+                pallet+=visual(f"cage_end_{x}_{z}",box(.045,.96,.045),orange,f"{x} 0 {z} 0 0 0")
+        for y in (-.46,.46):
+            for z in (.12,.70):
+                pallet+=visual(f"cage_rail_{y}_{z}",box(1.16,.045,.045),orange,f"0 {y} {z} 0 0 0")
         items.append(model(f"pallet_{i}","0 0 -50 0 0 0",pallet))
         items.append(model(f"hanger_{i}","0 0 -50 0 0 0",visual("rod",cylinder(.025,c['suspension']),steel)))
         items.append(model(f"coupler_{i}","0 0 -50 0 0 0",visual("slider",box(.38,.10,.08),".1 .4 .7 1")))
@@ -223,6 +238,8 @@ def generate(config, directory, mode="central_local", gust=True, stop_at_end=Fal
     # scene. Running >1200 static visual models at 500 Hz wastes host CPU.
     meta['gazebo_server_step_s'] = server_step
     meta['core_step_s'] = c['dt']
+    meta['support_style'] = 'central_T_mast'
+    meta['carrier_style'] = 'garrucha_inspired_open_cage_four_support_wheels'
     (out/"metadata.json").write_text(json.dumps(meta,indent=2),encoding="utf-8")
     return out/"world.sdf"
 

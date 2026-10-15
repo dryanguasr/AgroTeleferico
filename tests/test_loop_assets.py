@@ -39,9 +39,11 @@ class Assets(unittest.TestCase):
             p=m.generate(ROOT/'config/loop.yaml',Path(t)/'case')
             xml=ET.parse(p);names=[a.attrib['name'] for a in xml.findall('.//model')]
             self.assertEqual(len(names),len(set(names)))
-            for prefix,n in [('bogie_',6),('pallet_',6),('portal_',13),('flex_',576)]:
+            for prefix,n in [('bogie_',6),('pallet_',6),('portal_',9),('flex_',384)]:
                 self.assertEqual(sum(x.startswith(prefix) for x in names),n)
             self.assertIn('main_motor_lower',names)
+            self.assertEqual(len(xml.findall('.//visual[@name="central_mast"]')),9)
+            self.assertEqual(len(xml.findall('.//visual[@name="column_-1"]')),0)
             self.assertEqual(len(xml.findall('.//collision')),0)
             ET.parse(p.parent/'terrain.dae')
             self.assertNotIn('fuel.gazebosim',p.read_text())

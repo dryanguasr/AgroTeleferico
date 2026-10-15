@@ -5,6 +5,8 @@ param(
     [ValidateSet('overview','lower','upper')][string]$View='overview',
     [ValidateRange(1,342)][double]$Until=341,
     [switch]$AllViews,
+    [switch]$NoGui,
+    [switch]$FollowCarrier,
     [string]$Distribution='Ubuntu-24.04'
 )
 $ErrorActionPreference='Stop'
@@ -15,7 +17,7 @@ $runRoot=Join-Path $repository ('results/'+$RunName)
 if (Test-Path -LiteralPath $runRoot) { throw 'Output already exists; preserve previous evidence' }
 New-Item -ItemType Directory -Path $runRoot | Out-Null
 $memoryFile=Join-Path $runRoot 'host_memory.json'
-$minimum=if($Case -eq 'capture'){14}else{9}
+$minimum=if($Case -eq 'capture'){if($NoGui){10}else{14}}else{9}
 function Write-MemorySample {
     $free=(Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory/1MB
     @{unix_s=[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()/1000.0; free_gib=$free} |
@@ -32,7 +34,9 @@ $second=Write-MemorySample
 if ($second -lt $minimum) { throw "Second admission sample below $minimum GiB" }
 $command='source /opt/ros/jazzy/setup.bash && source install/setup.bash && exec python3 '
 if ($Case -eq 'capture') {
-    $command+='scripts/capture_loop.py --output results/'+$RunName+'/capture --host-memory results/'+$RunName+'/host_memory.json --gui --video --timeout 1800 --view '+$View+' --until '+$Until.ToString([Globalization.CultureInfo]::InvariantCulture)
+    $command+='scripts/capture_loop.py --output results/'+$RunName+'/capture --host-memory results/'+$RunName+'/host_memory.json --video --timeout 1800 --view '+$View+' --until '+$Until.ToString([Globalization.CultureInfo]::InvariantCulture)
+    if(-not $NoGui) { $command+=' --gui' }
+    if($FollowCarrier) { $command+=' --follow-carrier 0' }
     if($AllViews) { $command+=' --all-views' }
 } else {
     $command+='scripts/run_loop_guarded.py --output results/'+$RunName+'/'+$Case+' --host-memory results/'+$RunName+'/host_memory.json --case '+$Case

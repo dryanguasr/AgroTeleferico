@@ -26,6 +26,7 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
   std::string params,output,mode;
   bool gust=true,stop=false,finished=false,failed=false;
   int reset_count=0;
+  int follow_carrier=-1;
   double visual_t=-1,accumulator=0;
   template<class T>T get(const std::shared_ptr<const sdf::Element>&s,const std::string &key,T fallback) {
     return s->HasElement(key)?s->Get<T>(key):fallback;
@@ -52,6 +53,11 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
     const auto &c=sim->c;const auto &route=sim->route;
     for(size_t i=0;i<sim->carts.size();++i) {
       auto &a=sim->carts[i];auto d=route.tangent(sim->q+a.phase+a.offset);
+      if(static_cast<int>(i)==follow_carrier) {
+        // Fixed world offset avoids artificial camera roll during swing.
+        pose(ecm,"inspection_camera_follow",a.pallet+loop::V3{2.4,-3.2,2.0},
+             gz::math::Quaterniond(0,std::atan2(1.1,4.),std::atan2(3.2,-2.4)));
+      }
       double yaw=std::atan2(d.y,d.x),pitch=-std::atan2(d.z,std::hypot(d.x,d.y));
       pose(ecm,"bogie_"+std::to_string(i),a.pivot+loop::V3{0,0,.11},gz::math::Quaterniond(0,pitch,yaw));
       auto rot=gz::math::Quaterniond(0,-a.tx,0)*gz::math::Quaterniond(a.ty,0,0)*gz::math::Quaterniond(0,0,yaw);
@@ -96,6 +102,7 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
     params=get<std::string>(s,"params","");output=get<std::string>(s,"output","results/loop");mode=get<std::string>(s,"mode","central_local");
     loop::require(mode=="central_only"||mode=="central_local","invalid control mode");
     gust=get<bool>(s,"gust",true);stop=get<bool>(s,"stop_at_end",false);events=&manager;
+    follow_carrier=get<int>(s,"follow_carrier",-1);
     status=node.Advertise<gz::msgs::StringMsg>("/agro_loop/status");initialise();
   }
   void Reset(const gz::sim::UpdateInfo &,gz::sim::EntityComponentManager &) override {

@@ -1,0 +1,56 @@
+# SI. Values are reversible conceptual assumptions, not construction specifications.
+# Origins: topology/counts/profile order = user; all numeric physical values = assumptions.
+carriers_per_lane: 3
+supports_per_segment: 3   # Inclusive endpoints: 9 shared T supports, 6 m horizontal spacing.
+cable_segments: 12
+dt: 0.002
+shape_period: 0.02
+log_period: 0.05
+visual_period: 0.05
+terrain: [[0, 0], [12, 6], [24, 1], [36, 9], [48, 3]]
+support_height: 6.0
+lane_half_width: 2.0
+gauge: 0.8
+guide_half_length: 1.4    # Smooth transition for the longer 6 m spans; no acceptance limits relaxed.
+guide_lift: 0.04
+slack: 0.006
+cable_EA: 180000.0
+cable_kg_per_horizontal_m: 0.15
+bogie_mass: 8.0
+hanger_mass: 2.0
+pallet_mass: 5.0
+nominal_payload: 20.0
+suspension: 1.0
+max_speed: 0.4
+max_accel: 0.10
+main_equivalent_mass: 400.0  # Includes reflected drive inertia, not a hidden counterweight.
+main_force_limit: 2500.0
+main_drag: 2.0
+drive_radius: 0.3
+rolling_coefficient: 1.2
+coupling_k: 3500.0
+coupling_c: 140.0
+local_stroke: 0.22
+local_speed: 0.18
+local_force_limit: 60.0
+local_damping_gain: 25.0
+swing_damping: 0.7
+air_density: 1.15
+drag_coefficient: 1.1
+area_empty: 0.3
+area_per_kg: 0.012
+wind_speed: 4.0
+wind_duration: 10.0
+wind_bearing_deg: 65.0
+max_tension: 6000.0        # Rejection bound, not certified working load.
+min_clearance: 1.0
+max_swing: 0.35
+initial_dwell: 5.0
+station_dwell: 7.0
+final_dwell: 8.0
+station_tolerance: 0.09
+stop_speed: 0.012
+payload_ramp: 2.0
+profile_dx: 0.025
+station_start_offset: 0.05
+derivative_step: 0.03

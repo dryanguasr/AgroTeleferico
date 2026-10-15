@@ -31,6 +31,10 @@ def main():
             if visual.get('name').startswith('retention_'):
                 continue
             size = np.fromstring(visual.findtext('geometry/box/size', ''), sep=' ')
+            cylinder = visual.find('geometry/cylinder')
+            if cylinder is not None:
+                radius = float(cylinder.findtext('radius'))
+                size = np.array([2*radius, 2*radius, float(cylinder.findtext('length'))])
             local = np.fromstring(visual.findtext('pose', '0 0 0 0 0 0'), sep=' ')
             if len(size) != 3 or np.any(local[3:] != 0):
                 raise ValueError('Expected axis-aligned structural box')
@@ -38,9 +42,8 @@ def main():
     rows = np.genfromtxt(args.case/'generated/gazebo/carriers.csv', names=True, delimiter=',')
     pivot = np.column_stack([rows['pivot_'+axis+'_m'] for axis in 'xyz'])
     pallet = np.column_stack([rows['pallet_'+axis+'_m'] for axis in 'xyz'])
-    # Current generator: full pallet/crate corner radius <=0.817 m; bogie <=0.70 m.
-    # Use 0.85 m spheres independent of yaw/pitch/roll and payload visibility.
-    bodies = [('bogie', pivot+np.array([0, 0, .11]), .85), ('pallet_and_load', pallet, .85)]
+    # Include the new cage's upper corners for any yaw/pitch/roll.
+    bodies = [('bogie', pivot+np.array([0, 0, .11]), .85), ('pallet_and_load', pallet, 1.1)]
     findings = {}
     for body, centers, radius in bodies:
         closest = None
@@ -53,7 +56,7 @@ def main():
                 closest = record
         findings[body] = closest
     result = {'scope': 'Sampled CSV poses against portal columns/crossbeams, station decks and motor boxes only. Sphere overlap is inconclusive, not proof of contact. Excludes couplers, hanger, rails, retentions, tractor, rotor, terrain and intersample motion.',
-              'sphere_radius_m': .85, 'samples': len(rows), 'obstacles': len(obstacles),
+              'sphere_radii_m': {'bogie': .85, 'pallet_and_load': 1.1}, 'samples': len(rows), 'obstacles': len(obstacles),
               'findings': findings,
               'all_screened_spheres_clear': all(v['lower_bound_m'] > 0 for v in findings.values())}
     args.output.write_text(json.dumps(result, indent=2))

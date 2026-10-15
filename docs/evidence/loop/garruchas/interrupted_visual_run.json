@@ -1,0 +1,26 @@
+{
+  "command": [
+    "gz",
+    "sim",
+    "-s",
+    "-r",
+    "-v",
+    "3",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_garruchas_complete_01/capture/generated/world.sdf"
+  ],
+  "view": "overview",
+  "follow_carrier": 0,
+  "live_gazebo_sensor": true,
+  "replay": false,
+  "video_speedup_nominal": 4,
+  "frames": 450,
+  "first_frame_wall_s": 7.304347226999994,
+  "last_simulation_s": 89.8,
+  "gazebo_exit_code": 0,
+  "gui_exit_code": null,
+  "stop_requested": true,
+  "stop_acknowledged": true,
+  "errors": [
+    "RuntimeError('Preventive render stop: host reserve or explicit request')"
+  ]
+}

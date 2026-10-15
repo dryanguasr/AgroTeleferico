@@ -1,0 +1,76 @@
+Start testing: Oct 15 00:10 -05
+----------------------------------------------------------
+1/4 Testing: loop_core
+1/4 Test: loop_core
+Command: "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build/agro_teleferico/test_loop"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build/agro_teleferico
+"loop_core" start time: Oct 15 00:10 -05
+Output:
+----------------------------------------------------------
+Loop core assertions passed: geometry, closure, loading, reactions, compatibility, IDs, dwell, config.
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"loop_core" end time: Oct 15 00:10 -05
+"loop_core" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: loop_assets
+2/4 Test: loop_assets
+Command: "/usr/bin/python3" "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/tests/test_loop_assets.py"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build/agro_teleferico
+"loop_assets" start time: Oct 15 00:10 -05
+Output:
+----------------------------------------------------------
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.467s
+
+OK
+<end of output>
+Test time =   0.74 sec
+----------------------------------------------------------
+Test Passed.
+"loop_assets" end time: Oct 15 00:10 -05
+"loop_assets" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: loop_guard
+3/4 Test: loop_guard
+Command: "/usr/bin/python3" "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/tests/test_loop_guard.py"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build/agro_teleferico
+"loop_guard" start time: Oct 15 00:10 -05
+Output:
+----------------------------------------------------------
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.006s
+
+OK
+<end of output>
+Test time =   0.58 sec
+----------------------------------------------------------
+Test Passed.
+"loop_guard" end time: Oct 15 00:10 -05
+"loop_guard" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: physics
+4/4 Test: physics
+Command: "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build/agro_teleferico/test_physics"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build/agro_teleferico
+"physics" start time: Oct 15 00:10 -05
+Output:
+----------------------------------------------------------
+Allocation residual 3.1427e-14 tensions 81.9584 81.9584 81.9584 81.9584 29.4135 29.4135 29.4135 29.4135
+Physics checks passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"physics" end time: Oct 15 00:10 -05
+"physics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 15 00:10 -05

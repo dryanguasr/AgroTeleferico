@@ -1,5 +1,10 @@
 # Ejecutar la demostración conceptual
 
+Para la revisión actual de nueve postes en T, jaulas tipo garrucha y vídeo
+con recuadro de seguimiento, ver [revision_garruchas.md](revision_garruchas.md).
+Las recetas generales de este documento también permiten conservar las vistas
+estáticas y repetir configuraciones históricas mediante su YAML archivado.
+
 Trabajar desde la rama del circuito, basada en `feat/gazebo-cable-pilot`, sin sobrescribir cambios locales. Usar carpetas de salida NUEVAS: los programas rechazan sobrescribir evidencia. No hacen falta descargas de modelos de Fuel.
 
 ## 1. Modelo reducido, sin ROS/Gazebo

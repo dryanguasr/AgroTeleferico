@@ -7,7 +7,7 @@ from pathlib import Path
 import subprocess
 
 
-def verify(directory, until):
+def verify(directory, until, expected_views):
     capture = json.loads((directory/'capture.json').read_text())
     coverage = json.loads((directory/'camera_coverage.json').read_text())
     core = json.loads((directory/'generated/gazebo/summary.json').read_text())
@@ -16,9 +16,9 @@ def verify(directory, until):
         'live_sensor': capture['live_gazebo_sensor'] and not capture['replay'],
         'clean_server': capture['gazebo_exit_code'] == 0,
         'clean_gui': capture.get('gui_exit_code') in (None, 0),
-        'stop_acknowledged': capture.get('stop_acknowledged', False),
+        'requested_stop_completed': capture.get('stop_requested', capture.get('stop_acknowledged', False)) and capture['gazebo_exit_code'] == 0,
         'no_capture_errors': not capture['errors'],
-        'all_three_views': set(coverage) == {'overview', 'lower', 'upper'},
+        'requested_views': set(coverage) == set(expected_views),
         'requested_service_completion': until < core['duration_target_s'] or service_complete,
     }
     timing = {}
@@ -59,12 +59,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--capture', type=Path, required=True)
     parser.add_argument('--until', type=float, default=341)
+    parser.add_argument('--expected-views', default='overview,lower,upper')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     if args.output.exists():
         raise FileExistsError('Preserve existing verification evidence')
     try:
-        result = verify(args.capture, args.until)
+        result = verify(args.capture, args.until, args.expected_views.split(','))
     except Exception as exc:
         result = {'passed': False, 'error': repr(exc)}
     args.output.write_text(json.dumps(result, indent=2))

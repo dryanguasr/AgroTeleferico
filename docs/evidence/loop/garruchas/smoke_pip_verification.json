@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "live_cameras": true,
+  "same_simulation_timestamps": true,
+  "frames": 21,
+  "simulation_start_s": 0.02,
+  "simulation_end_s": 4.0,
+  "video": {
+    "width": 1280,
+    "height": 800,
+    "duration": "1.050000",
+    "nb_read_frames": "21"
+  },
+  "inset": {
+    "carrier_id": 0,
+    "width": 384,
+    "height": 240,
+    "camera": "world-fixed offset following simulated pallet"
+  },
+  "note": "Both views rendered live by the same Gazebo world; postprocessing only scales and overlays the synchronized videos."
+}
