@@ -1,5 +1,6 @@
 """Structural asset tests: XML parsing is not a Gazebo/SDF schema validation."""
 import importlib.util
+import math
 from pathlib import Path
 import tempfile
 import unittest
@@ -9,6 +10,30 @@ spec=importlib.util.spec_from_file_location('generate_loop',ROOT/'scripts/genera
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 
 class Assets(unittest.TestCase):
+    def test_mesh_path_with_spaces_and_xml_characters(self):
+        with tempfile.TemporaryDirectory() as t:
+            p=m.generate(ROOT/'config/loop.yaml',Path(t)/'workspace with spaces & accents á')
+            uri=ET.parse(p).find('.//mesh/uri').text
+            self.assertEqual(Path(uri),p.parent/'terrain.dae')
+            self.assertTrue(Path(uri).is_file())
+            self.assertNotIn('%20',uri)
+            self.assertEqual(float(ET.parse(p).find('.//max_step_size').text),.01)
+            self.assertEqual(m.read_config(p.parent/'loop.yaml')['dt'],.002)
+
+    def test_terrain_normals_and_triangle_indices(self):
+        with tempfile.TemporaryDirectory() as t:
+            p=m.generate(ROOT/'config/loop.yaml',Path(t)/'case')
+            ns={'c':'http://www.collada.org/2005/11/COLLADASchema'}
+            mesh=ET.parse(p.parent/'terrain.dae')
+            triangles=mesh.find('.//c:triangles',ns)
+            indices=list(map(int,triangles.find('c:p',ns).text.split()))
+            self.assertEqual(len(indices),int(triangles.attrib['count'])*3*2)
+            normals=list(map(float,mesh.find('.//c:float_array[@id="normal-data"]',ns).text.split()))
+            self.assertLess(max(indices),len(normals)//3)
+            for i in range(0,len(normals),3):
+                self.assertAlmostEqual(math.sqrt(sum(x*x for x in normals[i:i+3])),1)
+                self.assertGreater(normals[i+2],0)
+
     def test_model_inventory_and_local_assets(self):
         with tempfile.TemporaryDirectory() as t:
             p=m.generate(ROOT/'config/loop.yaml',Path(t)/'case')

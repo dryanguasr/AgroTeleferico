@@ -100,13 +100,29 @@ def terrain_mesh(c, path):
     text = f'''<?xml version="1.0" encoding="utf-8"?>
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1"><asset><unit meter="1"/><up_axis>Z_UP</up_axis></asset>
 <library_geometries><geometry id="terrain"><mesh><source id="points"><float_array id="xyz" count="{len(vertices)}">{' '.join(map(str,vertices))}</float_array><technique_common><accessor source="#xyz" count="{len(vertices)//3}" stride="3"><param name="X" type="float"/><param name="Y" type="float"/><param name="Z" type="float"/></accessor></technique_common></source><vertices id="v"><input semantic="POSITION" source="#points"/></vertices><triangles count="{len(triangles)//3}"><input semantic="VERTEX" source="#v" offset="0"/><p>{' '.join(map(str,triangles))}</p></triangles></mesh></geometry></library_geometries><library_visual_scenes><visual_scene id="scene"><node id="terrain-node"><instance_geometry url="#terrain"/></node></visual_scene></library_visual_scenes><scene><instance_visual_scene url="#scene"/></scene></COLLADA>'''
+    # Ogre2 uses mesh materials; an SDF tint alone leaves an unbound COLLADA
+    # material white. Bind an explicit diffuse material to the terrain faces.
+    text = text.replace('<library_geometries>', '''<library_effects><effect id="soil-effect"><profile_COMMON><technique sid="common"><lambert><diffuse><color>.16 .43 .2 1</color></diffuse></lambert></technique></profile_COMMON></effect></library_effects><library_materials><material id="soil-material"><instance_effect url="#soil-effect"/></material></library_materials><library_geometries>''')
+    text = text.replace('<triangles count=', '<triangles material="soil" count=')
+    text = text.replace('<instance_geometry url="#terrain"/>', '<instance_geometry url="#terrain"><bind_material><technique_common><instance_material symbol="soil" target="#soil-material"/></technique_common></bind_material></instance_geometry>')
+    normals = []
+    for x in vertices[::3]:
+        slope = (ground(c, x+.001)-ground(c, x-.001))/.002
+        norm = math.hypot(slope, 1)
+        normals.extend((-slope/norm, 0, 1/norm))
+    normal_source = f'<source id="normals"><float_array id="normal-data" count="{len(normals)}">{" ".join(map(str,normals))}</float_array><technique_common><accessor source="#normal-data" count="{len(normals)//3}" stride="3"><param name="X" type="float"/><param name="Y" type="float"/><param name="Z" type="float"/></accessor></technique_common></source>'
+    text = text.replace('<vertices id="v">', normal_source+'<vertices id="v">')
+    text = text.replace('<input semantic="VERTEX" source="#v" offset="0"/>', '<input semantic="VERTEX" source="#v" offset="0"/><input semantic="NORMAL" source="#normals" offset="1"/>')
+    text = text.replace('<p>'+' '.join(map(str,triangles))+'</p>', '<p>'+' '.join(str(i) for i in triangles for _ in range(2))+'</p>')
     path.write_text(text, encoding="utf-8")
 
 
-def generate(config, directory, mode="central_local", gust=True, stop_at_end=False):
+def generate(config, directory, mode="central_local", gust=True, stop_at_end=False, server_step=0.01):
     if mode not in ("central_only", "central_local"):
         raise ValueError("Unknown mode")
     c = read_config(config)
+    if not math.isfinite(server_step) or server_step <= 0:
+        raise ValueError('Gazebo server step must be positive and finite')
     out = Path(directory).resolve()
     out.mkdir(parents=True, exist_ok=True)
     if (out/"world.sdf").exists():
@@ -116,7 +132,9 @@ def generate(config, directory, mode="central_local", gust=True, stop_at_end=Fal
     terrain_mesh(c, out/"terrain.dae")
     xs, h, r, gauge = supports(c), c["support_height"], c["lane_half_width"], c["gauge"]
     dark, steel, orange, green = ".12 .16 .20 1", ".5 .55 .6 1", "1 .35 .05 1", ".16 .43 .2 1"
-    items = [model("terrain_three_valleys_two_peaks", "0 0 0 0 0 0", visual("surface", f'<mesh><uri>{escape((out/"terrain.dae").as_uri())}</uri></mesh>', green))]
+    # Harmonic's resource resolver accepts absolute paths but does not decode
+    # percent-escaped file URIs (e.g. %20 in a Windows/WSL workspace name).
+    items = [model("terrain_three_valleys_two_peaks", "0 0 0 0 0 0", visual("surface", f'<mesh><uri>{escape(str(out/"terrain.dae"))}</uri></mesh>', green))]
     for i, x in enumerate(xs):
         z = ground(c, x)
         shapes = [visual("crossbeam", box(.22, 9, .18), steel, f"0 0 {h+1.25} 0 0 0")]
@@ -188,7 +206,7 @@ def generate(config, directory, mode="central_local", gust=True, stop_at_end=Fal
     items.append(model("wind_indicator", "0 0 -50 0 0 0", visual("shaft",box(2,.10,.10),".05 .65 1 1")+visual("tip",box(.35,.45,.15),".05 .65 1 1",".95 0 0 0 0 0")))
     parameters=f'<params>{escape(str(out/"loop.params"))}</params><output>{escape(str(out/"gazebo"))}</output><mode>{mode}</mode><gust>{str(gust).lower()}</gust><stop_at_end>{str(stop_at_end).lower()}</stop_at_end>'
     text=f'''<?xml version="1.0"?>
-<sdf version="1.9"><world name="agro_loop"><gravity>0 0 -9.81</gravity><physics name="physics" type="ignored"><max_step_size>{c['dt']}</max_step_size><real_time_factor>1</real_time_factor></physics>
+<sdf version="1.9"><world name="agro_loop"><gravity>0 0 -9.81</gravity><physics name="physics" type="ignored"><max_step_size>{server_step}</max_step_size><real_time_factor>1</real_time_factor></physics>
 <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/><plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/><plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
 <plugin filename="AgroLoopSystem" name="agro::LoopSystem">{parameters}</plugin>
 <scene><ambient>.65 .65 .65 1</ambient><background>.65 .8 .95 1</background><shadows>false</shadows></scene><light name="sun" type="directional"><pose>0 0 40 0 0 0</pose><diffuse>.9 .9 .9 1</diffuse><direction>-.5 .2 -1</direction></light>
@@ -201,6 +219,10 @@ def generate(config, directory, mode="central_local", gust=True, stop_at_end=Fal
     except (subprocess.CalledProcessError,FileNotFoundError):
         commit="unavailable"
     meta={"schema":"agro-loop-config-v1","commit":commit,"configuration_sha256":hashlib.sha256((out/"loop.yaml").read_bytes()).hexdigest(),"mode":mode,"gust":gust,"seed":0,"randomness":"none; deterministic prescribed scenario","units":"SI","parameter_origin":{"topology_and_six_carriers":"user_requirement","terrain_landmark_order":"user_requirement","numeric_values":"conceptual_assumptions; not identified or certified"},"support_cables_per_lane":2,"lanes":2,"unique_portals":len(xs),"static_visual_models":len(items),"native_contact_physics":False}
+    # The plugin substeps at c['dt']; this only schedules the kinematic Gazebo
+    # scene. Running >1200 static visual models at 500 Hz wastes host CPU.
+    meta['gazebo_server_step_s'] = server_step
+    meta['core_step_s'] = c['dt']
     (out/"metadata.json").write_text(json.dumps(meta,indent=2),encoding="utf-8")
     return out/"world.sdf"
 
@@ -212,8 +234,9 @@ def main():
     p.add_argument("--mode",choices=["central_only","central_local"],default="central_local")
     p.add_argument("--no-wind",action="store_true")
     p.add_argument("--stop-at-end",action="store_true")
+    p.add_argument("--server-step",type=float,default=.01,help="Gazebo scheduling step; core dt remains in YAML")
     a=p.parse_args()
-    print(generate(a.config,a.output,a.mode,not a.no_wind,a.stop_at_end))
+    print(generate(a.config,a.output,a.mode,not a.no_wind,a.stop_at_end,a.server_step))
 
 
 if __name__=="__main__":

@@ -28,7 +28,7 @@ build-loop/agro_loop_cli --config results/loop_one_01/loop.params --output resul
 
 ## 2. Gazebo Harmonic + ROS 2 Jazzy en Linux/WSL
 
-Esta ruta se entrega implementada, pero su compilación/ejecución queda pendiente de validación en el entorno de Codex. Conservar la instalación existente; no migrar de versión sin un motivo concreto. Preferir la carpeta Linux del repositorio.
+La compilación nativa y los cinco servicios se han ejecutado con Harmonic 8.11.0 y Jazzy, con paridad CLI/plugin aprobada. El [informe nativo](informe_nativo_circuito.md) resume resultados; [validacion_nativa_circuito.md](validacion_nativa_circuito.md) conserva la bitácora de fallos y pendientes. La grabación de 341 s y su revisión visual están documentadas en el informe; no sustituyen una validación de contacto físico. Conservar la instalación existente; no migrar de versión sin un motivo concreto. Preferir la carpeta Linux del repositorio.
 
 ```bash
 source /opt/ros/jazzy/setup.bash
@@ -67,5 +67,66 @@ Secuencia nominal: parada inicial y carga del carro 0; viaje hacia estación sup
 Seguir `CODEX_LOOP_HANDOFF.md`. Obtener capturas/vídeo de Gazebo de vista general, estaciones, carga/descarga, flexión y ráfaga. No reemplazar capturas por imágenes generadas. Un vídeo de replay debe identificarse como replay.
 
 Antes de reutilizar `scripts/capture_scene.py`, inspeccionar sus supuestos: pertenece al piloto y no se afirma compatible con el nuevo inventario de modelos. Ajustar el método de captura a WSLg disponible y registrar el comando real.
+
+El circuito dispone de un grabador propio de cámara Gazebo en vivo. Requiere
+Pillow (`python3-pil`) y `ffmpeg`; no reproduce los CSV:
+
+```bash
+python3 scripts/capture_loop.py --output results/loop_capture_new --view overview --gui --video --until 341 --timeout 1800
+```
+
+Las vistas disponibles son `overview`, `lower` y `upper`. Los PNG conservan
+instantes de carga, descarga y ráfaga; `frame_times.csv` permite revisar cobertura
+y pérdidas. El vídeo recibe 5 imágenes por segundo simulado y reproduce a
+20 fps (4× nominal). Un intento parcial no acredita cobertura del servicio.
+`--all-views` captura las tres cámaras en un solo mundo y graba vídeo de la
+vista seleccionada. La GUI utiliza Qt xcb y libX11 (incluida en el entorno
+Ubuntu/WSLg); su cierre normal se limita al PID de esa instancia, sin cerrar
+ventanas de otras aplicaciones. Se registran por separado las salidas del
+servidor y de la GUI y la confirmación del servicio de parada.
+
+Después de una captura completa con las tres vistas, verificar tiempos,
+integridad del vídeo, salidas y reserva de RAM (no sustituye la revisión visual):
+
+```bash
+python3 scripts/verify_loop_capture.py --capture results/loop_capture_new/capture --output results/loop_capture_new/verification.json
+```
+
+La ruta anterior corresponde al supervisor PowerShell; si se ejecuta el
+grabador directamente, usar su directorio `--output` como `--capture`.
+
+En este PC compartido, ejecutar desde PowerShell 7 mediante el supervisor incluido
+en el repositorio (no ejecutar estos ejemplos simultáneamente):
+
+```powershell
+./scripts/windows/run_guarded_loop.ps1 -RunName loop_guarded_new -Case hybrid_gust
+./scripts/windows/run_guarded_loop.ps1 -RunName loop_capture_new -Case capture -View overview -Until 341
+```
+
+El lanzador localiza el repositorio, convierte la ruta con `wslpath` y usa
+Ubuntu-24.04 por defecto (`-Distribution` permite indicar otra instalación
+compatible ya preparada). La compilación y `install/setup.bash` deben existir.
+Solo se debe ejecutar un lanzador a la vez; no coordina automáticamente otros
+proyectos ni constituye un límite duro de memoria del sistema operativo.
+Conserva las dos muestras de admisión, logs y código de salida del supervisor.
+
+Ejecuta los scripts Linux
+con `--host-memory` alimentado por muestras reales: al menos 9 GiB libres para
+headless y 14 GiB para render con GUI (pico observado 8.42 GiB), dos mediciones separadas, cierre preventivo bajo
+5 GiB para preservar la reserva humana de 4 GiB. La opción sin monitor anterior
+es una referencia de uso en una máquina dedicada, no el procedimiento vigente
+en este PC. No solapar render con otra carga pesada de GPU.
+
+Para representar un caso completo ya verificado:
+
+```bash
+python3 scripts/plot_loop_native.py --case results/loop_guarded_01/hybrid_gust --output results/loop_plots_new
+```
+
+`compare_loop_backends.py` verifica todos los campos CSV y eventos contra CLI;
+`collect_loop_native.py` recibe cinco argumentos `--case nombre=directorio`,
+`--cli directorio_suite_cli` y `--output directorio_nuevo`. Exige los cinco
+casos completos y los cierres de los supervisores. Aplica los mismos umbrales
+comparativos de la suite sin favorecer el controlador híbrido.
 
 Si una ejecución falla, conservar su carpeta, leer `process.log`/`summary.json` y utilizar una nueva para repetir. No ocultar fallos borrando evidencias ni degradar automáticamente el modelo para forzar aprobación.

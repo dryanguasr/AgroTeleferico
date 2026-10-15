@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "checks": {
+    "live_sensor": true,
+    "clean_server": true,
+    "clean_gui": true,
+    "stop_acknowledged": true,
+    "no_capture_errors": true,
+    "all_three_views": true,
+    "overview_coverage": true,
+    "overview_continuous": true,
+    "overview_metadata": true,
+    "overview_checkpoints": true,
+    "lower_coverage": true,
+    "lower_continuous": true,
+    "lower_metadata": true,
+    "lower_checkpoints": true,
+    "upper_coverage": true,
+    "upper_continuous": true,
+    "upper_metadata": true,
+    "upper_checkpoints": true,
+    "video_format": true,
+    "video_frames": true,
+    "video_duration": true,
+    "video_decodes": true,
+    "host_reserve": true
+  },
+  "timing": {
+    "overview": {
+      "frames": 21,
+      "first_simulation_s": 0.02,
+      "last_simulation_s": 4.0,
+      "max_gap_s": 0.20000000000000018,
+      "render_simulation_to_wall_ratio": 0.7708728216082855
+    },
+    "lower": {
+      "frames": 21,
+      "first_simulation_s": 0.02,
+      "last_simulation_s": 4.0,
+      "max_gap_s": 0.20000000000000018,
+      "render_simulation_to_wall_ratio": 0.7625940014801088
+    },
+    "upper": {
+      "frames": 21,
+      "first_simulation_s": 0.02,
+      "last_simulation_s": 4.0,
+      "max_gap_s": 0.20000000000000018,
+      "render_simulation_to_wall_ratio": 0.7562455240596898
+    }
+  },
+  "video": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 800,
+    "r_frame_rate": "20/1",
+    "duration": "1.050000",
+    "nb_read_frames": "21"
+  },
+  "resources": {
+    "peak_tree_rss_gib": 5.1424102783203125,
+    "minimum_host_free_gib": 10.463348388671875
+  },
+  "decode_stderr": "",
+  "scope": "File integrity, full decode and timing only. Visual geometry and absence of residual processes require separate inspection."
+}

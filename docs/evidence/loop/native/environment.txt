@@ -1,0 +1,47 @@
+
+--- OS ---
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.4 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+Linux LAPTOP-C6UQO8L3 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+--- Gazebo ---
+8.11.0
+
+--- ROS packages ---
+ffmpeg	7:6.1.1-3ubuntu5
+python3-colcon-core	0.21.0+upstream-1
+python3-matplotlib	3.6.3-1ubuntu5
+python3-numpy	1:1.26.4+ds-6ubuntu1
+python3-pil:amd64	10.2.0-1ubuntu1.3
+ros-jazzy-gz-sim-vendor	0.0.10-1noble.20260604.111001
+ros-jazzy-ros-base	0.11.0-1noble.20260616.084325
+ros-jazzy-ros-gz-bridge	1.0.22-1noble.20260615.142443
+
+--- WSLg ---
+WSLg ( x86_64 ): 1.0.73.2
+Built at: Mon May 18 22:31:53 UTC 2026
+Azure Linux: VERSION="3.0.20260510"
+DirectX-Headers:
+mesa:
+pulseaudio: c33051f2296af748ac5cd13e51abfac4d129e4c7
+FreeRDP: c4030980b29322a9cb2190711a5fadeeeb8b6a33
+weston: 04d436c7d9a0cd55fa64b6612c7fa678d6fcd077
+
+--- Display environment ---
+:0
+wayland-0
+/run/user/1000
+
+--- GPU ---
+Format modifier is not recognized.

@@ -1,0 +1,31 @@
+{
+  "schema": "agro-loop-native-evidence-v1",
+  "cases": {
+    "hybrid_gust": {
+      "archive": "hybrid_gust.zip",
+      "sha256": "88e14573fc90fbdd8cb63d5195734cc817fc986d9f40faad9bcba7702c52cc55",
+      "bytes": 7242992
+    },
+    "central_gust": {
+      "archive": "central_gust.zip",
+      "sha256": "3ff5909de3d55670322c8cfa8a87c2a9a73f2bc488195b2e32861561a7686f81",
+      "bytes": 6595495
+    },
+    "hybrid_calm": {
+      "archive": "hybrid_calm.zip",
+      "sha256": "a22e330d19f45c1eae0afb056bb74c5bcfb8655c02e23f1f90d2042e3320b79c",
+      "bytes": 7229009
+    },
+    "hybrid_half_dt": {
+      "archive": "hybrid_half_dt.zip",
+      "sha256": "3b9f4a9f32d32e402edd94980fb04fd67b2886bb90a16db20423ae5c9db2f3c8",
+      "bytes": 7244347
+    },
+    "hybrid_half_shape": {
+      "archive": "hybrid_half_shape.zip",
+      "sha256": "d097ff31ab3f3f7c78c5fd416daf4919765e1abb742c39ab54bacead07f3be23",
+      "bytes": 7244580
+    }
+  },
+  "note": "Native reduced-model results; not wheel-cable contact validation. Archives contain original complete CSV and run metadata."
+}

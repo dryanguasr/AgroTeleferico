@@ -1,5 +1,10 @@
 # Entrega a Codex: validación nativa pendiente
 
+> Documento histórico de entrega. Los avances posteriores, resultados nativos
+> y pendientes actuales están en [informe_nativo_circuito.md](informe_nativo_circuito.md)
+> y [validacion_nativa_circuito.md](validacion_nativa_circuito.md). Las afirmaciones
+> de ausencia de Gazebo que siguen describen el entorno inicial de esta entrega.
+
 ## Punto de partida
 
 Continuar el trabajo de la rama `feat/gazebo-loop-six-carriers`, derivada del piloto `52298bf5935575e80fc20c975e34cd020b4249c5`. Revisar primero estado local, instrucciones del repositorio y divergencias remotas; no resetear cambios ajenos ni recrear el proyecto desde `main`.

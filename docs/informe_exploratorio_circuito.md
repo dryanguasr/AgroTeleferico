@@ -1,5 +1,9 @@
 # Informe exploratorio: circuito multicarro
 
+Este informe conserva los resultados standalone iniciales. La validación
+posterior en Harmonic/Jazzy y sus evidencias están en el
+[informe nativo](informe_nativo_circuito.md); no se han sustituido estos datos.
+
 ## Evidencia obtenida y alcance
 
 Se ejecutó el núcleo reducido C++17, no Gazebo. CMake standalone compiló y CTest aprobó dos targets; `loop_assets` contiene tres pruebas Python. XML bien formado no equivale a validación SDF nativa. Los cinco servicios finalizaron y aprobaron los criterios internos definidos en `run_loop_suite.py`.

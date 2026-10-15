@@ -1,0 +1,12 @@
+{
+  "action": "WM_DELETE_WINDOW sent to owned GUI PID 548 after exact GZ_PARTITION verification",
+  "reason": "Windows free memory approached preventive threshold; release duplicate interactive renderer while preserving live three-camera server and video",
+  "partition": "agro_loop_capture_d6a7c69263264880a28abe6c4776cd81",
+  "last_preintervention_sample_wall_s": 328.7436101940002,
+  "last_preintervention_host_free_gib": 5.444599151611328,
+  "first_inspected_postintervention_wall_s": 368.8719446230007,
+  "postintervention_tree_rss_gib": 4.384208679199219,
+  "postintervention_host_free_gib": 7.481254577636719,
+  "server_restarted": false,
+  "timestamps_note": "Bounds from inspected samples, not exact intervention timestamp. Final GUI exit is recorded by capture.json."
+}

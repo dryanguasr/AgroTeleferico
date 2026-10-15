@@ -44,6 +44,26 @@ def assess(folder, config):
     return summary, carts
 
 
+def compare_cases(results, traces):
+    """Apply the same comparison gates to CLI, native, or collected services."""
+    comparison = {}
+    required = {'hybrid_gust', 'central_gust', 'hybrid_calm', 'hybrid_half_dt', 'hybrid_half_shape'}
+    if set(results) != required or not all(r['passed'] for r in results.values()):
+        return {'complete_suite': {'passed': False}}
+    base = results['hybrid_gust']
+    for name in ('hybrid_half_dt', 'hybrid_half_shape'):
+        differences = {}
+        for k, floor in [('rms_swing_x_rad', .001), ('rms_swing_y_rad', .001), ('peak_tension_N', 1)]:
+            differences[k] = abs(results[name][k]-base[k])/max(abs(base[k]), floor)
+        comparison[name] = {'relative_changes': differences, 'passed': max(differences.values()) < .05}
+    a, b = traces['hybrid_gust'], traces['hybrid_calm']
+    aligned = len(a) == len(b) and np.allclose(a['time_s'], b['time_s']) and np.array_equal(a['id'], b['id'])
+    response = float(np.max(abs(a['swing_y_rad']-b['swing_y_rad']))) if aligned else 0
+    comparison['wind_response'] = {'max_transverse_difference_rad': response, 'passed': aligned and response > .003}
+    comparison['same_service'] = {'passed': all(r['loaded_kg'] == base['loaded_kg'] and r['unloaded_kg'] == base['unloaded_kg'] and abs(r['final_q_m']-base['final_q_m']) < .01 for r in results.values())}
+    return comparison
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--config',default='config/loop.yaml')
@@ -96,19 +116,7 @@ def main():
             results[name]={'passed':False,'error':str(exc)}
         (root/'summary.json').write_text(json.dumps({'backend':args.backend,'cases':results},indent=2))
         print(name, 'PASS' if results[name]['passed'] else 'FAIL',flush=True)
-    comparison={}
-    if len(results)>1 and all(r['passed'] for r in results.values()):
-        base=results['hybrid_gust']
-        for name in ('hybrid_half_dt','hybrid_half_shape'):
-            differences={}
-            for k,floor in [('rms_swing_x_rad',.001),('rms_swing_y_rad',.001),('peak_tension_N',1)]:
-                differences[k]=abs(results[name][k]-base[k])/max(abs(base[k]),floor)
-            comparison[name]={'relative_changes':differences,'passed':max(differences.values())<.05}
-        a,b=traces['hybrid_gust'],traces['hybrid_calm']
-        aligned = len(a)==len(b) and np.allclose(a['time_s'],b['time_s']) and np.array_equal(a['id'],b['id'])
-        response=float(np.max(abs(a['swing_y_rad']-b['swing_y_rad']))) if aligned else 0
-        comparison['wind_response']={'max_transverse_difference_rad':response,'passed':aligned and response>.003}
-        comparison['same_service']={'passed':all(r['loaded_kg']==base['loaded_kg'] and r['unloaded_kg']==base['unloaded_kg'] and abs(r['final_q_m']-base['final_q_m'])<.01 for r in results.values())}
+    comparison = {} if args.quick else compare_cases(results, traces)
     passed=all(r['passed'] for r in results.values()) and all(r['passed'] for r in comparison.values())
     output={'schema':'agro-loop-suite-v1','backend':args.backend,'passed':passed,'cases':results,'comparisons':comparison,
             'interpretation':'Numeric conceptual checks only. No inference of physical validation, stored electrical energy, or superiority of hybrid control.'}

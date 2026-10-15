@@ -1,0 +1,22 @@
+{
+  "command": [
+    "gz",
+    "sim",
+    "-s",
+    "-r",
+    "-v",
+    "3",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_capture_complete_02/capture/generated/world.sdf"
+  ],
+  "view": "overview",
+  "live_gazebo_sensor": true,
+  "replay": false,
+  "video_speedup_nominal": 4,
+  "frames": 1706,
+  "first_frame_wall_s": 10.20480950000001,
+  "last_simulation_s": 341.0,
+  "gazebo_exit_code": 0,
+  "gui_exit_code": 0,
+  "stop_acknowledged": true,
+  "errors": []
+}
