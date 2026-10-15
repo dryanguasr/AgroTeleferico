@@ -76,6 +76,43 @@ y no se presentan como resultados de nueve apoyos.
 
 ## Reproducción
 
+### Punto de retomada — 15 de octubre de 2026
+
+Trabajo suspendido por solicitud del usuario. El heartbeat
+`continuidad-telef-rico-y-relevo-rl-il` está **PAUSED**; publicar estos cambios
+no autoriza reactivarlo ni ejecutar nuevas simulaciones. Esperar una indicación
+humana para continuar. Rama: `feat/gazebo-loop-six-carriers`; no fusionar `main`.
+
+La entrega anterior de 13 apoyos y su validación nativa están completas. La
+revisión de nueve postes en T tiene cinco casos CLI aprobados, CTest 4/4 y
+vídeo PiP parcial verificado. No confundir estos alcances.
+
+Al retomar, en este orden:
+
+1. Leer este informe y `docs/evidence/loop/garruchas/manifest.json`. Comprobar
+   procesos reales antes de iniciar trabajo; no repetir los casos ya aprobados.
+2. Comprobar margen estable con dos muestras separadas de RAM Windows. Mantener
+   al menos 4 GiB libres y parada preventiva bajo 5 GiB; la captura sin GUI
+   exige 10 GiB para admisión. El usuario coordina recursos: no consultar ni
+   reactivar otros chats. Un solo proceso propio de simulación pesado a la vez.
+3. Grabar 341 s con vista general y seguimiento en una carpeta nueva, usando
+   el comando de abajo. Preservar todos los intentos fallidos y parciales.
+4. Verificar cobertura, cierre limpio, sincronización, decodificación del MP4
+   y reserva de memoria. Componer el vídeo completo sin `--allow-partial`.
+5. Inspeccionar descarga, ráfaga y regreso en ambas vistas; comparar los CSV
+   `global`, `carriers` y `cables` de Gazebo con el nominal de la suite
+   `results/loop_towers_cli_03/hybrid_gust/core`. Esa carpeta es local e ignorada
+   por Git: si no está disponible en otro equipo, regenerar solo la referencia
+   necesaria con la configuración versionada, sin atribuirle evidencia previa.
+6. Versionar evidencia completa, hashes, métricas de rendimiento y resultados
+   de comparación; actualizar este informe. No declarar completo el recorrido
+   basándose en el vídeo parcial ni en los resultados de 13 apoyos.
+
+El vídeo parcial y los resúmenes están versionados en
+`docs/evidence/loop/garruchas`; los directorios `results/` conservan localmente
+los archivos originales y no se publican íntegros. Las órdenes siguientes son
+instrucciones para una futura reanudación, no una tarea automática activa.
+
 Desde PowerShell 7, con el entorno nativo compilado:
 
 ```powershell
