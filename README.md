@@ -1,113 +1,76 @@
-# Agro Teleférico
+# AgroTeleferico
 
-Proyecto para diseñar y validar un prototipo de robot agrícola suspendido por cables para apoyar labores agrícolas en laderas.
+**Robots por cables para explorar el transporte agrícola en laderas.**
 
-Piloto agrícola de dinámica y control en **Gazebo Harmonic + ROS 2 Jazzy**.
+¿Cómo mover una cosecha sobre un terreno inclinado? Este piloto explora distintas
+formas de transportar carga suspendida: desde un carro sencillo hasta una
+plataforma que se mueve y orienta mediante ocho cables.
 
-**[Ver los vídeos representativos](docs/videos.md):** circuito completo, vista
-general con recuadro de seguimiento y detalle de la garrucha. El índice distingue
-el servicio completo de las capturas parciales de la última revisión.
+[![Circuito con postes en T y garruchas en movimiento](docs/assets/garruchas_preview.gif)](docs/evidence/loop/garruchas/gazebo_pip_partial.mp4)
 
-| Escenario | Mecánica | Control |
-|---|---|---|
-| `single` | Carro sobre un portante flexible con flecha | Posición longitudinal, tracción limitada y balanceo |
-| `double` | Carro sobre dos portantes paralelos | Posición longitudinal, carga simétrica y rigidez lateral |
-| `spider` | Plataforma rígida con ocho cabrestantes | Posición y orientación con tensiones positivas |
+*Fragmento de la simulación en Gazebo, acelerado 4×. La vista general incluye
+un recuadro que sigue a uno de los carros. Haz clic para abrir el vídeo parcial.*
 
-El doble portante es una propuesta agrícola, no una reproducción mecánica de Monserrate. Todos los parámetros iniciales son supuestos de demostración.
+**[Ver vídeos](docs/videos.md) · [Explorar resultados](docs/resultados.md) · [Cómo ejecutarlo](docs/guia_tecnica.md)**
 
-## Ejecución en Ubuntu 24.04 / WSL
+## Del cable sencillo al control en ocho cables
 
-Requisitos: ROS 2 Jazzy, `ros-jazzy-ros-gz`, bibliotecas de desarrollo Gazebo Sim 8, Eigen3, colcon, NumPy, PyYAML y Matplotlib. `ffmpeg` sólo se necesita para exportar videos. Ejecutar dentro de Ubuntu WSL; WSLg permite abrir la GUI.
+Tres propuestas para comparar movimiento, estabilidad y control sobre una ladera:
 
-```bash
-git clone https://github.com/dryanguasr/AgroTeleferico.git
-cd AgroTeleferico
-source /opt/ros/jazzy/setup.bash
-colcon build --cmake-args -DBUILD_TESTING=ON
-source install/setup.bash
-ros2 launch agro_teleferico pilot.launch.py scenario:=single
-```
+| Un cable | Dos cables | Ocho cables |
+|:---:|:---:|:---:|
+| ![Carro sobre un cable](docs/assets/single.png) | ![Carro sobre dos cables](docs/assets/double.png) | ![Plataforma de ocho cables](docs/assets/spider.png) |
+| Un carro recorre un cable flexible, se detiene y regresa. | Dos portantes paralelos permiten estudiar el balanceo y el reparto de carga. | Una plataforma barre una zona y cambia de altura e inclinación. |
 
-Cambiar a `scenario:=double` o `scenario:=spider`. Usar `gui:=false`, `config:=/ruta/parametros.yaml` u `output:=/ruta/telemetry.csv` según necesidad. Cerrar con Ctrl+C. Ejecutar una simulación interactiva por partición Gazebo/dominio ROS.
+Las imágenes son capturas de las simulaciones. Los ensayos comparan cargas,
+perturbaciones y precisión del movimiento; puedes consultar las cifras en
+[los resultados del piloto](docs/resultados.md).
 
-## Pruebas
+## Un circuito inspirado en las garruchas
 
-```bash
-colcon test --event-handlers console_direct+
-colcon test-result --verbose
-python3 scripts/run_suite.py --quick  # Tres escenarios nominales, 120 s
-python3 scripts/run_suite.py          # 18 nominales + 3 perturbaciones
-```
+La extensión más reciente lleva la idea a un recorrido con **seis carros**,
+terreno irregular y operaciones de carga y descarga. La revisión visual incorpora
+**nueve postes en T**, separados **6 metros**, y jaulas abiertas inspiradas en
+las garruchas agrícolas.
 
-La suite ejecuta Gazebo y conserva CSV, SDF, log, gráficos y métricas JSON en `results/suite/`. Compara pasos de 1 y 0,5 ms, cargas útiles de 0/5/10 kg y perturbación lateral. Devuelve error si los criterios fallan. Los resultados generados no se versionan automáticamente.
+[![Vista general con detalle de una garrucha](docs/evidence/loop/garruchas/pip_preview.png)](docs/evidence/loop/garruchas/gazebo_pip_partial.mp4)
 
-Trayectorias: los carros recorren de x=1 a x=19 m, frenan al llegar y comienzan el regreso en t=60 s; la referencia adapta su avance a la pendiente y conserva margen de velocidad. La plataforma barre con cambios de los tres ángulos. Los ensayos terminan a 120 s; la ejecución interactiva queda abierta y corre en tiempo real por defecto.
+### Mira el piloto en acción
 
-## Comandos ROS 2
+| Vídeo | Qué encontrarás |
+|---|---|
+| **[▶ Circuito completo · 85 s](docs/evidence/loop/native/capture/gazebo.mp4)** | Recorrido, carga, descarga y ráfaga. Corresponde a la variante anterior de 13 apoyos. |
+| **[▶ Postes en T y garruchas · 31 s](docs/evidence/loop/garruchas/gazebo_pip_partial.mp4)** | Vista exterior con recuadro de seguimiento. Captura parcial de la revisión actual. |
+| **[▶ Detalle del carro · 31 s](docs/videos/garrucha_seguimiento_parcial.mp4)** | Ruedas, suspensión y jaula a resolución completa. La misma ejecución parcial, vista de cerca. |
 
-Un objetivo externo válido sustituye la demostración hasta reiniciar el escenario.
+Los enlaces abren los MP4 incluidos en el repositorio. Si no aparece un reproductor,
+usa **View raw / Download**. La animación de arriba permite ver un fragmento
+directamente en esta página. [Galería y evidencia de los vídeos →](docs/videos.md)
 
-```bash
-ros2 topic pub --once /agro/goal_x std_msgs/msg/Float64 '{data: 12.0}'
-ros2 topic pub --once /agro/target_pose geometry_msgs/msg/PoseStamped \
-  '{header: {frame_id: world}, pose: {position: {x: 10.0, y: 0.0, z: 7.68}, orientation: {w: 1.0}}}'
-ros2 topic echo /agro/pose
-ros2 topic echo /agro/tensions
-ros2 topic echo /agro/feasible
-```
+## Qué está listo y qué sigue
 
-`goal_x` es posición horizontal en [1,19] m. Se publican `/agro/pose` (`PoseStamped`), `/agro/velocity` (`TwistStamped`), `/agro/tensions` y `/agro/lengths` (`Float64MultiArray`), `/agro/feasible` (`Bool`) y `/agro/telemetry` (fila CSV completa). El encabezado CSV define el orden; cada cable ocupa tensión, longitud y velocidad de cabrestante. Entradas no usadas de carros contienen cero. Todas las poses usan `world` y tiempo simulado.
+- **Piloto de tres escenarios:** simulaciones, pruebas y resultados documentados.
+- **Circuito anterior de 13 apoyos:** recorrido completo y vídeo verificados.
+- **Revisión con postes en T y garruchas:** implementada, con pruebas numéricas
+  aprobadas y vídeo parcial. La grabación se detuvo para respetar la reserva de RAM.
+- **Pendiente para después:** grabar el ciclo completo de esta última revisión,
+  revisar descarga y regreso, y cerrar la comparación de sus resultados.
 
-## Alcance
+El trabajo automático está **suspendido**. El [punto de retomada](docs/revision_garruchas.md)
+conserva los pasos pendientes y la evidencia disponible.
 
-- Carros: dinámica reducida con restricción guiada, catenaria elástica cuasiestática a 50 Hz, tracción y péndulo de balanceo. Gazebo representa la pose calculada; no se resuelve contacto rueda–cable.
-- Doble cable: reparto simétrico de carga y rigidez lateral equivalente, sin transferencia de carga lateral detallada.
-- Plataforma: dinámica de cuerpo rígido integrada por Gazebo y fuerzas de ocho cables elásticos amortiguados que sólo tiran. Sin masa distribuida ni colisiones entre cables.
-- Las líneas renderizadas usan segmentos de longitud visual fija; no determinan las fuerzas físicas.
-- El límite de tensión acota el comando; una perturbación puede producir sobretensión física, registrada sin recorte artificial.
+## Probarlo y conocer el proyecto
 
-Ver [resultados medidos y escenas](docs/resultados.md), [modelo](docs/modelo.md), [referencias](docs/referencias.md) y [validación](docs/validacion.md). Código nuevo bajo MIT; no se ha incorporado código externo de las referencias.
+El entorno de ejecución es **Ubuntu 24.04, ROS 2 Jazzy y Gazebo Harmonic**,
+también utilizado desde WSL en Windows.
 
-## Nuevo: circuito conceptual de seis carros
+- [Guía técnica: instalación, ejecución y comandos](docs/guia_tecnica.md).
+- [Cómo ejecutar y grabar el circuito](docs/demo_circuito.md).
+- [Resultados de los tres escenarios](docs/resultados.md) e [informe del circuito](docs/informe_nativo_circuito.md).
+- [Proyectos de referencia](docs/referencias.md) y [cómo funciona el modelo](docs/modelo.md).
 
-La configuración actual incorpora **9 postes en T**, vanos de 6 m horizontales
-y carros con jaula inspirada en garruchas. El vídeo añade un recuadro que sigue
-al carro 0. Ver [cambios, pruebas y reproducción](docs/revision_garruchas.md).
-La evidencia nativa enlazada a continuación conserva la variante anterior de
-13 apoyos; no debe confundirse con los resultados de esta revisión.
+Este es un piloto de simulación para comparar conceptos. Las dimensiones y masas
+son supuestos de demostración; todavía no es un diseño listo para construir o
+instalar en una finca. [Alcance y validación](docs/validacion.md).
 
-Extensión independiente; no cambia la configuración ni el código físico de los tres escenarios anteriores. Dos carriles, cuatro portantes, tractor separado, terreno irregular, palets, paradas globales, ajuste local y viento. **Cinco servicios nativos Harmonic/Jazzy, paridad CLI/plugin y grabación completa aprobados.** No es validación física ni contacto rueda–cable. Ver el [informe nativo](docs/informe_nativo_circuito.md) y los [CSV y gráficos empaquetados](docs/evidence/loop/native/manifest.json).
-
-```bash
-cmake -S . -B build-loop -DAGRO_LOOP_STANDALONE=ON -DBUILD_TESTING=ON -DCMAKE_BUILD_TYPE=Release
-cmake --build build-loop -j2
-ctest --test-dir build-loop --output-on-failure
-python3 scripts/run_loop_suite.py --binary build-loop/agro_loop_cli --output results/loop_check_01
-python3 scripts/report_loop.py --summary results/loop_check_01/summary.json --output results/loop_check_01/report.md
-```
-
-Tras compilar con colcon y cargar `install/setup.bash`:
-
-```bash
-ros2 launch agro_teleferico loop.launch.py output:=results/loop_gui_01
-# Alternativa sin GUI; usar otra carpeta:
-ros2 launch agro_teleferico loop.launch.py gui:=false output:=results/loop_headless_01
-```
-
-Cada ejecución exige una carpeta nueva. Ver [instrucciones completas y captura](docs/demo_circuito.md), [arquitectura y límites](docs/concepto_circuito.md), [resultados reducidos](docs/informe_exploratorio_circuito.md) y [trabajo restante para Codex](docs/CODEX_LOOP_HANDOFF.md). El [goal original](docs/goals/loop_six_carriers.md) permanece como referencia, no como afirmación de cumplimiento total.
-
-Captura en este PC desde PowerShell 7, con vigilancia de RAM Windows y dos
-vistas simultáneas: general y seguimiento (requiere el entorno ya compilado):
-
-```powershell
-./scripts/windows/run_guarded_loop.ps1 -RunName loop_capture_new -Case capture -View overview -Until 341 -NoGui -FollowCarrier
-```
-
-El vídeo corresponde al sensor Gazebo en vivo, a 1280×800 y 4× de velocidad
-nominal; los CSV de tiempos permiten comprobar la cobertura real. El supervisor
-exige una carpeta nueva y conserva también intentos incompletos. El servicio
-headless histórico de 13 apoyos midió un factor de tiempo real de 0,5046; el rendimiento
-gráfico se registra aparte. El control híbrido aumentó un 4,55 % el RMS
-longitudinal frente al central en el caso nominal con ráfaga: no se demuestra
-una mejora del control local.
+Código bajo [licencia MIT](LICENSE).
