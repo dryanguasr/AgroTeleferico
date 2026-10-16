@@ -4,6 +4,10 @@ Proyecto para diseñar y validar un prototipo de robot agrícola suspendido por 
 
 Piloto agrícola de dinámica y control en **Gazebo Harmonic + ROS 2 Jazzy**.
 
+**[Ver los vídeos representativos](docs/videos.md):** circuito completo, vista
+general con recuadro de seguimiento y detalle de la garrucha. El índice distingue
+el servicio completo de las capturas parciales de la última revisión.
+
 | Escenario | Mecánica | Control |
 |---|---|---|
 | `single` | Carro sobre un portante flexible con flecha | Posición longitudinal, tracción limitada y balanceo |
