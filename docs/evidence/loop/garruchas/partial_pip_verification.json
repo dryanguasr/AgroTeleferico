@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "partial_capture": true,
+  "capture_errors": [
+    "RuntimeError('Preventive render stop: host reserve or explicit request')"
+  ],
+  "live_cameras": true,
+  "same_simulation_timestamps": true,
+  "frames": 627,
+  "simulation_start_s": 0.02,
+  "simulation_end_s": 125.2,
+  "video": {
+    "width": 1280,
+    "height": 800,
+    "duration": "31.350000",
+    "nb_read_frames": "627"
+  },
+  "inset": {
+    "carrier_id": 0,
+    "width": 384,
+    "height": 240,
+    "camera": "world-fixed offset following simulated pallet"
+  },
+  "note": "Both views rendered live by the same Gazebo world; postprocessing only scales and overlays the synchronized videos."
+}

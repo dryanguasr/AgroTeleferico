@@ -1,0 +1,11 @@
+build/
+install/
+log/
+results/
+__pycache__/
+*.pyc
+.venv/
+build-clean/
+install-clean/
+log-clean/
+build-loop/

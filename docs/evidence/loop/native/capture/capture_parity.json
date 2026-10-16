@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": {
+    "global.csv": true,
+    "carriers.csv": true,
+    "cables.csv": true,
+    "same_events": true,
+    "complete": true
+  },
+  "scope": "Exact byte comparison of full CSV with approved nominal headless case; same events; complete service."
+}

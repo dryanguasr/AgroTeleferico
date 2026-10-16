@@ -1,0 +1,639 @@
+{
+  "schema": "agro-loop-suite-v1",
+  "backend": "standalone",
+  "passed": true,
+  "cases": {
+    "hybrid_gust": {
+      "schema": "agro-loop-v1",
+      "origin": "standalone_reduced_model",
+      "status": "completed",
+      "mode": "central_local",
+      "gust_enabled": true,
+      "simulated_s": 340.802587245,
+      "duration_target_s": 340.802587245,
+      "wall_s": 10.147500801,
+      "simulation_to_wall_ratio": 33.5848790681,
+      "carriers": 6,
+      "unique_supports": 9,
+      "reference_loop_m": 123.294486652,
+      "final_q_m": 123.294486652,
+      "max_reference_error_m": 9.41652274591e-05,
+      "peak_main_force_N": 1241.6046707,
+      "peak_main_torque_Nm": 372.48140121,
+      "peak_local_force_N": 9.42552378736,
+      "max_swing_rad": 0.104768937291,
+      "peak_tension_N": 634.087651744,
+      "min_pallet_ground_clearance_m": 3.36189328724,
+      "min_carrier_center_distance_m": 3.99996198579,
+      "max_step_pallet_displacement_m": 0.00407240951494,
+      "max_local_offset_m": 0.197347539166,
+      "max_local_speed_m_s": 0.18,
+      "governor_or_stop_count": 899,
+      "drive_positive_J": 18395.4017196,
+      "drive_absorbed_J": 17188.0600446,
+      "local_positive_J": 11.6343083184,
+      "local_absorbed_J": 4.30202467314,
+      "load_energy_J": -588.55349162,
+      "energy_residual_J": 37.7774742296,
+      "loaded_kg": 20,
+      "unloaded_kg": 20,
+      "gust_start_s": 210.146,
+      "gust_end_s": 220.146,
+      "signal_provenance": {
+        "poses_and_angles": "reduced_model_state",
+        "cables": "quasistatic_elastic_equilibrium",
+        "wind_and_dispatch": "scripted_inputs",
+        "forces_and_energy": "reduced_model_estimates"
+      },
+      "limits": [
+        "not native Gazebo contact dynamics",
+        "not physical validation or Sim2Real",
+        "absorbed mechanical energy is not stored electricity",
+        "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+      ],
+      "events": [
+        {
+          "time_s": 1,
+          "name": "load_begin",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 3.002,
+          "name": "load_end",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 150.694,
+          "name": "unload_begin",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 152.694,
+          "name": "unload_end",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 210.146,
+          "name": "gust_begin",
+          "carrier": -1,
+          "from": 0,
+          "to": 4
+        },
+        {
+          "time_s": 220.146,
+          "name": "gust_end",
+          "carrier": -1,
+          "from": 4,
+          "to": 0
+        },
+        {
+          "time_s": 340.802587245,
+          "name": "complete",
+          "carrier": -1,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "rms_swing_x_rad": 0.009888917657929253,
+      "rms_swing_y_rad": 0.003538607313143362,
+      "peak_power_W": 496.5975171,
+      "governor_or_stop_carrier_seconds": 1.798,
+      "checks": {
+        "completed": true,
+        "all_csv_finite": true,
+        "ids_persist": true,
+        "full_loop": true,
+        "initial_distribution": true,
+        "payload_service": true,
+        "stroke_limit": true,
+        "speed_limit": true,
+        "force_limit": true,
+        "main_force_limit": true,
+        "tension_domain": true,
+        "clearance": true,
+        "carrier_envelopes": true,
+        "no_large_pose_jump": true,
+        "closed_loop_error": true
+      },
+      "passed": true,
+      "residual_over_positive_work": 0.0020523387998101373,
+      "end_to_end_wall_s": 12.85467319999998
+    },
+    "central_gust": {
+      "schema": "agro-loop-v1",
+      "origin": "standalone_reduced_model",
+      "status": "completed",
+      "mode": "central_only",
+      "gust_enabled": true,
+      "simulated_s": 340.802587245,
+      "duration_target_s": 340.802587245,
+      "wall_s": 10.696164499,
+      "simulation_to_wall_ratio": 31.862130325,
+      "carriers": 6,
+      "unique_supports": 9,
+      "reference_loop_m": 123.294486652,
+      "final_q_m": 123.294486652,
+      "max_reference_error_m": 9.41652274591e-05,
+      "peak_main_force_N": 1237.12503718,
+      "peak_main_torque_Nm": 371.137511155,
+      "peak_local_force_N": 0,
+      "max_swing_rad": 0.0991726640795,
+      "peak_tension_N": 634.087651686,
+      "min_pallet_ground_clearance_m": 3.36448780729,
+      "min_carrier_center_distance_m": 3.99996190922,
+      "max_step_pallet_displacement_m": 0.00402439403839,
+      "max_local_offset_m": 0.194784521556,
+      "max_local_speed_m_s": 0.18,
+      "governor_or_stop_count": 891,
+      "drive_positive_J": 18396.3462689,
+      "drive_absorbed_J": 17184.3297326,
+      "local_positive_J": 0,
+      "local_absorbed_J": 0,
+      "load_energy_J": -588.553405959,
+      "energy_residual_J": 34.9617948151,
+      "loaded_kg": 20,
+      "unloaded_kg": 20,
+      "gust_start_s": 210.146,
+      "gust_end_s": 220.146,
+      "signal_provenance": {
+        "poses_and_angles": "reduced_model_state",
+        "cables": "quasistatic_elastic_equilibrium",
+        "wind_and_dispatch": "scripted_inputs",
+        "forces_and_energy": "reduced_model_estimates"
+      },
+      "limits": [
+        "not native Gazebo contact dynamics",
+        "not physical validation or Sim2Real",
+        "absorbed mechanical energy is not stored electricity",
+        "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+      ],
+      "events": [
+        {
+          "time_s": 1,
+          "name": "load_begin",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 3.002,
+          "name": "load_end",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 150.694,
+          "name": "unload_begin",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 152.694,
+          "name": "unload_end",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 210.146,
+          "name": "gust_begin",
+          "carrier": -1,
+          "from": 0,
+          "to": 4
+        },
+        {
+          "time_s": 220.146,
+          "name": "gust_end",
+          "carrier": -1,
+          "from": 4,
+          "to": 0
+        },
+        {
+          "time_s": 340.802587245,
+          "name": "complete",
+          "carrier": -1,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "rms_swing_x_rad": 0.009410341604086964,
+      "rms_swing_y_rad": 0.0035379674820698974,
+      "peak_power_W": 494.663339,
+      "governor_or_stop_carrier_seconds": 1.782,
+      "checks": {
+        "completed": true,
+        "all_csv_finite": true,
+        "ids_persist": true,
+        "full_loop": true,
+        "initial_distribution": true,
+        "payload_service": true,
+        "stroke_limit": true,
+        "speed_limit": true,
+        "force_limit": true,
+        "main_force_limit": true,
+        "tension_domain": true,
+        "clearance": true,
+        "carrier_envelopes": true,
+        "no_large_pose_jump": true,
+        "closed_loop_error": true
+      },
+      "passed": true,
+      "residual_over_positive_work": 0.001900474926056636,
+      "end_to_end_wall_s": 13.196092780000015
+    },
+    "hybrid_calm": {
+      "schema": "agro-loop-v1",
+      "origin": "standalone_reduced_model",
+      "status": "completed",
+      "mode": "central_local",
+      "gust_enabled": false,
+      "simulated_s": 340.802587245,
+      "duration_target_s": 340.802587245,
+      "wall_s": 11.400693458,
+      "simulation_to_wall_ratio": 29.8931454039,
+      "carriers": 6,
+      "unique_supports": 9,
+      "reference_loop_m": 123.294486652,
+      "final_q_m": 123.294486652,
+      "max_reference_error_m": 9.41652274591e-05,
+      "peak_main_force_N": 1241.6046707,
+      "peak_main_torque_Nm": 372.48140121,
+      "peak_local_force_N": 9.42552378736,
+      "max_swing_rad": 0.104768937291,
+      "peak_tension_N": 634.087651744,
+      "min_pallet_ground_clearance_m": 3.36189328724,
+      "min_carrier_center_distance_m": 3.99996198579,
+      "max_step_pallet_displacement_m": 0.00407240951494,
+      "max_local_offset_m": 0.197347539166,
+      "max_local_speed_m_s": 0.18,
+      "governor_or_stop_count": 899,
+      "drive_positive_J": 18395.4016212,
+      "drive_absorbed_J": 17188.0553801,
+      "local_positive_J": 11.6327057997,
+      "local_absorbed_J": 4.30453334977,
+      "load_energy_J": -588.55349162,
+      "energy_residual_J": 36.244742963,
+      "loaded_kg": 20,
+      "unloaded_kg": 20,
+      "gust_start_s": -1,
+      "gust_end_s": -1,
+      "signal_provenance": {
+        "poses_and_angles": "reduced_model_state",
+        "cables": "quasistatic_elastic_equilibrium",
+        "wind_and_dispatch": "scripted_inputs",
+        "forces_and_energy": "reduced_model_estimates"
+      },
+      "limits": [
+        "not native Gazebo contact dynamics",
+        "not physical validation or Sim2Real",
+        "absorbed mechanical energy is not stored electricity",
+        "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+      ],
+      "events": [
+        {
+          "time_s": 1,
+          "name": "load_begin",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 3.002,
+          "name": "load_end",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 150.694,
+          "name": "unload_begin",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 152.694,
+          "name": "unload_end",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 340.802587245,
+          "name": "complete",
+          "carrier": -1,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "rms_swing_x_rad": 0.00975801287307494,
+      "rms_swing_y_rad": 0.0018716487614118794,
+      "peak_power_W": 496.5975171,
+      "governor_or_stop_carrier_seconds": 1.798,
+      "checks": {
+        "completed": true,
+        "all_csv_finite": true,
+        "ids_persist": true,
+        "full_loop": true,
+        "initial_distribution": true,
+        "payload_service": true,
+        "stroke_limit": true,
+        "speed_limit": true,
+        "force_limit": true,
+        "main_force_limit": true,
+        "tension_domain": true,
+        "clearance": true,
+        "carrier_envelopes": true,
+        "no_large_pose_jump": true,
+        "closed_loop_error": true
+      },
+      "passed": true,
+      "residual_over_positive_work": 0.0019690702108288946,
+      "end_to_end_wall_s": 13.426075647000005
+    },
+    "hybrid_half_dt": {
+      "schema": "agro-loop-v1",
+      "origin": "standalone_reduced_model",
+      "status": "completed",
+      "mode": "central_local",
+      "gust_enabled": true,
+      "simulated_s": 340.802587245,
+      "duration_target_s": 340.802587245,
+      "wall_s": 10.912684908,
+      "simulation_to_wall_ratio": 31.2299484607,
+      "carriers": 6,
+      "unique_supports": 9,
+      "reference_loop_m": 123.294486652,
+      "final_q_m": 123.294486652,
+      "max_reference_error_m": 4.70864552327e-05,
+      "peak_main_force_N": 1241.61735139,
+      "peak_main_torque_Nm": 372.485205417,
+      "peak_local_force_N": 9.43405045049,
+      "max_swing_rad": 0.104826608014,
+      "peak_tension_N": 634.087651742,
+      "min_pallet_ground_clearance_m": 3.36182216281,
+      "min_carrier_center_distance_m": 3.9999618695,
+      "max_step_pallet_displacement_m": 0.00307125458756,
+      "max_local_offset_m": 0.197361856862,
+      "max_local_speed_m_s": 0.18,
+      "governor_or_stop_count": 1793,
+      "drive_positive_J": 18396.1752379,
+      "drive_absorbed_J": 17187.3549618,
+      "local_positive_J": 11.6365076367,
+      "local_absorbed_J": 4.30581520883,
+      "load_energy_J": -588.553491264,
+      "energy_residual_J": 36.2939295322,
+      "loaded_kg": 20,
+      "unloaded_kg": 20,
+      "gust_start_s": 210.146000001,
+      "gust_end_s": 220.146000001,
+      "signal_provenance": {
+        "poses_and_angles": "reduced_model_state",
+        "cables": "quasistatic_elastic_equilibrium",
+        "wind_and_dispatch": "scripted_inputs",
+        "forces_and_energy": "reduced_model_estimates"
+      },
+      "limits": [
+        "not native Gazebo contact dynamics",
+        "not physical validation or Sim2Real",
+        "absorbed mechanical energy is not stored electricity",
+        "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+      ],
+      "events": [
+        {
+          "time_s": 1,
+          "name": "load_begin",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 3.001,
+          "name": "load_end",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 150.694,
+          "name": "unload_begin",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 152.694,
+          "name": "unload_end",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 210.146000001,
+          "name": "gust_begin",
+          "carrier": -1,
+          "from": 0,
+          "to": 4
+        },
+        {
+          "time_s": 220.146000001,
+          "name": "gust_end",
+          "carrier": -1,
+          "from": 4,
+          "to": 0
+        },
+        {
+          "time_s": 340.802587245,
+          "name": "complete",
+          "carrier": -1,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "rms_swing_x_rad": 0.009893402926893355,
+      "rms_swing_y_rad": 0.003538670442656004,
+      "peak_power_W": 496.606445,
+      "governor_or_stop_carrier_seconds": 1.793,
+      "checks": {
+        "completed": true,
+        "all_csv_finite": true,
+        "ids_persist": true,
+        "full_loop": true,
+        "initial_distribution": true,
+        "payload_service": true,
+        "stroke_limit": true,
+        "speed_limit": true,
+        "force_limit": true,
+        "main_force_limit": true,
+        "tension_domain": true,
+        "clearance": true,
+        "carrier_envelopes": true,
+        "no_large_pose_jump": true,
+        "closed_loop_error": true
+      },
+      "passed": true,
+      "residual_over_positive_work": 0.001971659099621122,
+      "end_to_end_wall_s": 14.668581297999992
+    },
+    "hybrid_half_shape": {
+      "schema": "agro-loop-v1",
+      "origin": "standalone_reduced_model",
+      "status": "completed",
+      "mode": "central_local",
+      "gust_enabled": true,
+      "simulated_s": 340.802587245,
+      "duration_target_s": 340.802587245,
+      "wall_s": 16.317687108,
+      "simulation_to_wall_ratio": 20.88547139,
+      "carriers": 6,
+      "unique_supports": 9,
+      "reference_loop_m": 123.294486652,
+      "final_q_m": 123.294486652,
+      "max_reference_error_m": 9.41652274591e-05,
+      "peak_main_force_N": 1241.3529705,
+      "peak_main_torque_Nm": 372.40589115,
+      "peak_local_force_N": 9.3763487979,
+      "max_swing_rad": 0.104771103118,
+      "peak_tension_N": 634.087651762,
+      "min_pallet_ground_clearance_m": 3.36190269422,
+      "min_carrier_center_distance_m": 3.99996201101,
+      "max_step_pallet_displacement_m": 0.00310047567099,
+      "max_local_offset_m": 0.197304799521,
+      "max_local_speed_m_s": 0.18,
+      "governor_or_stop_count": 912,
+      "drive_positive_J": 18388.7774835,
+      "drive_absorbed_J": 17195.1272766,
+      "local_positive_J": 11.6487700971,
+      "local_absorbed_J": 4.31198615838,
+      "load_energy_J": -588.553491977,
+      "energy_residual_J": 52.2237597313,
+      "loaded_kg": 20,
+      "unloaded_kg": 20,
+      "gust_start_s": 210.146,
+      "gust_end_s": 220.146,
+      "signal_provenance": {
+        "poses_and_angles": "reduced_model_state",
+        "cables": "quasistatic_elastic_equilibrium",
+        "wind_and_dispatch": "scripted_inputs",
+        "forces_and_energy": "reduced_model_estimates"
+      },
+      "limits": [
+        "not native Gazebo contact dynamics",
+        "not physical validation or Sim2Real",
+        "absorbed mechanical energy is not stored electricity",
+        "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+      ],
+      "events": [
+        {
+          "time_s": 1,
+          "name": "load_begin",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 3.002,
+          "name": "load_end",
+          "carrier": 0,
+          "from": 0,
+          "to": 20
+        },
+        {
+          "time_s": 150.694,
+          "name": "unload_begin",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 152.694,
+          "name": "unload_end",
+          "carrier": 0,
+          "from": 20,
+          "to": 0
+        },
+        {
+          "time_s": 210.146,
+          "name": "gust_begin",
+          "carrier": -1,
+          "from": 0,
+          "to": 4
+        },
+        {
+          "time_s": 220.146,
+          "name": "gust_end",
+          "carrier": -1,
+          "from": 4,
+          "to": 0
+        },
+        {
+          "time_s": 340.802587245,
+          "name": "complete",
+          "carrier": -1,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "rms_swing_x_rad": 0.009894592752009504,
+      "rms_swing_y_rad": 0.003538637691673866,
+      "peak_power_W": 496.5363042,
+      "governor_or_stop_carrier_seconds": 1.824,
+      "checks": {
+        "completed": true,
+        "all_csv_finite": true,
+        "ids_persist": true,
+        "full_loop": true,
+        "initial_distribution": true,
+        "payload_service": true,
+        "stroke_limit": true,
+        "speed_limit": true,
+        "force_limit": true,
+        "main_force_limit": true,
+        "tension_domain": true,
+        "clearance": true,
+        "carrier_envelopes": true,
+        "no_large_pose_jump": true,
+        "closed_loop_error": true
+      },
+      "passed": true,
+      "residual_over_positive_work": 0.0028381820622818874,
+      "end_to_end_wall_s": 18.55397147100001
+    }
+  },
+  "comparisons": {
+    "hybrid_half_dt": {
+      "relative_changes": {
+        "rms_swing_x_rad": 0.00045356520493471905,
+        "rms_swing_y_rad": 1.784021425821481e-05,
+        "peak_tension_N": 3.154104710441704e-12
+      },
+      "passed": true
+    },
+    "hybrid_half_shape": {
+      "relative_changes": {
+        "rms_swing_x_rad": 0.0005738842486670101,
+        "rms_swing_y_rad": 8.584883208497887e-06,
+        "peak_tension_N": 2.8387121685966607e-11
+      },
+      "passed": true
+    },
+    "wind_response": {
+      "max_transverse_difference_rad": 0.04348248479,
+      "passed": true
+    },
+    "same_service": {
+      "passed": true
+    }
+  },
+  "interpretation": "Numeric conceptual checks only. No inference of physical validation, stored electrical energy, or superiority of hybrid control."
+}

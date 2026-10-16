@@ -1,0 +1,17 @@
+{
+  "swing_x_rad": {
+    "H\u00edbrido, r\u00e1faga": 0.9011403247284866,
+    "Central, r\u00e1faga": 0.861898945335227,
+    "H\u00edbrido, calma": 0.8965948712818291
+  },
+  "swing_y_rad": {
+    "H\u00edbrido, r\u00e1faga": 0.2024505806971377,
+    "Central, r\u00e1faga": 0.20244944950970983,
+    "H\u00edbrido, calma": 0.10714392301014584
+  },
+  "sources": [
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_guarded_01/hybrid_gust",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_guarded_02/central_gust",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_guarded_03_retry01/hybrid_calm"
+  ]
+}

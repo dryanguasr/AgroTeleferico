@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "five_native_services": true,
+    "all_cli_parity": true,
+    "lifecycle": true,
+    "capture_complete": true,
+    "capture_matches_native": true,
+    "pilot_recomputed_metrics": true,
+    "packaged_hashes_valid": true
+  },
+  "passed": true,
+  "qualifications": [
+    "Pilot full supervisor interrupted; metrics recovered from 21 complete CSV, last process exit unknown.",
+    "Visual review is sampled and includes occlusions; no continuous collision certification.",
+    "CI workflow updated but remote GitHub Actions not run in this delivery.",
+    "Local commit only; no main merge or remote publication."
+  ]
+}

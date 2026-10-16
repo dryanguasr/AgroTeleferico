@@ -1,0 +1,33 @@
+{
+  "schema": "agro-loop-suite-v1",
+  "backend": "standalone",
+  "passed": false,
+  "cases": {
+    "hybrid_gust": {
+      "passed": false,
+      "error": "process returned 1; see /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_towers_cli_01/hybrid_gust/process.log"
+    },
+    "central_gust": {
+      "passed": false,
+      "error": "process returned 1; see /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_towers_cli_01/central_gust/process.log"
+    },
+    "hybrid_calm": {
+      "passed": false,
+      "error": "process returned 1; see /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_towers_cli_01/hybrid_calm/process.log"
+    },
+    "hybrid_half_dt": {
+      "passed": false,
+      "error": "process returned 1; see /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_towers_cli_01/hybrid_half_dt/process.log"
+    },
+    "hybrid_half_shape": {
+      "passed": false,
+      "error": "process returned 1; see /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/loop_towers_cli_01/hybrid_half_shape/process.log"
+    }
+  },
+  "comparisons": {
+    "complete_suite": {
+      "passed": false
+    }
+  },
+  "interpretation": "Numeric conceptual checks only. No inference of physical validation, stored electrical energy, or superiority of hybrid control."
+}

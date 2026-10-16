@@ -1,0 +1,373 @@
+{
+  "scope": "Recovered numerical assessment from preserved complete CSV files; original supervisor interrupted before aggregate report. Last process exit code was not recorded, and its wall time is unavailable. No simulation rerun and no original file overwritten.",
+  "runs": {
+    "double_p0_dt0.0005": {
+      "duration_s": 120.0005,
+      "position_rms_m": 0.0035037362937729785,
+      "orientation_rms_deg": 0.17808586173084254,
+      "peak_tension_N": 179.6267129,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.073008432e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "double_p0_dt0.001": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.003510929239688638,
+      "orientation_rms_deg": 0.17824176708870365,
+      "peak_tension_N": 179.6267117,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.044142633e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "double_p10_dt0.0005": {
+      "duration_s": 120.0005,
+      "position_rms_m": 0.0035072250589060043,
+      "orientation_rms_deg": 0.17823720887772587,
+      "peak_tension_N": 311.1849409,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.050359882e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "double_p10_dt0.001": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.003514419562326303,
+      "orientation_rms_deg": 0.178392811043208,
+      "peak_tension_N": 311.1849444,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.018607503e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "double_p5_dt0.0005": {
+      "duration_s": 120.0005,
+      "position_rms_m": 0.0035056922894217317,
+      "orientation_rms_deg": 0.17816340068656988,
+      "peak_tension_N": 245.3698215,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.059241666e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "double_p5_dt0.001": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.003512884830044782,
+      "orientation_rms_deg": 0.1783188752062938,
+      "peak_tension_N": 245.3698158,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.029709734e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "double_perturbation": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.003512884830044782,
+      "orientation_rms_deg": 0.3263166536652539,
+      "peak_tension_N": 245.3698158,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 4.385490347024143,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.029709734e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "single_p0_dt0.0005": {
+      "duration_s": 120.0005,
+      "position_rms_m": 0.0035072250589060056,
+      "orientation_rms_deg": 0.17823720887772587,
+      "peak_tension_N": 311.1849409,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.050581926e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "single_p0_dt0.001": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.003514419562326303,
+      "orientation_rms_deg": 0.178392811043208,
+      "peak_tension_N": 311.1849444,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.018607503e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "single_p10_dt0.0005": {
+      "duration_s": 120.0005,
+      "position_rms_m": 0.003510439122332397,
+      "orientation_rms_deg": 0.1784107601214655,
+      "peak_tension_N": 573.9388011,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.028155421e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "single_p10_dt0.001": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.0035176216886962535,
+      "orientation_rms_deg": 0.17856641723306102,
+      "peak_tension_N": 573.9388002,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 1.996403043e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "single_p5_dt0.0005": {
+      "duration_s": 120.0005,
+      "position_rms_m": 0.0035092518544264837,
+      "orientation_rms_deg": 0.17834346778746207,
+      "peak_tension_N": 442.7116681,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.036593116e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "single_p5_dt0.001": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.0035164059400728293,
+      "orientation_rms_deg": 0.1785008491039567,
+      "peak_tension_N": 442.7116385,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 0.0,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.004618693e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "single_perturbation": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.0035164059400728293,
+      "orientation_rms_deg": 1.0802398362739787,
+      "peak_tension_N": 442.7116385,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 12.697168471036433,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 2.004618693e-12,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "spider_p0_dt0.0005": {
+      "duration_s": 120.0005,
+      "position_rms_m": 0.0008128170660665406,
+      "orientation_rms_deg": 0.1267895970987089,
+      "peak_tension_N": 91.50446736,
+      "min_tension_N": 8.625185607,
+      "roll_peak_deg": 3.43768250210906,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 0.0007753040131,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "spider_p0_dt0.001": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.0008115947570788938,
+      "orientation_rms_deg": 0.12678930582126965,
+      "peak_tension_N": 91.50446077,
+      "min_tension_N": 8.625216983,
+      "roll_peak_deg": 3.4376814816712264,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 0.0007740962962,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "spider_p10_dt0.0005": {
+      "duration_s": 120.0005,
+      "position_rms_m": 0.002416382189931048,
+      "orientation_rms_deg": 0.4587997338570615,
+      "peak_tension_N": 145.700303,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 3.4382284993751404,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 0.0007753066231,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "spider_p10_dt0.001": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.002415917894380276,
+      "orientation_rms_deg": 0.45881392348723776,
+      "peak_tension_N": 145.7002279,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 3.438227477218434,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 0.0007740989091,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "spider_p5_dt0.0005": {
+      "duration_s": 120.0005,
+      "position_rms_m": 0.000812684887297676,
+      "orientation_rms_deg": 0.12677941053700084,
+      "peak_tension_N": 111.7621844,
+      "min_tension_N": 3.0,
+      "roll_peak_deg": 3.437955084488262,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 0.0007753040131,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "spider_p5_dt0.001": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.0008114625807249931,
+      "orientation_rms_deg": 0.12677914420886768,
+      "peak_tension_N": 111.7621345,
+      "min_tension_N": 3.0,
+      "roll_peak_deg": 3.4379540651963443,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 0.0007740962962,
+      "passed": true,
+      "original_metrics_present": true,
+      "agrees_with_original": true
+    },
+    "spider_perturbation": {
+      "duration_s": 120.001,
+      "position_rms_m": 0.008166524290228383,
+      "orientation_rms_deg": 0.21267278535304024,
+      "peak_tension_N": 111.7621345,
+      "min_tension_N": 0.0,
+      "roll_peak_deg": 3.4379540651963443,
+      "infeasible_fraction": 0.0,
+      "saturated_fraction": 0.0,
+      "final_position_error_m": 0.0007740962962,
+      "passed": true,
+      "original_metrics_present": false
+    }
+  },
+  "step_convergence": {
+    "single_p0": {
+      "relative_changes": {
+        "position_rms_m": 0.00205133782390961,
+        "orientation_rms_deg": 0.000873006071301749,
+        "peak_tension_N": 1.1247330867106717e-08
+      },
+      "passed": true
+    },
+    "single_p5": {
+      "relative_changes": {
+        "position_rms_m": 0.0020386355676699575,
+        "orientation_rms_deg": 0.0008824619059340985,
+        "peak_tension_N": 6.686067284353098e-08
+      },
+      "passed": true
+    },
+    "single_p10": {
+      "relative_changes": {
+        "position_rms_m": 0.002046059228933247,
+        "orientation_rms_deg": 0.0008724648193278237,
+        "peak_tension_N": 1.5681114957010176e-09
+      },
+      "passed": true
+    },
+    "double_p0": {
+      "relative_changes": {
+        "position_rms_m": 0.002052935869758043,
+        "orientation_rms_deg": 0.0008754505065469354,
+        "peak_tension_N": 6.680520923919423e-09
+      },
+      "passed": true
+    },
+    "double_p5": {
+      "relative_changes": {
+        "position_rms_m": 0.002051674827466589,
+        "orientation_rms_deg": 0.0008726512803683767,
+        "peak_tension_N": 2.323024065395063e-08
+      },
+      "passed": true
+    },
+    "double_p10": {
+      "relative_changes": {
+        "position_rms_m": 0.0020513378239099818,
+        "orientation_rms_deg": 0.000873006071301749,
+        "peak_tension_N": 1.1247330867106717e-08
+      },
+      "passed": true
+    },
+    "spider_p0": {
+      "relative_changes": {
+        "position_rms_m": 0.001222308987646717,
+        "orientation_rms_deg": 2.297329165143154e-06,
+        "peak_tension_N": 7.201834186330368e-08
+      },
+      "passed": true
+    },
+    "spider_p5": {
+      "relative_changes": {
+        "position_rms_m": 0.0012223065726828719,
+        "orientation_rms_deg": 2.1007207087508238e-06,
+        "peak_tension_N": 4.4648375710689665e-07
+      },
+      "passed": true
+    },
+    "spider_p10": {
+      "relative_changes": {
+        "position_rms_m": 0.00019214491511583776,
+        "orientation_rms_deg": 3.092772102754329e-05,
+        "peak_tension_N": 5.154416185645019e-07
+      },
+      "passed": true
+    }
+  },
+  "passed": true
+}

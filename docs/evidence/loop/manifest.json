@@ -1,0 +1,41 @@
+{
+  "base_commit": "52298bf5935575e80fc20c975e34cd020b4249c5",
+  "date": "2026-10-11",
+  "environment": {
+    "os": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0"
+  },
+  "scope": "Standalone reduced model and XML only",
+  "checks": {
+    "cmake_standalone": "passed",
+    "ctest_targets": 2,
+    "python_asset_tests": 3,
+    "complete_reduced_runs": 5,
+    "python_syntax": "passed",
+    "support_candidates": [9, 13, 17]
+  },
+  "not_executed": [
+    "Gazebo plugin compilation",
+    "native SDF validation",
+    "Gazebo GUI/headless",
+    "ROS launch runtime",
+    "legacy physics regression",
+    "physical experiment"
+  ],
+  "source_files": {
+    "CMakeLists.txt": {"sha256": "3f19fa30d03566cc252677db3dfec41b32224b6f3b9db7a55df7a92b77bda0cf", "git_blob": "ee81f7dead67acd8c7c37ed4a65a97effefad01a"},
+    "config/loop.yaml": {"sha256": "f636b13f23f51150c4fd77daa018c4166c82ac17e3ff3d29292643f8fb6c1e41", "git_blob": "cb52ba98ffad38ad294a3b086a7e87406920b105"},
+    "include/agro/loop.hpp": {"sha256": "e80f08759e6bf8103fa63f889b95ad9f55e9fb8328d5b1dacfb6779ff8c20112", "git_blob": "55879498c52c1d36d304a2edca7a0ca9f405f85e"},
+    "include/agro/loop_log.hpp": {"sha256": "3c8c349392e1ba78e73fb1765c63b5620c71c9d450320bfaa9bf84986410a2d9", "git_blob": "5ae49be0f489e5d5b776d1456ddea61b4e8d6e81"},
+    "src/loop_cli.cpp": {"sha256": "a486800d6d4ea3d8c442f6539c76ba0713bb3f9fbb8e683418e52dcd8ef1c7ab", "git_blob": "a97e30f419d1d2eaad6c704c57767351605839f0"},
+    "src/loop_system.cpp": {"sha256": "0c99b0c72bd3238ba60a73fe492c4aa243c6697bfe7915d4850acc4fb06b0017", "git_blob": "f4f98ba0935d425fbe68802f505360f8173e2b6a"},
+    "scripts/generate_loop.py": {"sha256": "d1ecf93479f6d6c98953a8f8b4aee6027d4b94e87b6dd5e175abe0243409e2ac", "git_blob": "5fb389cd538f9d367611d41140af0ef39d34504d"},
+    "scripts/run_loop_suite.py": {"sha256": "2cb2449d26f7f3e57f9db6b69e75cdaece5ead9edd48d8a5e41b5ab9a757bc9e", "git_blob": "2a6e6c8bdab5d718b7b019ed123554b418f4336e"},
+    "scripts/report_loop.py": {"sha256": "3003a44f14daca8bec94b55a47c38703af8b6f28ec3e150137dbd93f85c8b3bc", "git_blob": "cc90ea4eae89639e15af387b2df2147bd46c7c14"},
+    "launch/loop.launch.py": {"sha256": "5eb26ef7fc29d7b924a1ef5096a96780f7551996a3092cdf8bcf79c3dc544cd1", "git_blob": "8bc531658710fa9e39cb519d73b34b6e3a9c005d"},
+    "tests/test_loop.cpp": {"sha256": "4709478a6012a9c1d055dcad192f93b50d555f5b3f39fb34e2fbae1fdb46d821", "git_blob": "a4ea4852e97bf7cb23d9d12af2e650e709a3bc04"},
+    "tests/test_loop_assets.py": {"sha256": "bba3fd8634e140176bc4b9ca891a1fa3d7c0f86eac16910457b8fb0f18769e97", "git_blob": "32cc240768e6cbc5ec4690389b9ef0273e874ef3"}
+  },
+  "evidence_note": "Suite last case restarted completely after environment driver timeout, then assessed by same function. Full transient CSV remain in work directory; only summaries versioned. Physics unchanged by subsequent parser error-handling and CLI screening changes."
+}

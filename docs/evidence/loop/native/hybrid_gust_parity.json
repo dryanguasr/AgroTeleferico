@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "cases": {
+    "hybrid_gust": {
+      "same_input": true,
+      "complete_services": true,
+      "same_events": true,
+      "same_mode_and_wind": true,
+      "files": {
+        "global.csv": {
+          "same_schema_and_rows": true,
+          "rows_cli": 6818,
+          "rows_gazebo": 6818,
+          "max_absolute_difference": {
+            "time_s": 0.0,
+            "stage": 0.0,
+            "q_m": 0.0,
+            "reference_m": 0.0,
+            "speed_m_s": 0.0,
+            "force_N": 0.0,
+            "torque_Nm": 0.0,
+            "power_W": 0.0,
+            "wind_m_s": 0.0,
+            "max_tension_N": 0.0,
+            "max_sag_m": 0.0,
+            "drive_positive_J": 0.0,
+            "drive_absorbed_J": 0.0,
+            "local_positive_J": 0.0,
+            "local_absorbed_J": 0.0,
+            "wind_work_J": 0.0,
+            "loss_work_J": 0.0,
+            "load_energy_J": 0.0,
+            "stop_loss_J": 0.0,
+            "energy_J": 0.0,
+            "residual_J": 0.0
+          },
+          "exactly_equal": true
+        },
+        "carriers.csv": {
+          "same_schema_and_rows": true,
+          "rows_cli": 40908,
+          "rows_gazebo": 40908,
+          "max_absolute_difference": {
+            "time_s": 0.0,
+            "id": 0.0,
+            "lane": 0.0,
+            "span": 0.0,
+            "reference_s_m": 0.0,
+            "offset_m": 0.0,
+            "offset_speed_m_s": 0.0,
+            "payload_kg": 0.0,
+            "total_mass_kg": 0.0,
+            "pivot_x_m": 0.0,
+            "pivot_y_m": 0.0,
+            "pivot_z_m": 0.0,
+            "pallet_x_m": 0.0,
+            "pallet_y_m": 0.0,
+            "pallet_z_m": 0.0,
+            "vx_m_s": 0.0,
+            "vy_m_s": 0.0,
+            "vz_m_s": 0.0,
+            "swing_x_rad": 0.0,
+            "swing_y_rad": 0.0,
+            "rate_x_rad_s": 0.0,
+            "rate_y_rad_s": 0.0,
+            "connector_N": 0.0,
+            "local_force_N": 0.0,
+            "local_power_W": 0.0,
+            "saturated": 0.0,
+            "governor_or_stop_count": 0.0,
+            "force_wind_x_N": 0.0,
+            "force_wind_y_N": 0.0
+          },
+          "exactly_equal": true
+        },
+        "cables.csv": {
+          "same_schema_and_rows": true,
+          "rows_cli": 163632,
+          "rows_gazebo": 163632,
+          "max_absolute_difference": {
+            "time_s": 0.0,
+            "lane": 0.0,
+            "span": 0.0,
+            "x0_m": 0.0,
+            "x1_m": 0.0,
+            "rest_length_m": 0.0,
+            "H_N": 0.0,
+            "max_tension_N": 0.0,
+            "sag_m": 0.0,
+            "load_per_cable_N": 0.0,
+            "left_reaction_N": 0.0,
+            "right_reaction_N": 0.0,
+            "elastic_per_cable_J": 0.0
+          },
+          "exactly_equal": true
+        }
+      },
+      "passed": true
+    }
+  },
+  "scope": "All logged states and events, at CSV precision; not proof of physical validity or correctness of rendered geometry."
+}

@@ -1,0 +1,23 @@
+{
+  "follow_video_duration_s": 31.35,
+  "new_simulations_run": false,
+  "follow_video_frames": 627,
+  "follow_video_full_decode": "PASS",
+  "files": [
+    {
+      "bytes": 2567660,
+      "sha256": "dbad44361e4aad76fae290f001d736c4de2a009626df87592e7a52e1ee662baa",
+      "path": "docs/evidence/loop/native/capture/gazebo.mp4"
+    },
+    {
+      "bytes": 2975502,
+      "sha256": "86d53601a00a271ba79ad1e50154a8f3f9e3a9b38e65a554174df2a92e476a42",
+      "path": "docs/evidence/loop/garruchas/gazebo_pip_partial.mp4"
+    },
+    {
+      "bytes": 5393744,
+      "sha256": "00323cf214339cd05c572e9dd1b2bfb7556316ce668ecae45459598fddae65d3",
+      "path": "docs/videos/garrucha_seguimiento_parcial.mp4"
+    }
+  ]
+}
