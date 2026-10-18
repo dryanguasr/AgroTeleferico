@@ -1,0 +1,8 @@
+{
+  "first_free_gib": 10.02578353881836,
+  "reserve_gib": 4,
+  "minimum_gib": 10,
+  "separation_s": 5,
+  "admitted": true,
+  "second_free_gib": 10.259529113769531
+}

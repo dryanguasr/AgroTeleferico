@@ -1,0 +1,70 @@
+{
+  "scenario": "buitrago_patio",
+  "core_checks": {
+    "completed": true,
+    "two_persistent_ids": true,
+    "two_stations": true,
+    "full_loop": true,
+    "no_local_motor_force": true,
+    "nominal_indoor_calm": true,
+    "both_carriers_serviced": true,
+    "loading_line_stopped": true
+  },
+  "core_passed": true,
+  "static_stability": [
+    {
+      "station": 0,
+      "water_kg": 120.0,
+      "mass_kg": 205.0,
+      "minimum_sliding_margin": 0.6701245492,
+      "minimum_overturn_margin": 0.6341191824,
+      "normal_range_N": [
+        1643.811625,
+        2054.166736
+      ],
+      "maximum_mean_pressure_Pa": 222.3124173,
+      "out_of_domain_samples": 802
+    },
+    {
+      "station": 1,
+      "water_kg": 120.0,
+      "mass_kg": 205.0,
+      "minimum_sliding_margin": 1.079549323,
+      "minimum_overturn_margin": 0.9572320288,
+      "normal_range_N": [
+        2190.968909,
+        2650.535495
+      ],
+      "maximum_mean_pressure_Pa": 286.8544908,
+      "out_of_domain_samples": 381
+    }
+  ],
+  "geometric_conflicts": [
+    {
+      "object": "corridor_rail_1",
+      "carrier": 0,
+      "first_time_s": 49.1,
+      "samples": 132,
+      "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+    },
+    {
+      "object": "corridor_rail_1",
+      "carrier": 1,
+      "first_time_s": 10.9,
+      "samples": 138,
+      "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+    }
+  ],
+  "warnings": [
+    "Fixed bases fail preliminary static force envelope during part of service",
+    "Geometric conflicts require resolution; scene is not an accepted installation"
+  ],
+  "energy_residual_J": 0.178099231898,
+  "drive_positive_J": 117.093309727,
+  "drive_absorbed_J": 251.66744055,
+  "structural_floor_capacity": "unknown",
+  "native_base_dynamics": false,
+  "continuous_collision_certification": false,
+  "geometry_review": "partial: basket/rail and station/slab candidates only; cables, braces, bogie and site obstacles remain pending",
+  "accepted": false
+}

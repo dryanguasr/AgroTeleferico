@@ -9,3 +9,4 @@ build-clean/
 install-clean/
 log-clean/
 build-loop/
+build-ballasted/

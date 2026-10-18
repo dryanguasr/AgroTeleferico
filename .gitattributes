@@ -1,6 +1,8 @@
 * text=auto eol=lf
 *.png binary
 *.mp4 binary
+*.zip binary
+docs/evidence/single_span_revised/** -text -whitespace
 # Preserve measured artifacts byte-for-byte, including original log whitespace.
 docs/evidence/loop/native/** -text -whitespace
 docs/evidence/loop/garruchas/** -text -whitespace

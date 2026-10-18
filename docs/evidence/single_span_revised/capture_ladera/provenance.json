@@ -1,0 +1,8 @@
+{
+  "captured_before_launch": true,
+  "world_sha256": "9baa5367ed055a30b4ca87a6bb16f9df99ef3607b9221c5db27d759ce2f361bd",
+  "plugin_sha256": "6716a4bd8d12efed79e111e05f4b0efe604ac69ff44095e9a43ed118abb0aa60",
+  "git_head": "839396ca156384e5c6c704ae5035c68abe237acf",
+  "git_status": " M .gitattributes\n M .gitignore\n M CMakeLists.txt\n M README.md\n M include/agro/loop.hpp\n M include/agro/loop_log.hpp\n M scripts/capture_loop.py\n M scripts/generate_loop.py\n M scripts/run_loop_guarded.py\n M scripts/windows/run_guarded_loop.ps1\n M src/loop_system.cpp\n?? config/ballasted_common.json\n?? config/ballasted_compact_candidate.json\n?? config/ballasted_revised_supports.json\n?? config/buitrago_entre_pisos.json\n?? config/buitrago_patio.json\n?? config/ladera_agricola.json\n?? config/legacy/\n?? docs/ballasted_progress.md\n?? docs/soportes_revisados.md\n?? launch/ballasted.launch.py\n?? scripts/audit_support_clearance.py\n?? scripts/check_ballasted.py\n?? scripts/export_ballasted_evidence.py\n?? scripts/generate_ballasted.py\n?? scripts/review_ballasted_geometry.py\n?? scripts/run_ballasted_core.py\n?? scripts/screen_ballasted_layout.cpp\n?? scripts/summarize_ballasted.py\n?? scripts/verify_ballasted_capture.py\n?? tests/test_ballasted.cpp\n?? tests/test_ballasted_assets.py\n?? tests/test_ballasted_geometry.py\n",
+  "sensor_images_with_caption": true
+}

@@ -1,0 +1,1021 @@
+{
+  "cases": [
+    {
+      "case": "00_buitrago_patio",
+      "summary": {
+        "schema": "agro-loop-v1",
+        "origin": "standalone_reduced_model",
+        "status": "completed",
+        "mode": "central_only",
+        "gust_enabled": false,
+        "simulated_s": 162.026040433,
+        "duration_target_s": 162.026040433,
+        "wall_s": 2.638389833,
+        "simulation_to_wall_ratio": 61.4109554269,
+        "carriers": 2,
+        "unique_supports": 2,
+        "reference_loop_m": 25.263615433,
+        "final_q_m": 25.263615433,
+        "max_reference_error_m": 3.84617244205e-05,
+        "peak_main_force_N": 173.070348882,
+        "peak_main_torque_Nm": 51.9211046647,
+        "peak_local_force_N": 0,
+        "max_swing_rad": 0.0146204660587,
+        "peak_tension_N": 363.626521517,
+        "min_pallet_ground_clearance_m": 1.21200716304,
+        "min_carrier_center_distance_m": 2.19999907405,
+        "max_step_pallet_displacement_m": 0.00115780469268,
+        "max_local_offset_m": 0.095258120043,
+        "max_local_speed_m_s": 0.0637558322226,
+        "governor_or_stop_count": 0,
+        "drive_positive_J": 117.093309727,
+        "drive_absorbed_J": 251.66744055,
+        "local_positive_J": 0,
+        "local_absorbed_J": 0,
+        "load_energy_J": 156.959917083,
+        "energy_residual_J": 0.178099231898,
+        "loaded_kg": 15,
+        "unloaded_kg": 15,
+        "gust_start_s": -1,
+        "gust_end_s": -1,
+        "signal_provenance": {
+          "poses_and_angles": "reduced_model_state",
+          "cables": "quasistatic_elastic_equilibrium",
+          "wind_and_dispatch": "scripted_inputs",
+          "forces_and_energy": "reduced_model_estimates"
+        },
+        "limits": [
+          "not native Gazebo contact dynamics",
+          "not physical validation or Sim2Real",
+          "absorbed mechanical energy is not stored electricity",
+          "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+        ],
+        "events": [
+          {
+            "time_s": 1,
+            "name": "load_begin",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 1,
+            "from": 0,
+            "to": 10
+          },
+          {
+            "time_s": 59.736,
+            "name": "unload_begin",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 61.736,
+            "name": "unload_end",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 61.736,
+            "name": "unload_end",
+            "carrier": 1,
+            "from": 10,
+            "to": 0
+          },
+          {
+            "time_s": 162.026040433,
+            "name": "complete",
+            "carrier": -1,
+            "from": 0,
+            "to": 0
+          }
+        ]
+      },
+      "assessment": {
+        "scenario": "buitrago_patio",
+        "core_checks": {
+          "completed": true,
+          "two_persistent_ids": true,
+          "two_stations": true,
+          "full_loop": true,
+          "no_local_motor_force": true,
+          "nominal_indoor_calm": true,
+          "both_carriers_serviced": true,
+          "loading_line_stopped": true
+        },
+        "core_passed": true,
+        "static_stability": [
+          {
+            "station": 0,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.109237336,
+            "minimum_overturn_margin": 1.996089997,
+            "normal_range_N": [
+              5175.411625,
+              5585.766736
+            ],
+            "maximum_mean_pressure_Pa": 604.5202095,
+            "out_of_domain_samples": 0
+          },
+          {
+            "station": 1,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.518664152,
+            "minimum_overturn_margin": 2.233093006,
+            "normal_range_N": [
+              5722.568909,
+              6182.135495
+            ],
+            "maximum_mean_pressure_Pa": 669.062283,
+            "out_of_domain_samples": 0
+          }
+        ],
+        "geometric_conflicts": [
+          {
+            "object": "corridor_rail_1",
+            "carrier": 0,
+            "first_time_s": 49.1,
+            "samples": 132,
+            "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+          },
+          {
+            "object": "corridor_rail_1",
+            "carrier": 1,
+            "first_time_s": 10.9,
+            "samples": 138,
+            "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+          }
+        ],
+        "warnings": [
+          "Geometric conflicts require resolution; scene is not an accepted installation"
+        ],
+        "energy_residual_J": 0.178099231898,
+        "drive_positive_J": 117.093309727,
+        "drive_absorbed_J": 251.66744055,
+        "structural_floor_capacity": "unknown",
+        "native_base_dynamics": false,
+        "continuous_collision_certification": false,
+        "geometry_review": "partial: basket/rail and station/slab candidates only; cables, braces, bogie and site obstacles remain pending",
+        "accepted": false
+      }
+    },
+    {
+      "case": "01_buitrago_entre_pisos",
+      "summary": {
+        "schema": "agro-loop-v1",
+        "origin": "standalone_reduced_model",
+        "status": "completed",
+        "mode": "central_only",
+        "gust_enabled": false,
+        "simulated_s": 162.026040433,
+        "duration_target_s": 162.026040433,
+        "wall_s": 2.223105341,
+        "simulation_to_wall_ratio": 72.8827543369,
+        "carriers": 2,
+        "unique_supports": 2,
+        "reference_loop_m": 25.263615433,
+        "final_q_m": 25.263615433,
+        "max_reference_error_m": 3.84617244205e-05,
+        "peak_main_force_N": 173.070348882,
+        "peak_main_torque_Nm": 51.9211046647,
+        "peak_local_force_N": 0,
+        "max_swing_rad": 0.0146204660587,
+        "peak_tension_N": 363.626521517,
+        "min_pallet_ground_clearance_m": 1.21200716304,
+        "min_carrier_center_distance_m": 2.19999907405,
+        "max_step_pallet_displacement_m": 0.00115780469268,
+        "max_local_offset_m": 0.095258120043,
+        "max_local_speed_m_s": 0.0637558322226,
+        "governor_or_stop_count": 0,
+        "drive_positive_J": 117.093309727,
+        "drive_absorbed_J": 251.66744055,
+        "local_positive_J": 0,
+        "local_absorbed_J": 0,
+        "load_energy_J": 156.959917083,
+        "energy_residual_J": 0.178099231898,
+        "loaded_kg": 15,
+        "unloaded_kg": 15,
+        "gust_start_s": -1,
+        "gust_end_s": -1,
+        "signal_provenance": {
+          "poses_and_angles": "reduced_model_state",
+          "cables": "quasistatic_elastic_equilibrium",
+          "wind_and_dispatch": "scripted_inputs",
+          "forces_and_energy": "reduced_model_estimates"
+        },
+        "limits": [
+          "not native Gazebo contact dynamics",
+          "not physical validation or Sim2Real",
+          "absorbed mechanical energy is not stored electricity",
+          "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+        ],
+        "events": [
+          {
+            "time_s": 1,
+            "name": "load_begin",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 1,
+            "from": 0,
+            "to": 10
+          },
+          {
+            "time_s": 59.736,
+            "name": "unload_begin",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 61.736,
+            "name": "unload_end",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 61.736,
+            "name": "unload_end",
+            "carrier": 1,
+            "from": 10,
+            "to": 0
+          },
+          {
+            "time_s": 162.026040433,
+            "name": "complete",
+            "carrier": -1,
+            "from": 0,
+            "to": 0
+          }
+        ]
+      },
+      "assessment": {
+        "scenario": "buitrago_entre_pisos",
+        "core_checks": {
+          "completed": true,
+          "two_persistent_ids": true,
+          "two_stations": true,
+          "full_loop": true,
+          "no_local_motor_force": true,
+          "nominal_indoor_calm": true,
+          "both_carriers_serviced": true,
+          "loading_line_stopped": true
+        },
+        "core_passed": true,
+        "static_stability": [
+          {
+            "station": 0,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.109237336,
+            "minimum_overturn_margin": 1.996089997,
+            "normal_range_N": [
+              5175.411625,
+              5585.766736
+            ],
+            "maximum_mean_pressure_Pa": 604.5202095,
+            "out_of_domain_samples": 0
+          },
+          {
+            "station": 1,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.518664152,
+            "minimum_overturn_margin": 2.233093006,
+            "normal_range_N": [
+              5722.568909,
+              6182.135495
+            ],
+            "maximum_mean_pressure_Pa": 669.062283,
+            "out_of_domain_samples": 0
+          }
+        ],
+        "geometric_conflicts": [
+          {
+            "object": "corridor_rail_1",
+            "carrier": 0,
+            "first_time_s": 49.1,
+            "samples": 132,
+            "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+          },
+          {
+            "object": "corridor_rail_1",
+            "carrier": 1,
+            "first_time_s": 10.9,
+            "samples": 138,
+            "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+          }
+        ],
+        "warnings": [
+          "Geometric conflicts require resolution; scene is not an accepted installation"
+        ],
+        "energy_residual_J": 0.178099231898,
+        "drive_positive_J": 117.093309727,
+        "drive_absorbed_J": 251.66744055,
+        "structural_floor_capacity": "unknown",
+        "native_base_dynamics": false,
+        "continuous_collision_certification": false,
+        "geometry_review": "partial: basket/rail and station/slab candidates only; cables, braces, bogie and site obstacles remain pending",
+        "accepted": false
+      }
+    },
+    {
+      "case": "02_ladera_agricola",
+      "summary": {
+        "schema": "agro-loop-v1",
+        "origin": "standalone_reduced_model",
+        "status": "completed",
+        "mode": "central_only",
+        "gust_enabled": true,
+        "simulated_s": 193.958651226,
+        "duration_target_s": 193.958651226,
+        "wall_s": 2.80512574,
+        "simulation_to_wall_ratio": 69.1443697016,
+        "carriers": 2,
+        "unique_supports": 2,
+        "reference_loop_m": 31.6501375916,
+        "final_q_m": 31.6501375916,
+        "max_reference_error_m": 3.84617269304e-05,
+        "peak_main_force_N": 190.46568174,
+        "peak_main_torque_Nm": 57.1397045219,
+        "peak_local_force_N": 0,
+        "max_swing_rad": 0.0236066863541,
+        "peak_tension_N": 372.910025013,
+        "min_pallet_ground_clearance_m": 1.04860863109,
+        "min_carrier_center_distance_m": 2.19999918681,
+        "max_step_pallet_displacement_m": 0.0012850459291,
+        "max_local_offset_m": 0.0907255485636,
+        "max_local_speed_m_s": 0.0727097054124,
+        "governor_or_stop_count": 0,
+        "drive_positive_J": 169.219943569,
+        "drive_absorbed_J": 288.220488437,
+        "local_positive_J": 0,
+        "local_absorbed_J": 0,
+        "load_energy_J": 147.149911216,
+        "energy_residual_J": 0.302289115668,
+        "loaded_kg": 15,
+        "unloaded_kg": 15,
+        "gust_start_s": 118.368,
+        "gust_end_s": 128.368,
+        "signal_provenance": {
+          "poses_and_angles": "reduced_model_state",
+          "cables": "quasistatic_elastic_equilibrium",
+          "wind_and_dispatch": "scripted_inputs",
+          "forces_and_energy": "reduced_model_estimates"
+        },
+        "limits": [
+          "not native Gazebo contact dynamics",
+          "not physical validation or Sim2Real",
+          "absorbed mechanical energy is not stored electricity",
+          "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+        ],
+        "events": [
+          {
+            "time_s": 1,
+            "name": "load_begin",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 1,
+            "from": 0,
+            "to": 10
+          },
+          {
+            "time_s": 75.702,
+            "name": "unload_begin",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 77.704,
+            "name": "unload_end",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 77.704,
+            "name": "unload_end",
+            "carrier": 1,
+            "from": 10,
+            "to": 0
+          },
+          {
+            "time_s": 118.368,
+            "name": "gust_begin",
+            "carrier": -1,
+            "from": 0,
+            "to": 2
+          },
+          {
+            "time_s": 128.37,
+            "name": "gust_end",
+            "carrier": -1,
+            "from": 2,
+            "to": 0
+          },
+          {
+            "time_s": 193.958651226,
+            "name": "complete",
+            "carrier": -1,
+            "from": 0,
+            "to": 0
+          }
+        ]
+      },
+      "assessment": {
+        "scenario": "ladera_agricola",
+        "core_checks": {
+          "completed": true,
+          "two_persistent_ids": true,
+          "two_stations": true,
+          "full_loop": true,
+          "no_local_motor_force": true,
+          "nominal_indoor_calm": true,
+          "both_carriers_serviced": true,
+          "loading_line_stopped": true
+        },
+        "core_passed": true,
+        "static_stability": [
+          {
+            "station": 0,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.033163643,
+            "minimum_overturn_margin": 2.005942507,
+            "normal_range_N": [
+              5322.279139,
+              5614.656606
+            ],
+            "maximum_mean_pressure_Pa": 607.6468188,
+            "out_of_domain_samples": 0
+          },
+          {
+            "station": 1,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.308512002,
+            "minimum_overturn_margin": 2.131751636,
+            "normal_range_N": [
+              5704.440914,
+              6045.941261
+            ],
+            "maximum_mean_pressure_Pa": 654.3226473,
+            "out_of_domain_samples": 0
+          }
+        ],
+        "geometric_conflicts": [],
+        "warnings": [],
+        "energy_residual_J": 0.302289115668,
+        "drive_positive_J": 169.219943569,
+        "drive_absorbed_J": 288.220488437,
+        "structural_floor_capacity": "unknown",
+        "native_base_dynamics": false,
+        "continuous_collision_certification": false,
+        "geometry_review": "partial: basket/rail and station/slab candidates only; cables, braces, bogie and site obstacles remain pending",
+        "accepted": false
+      }
+    },
+    {
+      "case": "03_ladera_agricola",
+      "summary": {
+        "schema": "agro-loop-v1",
+        "origin": "standalone_reduced_model",
+        "status": "completed",
+        "mode": "central_only",
+        "gust_enabled": false,
+        "simulated_s": 193.958651226,
+        "duration_target_s": 193.958651226,
+        "wall_s": 3.39373073,
+        "simulation_to_wall_ratio": 57.1520449491,
+        "carriers": 2,
+        "unique_supports": 2,
+        "reference_loop_m": 31.6501375916,
+        "final_q_m": 31.6501375916,
+        "max_reference_error_m": 3.84617269304e-05,
+        "peak_main_force_N": 190.46568174,
+        "peak_main_torque_Nm": 57.1397045219,
+        "peak_local_force_N": 0,
+        "max_swing_rad": 0.0236066863541,
+        "peak_tension_N": 372.910025013,
+        "min_pallet_ground_clearance_m": 1.04860863109,
+        "min_carrier_center_distance_m": 2.20000004296,
+        "max_step_pallet_displacement_m": 0.0012850459291,
+        "max_local_offset_m": 0.0907255485636,
+        "max_local_speed_m_s": 0.0727097054124,
+        "governor_or_stop_count": 0,
+        "drive_positive_J": 169.219943569,
+        "drive_absorbed_J": 288.220488437,
+        "local_positive_J": 0,
+        "local_absorbed_J": 0,
+        "load_energy_J": 147.149911216,
+        "energy_residual_J": 0.240843596794,
+        "loaded_kg": 15,
+        "unloaded_kg": 15,
+        "gust_start_s": -1,
+        "gust_end_s": -1,
+        "signal_provenance": {
+          "poses_and_angles": "reduced_model_state",
+          "cables": "quasistatic_elastic_equilibrium",
+          "wind_and_dispatch": "scripted_inputs",
+          "forces_and_energy": "reduced_model_estimates"
+        },
+        "limits": [
+          "not native Gazebo contact dynamics",
+          "not physical validation or Sim2Real",
+          "absorbed mechanical energy is not stored electricity",
+          "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+        ],
+        "events": [
+          {
+            "time_s": 1,
+            "name": "load_begin",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 1,
+            "from": 0,
+            "to": 10
+          },
+          {
+            "time_s": 75.702,
+            "name": "unload_begin",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 77.704,
+            "name": "unload_end",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 77.704,
+            "name": "unload_end",
+            "carrier": 1,
+            "from": 10,
+            "to": 0
+          },
+          {
+            "time_s": 193.958651226,
+            "name": "complete",
+            "carrier": -1,
+            "from": 0,
+            "to": 0
+          }
+        ]
+      },
+      "assessment": {
+        "scenario": "ladera_agricola",
+        "core_checks": {
+          "completed": true,
+          "two_persistent_ids": true,
+          "two_stations": true,
+          "full_loop": true,
+          "no_local_motor_force": true,
+          "nominal_indoor_calm": true,
+          "both_carriers_serviced": true,
+          "loading_line_stopped": true
+        },
+        "core_passed": true,
+        "static_stability": [
+          {
+            "station": 0,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.033163643,
+            "minimum_overturn_margin": 2.005942507,
+            "normal_range_N": [
+              5322.279139,
+              5614.656606
+            ],
+            "maximum_mean_pressure_Pa": 607.6468188,
+            "out_of_domain_samples": 0
+          },
+          {
+            "station": 1,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.308512002,
+            "minimum_overturn_margin": 2.131751636,
+            "normal_range_N": [
+              5704.440914,
+              6045.941261
+            ],
+            "maximum_mean_pressure_Pa": 654.3226473,
+            "out_of_domain_samples": 0
+          }
+        ],
+        "geometric_conflicts": [],
+        "warnings": [],
+        "energy_residual_J": 0.240843596794,
+        "drive_positive_J": 169.219943569,
+        "drive_absorbed_J": 288.220488437,
+        "structural_floor_capacity": "unknown",
+        "native_base_dynamics": false,
+        "continuous_collision_certification": false,
+        "geometry_review": "partial: basket/rail and station/slab candidates only; cables, braces, bogie and site obstacles remain pending",
+        "accepted": false
+      }
+    },
+    {
+      "case": "04_ladera_agricola",
+      "summary": {
+        "schema": "agro-loop-v1",
+        "origin": "standalone_reduced_model",
+        "status": "completed",
+        "mode": "central_only",
+        "gust_enabled": true,
+        "simulated_s": 193.958651226,
+        "duration_target_s": 193.958651226,
+        "wall_s": 3.714277012,
+        "simulation_to_wall_ratio": 52.2197592154,
+        "carriers": 2,
+        "unique_supports": 2,
+        "reference_loop_m": 31.6501375916,
+        "final_q_m": 31.6501375916,
+        "max_reference_error_m": 1.92320366068e-05,
+        "peak_main_force_N": 190.454717166,
+        "peak_main_torque_Nm": 57.1364151497,
+        "peak_local_force_N": 0,
+        "max_swing_rad": 0.0236243497122,
+        "peak_tension_N": 372.910025014,
+        "min_pallet_ground_clearance_m": 1.04858859626,
+        "min_carrier_center_distance_m": 2.1999991793,
+        "max_step_pallet_displacement_m": 0.00109270794368,
+        "max_local_offset_m": 0.09073107769,
+        "max_local_speed_m_s": 0.0727109514797,
+        "governor_or_stop_count": 0,
+        "drive_positive_J": 169.214607296,
+        "drive_absorbed_J": 288.22796085,
+        "local_positive_J": 0,
+        "local_absorbed_J": 0,
+        "load_energy_J": 147.149910835,
+        "energy_residual_J": 0.315463662529,
+        "loaded_kg": 15,
+        "unloaded_kg": 15,
+        "gust_start_s": 118.368,
+        "gust_end_s": 128.368,
+        "signal_provenance": {
+          "poses_and_angles": "reduced_model_state",
+          "cables": "quasistatic_elastic_equilibrium",
+          "wind_and_dispatch": "scripted_inputs",
+          "forces_and_energy": "reduced_model_estimates"
+        },
+        "limits": [
+          "not native Gazebo contact dynamics",
+          "not physical validation or Sim2Real",
+          "absorbed mechanical energy is not stored electricity",
+          "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+        ],
+        "events": [
+          {
+            "time_s": 1,
+            "name": "load_begin",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.001,
+            "name": "load_end",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.001,
+            "name": "load_end",
+            "carrier": 1,
+            "from": 0,
+            "to": 10
+          },
+          {
+            "time_s": 75.701,
+            "name": "unload_begin",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 77.701,
+            "name": "unload_end",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 77.701,
+            "name": "unload_end",
+            "carrier": 1,
+            "from": 10,
+            "to": 0
+          },
+          {
+            "time_s": 118.368,
+            "name": "gust_begin",
+            "carrier": -1,
+            "from": 0,
+            "to": 2
+          },
+          {
+            "time_s": 128.368,
+            "name": "gust_end",
+            "carrier": -1,
+            "from": 2,
+            "to": 0
+          },
+          {
+            "time_s": 193.958651226,
+            "name": "complete",
+            "carrier": -1,
+            "from": 0,
+            "to": 0
+          }
+        ]
+      },
+      "assessment": {
+        "scenario": "ladera_agricola",
+        "core_checks": {
+          "completed": true,
+          "two_persistent_ids": true,
+          "two_stations": true,
+          "full_loop": true,
+          "no_local_motor_force": true,
+          "nominal_indoor_calm": true,
+          "both_carriers_serviced": true,
+          "loading_line_stopped": true
+        },
+        "core_passed": true,
+        "static_stability": [
+          {
+            "station": 0,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.033164431,
+            "minimum_overturn_margin": 2.005943383,
+            "normal_range_N": [
+              5322.279273,
+              5614.656641
+            ],
+            "maximum_mean_pressure_Pa": 607.6468226,
+            "out_of_domain_samples": 0
+          },
+          {
+            "station": 1,
+            "water_kg": 480.0,
+            "mass_kg": 565.0,
+            "minimum_sliding_margin": 2.308512788,
+            "minimum_overturn_margin": 2.13175241,
+            "normal_range_N": [
+              5704.440914,
+              6045.941127
+            ],
+            "maximum_mean_pressure_Pa": 654.3226328,
+            "out_of_domain_samples": 0
+          }
+        ],
+        "geometric_conflicts": [],
+        "warnings": [],
+        "energy_residual_J": 0.315463662529,
+        "drive_positive_J": 169.214607296,
+        "drive_absorbed_J": 288.22796085,
+        "structural_floor_capacity": "unknown",
+        "native_base_dynamics": false,
+        "continuous_collision_certification": false,
+        "geometry_review": "partial: basket/rail and station/slab candidates only; cables, braces, bogie and site obstacles remain pending",
+        "accepted": false
+      }
+    },
+    {
+      "case": "05_buitrago_patio",
+      "summary": {
+        "schema": "agro-loop-v1",
+        "origin": "standalone_reduced_model",
+        "status": "completed",
+        "mode": "central_only",
+        "gust_enabled": false,
+        "simulated_s": 162.026040433,
+        "duration_target_s": 162.026040433,
+        "wall_s": 2.727855183,
+        "simulation_to_wall_ratio": 59.396862943,
+        "carriers": 2,
+        "unique_supports": 2,
+        "reference_loop_m": 25.263615433,
+        "final_q_m": 25.263615433,
+        "max_reference_error_m": 3.84617244205e-05,
+        "peak_main_force_N": 173.070348882,
+        "peak_main_torque_Nm": 51.9211046647,
+        "peak_local_force_N": 0,
+        "max_swing_rad": 0.0146204660587,
+        "peak_tension_N": 363.626521517,
+        "min_pallet_ground_clearance_m": 1.21200716304,
+        "min_carrier_center_distance_m": 2.19999907405,
+        "max_step_pallet_displacement_m": 0.00115780469268,
+        "max_local_offset_m": 0.095258120043,
+        "max_local_speed_m_s": 0.0637558322226,
+        "governor_or_stop_count": 0,
+        "drive_positive_J": 117.093309727,
+        "drive_absorbed_J": 251.66744055,
+        "local_positive_J": 0,
+        "local_absorbed_J": 0,
+        "load_energy_J": 156.959917083,
+        "energy_residual_J": 0.178099231898,
+        "loaded_kg": 15,
+        "unloaded_kg": 15,
+        "gust_start_s": -1,
+        "gust_end_s": -1,
+        "signal_provenance": {
+          "poses_and_angles": "reduced_model_state",
+          "cables": "quasistatic_elastic_equilibrium",
+          "wind_and_dispatch": "scripted_inputs",
+          "forces_and_energy": "reduced_model_estimates"
+        },
+        "limits": [
+          "not native Gazebo contact dynamics",
+          "not physical validation or Sim2Real",
+          "absorbed mechanical energy is not stored electricity",
+          "pendulum reaction and cable shape-rate coupling are incomplete; inspect energy residual"
+        ],
+        "events": [
+          {
+            "time_s": 1,
+            "name": "load_begin",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 0,
+            "from": 0,
+            "to": 5
+          },
+          {
+            "time_s": 3.002,
+            "name": "load_end",
+            "carrier": 1,
+            "from": 0,
+            "to": 10
+          },
+          {
+            "time_s": 59.736,
+            "name": "unload_begin",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 61.736,
+            "name": "unload_end",
+            "carrier": 0,
+            "from": 5,
+            "to": 0
+          },
+          {
+            "time_s": 61.736,
+            "name": "unload_end",
+            "carrier": 1,
+            "from": 10,
+            "to": 0
+          },
+          {
+            "time_s": 162.026040433,
+            "name": "complete",
+            "carrier": -1,
+            "from": 0,
+            "to": 0
+          }
+        ]
+      },
+      "assessment": {
+        "scenario": "buitrago_patio",
+        "core_checks": {
+          "completed": true,
+          "two_persistent_ids": true,
+          "two_stations": true,
+          "full_loop": true,
+          "no_local_motor_force": true,
+          "nominal_indoor_calm": true,
+          "both_carriers_serviced": true,
+          "loading_line_stopped": true
+        },
+        "core_passed": true,
+        "static_stability": [
+          {
+            "station": 0,
+            "water_kg": 120.0,
+            "mass_kg": 205.0,
+            "minimum_sliding_margin": 0.6701245492,
+            "minimum_overturn_margin": 0.6341191824,
+            "normal_range_N": [
+              1643.811625,
+              2054.166736
+            ],
+            "maximum_mean_pressure_Pa": 222.3124173,
+            "out_of_domain_samples": 802
+          },
+          {
+            "station": 1,
+            "water_kg": 120.0,
+            "mass_kg": 205.0,
+            "minimum_sliding_margin": 1.079549323,
+            "minimum_overturn_margin": 0.9572320288,
+            "normal_range_N": [
+              2190.968909,
+              2650.535495
+            ],
+            "maximum_mean_pressure_Pa": 286.8544908,
+            "out_of_domain_samples": 381
+          }
+        ],
+        "geometric_conflicts": [
+          {
+            "object": "corridor_rail_1",
+            "carrier": 0,
+            "first_time_s": 49.1,
+            "samples": 132,
+            "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+          },
+          {
+            "object": "corridor_rail_1",
+            "carrier": 1,
+            "first_time_s": 10.9,
+            "samples": 138,
+            "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+          }
+        ],
+        "warnings": [
+          "Fixed bases fail preliminary static force envelope during part of service",
+          "Geometric conflicts require resolution; scene is not an accepted installation"
+        ],
+        "energy_residual_J": 0.178099231898,
+        "drive_positive_J": 117.093309727,
+        "drive_absorbed_J": 251.66744055,
+        "structural_floor_capacity": "unknown",
+        "native_base_dynamics": false,
+        "continuous_collision_certification": false,
+        "geometry_review": "partial: basket/rail and station/slab candidates only; cables, braces, bogie and site obstacles remain pending",
+        "accepted": false
+      }
+    }
+  ],
+  "sensitivity": {
+    "half_step_max_q_difference_m": 1.9230000001257963e-05,
+    "half_step_q_tolerance_m": 0.005,
+    "passed": true,
+    "wind_changes_swing_max_rad": 0.014939356041112,
+    "wind_response_detected": true
+  }
+}

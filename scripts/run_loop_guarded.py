@@ -56,6 +56,8 @@ def main():
     p.add_argument('--host-memory', required=True)
     p.add_argument('--timeout', type=float, default=1200)
     p.add_argument('--case', choices=['hybrid_gust','central_gust','hybrid_calm','hybrid_half_dt','hybrid_half_shape'], default='hybrid_gust')
+    p.add_argument('--scenario',choices=['buitrago_patio','buitrago_entre_pisos','ladera_agricola'])
+    p.add_argument('--variant',choices=['baseline','compact_candidate','revised_supports'],default='revised_supports')
     args = p.parse_args()
     out = Path(args.output).resolve()
     out.mkdir(parents=True, exist_ok=False)
@@ -74,22 +76,33 @@ def main():
     if host_free() < 9:
         raise RuntimeError('Admission requires 9 GiB host free memory (4 GiB workload, 4 GiB reserve, 1 GiB stop margin)')
     values = read_config(Path('config/loop.yaml').resolve())
+    if args.scenario:
+        from generate_ballasted import config as pilot_config
+        values,_,_=pilot_config(args.scenario,variant=args.variant)
     if args.case == 'hybrid_half_dt':
         values['dt'] *= .5
     if args.case == 'hybrid_half_shape':
         values['shape_period'] *= .5
     config = out/'input.yaml'
     config.write_text(yaml.safe_dump(values,sort_keys=False))
-    world = generate(config, out/'generated', mode='central_only' if args.case=='central_gust' else 'central_local', gust=args.case!='hybrid_calm', stop_at_end=True)
+    if args.scenario:
+        from generate_ballasted import generate as generate_ballasted
+        world=generate_ballasted(args.scenario,out/'pilot',stop_at_end=True,variant=args.variant)
+    else:
+        world = generate(config, out/'generated', mode='central_only' if args.case=='central_gust' else 'central_local', gust=args.case!='hybrid_calm', stop_at_end=True)
     plugin = Path(get_package_prefix('agro_teleferico'))/'lib/libAgroLoopSystem.so'
     sources = [Path('src/loop_system.cpp'), Path('src/loop_cli.cpp'),
                *sorted(Path('include/agro').glob('loop*.hpp')),
                Path('scripts/generate_loop.py'), Path(__file__)]
+    if args.scenario:
+        sources += [Path('scripts/generate_ballasted.py'),Path('scripts/check_ballasted.py'),
+                    Path({'baseline':'config/ballasted_common.json','compact_candidate':'config/ballasted_compact_candidate.json','revised_supports':'config/ballasted_revised_supports.json'}[args.variant]),Path('config')/(args.scenario+'.json')]
     manifest = {
         'captured_before_launch': True,
         'case': args.case,
         'plugin_path': str(plugin),
         'plugin_sha256': hashlib.sha256(plugin.read_bytes()).hexdigest(),
+        'world_sha256': hashlib.sha256(world.read_bytes()).hexdigest(),
         'source_sha256': {str(path):hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
         'git_head': subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         'git_status': subprocess.check_output(['git','status','--short'],text=True),
@@ -135,8 +148,14 @@ def main():
     result = {'stop_reason': reason, 'exit_code': proc.returncode, 'peak_tree_rss_gib': peak, 'min_host_free_gib': minimum, 'wall_s': time.monotonic()-started, 'passed': False}
     if reason is None and proc.returncode == 0:
         try:
-            result['assessment'], _ = assess(out/'generated/gazebo', read_config(config))
-            result['passed'] = result['assessment']['passed']
+            if args.scenario:
+                from check_ballasted import assess as assess_ballasted
+                result['assessment']=assess_ballasted(out/'pilot')
+                result['passed']=result['assessment']['core_passed']
+                result['accepted_installation']=False
+            else:
+                result['assessment'], _ = assess(out/'generated/gazebo', read_config(config))
+                result['passed'] = result['assessment']['passed']
         except Exception as exc:
             result['assessment_error'] = repr(exc)
     (out/'guard_summary.json').write_text(json.dumps(result, indent=2))

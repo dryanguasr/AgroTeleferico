@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Capture live Gazebo rendering of the reduced loop, never a telemetry replay."""
 import argparse
+import hashlib
 import ctypes as C
 from functools import partial
 import json
@@ -13,7 +14,7 @@ import time
 import uuid
 import xml.etree.ElementTree as ET
 
-from PIL import Image
+from PIL import Image,ImageDraw
 from ament_index_python.packages import get_package_prefix
 from generate_loop import generate
 from run_loop_guarded import read_host_memory, tree_rss
@@ -83,6 +84,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', required=True)
     parser.add_argument('--config', default='config/loop.yaml')
+    parser.add_argument('--scenario',choices=['buitrago_patio','buitrago_entre_pisos','ladera_agricola'])
+    parser.add_argument('--variant',choices=['baseline','compact_candidate','revised_supports'],default='revised_supports')
     parser.add_argument('--view', choices=['overview', 'lower', 'upper'], default='overview')
     parser.add_argument('--until', type=float, default=341)
     parser.add_argument('--timeout', type=float, default=900)
@@ -108,16 +111,23 @@ def main():
     from gz.msgs10.server_control_pb2 import ServerControl
     from gz.msgs10.boolean_pb2 import Boolean
 
-    world = generate(args.config, directory/'generated', stop_at_end=False)
+    if args.scenario:
+        from generate_ballasted import generate as generate_ballasted
+        world=generate_ballasted(args.scenario,directory/'pilot',stop_at_end=False,variant=args.variant)
+    else:
+        world = generate(args.config, directory/'generated', stop_at_end=False)
     tree = ET.parse(world)
     root = tree.getroot().find('world')
     poses = {'overview': '34 -43 30 0 .48 1.80',
              'lower': '-9 -12 11 0 .30 .92',
              'upper': '56 -12 14 0 .30 2.16'}
+    if args.scenario:
+        poses={'overview':'-7 -13 7 0 .28 .91','lower':'-4 -6 4 0 .20 .65','upper':'12 -8 5.5 0 .08 1.95'}
+        if args.scenario=='ladera_agricola':poses['overview']='-7 -17 9 0 .3 .9'
     root.append(ET.fromstring('<plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"><render_engine>ogre2</render_engine></plugin>'))
     views = list(poses) if args.all_views else [args.view]
     if args.follow_carrier is not None:
-        if not 0 <= args.follow_carrier < 6:
+        if not 0 <= args.follow_carrier < (2 if args.scenario else 6):
             raise ValueError('Follow carrier must be in [0,5] for this six-carrier demo')
         views.append('follow')
         poses['follow'] = '3 -6 7 0 .3 2.2'
@@ -126,6 +136,13 @@ def main():
     for view in views:
         root.append(ET.fromstring(f'''<model name="inspection_camera_{view}"><static>true</static><pose>{poses[view]}</pose><link name="link"><sensor name="camera" type="camera"><always_on>true</always_on><update_rate>5</update_rate><topic>/agro_loop/inspection/{view}</topic><camera><horizontal_fov>1.15</horizontal_fov><image><width>1280</width><height>800</height><format>R8G8B8</format></image><clip><near>.1</near><far>150</far></clip></camera></sensor></link></model>'''))
     tree.write(world, encoding='unicode')
+    plugin_file=Path(get_package_prefix('agro_teleferico'))/'lib/libAgroLoopSystem.so'
+    (directory/'provenance.json').write_text(json.dumps({
+        'captured_before_launch':True,'world_sha256':hashlib.sha256(world.read_bytes()).hexdigest(),
+        'plugin_sha256':hashlib.sha256(plugin_file.read_bytes()).hexdigest(),
+        'git_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+        'git_status':subprocess.check_output(['git','status','--short'],text=True),
+        'sensor_images_with_caption':bool(args.scenario)},indent=2))
     done = threading.Event()
     node = Node()
     frames_by_view = {view: [] for view in views}
@@ -137,6 +154,8 @@ def main():
         if args.follow_carrier is not None:
             follow_encoder = subprocess.Popen(['ffmpeg', '-n', '-loglevel', 'error', '-f', 'rawvideo', '-pixel_format', 'rgb24', '-video_size', '1280x800', '-framerate', '20', '-i', '-', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', '-pix_fmt', 'yuv420p', str(directory/'follow.mp4')], stdin=subprocess.PIPE)
     checkpoints = [1, 4, 10, 60, 145, 150, 151, 153, 170, 180, 200, 212, 215, 218, 220, 228, 250, 300, 340]
+    if args.scenario:
+        checkpoints=[1,4,10,30,50,60,70,90,110,130,150,170,190]
     saved_by_view = {view: set() for view in views}
     started = time.monotonic()
     capture_lock = threading.Lock()
@@ -154,13 +173,24 @@ def main():
             if not view_frames:
                 print(f'First {view} frame after {time.monotonic()-started:.3f} wall seconds', flush=True)
             view_frames.append((stamp, time.monotonic()-started))
+            pixels=msg.data
+            if args.scenario:
+                frame=Image.frombytes('RGB',(msg.width,msg.height),pixels)
+                draw=ImageDraw.Draw(frame);draw.rectangle((0,0,msg.width,48),fill=(20,27,32))
+                draw.text((10,6),f'{args.scenario} | t={stamp:.1f} s | 2 carros | 480 L / 480 kg de agua por base',fill='white')
+                draw.text((10,25),'Modelo reducido - bases fijas - estabilidad analitica preliminar - capacidad de losa/suelo no verificada',fill=(255,210,120))
+                if args.scenario=='buitrago_entre_pisos' or args.variant=='revised_supports':
+                    draw.rectangle((0,48,msg.width,68),fill=(110,35,25))
+                    warning='SOPORTES REVISADOS: geometria muestreada; estructura y medidas reales pendientes' if args.variant=='revised_supports' else 'VARIANTE COMPACTA: revision geometrica parcial; ubicacion conceptual no aceptada' if args.variant=='compact_candidate' else 'CONFLICTOS GEOMETRICOS: baranda y losa superior; ubicacion conceptual no aceptada'
+                    draw.text((10,51),warning,fill='white')
+                pixels=frame.tobytes()
             if encoder and view == args.view:
-                encoder.stdin.write(msg.data)
+                encoder.stdin.write(pixels)
             if follow_encoder and view == 'follow':
-                follow_encoder.stdin.write(msg.data)
+                follow_encoder.stdin.write(pixels)
             for checkpoint in checkpoints:
                 if stamp >= checkpoint and checkpoint not in saved_by_view[view]:
-                    Image.frombytes('RGB', (msg.width, msg.height), msg.data).save(directory/f'{view}_{checkpoint:03d}s.png')
+                    Image.frombytes('RGB', (msg.width, msg.height), pixels).save(directory/f'{view}_{checkpoint:03d}s.png')
                     saved_by_view[view].add(checkpoint)
             if all(f and f[-1][0] >= args.until for f in frames_by_view.values()):
                 done.set()

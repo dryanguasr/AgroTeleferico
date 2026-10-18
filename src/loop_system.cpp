@@ -51,12 +51,37 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
   }
   void draw(gz::sim::EntityComponentManager &ecm) {
     const auto &c=sim->c;const auto &route=sim->route;
+    if(c.single_span) {
+      // Draw approach guides on the same blended path used by the bogies.
+      // They represent reduced-model transition guides, not rigid contact rails.
+      double X=c.terrain.back().first;
+      for(int end=0;end<2;++end)for(int lane=0;lane<2;++lane)for(int rail=0;rail<2;++rail)for(int j=0;j<6;++j) {
+        double start=end?X-c.guide_half_length:0;
+        auto at=[&](double x) {
+          double s=route.lane_length*x/X;
+          if(lane)s=2*route.lane_length+loop::pi*c.lane_half_width-s;
+          auto p=route.at(s).p;p.y+=(rail?c.gauge/2:-c.gauge/2);return p;
+        };
+        line(ecm,"guide_"+std::to_string(end)+"_"+std::to_string(lane)+"_"+std::to_string(rail)+"_"+std::to_string(j),
+             at(start+c.guide_half_length*j/6),at(start+c.guide_half_length*(j+1)/6));
+      }
+      for(int j=0;j<96;++j) {
+        auto a=route.at(route.total*j/96.).p+loop::V3{0,0,c.tractor_lift};
+        auto b=route.at(route.total*(j+1)/96.).p+loop::V3{0,0,c.tractor_lift};
+        line(ecm,"pilot_tractor_"+std::to_string(j),a,b);
+      }
+      for(int j=0;j<8;++j)
+        pose(ecm,"tractor_marker_"+std::to_string(j),route.at(sim->q+route.total*j/8.).p+loop::V3{0,0,c.tractor_lift});
+    }
     for(size_t i=0;i<sim->carts.size();++i) {
       auto &a=sim->carts[i];auto d=route.tangent(sim->q+a.phase+a.offset);
       if(static_cast<int>(i)==follow_carrier) {
         // Fixed world offset avoids artificial camera roll during swing.
-        pose(ecm,"inspection_camera_follow",a.pallet+loop::V3{2.4,-3.2,2.0},
-             gz::math::Quaterniond(0,std::atan2(1.1,4.),std::atan2(3.2,-2.4)));
+        // Projected heads approach the corridor under a slab. Observe from
+        // the open-span side so that the camera does not enter that slab.
+        bool projected=c.single_span&&c.base_offset>0;
+        pose(ecm,"inspection_camera_follow",a.pallet+(projected?loop::V3{-2.4,-3.2,.55}:loop::V3{2.4,-3.2,2.0}),
+             gz::math::Quaterniond(0,std::atan2(projected?.25:1.1,4.),std::atan2(3.2,projected?2.4:-2.4)));
       }
       double yaw=std::atan2(d.y,d.x),pitch=-std::atan2(d.z,std::hypot(d.x,d.y));
       pose(ecm,"bogie_"+std::to_string(i),a.pivot+loop::V3{0,0,.11},gz::math::Quaterniond(0,pitch,yaw));
@@ -64,11 +89,16 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
       pose(ecm,"pallet_"+std::to_string(i),a.pallet,rot);
       line(ecm,"hanger_"+std::to_string(i),a.pivot,a.pallet);
       auto tractor=route.at(sim->q+a.phase).p;
-      pose(ecm,"coupler_"+std::to_string(i),(tractor+a.pivot)*.5+loop::V3{0,0,.8},gz::math::Quaterniond(0,pitch,yaw));
+      double lift=c.single_span?c.tractor_lift:.8;
+      auto coupling=(tractor+a.pivot)*.5+loop::V3{0,0,lift};
+      pose(ecm,"coupler_"+std::to_string(i),coupling,gz::math::Quaterniond(0,pitch,yaw));
+      if(c.single_span&&c.base_offset>0)
+        line(ecm,"traction_link_"+std::to_string(i),a.pivot+loop::V3{0,0,.14},coupling);
       for(int j=0;j<2;++j) {
         loop::V3 p{0,0,-50};
         if(a.payload>c.nominal_payload*(j+.15)/2) {
-          auto shift=rot*gz::math::Vector3d(j? .27:-.27,0,.30);
+          double dx=c.single_span?.13:.27,dz=c.single_span?.15:.30;
+          auto shift=rot*gz::math::Vector3d(j?dx:-dx,0,dz);
           p=a.pallet+loop::V3{shift.X(),shift.Y(),shift.Z()};
         }
         pose(ecm,"load_"+std::to_string(i)+"_"+std::to_string(j),p,rot);
@@ -88,11 +118,20 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
         line(ecm,"flex_"+std::to_string(lane)+"_"+std::to_string(k)+"_"+std::to_string(rail)+"_"+std::to_string(j),a,b);
       }
     }
-    pose(ecm,"main_rotor",{0,0,route.ground(0)+c.support_height+.8},gz::math::Quaterniond(0,0,-sim->q/c.lane_half_width));
-    loop::V3 wp{0,0,-50};if(sim->wind>.05)wp={24,0,route.ground(24)+c.support_height+3};
+    pose(ecm,"main_rotor",{0,0,route.ground(0)+c.support_height+(c.single_span?c.tractor_lift:.8)},gz::math::Quaterniond(0,0,-sim->q/c.lane_half_width));
+    double wx=c.single_span?c.terrain.back().first/2:24;
+    loop::V3 wp{0,0,-50};if(sim->wind>.05)wp={wx,0,route.ground(wx)+c.support_height+3};
     pose(ecm,"wind_indicator",wp,gz::math::Quaterniond(0,0,c.wind_bearing_deg*loop::pi/180));
     gz::msgs::StringMsg msg;std::ostringstream text;
     text<<"{\"model\":\"reduced_not_native_contact\",\"time_s\":"<<sim->t<<",\"stage\":"<<sim->stage<<",\"wind_m_s\":"<<sim->wind<<",\"line_speed_m_s\":"<<sim->v<<",\"main_force_N\":"<<sim->main_force<<"}";
+    if(c.single_span) {
+      auto a=loop::ballast(*sim,0),b=loop::ballast(*sim,1);
+      std::string value=text.str();value.pop_back();text.str("");text.clear();
+      text<<value<<",\"litres_per_base\":"<<c.ballast_litres*c.ballast_fill
+          <<",\"base_A_sliding_margin\":"<<a.sliding_margin<<",\"base_B_sliding_margin\":"<<b.sliding_margin
+          <<",\"base_A_overturn_margin\":"<<a.overturn_margin<<",\"base_B_overturn_margin\":"<<b.overturn_margin
+          <<",\"static_domain_warning\":"<<((!a.in_domain||!b.in_domain)?"true":"false")<<"}";
+    }
     msg.set_data(text.str());status.Publish(msg);
   }
  public:

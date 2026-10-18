@@ -1,0 +1,69 @@
+{
+  "scenario": "buitrago_patio",
+  "core_checks": {
+    "completed": true,
+    "two_persistent_ids": true,
+    "two_stations": true,
+    "full_loop": true,
+    "no_local_motor_force": true,
+    "nominal_indoor_calm": true,
+    "both_carriers_serviced": true,
+    "loading_line_stopped": true
+  },
+  "core_passed": true,
+  "static_stability": [
+    {
+      "station": 0,
+      "water_kg": 480.0,
+      "mass_kg": 565.0,
+      "minimum_sliding_margin": 2.109237336,
+      "minimum_overturn_margin": 1.996089997,
+      "normal_range_N": [
+        5175.411625,
+        5585.766736
+      ],
+      "maximum_mean_pressure_Pa": 604.5202095,
+      "out_of_domain_samples": 0
+    },
+    {
+      "station": 1,
+      "water_kg": 480.0,
+      "mass_kg": 565.0,
+      "minimum_sliding_margin": 2.518664152,
+      "minimum_overturn_margin": 2.233093006,
+      "normal_range_N": [
+        5722.568909,
+        6182.135495
+      ],
+      "maximum_mean_pressure_Pa": 669.062283,
+      "out_of_domain_samples": 0
+    }
+  ],
+  "geometric_conflicts": [
+    {
+      "object": "corridor_rail_1",
+      "carrier": 0,
+      "first_time_s": 49.1,
+      "samples": 132,
+      "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+    },
+    {
+      "object": "corridor_rail_1",
+      "carrier": 1,
+      "first_time_s": 10.9,
+      "samples": 138,
+      "method": "conservative basket bounding sphere; candidate conflict, requires finer envelope review"
+    }
+  ],
+  "warnings": [
+    "Geometric conflicts require resolution; scene is not an accepted installation"
+  ],
+  "energy_residual_J": 0.178099231898,
+  "drive_positive_J": 117.093309727,
+  "drive_absorbed_J": 251.66744055,
+  "structural_floor_capacity": "unknown",
+  "native_base_dynamics": false,
+  "continuous_collision_certification": false,
+  "geometry_review": "partial: basket/rail and station/slab candidates only; cables, braces, bogie and site obstacles remain pending",
+  "accepted": false
+}

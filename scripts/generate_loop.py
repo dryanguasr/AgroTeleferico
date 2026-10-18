@@ -16,7 +16,7 @@ def read_config(path):
         raise ValueError("Expected a mapping containing terrain")
     for k, v in c.items():
         if k == "terrain":
-            if len(v) != 5 or any(len(p) != 2 for p in v):
+            if len(v) != (2 if c.get('single_span') else 5) or any(len(p) != 2 for p in v):
                 raise ValueError("Five (x,z) landmarks required")
             numbers = [x for p in v for x in p]
         else:
@@ -39,11 +39,13 @@ def ground(c, x):
     for a, b in zip(pts, pts[1:]):
         if x <= b[0]:
             u = (x - a[0]) / (b[0] - a[0])
-            return a[1] + (b[1] - a[1]) * (.5 - .5 * math.cos(math.pi*u))
+            return a[1] + (b[1] - a[1]) * (u if c.get('single_span') else (.5 - .5 * math.cos(math.pi*u)))
     raise ValueError("No terrain interval")
 
 
 def supports(c):
+    if c.get('single_span'):
+        return [c['terrain'][0][0], c['terrain'][-1][0]]
     n = int(c["supports_per_segment"]) - 1
     return [a[0] + (b[0]-a[0])*i/n for a, b in zip(c["terrain"], c["terrain"][1:]) for i in range(n)] + [c["terrain"][-1][0]]
 
@@ -52,7 +54,7 @@ def write_params(c, path):
     rows = ["# Generated from loop.yaml; SI. Do not edit independently."]
     for k, v in c.items():
         if k == "terrain":
-            rows.append("terrain 5 " + " ".join(str(x) for p in v for x in p))
+            rows.append(f"terrain {len(v)} " + " ".join(str(x) for p in v for x in p))
         else:
             rows.append(f"{k} {v}")
     Path(path).write_text("\n".join(rows)+"\n", encoding="utf-8")

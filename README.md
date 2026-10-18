@@ -1,5 +1,21 @@
 # AgroTeleferico
 
+## Piloto actual: un vano, dos carros y bases con lastre
+
+[![Patio entre el primer y el segundo piso](docs/evidence/single_span_revised/capture_patio/overview_004s.png)](docs/evidence/single_span_revised/capture_patio/gazebo.mp4)
+
+El patio despejado conecta el primer piso con el segundo: **3,20 m de
+desnivel en 8,60 m horizontales**, con cotas supuestas del edificio conceptual.
+Los soportes exteriores separan depósito, bastidor y recorrido de los carros.
+La revisión geométrica incluye ruedas, acoples, suspensión y carga frente a
+soportes y edificio; no sustituye una validación estructural o de contacto.
+
+**[Diseño, comprobaciones y ejecución](docs/soportes_revisados.md)** ·
+**[Seguimiento del carro](docs/evidence/single_span_revised/capture_patio/follow.mp4)** ·
+**[Resultados verificables](docs/evidence/single_span_revised/metrics.json)**
+
+Las propuestas y capturas que siguen documentan etapas anteriores del proyecto.
+
 **Robots por cables para explorar el transporte agrícola en laderas.**
 
 ¿Cómo mover una cosecha sobre un terreno inclinado? Este piloto explora distintas

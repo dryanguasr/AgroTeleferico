@@ -1,5 +1,15 @@
 # Resultados del piloto
 
+## Piloto actual de un vano y dos carros
+
+El patio conecta pisos separados 3,20 m y usa soportes exteriores con lastre.
+La campaña revisada, los ensayos con poco lastre, la revisión de interferencias
+y las limitaciones están en [Soportes revisados](soportes_revisados.md).
+Los datos verificables se conservan en el
+[manifiesto de evidencia crítica](evidence/single_span_revised/manifest.json).
+
+## Resultados de etapas anteriores
+
 Ejecución local verificada en Ubuntu 24.04 / WSL, ROS 2 Jazzy y Gazebo Harmonic 8.11.0.
 
 **Matriz de validación: 21 ensayos, resultado APROBADO.**
