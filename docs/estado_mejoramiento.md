@@ -21,8 +21,13 @@ La prueba usa una carpeta temporal externa para importar todos los scripts
 instalados, consultar las ayudas, generar el patio y leer la procedencia sin
 depender del directorio fuente. No inicia Gazebo.
 
-Las siguientes fases siguen pendientes: réplica nativa corta de demanda y guía
-completa de reproducción; contratos de rampa y calibración; aceptación energética;
+La primera fase se fusionó mediante el PR #3 en 67a2d3b, con las tres suites de CI
+aprobadas. La segunda fase incorpora una réplica nativa corta de demanda y su
+[guía de reproducción](reproduccion_demanda.md), con calibración nueva, paridad
+y auditoría independiente. La aceptación se registra en smoke.json y en la suite
+demand-native de CI. La línea de nueve postes continúa pausada.
+
+Las siguientes fases siguen pendientes: contratos de rampa y calibración; aceptación energética;
 consolidación de supervisores; protección de main y retirada de ramas integradas.
 La aprobación de esta primera fase no cierra esos trabajos ni valida físicamente
 el prototipo. Las campañas históricas no se repiten por cambios documentales.

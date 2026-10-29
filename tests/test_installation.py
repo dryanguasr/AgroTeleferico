@@ -18,7 +18,7 @@ def main():
             subprocess.run([sys.executable, '-c', code, str(commands), str(path)],
                            cwd=directory, env=env, check=True, timeout=30)
         for name in ('capture_loop', 'generate_ballasted', 'validate_demand_native',
-                     'compose_telemetry_hud', 'run_ballasted_core'):
+                     'compose_telemetry_hud', 'run_ballasted_core', 'run_demand_smoke'):
             subprocess.run([sys.executable, str(commands/(name+'.py')), '--help'],
                            cwd=directory, env=env, check=True, timeout=30,
                            stdout=subprocess.DEVNULL)

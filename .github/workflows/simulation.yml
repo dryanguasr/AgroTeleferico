@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        suite: [unit-install, lifecycle-current, historical-convergence]
+        suite: [unit-install, lifecycle-current, demand-native, historical-convergence]
     steps:
       - uses: actions/checkout@v4
       - uses: ros-tooling/setup-ros@v0.7
@@ -42,6 +42,13 @@ jobs:
           source /opt/ros/jazzy/setup.bash
           source install/setup.bash
           python3 tests/test_loop_native.py --scenario ballasted --output results/current_lifecycle_ci
+      - name: Réplica nativa corta de demanda
+        if: matrix.suite == 'demand-native'
+        shell: bash
+        run: |
+          source /opt/ros/jazzy/setup.bash
+          source install/setup.bash
+          python3 "$(ros2 pkg prefix agro_teleferico)/lib/agro_teleferico/run_demand_smoke.py" --linux-host --output results/demand_smoke_ci
       - name: Regresiones históricas y convergencia
         if: matrix.suite == 'historical-convergence'
         shell: bash
