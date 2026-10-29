@@ -1,5 +1,9 @@
 # Modelo físico
 
+> Modelo histórico de los escenarios `single`, `double` y `spider`.
+> La variante actual de un vano con lastre usa otra aproximación de cable y
+> otro contrato: consultar la [especificación vigente](modelo_vigente.md).
+
 ## Catenaria elástica
 
 La coordenada material `s` mide longitud sin estirar. Con rigidez `EA`, tensión horizontal `H>0` y peso material `w`, la tensión vertical es `V(s)=V0+w*s`. Se integran analíticamente:

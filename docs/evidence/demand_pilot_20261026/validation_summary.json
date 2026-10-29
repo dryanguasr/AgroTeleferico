@@ -1,0 +1,38 @@
+{
+  "A": {
+    "native_passed": true,
+    "native_csv_count": 6,
+    "partial_passed": true,
+    "partial_csv_count": 6,
+    "frames": 3000,
+    "gazebo_exit_code": 0,
+    "errors": []
+  },
+  "B": {
+    "native_passed": true,
+    "native_csv_count": 6,
+    "partial_passed": true,
+    "partial_csv_count": 6,
+    "frames": 3000,
+    "gazebo_exit_code": 0,
+    "errors": []
+  },
+  "C": {
+    "native_passed": true,
+    "native_csv_count": 6,
+    "partial_passed": true,
+    "partial_csv_count": 6,
+    "frames": 3000,
+    "gazebo_exit_code": 0,
+    "errors": []
+  },
+  "D": {
+    "native_passed": true,
+    "native_csv_count": 6,
+    "partial_passed": true,
+    "partial_csv_count": 6,
+    "frames": 3000,
+    "gazebo_exit_code": 0,
+    "errors": []
+  }
+}

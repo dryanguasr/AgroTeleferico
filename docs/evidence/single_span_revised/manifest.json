@@ -1,0 +1,222 @@
+{
+  "schema": "single-span-critical-evidence-v1",
+  "scope": "reduced model and sampled geometry; no structural certification",
+  "private_reference_included": false,
+  "source_sha256": {
+    "include/agro/loop.hpp": "dc252e4db703974df5ab9414a44da3a07ca5c3922c54acda6d1396d95bba1cc6",
+    "include/agro/loop_log.hpp": "7d629ccf7af9574fd3290a4d82a30b92b0b0530768ed26f380a6df4dc670e219",
+    "src/loop_system.cpp": "49f53e13544cae7a0b2a22b15a5b5e70b48dee441be5e8e897fcdebd9fe2415e",
+    "config/ballasted_common.json": "7cb4af0790afd20c6d8128c1911ffca15e2df97c1a7798a354609d9962b46339",
+    "config/ballasted_compact_candidate.json": "27bba116130b95fc1ae5ced5a1572978edcbad5447bb1013cac5c0633a830117",
+    "config/ballasted_revised_supports.json": "d88f3983153a5cc5160b04a0ff76b1641849c41d0c77fad891ffcff695006767",
+    "config/buitrago_entre_pisos.json": "74a220654aaaf1ff5e616b590a5f152e894b71b56c0baf3823dd371d46946efa",
+    "config/buitrago_patio.json": "dc29ab63ee79d99d73f15b92e1a1613a9e5293bff4933349a176897c1c0d9ff9",
+    "config/ladera_agricola.json": "73678a8bf559221c9ce95a0f23cfcce39372e96de4089c8989701d6fcfe9d8ce",
+    "config/legacy/buitrago_patio.json": "f8b4d9fd51cef9ac82184281c416500d14df7bcf77c71651523f1cf6c56ba799",
+    "CMakeLists.txt": "55c803bc770ebf2a48276f28d9ecd3d3198f74f70a6a21c32e6bd1f9e32bccc6",
+    "scripts/windows/run_guarded_loop.ps1": "152f63d8278d698b34b8e158634d670d2940a80307b20d3eebb2d0809c9dd2ea",
+    "tests/test_ballasted.cpp": "f6ccc07c8f41deff5cf497d2e22aa1bc6b07dcc75e30723689a547ba79caa30e",
+    "tests/test_ballasted_assets.py": "eaab44fc9f5ad486b8c87c5568a449ae28d36781cb6120227d79818922448e31",
+    "tests/test_ballasted_geometry.py": "560029e388ef9bb5870d78bd2574c2494e75fff0882c5aa943cd5a6db8009c71",
+    "scripts/generate_ballasted.py": "476861427482011589e890b5efd162c2f64fca82174173890d1b7e0a8b87c295",
+    "scripts/generate_loop.py": "9538aec5b406e0eb5725d130d7062ad7e11f35a5aa06121b4736137a9d0b9f0f",
+    "scripts/audit_support_clearance.py": "4d1230f40bc8c01343b791bde96205fab638d1c99890b4544228cb3a3fed9a18",
+    "scripts/capture_loop.py": "16e6ae11f8d5a7119c4a06c4c15e69ca2ad6536e81d43d2e56b90be36e202c0e",
+    "scripts/verify_ballasted_capture.py": "5792e3154334555b7a0ea1f5441e74713535c77ddf673049003a1c7905e56494",
+    "scripts/export_ballasted_evidence.py": "e3f6dca533f7da537d5c0e3803c169a38070bbdd3a46fad9d6736a7709026379",
+    "scripts/run_ballasted_core.py": "0b96e031d0a3d39ee6334068137f0d0e3c9ae406208823881332eeb564f98614",
+    "scripts/check_ballasted.py": "ad44d8bc2aad3eb0658836dc758c37fee9a6310c3ecbac8dc2d887c14ea2e185",
+    "scripts/summarize_ballasted.py": "cd814dec008d1715a72f81d677aef805ce56b7205ec0bf53a37ac2dcab9ffd05",
+    "scripts/run_loop_guarded.py": "4cfb1a0d97a319eb842003b052a943e3b3c3c3bc1d27c9001a552f5732f0e10b"
+  },
+  "files": {
+    "00_buitrago_patio/assessment.json": {
+      "bytes": 1980,
+      "sha256": "aebe7a5a04101ebf286879a6b4bbef5c466292361c1d86bd0270c11e2b62322b"
+    },
+    "00_buitrago_patio/metadata.json": {
+      "bytes": 3463,
+      "sha256": "2e8951ff8a5fc3025eecb4de62b11b2a5419f45069dfcbe7205efd7b730f7471"
+    },
+    "00_buitrago_patio/reproduction.zip": {
+      "bytes": 1391189,
+      "sha256": "ce8ea20b6d99ab36d360314a9d896b7fb233d78b7ff053e7ca75af833c8dda96"
+    },
+    "00_buitrago_patio/summary.json": {
+      "bytes": 2075,
+      "sha256": "2546333b7d22230b4157c869d10e59e523d8bca8fc81d7cb96c193bdf20b6330"
+    },
+    "00_buitrago_patio/support_clearance.json": {
+      "bytes": 1076,
+      "sha256": "0907d0ef1fbedad1a38dc347484c12a3d2bb7815a153540250e1200d5a0dac1d"
+    },
+    "01_buitrago_entre_pisos/assessment.json": {
+      "bytes": 1986,
+      "sha256": "9a6544e6a062a0d438a82976901df32667d60b82c7bf6c5aebb931871698a415"
+    },
+    "01_buitrago_entre_pisos/metadata.json": {
+      "bytes": 3480,
+      "sha256": "551810e016205a60bd543ea93f021f85dfec4b5aff269efc26ee53391c352b38"
+    },
+    "01_buitrago_entre_pisos/reproduction.zip": {
+      "bytes": 1391209,
+      "sha256": "24714f6bafa082d8d1f20e50ab54b87ec514e0bb2f47644d6815508deaf27dba"
+    },
+    "01_buitrago_entre_pisos/summary.json": {
+      "bytes": 2075,
+      "sha256": "ed5af2980a902ea54b4e43c9a7e545f9c32afd75908c57c66f7c791e1455ca33"
+    },
+    "01_buitrago_entre_pisos/support_clearance.json": {
+      "bytes": 1076,
+      "sha256": "24a1f89dc58f2be732129d94825b8fdc321ffff9829c6fcdf2bf91eee5377f31"
+    },
+    "02_ladera_agricola/assessment.json": {
+      "bytes": 1446,
+      "sha256": "1ba37269d3c703e15beb70adb8120696529d3d24f303bad561127aa126216f45"
+    },
+    "02_ladera_agricola/metadata.json": {
+      "bytes": 3365,
+      "sha256": "5f5162a89569ec6b46f586e3d78357e3d2cf0cfde3a94a2e1164e793806df52c"
+    },
+    "02_ladera_agricola/reproduction.zip": {
+      "bytes": 1678349,
+      "sha256": "dafd048c5fb34cc09519b499976785f9f8dcdf50a76fa67cf0f03fc9d3d318a9"
+    },
+    "02_ladera_agricola/summary.json": {
+      "bytes": 2218,
+      "sha256": "6764e75d15c601a274aad7804e03f1dd7b082b472ef6d6a4c6c5fff3087190d0"
+    },
+    "02_ladera_agricola/support_clearance.json": {
+      "bytes": 1076,
+      "sha256": "ad6ded2104fa835d0fdbd88d807ab13e4b7ac824b893d2db599a1735d590ecae"
+    },
+    "03_ladera_agricola/assessment.json": {
+      "bytes": 1446,
+      "sha256": "4bd55b451e89cfb9082625f7dd5a6969e3bc18a37ece5f78d3b999db896a6ed9"
+    },
+    "03_ladera_agricola/metadata.json": {
+      "bytes": 3367,
+      "sha256": "d2aa61c2eb9f1c73e4fb825d867265e336ebbb5062f0537fac9881eebaa96022"
+    },
+    "03_ladera_agricola/summary.json": {
+      "bytes": 2076,
+      "sha256": "16a10a0dee5d25093e3c5684d394f7ea836999cc2b26ace06de66a9f5d63e483"
+    },
+    "04_ladera_agricola/assessment.json": {
+      "bytes": 1444,
+      "sha256": "03d10148f9753042ebe5e82b0c0f5304b011c7b6ceee367b8804262fb2c4c121"
+    },
+    "04_ladera_agricola/metadata.json": {
+      "bytes": 3365,
+      "sha256": "f35b400b1537a0235ddfe483b4185e56cb10569510421b0d2166d12cbfdadcdf"
+    },
+    "04_ladera_agricola/summary.json": {
+      "bytes": 2218,
+      "sha256": "2dc5dd28902a53a2d4e96d4abe156ecc98f9b27339f50beaff3a00a877125294"
+    },
+    "05_buitrago_patio/assessment.json": {
+      "bytes": 2069,
+      "sha256": "32a7b4786caea658842ceb412e408eb5a5488e90794c57fcca103480fa8c5575"
+    },
+    "05_buitrago_patio/metadata.json": {
+      "bytes": 3463,
+      "sha256": "c217f618cae31713947a2594aefcf1355e5186d2a7e6847a7d6ec48f72387e01"
+    },
+    "05_buitrago_patio/summary.json": {
+      "bytes": 2074,
+      "sha256": "c07fb193e9da8c2e39277d112669ae418e3f1f7dfd2562c37884dc9c99040f27"
+    },
+    "capture_ladera/admission.json": {
+      "bytes": 173,
+      "sha256": "a9aaa40c637c02bd07747cd50451426c33a8c67717a369970b1ac846bf79b939"
+    },
+    "capture_ladera/camera_coverage.json": {
+      "bytes": 918,
+      "sha256": "a31d760302f9ff2dd20192c101afa69a2afffd6a67ada522deb7d7b0781ecaeb"
+    },
+    "capture_ladera/follow.mp4": {
+      "bytes": 5336005,
+      "sha256": "8b13a81dc38c11064e9664542c2f71bd41757b769f1799d3d3703d06349dd1c6"
+    },
+    "capture_ladera/follow_050s.png": {
+      "bytes": 104807,
+      "sha256": "84b0d014d1c50ebf1b1403dbeb08586ddd8490519c84bf951e88505a874f292c"
+    },
+    "capture_ladera/follow_070s.png": {
+      "bytes": 94364,
+      "sha256": "deebf2a24224b0a76901dc70b41e281f8097ca120c9190289922185aced27184"
+    },
+    "capture_ladera/gazebo.mp4": {
+      "bytes": 1150806,
+      "sha256": "7bdca959df1eb52b1aa99edc640e6a12b1be17a90aaf7e605509a4e2af94ca51"
+    },
+    "capture_ladera/native_reproduction.zip": {
+      "bytes": 1715906,
+      "sha256": "936e839accff6ff399bb67ee8ec2c69eebf2c8f42ca4efa61fe2fa04beaff876"
+    },
+    "capture_ladera/overview_004s.png": {
+      "bytes": 77556,
+      "sha256": "fe9e4e21e5339c2c9adce8ae0fb70cc83257d585e7ed9ac2559976e81e699839"
+    },
+    "capture_ladera/provenance.json": {
+      "bytes": 1370,
+      "sha256": "ad8a558ed45a7c3a0de70429fcbdeefd90c83f732fa7112258caa3ad8a0e040f"
+    },
+    "capture_ladera/upper_004s.png": {
+      "bytes": 91051,
+      "sha256": "f1fdde7d41e3ff7f6e149292e4dae72ee028c2aca7fe5ac1b12fc94cc96d5bfa"
+    },
+    "capture_ladera/verification.json": {
+      "bytes": 3043,
+      "sha256": "ec3e90ec51608c39dffc15a01be7e29db19a46f744c8465d11da7f7c7f075925"
+    },
+    "capture_patio/admission.json": {
+      "bytes": 174,
+      "sha256": "7fcb8076af14bc6139aa61c276417c618dd184c992939d3bcb050eca07e57517"
+    },
+    "capture_patio/camera_coverage.json": {
+      "bytes": 830,
+      "sha256": "870a33fbbadfbf3e6f41fa4deeb5597994828bf3fe33f792adf34143abe4b9ec"
+    },
+    "capture_patio/follow.mp4": {
+      "bytes": 5882528,
+      "sha256": "baea58c38f2d07ce6f00b672a29c7d26d348025418ee73340d1aa2baa2d294e8"
+    },
+    "capture_patio/follow_050s.png": {
+      "bytes": 147165,
+      "sha256": "8a819fcbc17c4dab8a0f3009c609954b6f47f2ff45d95268db465f16bd152633"
+    },
+    "capture_patio/follow_070s.png": {
+      "bytes": 134049,
+      "sha256": "2a36d411c4100225b99c8ebb43e3b8918db5a394e85ca0d35fdf69a911de4e86"
+    },
+    "capture_patio/gazebo.mp4": {
+      "bytes": 1210703,
+      "sha256": "f3027b66caf9203e3913c6b8dcd1da4af7c28b1f6ec1acd4a52a09ccccaab0db"
+    },
+    "capture_patio/native_reproduction.zip": {
+      "bytes": 1420997,
+      "sha256": "41448775a156cee6ce4242b24c6c125314505f0853d4b2c228b6117195246ab5"
+    },
+    "capture_patio/overview_004s.png": {
+      "bytes": 116599,
+      "sha256": "04b0ec15af9d5414cecb1669238a31c555ba9e0dd7bcb8926b78deef49fc67d4"
+    },
+    "capture_patio/provenance.json": {
+      "bytes": 1296,
+      "sha256": "aa2e11d6a99f3ba2c32ddd52a9434d4370b573cee4fa10f770c4348132462ddc"
+    },
+    "capture_patio/upper_004s.png": {
+      "bytes": 96966,
+      "sha256": "189ec8d721ed5b3266bc84f107e00f7bb952f1b3e860c2807204db3a249be05a"
+    },
+    "capture_patio/verification.json": {
+      "bytes": 3043,
+      "sha256": "5eea5826efc83ad1f54a803b7c417780d6bf5ed75033ab8d842cba21e8b1c81d"
+    },
+    "metrics.json": {
+      "bytes": 32325,
+      "sha256": "d132969300a5cff1e0f5c79a5b03070e1f61c770377f7f2b129e7b8b59e81ec7"
+    }
+  }
+}

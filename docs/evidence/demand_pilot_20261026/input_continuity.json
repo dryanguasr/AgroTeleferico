@@ -1,0 +1,5 @@
+{
+  "all_180_demands_identical_to_preliminary": true,
+  "preliminary_campaign": "results/demand_campaign_01",
+  "excluded_reason": "known backlog deadline protection corrected; do not mix revisions"
+}

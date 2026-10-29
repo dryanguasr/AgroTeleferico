@@ -1,0 +1,22 @@
+{
+  "audit_command": [
+    "python3",
+    "scripts/audit_demand_outputs.py",
+    "--campaign",
+    "results/demand_campaign_02",
+    "--output",
+    "results/demand_campaign_02/audit_full_01.json"
+  ],
+  "analysis_command": [
+    "python3",
+    "scripts/analyze_demand.py",
+    "--campaign",
+    "results/demand_campaign_02",
+    "--output",
+    "results/demand_analysis_02"
+  ],
+  "audit_exit_code": 0,
+  "analysis_exit_code": 0,
+  "derived_exit_code": 0,
+  "figure_exit_code": 0
+}

@@ -7,6 +7,8 @@ param(
     [switch]$AllViews,
     [switch]$NoGui,
     [switch]$FollowCarrier,
+    [ValidateSet('buitrago_patio','buitrago_entre_pisos','ladera_agricola')][string]$Scenario,
+    [ValidateSet('baseline','compact_candidate','revised_supports')][string]$Variant='revised_supports',
     [string]$Distribution='Ubuntu-24.04'
 )
 $ErrorActionPreference='Stop'
@@ -26,10 +28,12 @@ function Write-MemorySample {
     return $free
 }
 $first=Write-MemorySample
+@{first_free_gib=$first;second_free_gib=$null;minimum_gib=$minimum;reserve_gib=4;admitted=$false} |
+    ConvertTo-Json | Set-Content (Join-Path $runRoot 'admission.json')
 if ($first -lt $minimum) { throw "Admission requires $minimum GiB free; observed $first" }
 Start-Sleep -Seconds 5
 $second=Write-MemorySample
-@{first_free_gib=$first;second_free_gib=$second;separation_s=5;minimum_gib=$minimum;reserve_gib=4} |
+@{first_free_gib=$first;second_free_gib=$second;separation_s=5;minimum_gib=$minimum;reserve_gib=4;admitted=($second -ge $minimum)} |
     ConvertTo-Json | Set-Content (Join-Path $runRoot 'admission.json')
 if ($second -lt $minimum) { throw "Second admission sample below $minimum GiB" }
 $command='source /opt/ros/jazzy/setup.bash && source install/setup.bash && exec python3 '
@@ -41,6 +45,7 @@ if ($Case -eq 'capture') {
 } else {
     $command+='scripts/run_loop_guarded.py --output results/'+$RunName+'/'+$Case+' --host-memory results/'+$RunName+'/host_memory.json --case '+$Case
 }
+if($Scenario) { $command+=' --scenario '+$Scenario+' --variant '+$Variant }
 $info=[System.Diagnostics.ProcessStartInfo]::new()
 $info.FileName='wsl.exe'
 $info.UseShellExecute=$false

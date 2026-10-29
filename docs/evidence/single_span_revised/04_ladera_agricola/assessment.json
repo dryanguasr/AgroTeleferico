@@ -1,0 +1,52 @@
+{
+  "scenario": "ladera_agricola",
+  "core_checks": {
+    "completed": true,
+    "two_persistent_ids": true,
+    "two_stations": true,
+    "full_loop": true,
+    "no_local_motor_force": true,
+    "nominal_indoor_calm": true,
+    "both_carriers_serviced": true,
+    "loading_line_stopped": true
+  },
+  "core_passed": true,
+  "static_stability": [
+    {
+      "station": 0,
+      "water_kg": 480.0,
+      "mass_kg": 565.0,
+      "minimum_sliding_margin": 2.033164431,
+      "minimum_overturn_margin": 2.005943383,
+      "normal_range_N": [
+        5322.279273,
+        5614.656641
+      ],
+      "maximum_mean_pressure_Pa": 607.6468226,
+      "out_of_domain_samples": 0
+    },
+    {
+      "station": 1,
+      "water_kg": 480.0,
+      "mass_kg": 565.0,
+      "minimum_sliding_margin": 2.308512788,
+      "minimum_overturn_margin": 2.13175241,
+      "normal_range_N": [
+        5704.440914,
+        6045.941127
+      ],
+      "maximum_mean_pressure_Pa": 654.3226328,
+      "out_of_domain_samples": 0
+    }
+  ],
+  "geometric_conflicts": [],
+  "warnings": [],
+  "energy_residual_J": 0.315463662529,
+  "drive_positive_J": 169.214607296,
+  "drive_absorbed_J": 288.22796085,
+  "structural_floor_capacity": "unknown",
+  "native_base_dynamics": false,
+  "continuous_collision_certification": false,
+  "geometry_review": "partial: basket/rail and station/slab candidates only; cables, braces, bogie and site obstacles remain pending",
+  "accepted": false
+}

@@ -1,0 +1,11 @@
+{
+  "classification": "verified profile mismatch in capture verifier",
+  "old_validator_sha256": "d9a55379516dbb3436ac412f488eb2064c840c124f284ce6233025d186b5a43f",
+  "new_validator_sha256": "00d62acabd826b80986bde349374b506a19401a027bc5af0c8512e8cddcc97a5",
+  "old_cli_admission_gib": 7,
+  "corrected_cli_admission_gib": 6,
+  "native_admission_gib_unchanged": 7,
+  "stop_below_gib": 5,
+  "reserve_gib": 4,
+  "dynamics_changed": false
+}

@@ -1,5 +1,17 @@
 # Vídeos representativos
 
+## Piloto actual: soportes exteriores y patio entre pisos
+
+- [Patio: vista general](evidence/single_span_revised/capture_patio/gazebo.mp4).
+- [Patio: seguimiento del carro](evidence/single_span_revised/capture_patio/follow.mp4).
+- [Ladera: vista general](evidence/single_span_revised/capture_ladera/gazebo.mp4).
+- [Ladera: seguimiento](evidence/single_span_revised/capture_ladera/follow.mp4).
+
+Grabaciones completas de Gazebo, reproducción nominal 4×. Consulte el
+[alcance de la revisión y las verificaciones](soportes_revisados.md).
+
+## Circuito histórico de seis carros
+
 Selección de grabaciones existentes del circuito de seis carros, renderizadas
 en Gazebo. Los MP4 están incluidos en esta rama del repositorio; si GitHub no
 ofrece reproducción en la página del archivo, usar **View raw / Download**.

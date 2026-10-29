@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "checks": {
+    "clean_exit": true,
+    "capture_without_errors": true,
+    "stop_requested_and_acknowledged": true,
+    "live_sensor": true,
+    "intentional_partial_segment": true,
+    "requested_coverage": true,
+    "coverage_overview": true,
+    "coverage_follow": true,
+    "cameras_synchronized": true,
+    "decode_gazebo.mp4": true,
+    "frames_gazebo.mp4": true,
+    "decode_follow.mp4": true,
+    "frames_follow.mp4": true,
+    "reserve_preserved": true,
+    "reference_exit": true,
+    "parity_global.csv": true,
+    "parity_carriers.csv": true,
+    "parity_cables.csv": true,
+    "parity_bases.csv": true,
+    "parity_geometry.csv": true,
+    "same_stop_time": true,
+    "same_events": true
+  },
+  "requested_until_s": 135.0,
+  "actual_core_stop_s": 135.04,
+  "coverage": {
+    "overview": {
+      "frames": 676,
+      "first_s": 0.04,
+      "last_s": 135.0,
+      "max_gap_s": 0.20000000000001705
+    },
+    "follow": {
+      "frames": 676,
+      "first_s": 0.04,
+      "last_s": 135.0,
+      "max_gap_s": 0.20000000000001705
+    }
+  },
+  "videos": {
+    "gazebo.mp4": {
+      "stream": {
+        "width": 1280,
+        "height": 800,
+        "r_frame_rate": "20/1",
+        "duration": "33.800000",
+        "nb_read_frames": "676"
+      },
+      "sha256": "a2fb91412ac4af73c0530fce6e8de89dd6cd3f2a70d905c6dc0cdd3e2ba2dee7",
+      "decode_exit_code": 0,
+      "decode_stderr": ""
+    },
+    "follow.mp4": {
+      "stream": {
+        "width": 1280,
+        "height": 800,
+        "r_frame_rate": "20/1",
+        "duration": "33.800000",
+        "nb_read_frames": "676"
+      },
+      "sha256": "336245321829d08ffc42b423be4681e9220a3346c2da3d1357e67b0d3b2b748d",
+      "decode_exit_code": 0,
+      "decode_stderr": ""
+    }
+  },
+  "parity": {
+    "global.csv": {
+      "identical": true,
+      "native_sha256": "7abc81afb6a5808faebbac5a5d4abd53aa7301ea8ca4cb2a83d47b1e6f2df327",
+      "reference_sha256": "7abc81afb6a5808faebbac5a5d4abd53aa7301ea8ca4cb2a83d47b1e6f2df327"
+    },
+    "carriers.csv": {
+      "identical": true,
+      "native_sha256": "87c36d9d9e823f15d38561b5010f8365fcf36811509f6c1e8525f4bb818c15e6",
+      "reference_sha256": "87c36d9d9e823f15d38561b5010f8365fcf36811509f6c1e8525f4bb818c15e6"
+    },
+    "cables.csv": {
+      "identical": true,
+      "native_sha256": "6e144cc1b4476840fb0a9055f6437eedebf8507d904fd400f8099e475abf0b68",
+      "reference_sha256": "6e144cc1b4476840fb0a9055f6437eedebf8507d904fd400f8099e475abf0b68"
+    },
+    "bases.csv": {
+      "identical": true,
+      "native_sha256": "8038f23145f820b5d4b7303b9a8f898241bb15ae3a03a6ce6ff338945013cbed",
+      "reference_sha256": "8038f23145f820b5d4b7303b9a8f898241bb15ae3a03a6ce6ff338945013cbed"
+    },
+    "geometry.csv": {
+      "identical": true,
+      "native_sha256": "1f8fd2705074d6cff3cf863e0810c9827aadee8eddff3f7378fe0339108ce2ce",
+      "reference_sha256": "1f8fd2705074d6cff3cf863e0810c9827aadee8eddff3f7378fe0339108ce2ce"
+    }
+  },
+  "reference_command": [
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/install/agro_teleferico/lib/agro_teleferico/agro_loop_cli",
+    "--config",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_ladera_capture_01/capture/pilot/generated/loop.params",
+    "--output",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_ladera_capture_01/capture/reference_core",
+    "--mode",
+    "central_only",
+    "--until",
+    "135.039"
+  ],
+  "min_host_free_gib": 9.48895263671875,
+  "peak_tree_rss_gib": 2.547107696533203,
+  "scope": "partial live rendering and same-core parity; not a complete service or physical validation"
+}

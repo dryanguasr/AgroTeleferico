@@ -1,0 +1,5776 @@
+{
+  "schema": "agro-demand-campaign-v1",
+  "dataset_manifest_sha256": "df146af2f438e7e21a71a20cb4900fa6eff1f570879f7f00af2a4ff7d4dbce60",
+  "planned_runs": 720,
+  "limit_requested": null,
+  "timeout_s": 300,
+  "runs": [
+    {
+      "dataset": "balanced_r12_s000",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s000/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s000",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s000/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s000",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s000/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s000",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s000/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s001",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s001/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s001",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s001/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s001",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s001/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s001",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s001/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s002",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s002/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s002",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s002/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s002",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s002/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s002",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s002/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s003",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s003/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s003",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s003/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s003",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s003/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s003",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s003/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s004",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s004/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s004",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s004/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s004",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s004/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s004",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s004/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s005",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s005/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s005",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s005/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s005",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s005/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s005",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s005/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s006",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s006/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s006",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s006/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s006",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s006/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s006",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s006/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s007",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s007/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s007",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s007/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s007",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s007/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s007",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s007/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s008",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s008/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s008",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s008/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s008",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s008/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s008",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s008/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s009",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s009/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s009",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s009/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s009",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s009/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s009",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s009/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s010",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s010/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s010",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s010/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s010",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s010/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s010",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s010/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s011",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s011/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s011",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s011/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s011",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s011/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s011",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s011/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s012",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s012/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s012",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s012/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s012",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s012/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s012",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s012/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s013",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s013/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s013",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s013/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s013",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s013/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s013",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s013/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s014",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s014/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s014",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s014/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s014",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s014/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s014",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s014/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s015",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s015/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s015",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s015/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s015",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s015/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s015",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s015/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s016",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s016/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s016",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s016/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s016",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s016/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s016",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s016/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s017",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s017/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s017",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s017/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s017",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s017/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s017",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s017/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s018",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s018/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s018",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s018/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s018",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s018/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s018",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s018/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s019",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s019/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s019",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s019/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s019",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s019/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s019",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s019/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s020",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s020/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s020",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s020/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s020",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s020/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s020",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s020/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s021",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s021/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s021",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s021/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s021",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s021/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s021",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s021/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s022",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s022/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s022",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s022/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s022",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s022/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s022",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s022/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s023",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s023/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s023",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s023/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s023",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s023/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s023",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s023/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s024",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s024/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s024",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s024/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s024",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s024/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s024",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s024/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s025",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s025/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s025",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s025/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s025",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s025/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s025",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s025/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s026",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s026/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s026",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s026/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s026",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s026/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s026",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s026/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s027",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s027/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s027",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s027/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s027",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s027/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s027",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s027/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s028",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s028/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s028",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s028/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s028",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s028/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s028",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s028/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s029",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s029/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s029",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s029/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s029",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s029/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r12_s029",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r12_s029/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s000",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s000/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s000",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s000/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s000",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s000/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s000",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s000/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s001",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s001/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s001",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s001/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s001",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s001/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s001",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s001/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s002",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s002/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s002",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s002/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s002",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s002/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s002",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s002/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s003",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s003/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s003",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s003/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s003",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s003/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s003",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s003/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s004",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s004/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s004",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s004/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s004",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s004/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s004",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s004/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s005",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s005/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s005",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s005/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s005",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s005/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s005",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s005/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s006",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s006/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s006",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s006/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s006",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s006/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s006",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s006/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s007",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s007/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s007",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s007/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s007",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s007/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s007",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s007/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s008",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s008/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s008",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s008/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s008",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s008/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s008",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s008/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s009",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s009/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s009",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s009/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s009",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s009/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s009",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s009/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s010",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s010/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s010",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s010/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s010",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s010/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s010",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s010/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s011",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s011/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s011",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s011/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s011",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s011/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s011",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s011/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s012",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s012/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s012",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s012/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s012",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s012/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s012",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s012/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s013",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s013/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s013",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s013/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s013",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s013/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s013",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s013/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s014",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s014/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s014",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s014/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s014",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s014/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s014",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s014/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s015",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s015/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s015",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s015/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s015",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s015/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s015",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s015/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s016",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s016/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s016",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s016/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s016",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s016/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s016",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s016/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s017",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s017/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s017",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s017/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s017",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s017/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s017",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s017/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s018",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s018/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s018",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s018/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s018",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s018/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s018",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s018/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s019",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s019/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s019",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s019/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s019",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s019/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s019",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s019/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s020",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s020/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s020",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s020/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s020",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s020/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s020",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s020/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s021",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s021/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s021",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s021/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s021",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s021/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s021",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s021/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s022",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s022/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s022",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s022/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s022",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s022/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s022",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s022/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s023",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s023/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s023",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s023/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s023",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s023/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s023",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s023/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s024",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s024/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s024",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s024/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s024",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s024/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s024",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s024/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s025",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s025/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s025",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s025/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s025",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s025/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s025",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s025/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s026",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s026/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s026",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s026/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s026",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s026/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s026",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s026/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s027",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s027/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s027",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s027/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s027",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s027/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s027",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s027/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s028",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s028/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s028",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s028/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s028",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s028/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s028",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s028/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s029",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s029/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s029",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s029/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s029",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s029/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r12_s029",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r12_s029/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s000",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s000/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s000",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s000/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s000",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s000/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s000",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s000/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s001",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s001/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s001",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s001/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s001",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s001/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s001",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s001/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s002",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s002/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s002",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s002/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s002",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s002/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s002",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s002/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s003",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s003/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s003",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s003/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s003",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s003/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s003",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s003/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s004",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s004/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s004",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s004/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s004",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s004/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s004",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s004/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s005",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s005/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s005",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s005/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s005",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s005/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s005",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s005/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s006",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s006/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s006",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s006/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s006",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s006/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s006",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s006/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s007",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s007/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s007",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s007/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s007",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s007/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s007",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s007/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s008",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s008/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s008",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s008/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s008",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s008/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s008",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s008/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s009",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s009/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s009",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s009/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s009",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s009/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s009",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s009/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s010",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s010/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s010",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s010/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s010",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s010/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s010",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s010/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s011",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s011/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s011",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s011/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s011",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s011/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s011",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s011/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s012",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s012/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s012",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s012/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s012",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s012/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s012",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s012/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s013",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s013/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s013",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s013/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s013",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s013/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s013",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s013/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s014",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s014/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s014",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s014/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s014",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s014/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s014",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s014/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s015",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s015/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s015",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s015/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s015",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s015/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s015",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s015/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s016",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s016/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s016",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s016/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s016",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s016/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s016",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s016/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s017",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s017/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s017",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s017/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s017",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s017/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s017",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s017/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s018",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s018/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s018",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s018/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s018",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s018/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s018",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s018/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s019",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s019/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s019",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s019/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s019",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s019/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s019",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s019/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s020",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s020/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s020",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s020/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s020",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s020/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s020",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s020/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s021",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s021/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s021",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s021/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s021",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s021/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s021",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s021/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s022",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s022/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s022",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s022/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s022",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s022/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s022",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s022/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s023",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s023/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s023",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s023/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s023",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s023/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s023",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s023/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s024",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s024/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s024",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s024/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s024",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s024/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s024",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s024/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s025",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s025/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s025",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s025/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s025",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s025/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s025",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s025/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s026",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s026/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s026",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s026/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s026",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s026/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s026",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s026/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s027",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s027/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s027",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s027/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s027",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s027/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s027",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s027/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s028",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s028/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s028",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s028/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s028",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s028/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s028",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s028/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s029",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s029/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s029",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s029/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s029",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s029/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r24_s029",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r24_s029/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s000",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s000/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s000",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s000/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s000",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s000/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s000",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s000/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s001",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s001/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s001",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s001/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s001",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s001/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s001",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s001/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s002",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s002/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s002",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s002/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s002",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s002/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s002",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s002/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s003",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s003/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s003",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s003/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s003",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s003/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s003",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s003/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s004",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s004/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s004",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s004/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s004",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s004/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s004",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s004/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s005",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s005/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s005",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s005/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s005",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s005/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s005",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s005/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s006",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s006/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s006",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s006/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s006",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s006/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s006",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s006/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s007",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s007/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s007",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s007/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s007",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s007/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s007",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s007/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s008",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s008/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s008",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s008/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s008",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s008/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s008",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s008/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s009",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s009/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s009",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s009/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s009",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s009/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s009",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s009/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s010",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s010/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s010",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s010/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s010",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s010/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s010",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s010/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s011",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s011/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s011",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s011/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s011",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s011/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s011",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s011/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s012",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s012/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s012",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s012/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s012",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s012/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s012",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s012/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s013",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s013/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s013",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s013/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s013",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s013/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s013",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s013/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s014",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s014/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s014",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s014/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s014",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s014/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s014",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s014/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s015",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s015/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s015",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s015/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s015",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s015/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s015",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s015/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s016",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s016/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s016",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s016/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s016",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s016/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s016",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s016/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s017",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s017/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s017",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s017/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s017",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s017/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s017",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s017/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s018",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s018/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s018",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s018/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s018",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s018/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s018",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s018/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s019",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s019/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s019",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s019/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s019",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s019/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s019",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s019/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s020",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s020/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s020",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s020/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s020",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s020/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s020",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s020/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s021",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s021/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s021",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s021/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s021",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s021/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s021",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s021/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s022",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s022/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s022",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s022/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s022",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s022/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s022",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s022/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s023",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s023/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s023",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s023/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s023",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s023/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s023",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s023/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s024",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s024/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s024",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s024/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s024",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s024/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s024",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s024/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s025",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s025/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s025",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s025/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s025",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s025/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s025",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s025/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s026",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s026/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s026",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s026/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s026",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s026/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s026",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s026/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s027",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s027/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s027",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s027/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s027",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s027/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s027",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s027/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s028",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s028/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s028",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s028/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s028",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s028/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s028",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s028/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s029",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s029/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s029",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s029/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s029",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s029/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r24_s029",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r24_s029/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s000",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s000/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s000",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s000/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s000",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s000/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s000",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s000/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s001",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s001/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s001",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s001/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s001",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s001/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s001",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s001/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s002",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s002/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s002",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s002/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s002",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s002/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s002",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s002/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s003",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s003/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s003",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s003/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s003",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s003/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s003",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s003/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s004",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s004/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s004",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s004/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s004",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s004/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s004",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s004/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s005",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s005/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s005",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s005/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s005",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s005/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s005",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s005/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s006",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s006/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s006",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s006/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s006",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s006/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s006",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s006/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s007",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s007/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s007",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s007/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s007",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s007/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s007",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s007/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s008",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s008/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s008",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s008/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s008",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s008/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s008",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s008/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s009",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s009/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s009",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s009/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s009",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s009/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s009",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s009/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s010",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s010/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s010",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s010/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s010",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s010/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s010",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s010/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s011",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s011/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s011",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s011/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s011",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s011/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s011",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s011/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s012",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s012/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s012",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s012/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s012",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s012/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s012",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s012/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s013",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s013/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s013",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s013/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s013",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s013/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s013",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s013/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s014",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s014/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s014",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s014/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s014",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s014/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s014",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s014/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s015",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s015/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s015",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s015/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s015",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s015/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s015",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s015/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s016",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s016/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s016",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s016/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s016",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s016/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s016",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s016/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s017",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s017/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s017",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s017/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s017",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s017/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s017",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s017/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s018",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s018/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s018",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s018/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s018",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s018/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s018",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s018/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s019",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s019/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s019",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s019/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s019",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s019/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s019",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s019/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s020",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s020/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s020",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s020/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s020",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s020/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s020",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s020/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s021",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s021/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s021",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s021/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s021",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s021/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s021",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s021/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s022",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s022/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s022",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s022/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s022",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s022/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s022",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s022/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s023",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s023/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s023",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s023/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s023",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s023/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s023",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s023/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s024",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s024/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s024",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s024/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s024",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s024/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s024",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s024/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s025",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s025/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s025",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s025/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s025",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s025/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s025",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s025/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s026",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s026/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s026",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s026/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s026",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s026/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s026",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s026/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s027",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s027/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s027",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s027/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s027",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s027/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s027",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s027/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s028",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s028/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s028",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s028/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s028",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s028/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s028",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s028/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s029",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s029/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s029",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s029/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s029",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s029/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "balanced_r36_s029",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/balanced_r36_s029/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s000",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s000/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s000",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s000/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s000",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s000/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s000",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s000/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s001",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s001/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s001",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s001/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s001",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s001/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s001",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s001/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s002",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s002/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s002",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s002/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s002",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s002/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s002",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s002/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s003",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s003/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s003",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s003/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s003",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s003/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s003",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s003/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s004",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s004/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s004",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s004/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s004",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s004/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s004",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s004/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s005",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s005/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s005",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s005/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s005",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s005/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s005",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s005/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s006",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s006/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s006",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s006/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s006",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s006/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s006",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s006/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s007",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s007/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s007",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s007/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s007",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s007/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s007",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s007/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s008",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s008/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s008",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s008/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s008",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s008/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s008",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s008/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s009",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s009/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s009",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s009/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s009",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s009/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s009",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s009/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s010",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s010/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s010",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s010/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s010",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s010/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s010",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s010/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s011",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s011/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s011",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s011/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s011",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s011/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s011",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s011/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s012",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s012/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s012",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s012/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s012",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s012/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s012",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s012/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s013",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s013/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s013",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s013/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s013",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s013/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s013",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s013/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s014",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s014/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s014",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s014/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s014",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s014/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s014",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s014/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s015",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s015/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s015",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s015/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s015",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s015/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s015",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s015/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s016",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s016/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s016",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s016/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s016",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s016/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s016",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s016/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s017",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s017/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s017",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s017/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s017",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s017/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s017",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s017/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s018",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s018/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s018",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s018/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s018",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s018/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s018",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s018/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s019",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s019/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s019",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s019/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s019",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s019/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s019",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s019/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s020",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s020/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s020",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s020/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s020",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s020/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s020",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s020/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s021",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s021/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s021",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s021/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s021",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s021/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s021",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s021/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s022",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s022/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s022",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s022/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s022",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s022/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s022",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s022/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s023",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s023/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s023",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s023/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s023",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s023/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s023",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s023/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s024",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s024/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s024",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s024/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s024",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s024/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s024",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s024/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s025",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s025/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s025",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s025/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s025",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s025/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s025",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s025/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s026",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s026/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s026",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s026/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s026",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s026/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s026",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s026/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s027",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s027/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s027",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s027/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s027",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s027/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s027",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s027/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s028",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s028/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s028",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s028/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s028",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s028/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s028",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s028/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s029",
+      "policy": "A",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s029/A/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s029",
+      "policy": "B",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s029/B/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s029",
+      "policy": "C",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s029/C/attempt_001",
+      "comparable": true,
+      "errors": []
+    },
+    {
+      "dataset": "alternating_r36_s029",
+      "policy": "D",
+      "state": "completed",
+      "attempt": "runs/alternating_r36_s029/D/attempt_001",
+      "comparable": true,
+      "errors": []
+    }
+  ],
+  "finished": true,
+  "stop_reason": null,
+  "counts": {
+    "completed": 720,
+    "failed": 0,
+    "pending": 0
+  }
+}

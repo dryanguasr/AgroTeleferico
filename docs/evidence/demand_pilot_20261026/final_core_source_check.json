@@ -1,0 +1,7 @@
+{
+  "include/agro/demand.hpp": true,
+  "include/agro/loop.hpp": true,
+  "include/agro/loop_log.hpp": true,
+  "include/agro/physics.hpp": true,
+  "src/loop_cli.cpp": true
+}

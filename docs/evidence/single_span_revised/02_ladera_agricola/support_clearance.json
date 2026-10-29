@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "method": "15-axis SAT; cylinders conservatively enclosed by oriented boxes; exact logged body orientations",
+  "motor_member_intersections": [],
+  "static_building_intersections": [],
+  "tank_member_intersections": [],
+  "moving_intersections": [],
+  "pairs": 1273755,
+  "samples": 7762,
+  "sample_period_s": 0.05,
+  "scope": "station boxes/braces/motor versus building; tank versus support members; bogies including wheels/flanges, couplers, baskets, payload, hangers and traction links versus building and equipment",
+  "excluded": "wheel/guide contact, flexible cables and moving tractor/sheeve contacts, terrain/pad contact; connected structural joints deliberately overlap; not continuous collision or structural validation",
+  "physical_validation": false,
+  "world_sha256": "8026c7e08d4f6d82dbd580512b04bbd3eb13b513b0f730613105bf7c1de725b2",
+  "telemetry_sha256": {
+    "carriers.csv": "407a0451de5ef9e68ccff24de46477c9ee8e7297c9282502b5b5a951653e777c",
+    "geometry.csv": "6ce8e23b4e230f2e7730f9bd2702baceb028715592cc39f75f2e18df86bb71fb"
+  }
+}

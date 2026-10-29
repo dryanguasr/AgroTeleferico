@@ -1,0 +1,70 @@
+{
+  "overview": {
+    "frames": 816,
+    "last_simulation_s": 163.0,
+    "checkpoints": [
+      1,
+      4,
+      10,
+      30,
+      50,
+      60,
+      70,
+      90,
+      110,
+      130,
+      150
+    ]
+  },
+  "lower": {
+    "frames": 816,
+    "last_simulation_s": 163.0,
+    "checkpoints": [
+      1,
+      4,
+      10,
+      30,
+      50,
+      60,
+      70,
+      90,
+      110,
+      130,
+      150
+    ]
+  },
+  "upper": {
+    "frames": 816,
+    "last_simulation_s": 163.0,
+    "checkpoints": [
+      1,
+      4,
+      10,
+      30,
+      50,
+      60,
+      70,
+      90,
+      110,
+      130,
+      150
+    ]
+  },
+  "follow": {
+    "frames": 816,
+    "last_simulation_s": 163.0,
+    "checkpoints": [
+      1,
+      4,
+      10,
+      30,
+      50,
+      60,
+      70,
+      90,
+      110,
+      130,
+      150
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "method": "visual inspection of actual rendered QA PNGs through image viewer; whole videos additionally strictly decoded",
+  "policies": {
+    "A": {
+      "checked_frames": [
+        "hud_A/qa_00000.png",
+        "hud_A/qa_01500.png",
+        "hud_A/qa_02999.png"
+      ],
+      "sha256": {
+        "hud_A/qa_00000.png": "329c86a45bca9efaaef84f723a2dc368c331518d5d56c51a53e3fd1f0d1e2257",
+        "hud_A/qa_01500.png": "9e4e8dccbf6a1e312454c65ad1291eff798d80cf6d288c5a1c2ac7e798620200",
+        "hud_A/qa_02999.png": "f52b9fdcc2e6d892d5fb6adbe352384690a95158a19b0d14b801790c33f24053"
+      },
+      "passed": true
+    },
+    "B": {
+      "checked_frames": [
+        "hud_B/qa_00000.png",
+        "hud_B/qa_01500.png",
+        "hud_B/qa_02999.png"
+      ],
+      "sha256": {
+        "hud_B/qa_00000.png": "b041b7a9a78ea466950305ee5f8c45e103084214f2e7a1e0f7a362018217b071",
+        "hud_B/qa_01500.png": "ddfa2ad9e98de41b10d7461787ce1f14da87bb12bfb7e253a59ec729b726d741",
+        "hud_B/qa_02999.png": "42f2575ed048af273b4da6211f8d562446f4cece9febd30324387c74f8d14932"
+      },
+      "passed": true
+    },
+    "C": {
+      "checked_frames": [
+        "hud_C/qa_00000.png",
+        "hud_C/qa_01500.png",
+        "hud_C/qa_02999.png",
+        "hud_C_buffer_preview/preview.png"
+      ],
+      "sha256": {
+        "hud_C/qa_00000.png": "5c56f5295f4897cb7bc670ad7fd0e60559d9bf27bd888dc5afb95e15bab8efcb",
+        "hud_C/qa_01500.png": "b3cca4e33f82f8776c6f91433be78d5ad71d559725e5ab12b1f2b70f8d99b8af",
+        "hud_C/qa_02999.png": "782ecb7e0d9d7ebeda08bd44adca734b2851a56b465b044ae66861852c739974",
+        "hud_C_buffer_preview/preview.png": "d698cdf0def5c0d12301155da3901ab5e355b5549a6e625ce3bdbe154336c545"
+      },
+      "passed": true
+    },
+    "D": {
+      "checked_frames": [
+        "hud_D/qa_00000.png",
+        "hud_D/qa_01500.png",
+        "hud_D/qa_02999.png",
+        "hud_D_buffer_preview/preview.png"
+      ],
+      "sha256": {
+        "hud_D/qa_00000.png": "049cb918fd69ef185b453d68a038813aee7709eb22c79ef224b37f896dcd0fae",
+        "hud_D/qa_01500.png": "9e2588e84336cf1405bdf8e93543681b7e38570866cb5fccbeea52433cfd06cb",
+        "hud_D/qa_02999.png": "aaab0c15ea0815b24b06e4084a9e0b1b24a14a6b6725c5f4164e6a3eabc3405e",
+        "hud_D_buffer_preview/preview.png": "4db6bf96fe122976da6b69259f564e2ef802f4542a9caf23001ecd15bacb7176"
+      },
+      "passed": true
+    }
+  },
+  "notes": [
+    "Layout and text readable at 1920x1080; policy, clock, queue, deadlines, operator availability, payload, auxiliary mass, inventory, velocity, tension and energy visible.",
+    "A/B inventory panel correctly marks buffers disabled.",
+    "C/D auxiliary mass and station stocks remain visually distinct; reviewed buffer-active frames conserve 20 kg.",
+    "Stage labels Cargando/Descargando can include waiting for operators; actual manipulation timing is audited independently in operations.csv.",
+    "Some camera views are partly occluded by the support frame near a station; the overview and data panels remain available."
+  ],
+  "physical_certification": false
+}

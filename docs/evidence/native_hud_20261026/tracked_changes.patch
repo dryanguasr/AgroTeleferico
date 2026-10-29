@@ -1,0 +1,443 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ad0aaae..bc576d3 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -21,6 +21,8 @@ if(BUILD_TESTING)
+   add_test(NAME ballasted_geometry COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_ballasted_geometry.py)
+   add_test(NAME loop_assets COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_loop_assets.py)
+   add_test(NAME loop_guard COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_loop_guard.py)
++  add_test(NAME ros_interface_unit COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_ros_interface.py)
++  add_test(NAME telemetry_hud_unit COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_telemetry_hud.py)
+ endif()
+ if(AGRO_LOOP_STANDALONE)
+   message(STATUS "Standalone reduced model only: Gazebo/ROS validation is not part of this build")
+diff --git a/README.md b/README.md
+index 2760081..bc3209c 100644
+--- a/README.md
++++ b/README.md
+@@ -14,6 +14,23 @@ soportes y edificio; no sustituye una validación estructural o de contacto.
+ **[Seguimiento del carro](docs/evidence/single_span_revised/capture_patio/follow.mp4)** ·
+ **[Resultados verificables](docs/evidence/single_span_revised/metrics.json)**
+ 
++**[Especificación matemática y contratos vigentes](docs/modelo_vigente.md)** ·
++**[Correcciones, pruebas y protocolo posterior](docs/consolidacion_modelo.md)**
++
++La [validación mínima del código corregido](docs/validacion_minima_20261026.md)
++se ejecutó en Gazebo y ROS: 19/19 comprobaciones nativas, cinco CSV idénticos
++a CLI, comandos y cierre ROS single/spider, y 9/9 pruebas CTest.
++Se conservan las campañas anteriores y se añaden dos fragmentos nuevos con
++indicadores de telemetría sincronizados, a 4×:
++
++| Patio: carga, viaje y descarga | Ladera: viaje y ráfaga |
++|---|---|
++| [![Patio con telemetría](docs/evidence/native_hud_20261026/patio_preview.png)](docs/evidence/native_hud_20261026/patio_hud.mp4) | [![Ladera con telemetría](docs/evidence/native_hud_20261026/ladera_preview.png)](docs/evidence/native_hud_20261026/ladera_hud.mp4) |
++
++Las imágenes proceden de sensores Gazebo; el HUD se compone después con los
++registros de cada captura. La paridad comprueba integración del mismo núcleo;
++no certifica contacto físico, resistencia ni seguridad.
++
+ Las propuestas y capturas que siguen documentan etapas anteriores del proyecto.
+ 
+ **Robots por cables para explorar el transporte agrícola en laderas.**
+diff --git a/docs/modelo.md b/docs/modelo.md
+index 9a14314..592eede 100644
+--- a/docs/modelo.md
++++ b/docs/modelo.md
+@@ -1,5 +1,9 @@
+ # Modelo físico
+ 
++> Modelo histórico de los escenarios `single`, `double` y `spider`.
++> La variante actual de un vano con lastre usa otra aproximación de cable y
++> otro contrato: consultar la [especificación vigente](modelo_vigente.md).
++
+ ## Catenaria elástica
+ 
+ La coordenada material `s` mide longitud sin estirar. Con rigidez `EA`, tensión horizontal `H>0` y peso material `w`, la tensión vertical es `V(s)=V0+w*s`. Se integran analíticamente:
+diff --git a/include/agro/loop.hpp b/include/agro/loop.hpp
+index a3ac68b..9602d24 100644
+--- a/include/agro/loop.hpp
++++ b/include/agro/loop.hpp
+@@ -355,6 +355,13 @@ class Simulation {
+     const auto &a=carts.front();double d=wrap(q+a.phase+a.offset-s+route.total/2,route.total)-route.total/2;
+     return std::abs(d)<c.station_tolerance&&std::abs(v)<c.stop_speed&&std::abs(a.offset_speed)<c.stop_speed;
+   }
++  double payloadSpecificEnergy(size_t id) const {
++    const auto &a=carts[id];const auto &d=path_d[id];
++    // Derivative of energy() with respect to payload at fixed shape and state.
++    // Keep the same separated translational/pendulum kinetic approximation.
++    return .5*d.dot(d)*sq(v+a.offset_speed)+.5*sq(c.suspension)*(sq(a.wx)+sq(a.wy))+
++      g*a.pivot.z-g*c.suspension*std::cos(a.tx)*std::cos(a.ty);
++  }
+   void operation(double h) {
+     bool loading=stage==0,unloading=stage==2;if(!loading&&!unloading)return;
+     int &status=loading?load_status:unload_status;
+@@ -374,7 +381,7 @@ class Simulation {
+       double payload=i?c.descending_payload:c.nominal_payload;
+       a.payload=payload*(loading?u:1-u);
+       // Mass/energy enter or leave through the loading operation, not through the motor.
+-      load_energy+=(a.payload-before)*(g*a.pallet.z+.5*a.velocity.dot(a.velocity));
++      load_energy+=(a.payload-before)*payloadSpecificEnergy(i);
+       if(t+h-operation_start>=c.payload_ramp) {status=2;events.push_back({t+h,loading?"load_end":"unload_end",int(i),
+         loading?0:payload,a.payload});}
+       }
+diff --git a/scripts/generate_ballasted.py b/scripts/generate_ballasted.py
+index 2202597..0a8199e 100644
+--- a/scripts/generate_ballasted.py
++++ b/scripts/generate_ballasted.py
+@@ -16,7 +16,7 @@ SCENARIOS = ('buitrago_patio', 'buitrago_entre_pisos', 'ladera_agricola')
+ STEEL = '.35 .42 .46 1'
+ 
+ 
+-def config(scenario, fill=None, dt=None, calm=False, variant='revised_supports'):
++def config(scenario, fill=None, dt=None, calm=False, variant='revised_supports', shape_period=None):
+     spec = json.loads((ROOT/'config'/f'{scenario}.json').read_text())
+     if variant not in ('baseline','compact_candidate','revised_supports'):raise ValueError('Unknown equipment variant')
+     if scenario=='buitrago_patio' and variant!='revised_supports':
+@@ -30,6 +30,8 @@ def config(scenario, fill=None, dt=None, calm=False, variant='revised_supports')
+     core['terrain'] = [[0, 0], [spec['span_horizontal_m'], spec['floor_rise_m']]]
+     if dt is not None:
+         core['dt'] = dt
++    if shape_period is not None:
++        core['shape_period'] = shape_period
+     if fill is not None:
+         if not math.isfinite(fill) or not 0 <= fill <= 1:
+             raise ValueError('Fill fraction outside [0,1]')
+@@ -142,8 +144,8 @@ def stations(c, b):
+     return a
+ 
+ 
+-def generate(scenario, directory, fill=None, dt=None, calm=False, stop_at_end=True, descending_payload=None, variant='revised_supports'):
+-    c,b,spec=config(scenario,fill,dt,calm,variant)
++def generate(scenario, directory, fill=None, dt=None, calm=False, stop_at_end=True, descending_payload=None, variant='revised_supports', shape_period=None):
++    c,b,spec=config(scenario,fill,dt,calm,variant,shape_period)
+     if descending_payload is not None:
+         if not math.isfinite(descending_payload) or descending_payload<0:
+             raise ValueError('Descending payload must be finite and nonnegative')
+@@ -221,7 +223,8 @@ if __name__=='__main__':
+     p=argparse.ArgumentParser(description=__doc__)
+     p.add_argument('--scenario',choices=SCENARIOS,required=True);p.add_argument('--output',required=True)
+     p.add_argument('--fill',type=float);p.add_argument('--dt',type=float);p.add_argument('--calm',action='store_true')
++    p.add_argument('--shape-period',type=float)
+     p.add_argument('--descending-payload',type=float)
+     p.add_argument('--variant',choices=('baseline','compact_candidate','revised_supports'),default='revised_supports')
+     p.add_argument('--gui',action='store_true',help='Keep world open at completion; launch with gz sim -r')
+-    a=p.parse_args();print(generate(a.scenario,a.output,a.fill,a.dt,a.calm,not a.gui,a.descending_payload,a.variant))
++    a=p.parse_args();print(generate(a.scenario,a.output,a.fill,a.dt,a.calm,not a.gui,a.descending_payload,a.variant,a.shape_period))
+diff --git a/scripts/ros_interface.py b/scripts/ros_interface.py
+index 24bd28d..f13ff6c 100644
+--- a/scripts/ros_interface.py
++++ b/scripts/ros_interface.py
+@@ -1,8 +1,11 @@
+ #!/usr/bin/env python3
+ """Objetivos ROS 2 y telemetría tipada; la física y el control interno usan simTime."""
+ import math
++import signal
+ import rclpy
+ from rclpy.node import Node
++from rclpy.executors import ExternalShutdownException
++from rclpy.signals import SignalHandlerOptions
+ from geometry_msgs.msg import PoseStamped, TwistStamped
+ from std_msgs.msg import Float64, Float64MultiArray, Bool
+ 
+@@ -32,7 +35,12 @@ class Interface(Node):
+ 
+     def state(self, msg):
+         d = msg.data
+-        if len(d) != 50:
++        # Validate the complete row before publishing any derived message.
++        # builtin_interfaces/Time uses signed int32 seconds and nanoseconds
++        # in [0, 1e9); this interface accepts only nonnegative simulation time.
++        if len(d) != 50 or not all(math.isfinite(value) for value in d):
++            return
++        if not 0 <= d[0] < 2**31:
+             return
+         p = PoseStamped()
+         p.header.frame_id = 'world'
+@@ -55,15 +63,47 @@ class Interface(Node):
+ 
+ 
+ def main():
+-    rclpy.init()
+-    node = Interface()
++    node = None
++    original_error = None
++    stop_requested = False
++    previous_handlers = {}
++
++    def request_stop(signum, frame):
++        nonlocal stop_requested
++        stop_requested = True
++
+     try:
+-        rclpy.spin(node)
+-    except KeyboardInterrupt:
++        for signum in (signal.SIGINT, signal.SIGTERM):
++            previous_handlers[signum] = signal.signal(signum, request_stop)
++        # Keep the context alive while a subscription callback is being taken.
++        # Our handlers request a stop; cleanup follows the last spin_once.
++        rclpy.init(signal_handler_options=SignalHandlerOptions.NO)
++        node = Interface()
++        while not stop_requested and rclpy.ok():
++            rclpy.spin_once(node, timeout_sec=.1)
++    except (KeyboardInterrupt, ExternalShutdownException):
+         pass
++    except BaseException as error:
++        original_error = error
++        raise
+     finally:
+-        node.destroy_node()
+-        rclpy.shutdown()
++        cleanup_errors = []
++        # External code may already have closed the context. Always attempt
++        # destruction, idempotent shutdown, and restoration of our handlers.
++        cleanup = ([node.destroy_node] if node is not None else []) + [rclpy.try_shutdown]
++        cleanup += [lambda signum=signum, handler=handler: signal.signal(signum, handler)
++                    for signum, handler in previous_handlers.items()]
++        for close in cleanup:
++            try:
++                close()
++            except BaseException as error:
++                cleanup_errors.append(error)
++        if cleanup_errors:
++            primary = original_error if original_error is not None else cleanup_errors.pop(0)
++            for error in cleanup_errors:
++                primary.add_note(f'ROS cleanup failed: {error!r}')
++            if original_error is None:
++                raise primary
+ 
+ 
+ if __name__ == '__main__':
+diff --git a/scripts/run_loop_guarded.py b/scripts/run_loop_guarded.py
+index 54a87ba..0811495 100644
+--- a/scripts/run_loop_guarded.py
++++ b/scripts/run_loop_guarded.py
+@@ -50,6 +50,34 @@ def tree_rss(pid):
+     return sum(rss for p, parent, rss in records if p in selected)/1024**2, sorted(selected)
+ 
+ 
++def prepare_case(out, case, scenario=None, variant='revised_supports'):
++    """Generate the requested case without importing or starting ROS/Gazebo."""
++    out = Path(out)
++    calm = case == 'hybrid_calm'
++    if scenario:
++        from generate_ballasted import config as pilot_config, generate as generate_ballasted
++        values, _, _ = pilot_config(scenario, calm=calm, variant=variant)
++    else:
++        values = read_config(Path('config/loop.yaml').resolve())
++    if case == 'hybrid_half_dt':
++        values['dt'] *= .5
++    if case == 'hybrid_half_shape':
++        values['shape_period'] *= .5
++    config = out/'input.yaml'
++    config.write_text(yaml.safe_dump(values, sort_keys=False))
++    if scenario:
++        # These options must reach the generated params and SDF, not only the
++        # supervisor's record. Ballasted equipment always uses central_only.
++        world = generate_ballasted(scenario, out/'pilot', dt=values['dt'],
++                                   shape_period=values['shape_period'], calm=calm,
++                                   stop_at_end=True, variant=variant)
++    else:
++        world = generate(config, out/'generated',
++                         mode='central_only' if case == 'central_gust' else 'central_local',
++                         gust=not calm, stop_at_end=True)
++    return world, config
++
++
+ def main():
+     p = argparse.ArgumentParser(description=__doc__)
+     p.add_argument('--output', required=True)
+@@ -75,21 +103,7 @@ def main():
+ 
+     if host_free() < 9:
+         raise RuntimeError('Admission requires 9 GiB host free memory (4 GiB workload, 4 GiB reserve, 1 GiB stop margin)')
+-    values = read_config(Path('config/loop.yaml').resolve())
+-    if args.scenario:
+-        from generate_ballasted import config as pilot_config
+-        values,_,_=pilot_config(args.scenario,variant=args.variant)
+-    if args.case == 'hybrid_half_dt':
+-        values['dt'] *= .5
+-    if args.case == 'hybrid_half_shape':
+-        values['shape_period'] *= .5
+-    config = out/'input.yaml'
+-    config.write_text(yaml.safe_dump(values,sort_keys=False))
+-    if args.scenario:
+-        from generate_ballasted import generate as generate_ballasted
+-        world=generate_ballasted(args.scenario,out/'pilot',stop_at_end=True,variant=args.variant)
+-    else:
+-        world = generate(config, out/'generated', mode='central_only' if args.case=='central_gust' else 'central_local', gust=args.case!='hybrid_calm', stop_at_end=True)
++    world, config = prepare_case(out, args.case, args.scenario, args.variant)
+     plugin = Path(get_package_prefix('agro_teleferico'))/'lib/libAgroLoopSystem.so'
+     sources = [Path('src/loop_system.cpp'), Path('src/loop_cli.cpp'),
+                *sorted(Path('include/agro').glob('loop*.hpp')),
+diff --git a/tests/test_ballasted.cpp b/tests/test_ballasted.cpp
+index a3662ad..5383cd3 100644
+--- a/tests/test_ballasted.cpp
++++ b/tests/test_ballasted.cpp
+@@ -1,8 +1,52 @@
+ #include "agro/loop.hpp"
+ #include <iostream>
+ using namespace agro::loop;
++void test_payload_energy() {
++  // Isolate mass transfer from integration and cable-shape updates. Exercise
++  // each carrier separately and both together so their errors cannot cancel.
++  int cases=0;
++  for(int serviced:{0,1,2})for(bool loading:{false,true})
++  for(bool swing:{false,true})for(bool moving:{false,true}) {
++    Config c;c.single_span=1;c.carriers_per_lane=1;c.terrain={{0,0},{8.6,3.2}};
++    c.support_height=2.4;c.suspension=.48;c.lane_half_width=1.1;c.gauge=.42;
++    c.bogie_mass=3;c.hanger_mass=.6;c.pallet_mass=1.4;
++    c.nominal_payload=serviced==1?0:5;c.descending_payload=serviced==0?0:10;
++    c.max_speed=.2;c.max_accel=.04;c.min_clearance=.4;c.station_start_offset=0;
++    c.payload_ramp=2*c.dt;
++    Simulation sim(c,false,false);
++    sim.stage=loading?0:2;sim.q=loading?0:sim.route.lane_length;
++    sim.t=loading?1:sim.topArrival()+1;sim.v=moving?.005:0;
++    for(size_t j=0;j<sim.carts.size();++j) {
++      auto &a=sim.carts[j];a.offset=j?-.02:.01;
++      a.offset_speed=moving?(j?-.004:.003):0;
++      a.payload=loading?0:(j?c.descending_payload:c.nominal_payload);
++      a.tx=swing?(j?-.15:.2):0;a.ty=swing?(j?.12:-.1):0;
++      a.wx=swing?(j?-.25:.3):0;a.wy=swing?(j?.35:-.2):0;
++    }
++    sim.updateShape();sim.refreshPositions();
++    const double initial_energy=sim.energy(),initial_flux=sim.load_energy;
++    for(int k=0;k<2;++k) {
++      double before=sim.energy(),flux=sim.load_energy;
++      sim.operation(c.dt);
++      require(std::abs((sim.energy()-before)-(sim.load_energy-flux))<1e-10,
++        "mass-transfer flux differs from reduced energy change at fixed state");
++      sim.t+=c.dt;
++    }
++    require((loading?sim.load_status:sim.unload_status)==2,"mass transfer must complete");
++    for(size_t j=0;j<sim.carts.size();++j)
++      require(std::abs(sim.carts[j].payload-(loading?(j?c.descending_payload:c.nominal_payload):0))<1e-12,
++        "both carriers must reach their requested payload");
++    require(std::abs((sim.energy()-initial_energy)-(sim.load_energy-initial_flux))<1e-10,
++      "total mass-transfer energy mismatch");
++    require(loading?sim.load_energy>initial_flux:sim.load_energy<initial_flux,
++      "loading and unloading must have opposite energy-flow signs");
++    ++cases;
++  }
++  std::cout<<cases<<" frozen-state mass-transfer energy cases passed\n";
++}
+ int main() {
+  try {
++  test_payload_energy();
+   Config c;c.single_span=1;c.carriers_per_lane=1;c.terrain={{0,0},{8,0}};
+   c.support_height=2.4;c.suspension=.55;c.lane_half_width=1.1;c.gauge=.42;
+   c.bogie_mass=3;c.hanger_mass=.6;c.pallet_mass=1.4;c.nominal_payload=5;
+diff --git a/tests/test_loop_guard.py b/tests/test_loop_guard.py
+index 19a13ae..22c9108 100644
+--- a/tests/test_loop_guard.py
++++ b/tests/test_loop_guard.py
+@@ -1,13 +1,16 @@
+-"""Reject invalid resource evidence without starting Gazebo or any child process."""
++"""Check admission and effective case inputs without starting ROS/Gazebo."""
+ import json
+ from pathlib import Path
+ import sys
+ import tempfile
+ import unittest
++import xml.etree.ElementTree as ET
+ from unittest.mock import patch
++import yaml
+ 
+ sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
+-from run_loop_guarded import read_host_memory
++from run_loop_guarded import read_host_memory, prepare_case
++from generate_ballasted import config as pilot_config
+ 
+ 
+ class HostMemory(unittest.TestCase):
+@@ -48,5 +51,91 @@ class HostMemory(unittest.TestCase):
+                 self.read_sample(sample)
+ 
+ 
++class CasePreparation(unittest.TestCase):
++    cases = (
++        ('central_gust', .002, .02, True),
++        ('hybrid_gust', .002, .02, True),
++        ('hybrid_calm', .002, .02, False),
++        ('hybrid_half_dt', .001, .02, True),
++        ('hybrid_half_shape', .002, .01, True),
++    )
++
++    def test_ballasted_options_reach_generator(self):
++        for case, dt, shape_period, gust in self.cases:
++            with self.subTest(case=case), tempfile.TemporaryDirectory() as directory:
++                out = Path(directory)
++                expected_world = out/'pilot/generated/world.sdf'
++                with patch('generate_ballasted.generate', return_value=expected_world) as generate:
++                    world, config = prepare_case(out, case, 'ladera_agricola')
++                generate.assert_called_once_with(
++                    'ladera_agricola', out/'pilot', dt=dt, shape_period=shape_period,
++                    calm=not gust, stop_at_end=True, variant='revised_supports')
++                self.assertEqual(world, expected_world)
++                recorded = yaml.safe_load(config.read_text())
++                self.assertEqual((recorded['dt'], recorded['shape_period']), (dt, shape_period))
++
++    def test_effective_ballasted_inputs_agree(self):
++        # Actual file generation, no simulation: check the input the plugin will
++        # read as well as the supervisor record and human-readable metadata.
++        for case, dt, shape_period, gust in self.cases:
++            with self.subTest(case=case), tempfile.TemporaryDirectory() as directory:
++                out = Path(directory)
++                world, config = prepare_case(out, case, 'ladera_agricola')
++                recorded = yaml.safe_load(config.read_text())
++                pilot_input = yaml.safe_load((out/'pilot/input.yaml').read_text())
++                metadata = json.loads((world.parent/'metadata.json').read_text())
++                self.assertEqual(recorded, pilot_input)
++                self.assertEqual(recorded, metadata['core'])
++                self.assertEqual((recorded['dt'], recorded['shape_period']), (dt, shape_period))
++                self.assertEqual(metadata['scenario']['gust'], gust)
++                self.assertEqual(metadata['scenario']['equipment_variant'], 'revised_supports')
++                plugin = ET.parse(world).getroot().find("world/plugin[@name='agro::LoopSystem']")
++                self.assertEqual(plugin.findtext('gust'), str(gust).lower())
++                self.assertEqual(plugin.findtext('mode'), 'central_only')
++                self.assertEqual(plugin.findtext('stop_at_end'), 'true')
++                params = Path(plugin.findtext('params'))
++                self.assertEqual(params, world.parent/'loop.params')
++                effective = {}
++                for line in params.read_text().splitlines():
++                    if not line or line.startswith('#'):
++                        continue
++                    key, *values = line.split()
++                    if key == 'terrain':
++                        self.assertEqual(int(values[0]), len(recorded['terrain']))
++                        coords = list(map(float, values[1:]))
++                        effective[key] = [coords[i:i+2] for i in range(0, len(coords), 2)]
++                    else:
++                        effective[key] = float(values[0])
++                self.assertEqual(effective, recorded)
++
++    def test_variants_and_patio_alias_preserve_selection(self):
++        # Previous positional callers keep their variant argument in position 5.
++        for variant in ('baseline', 'compact_candidate', 'revised_supports'):
++            with self.subTest(variant=variant), tempfile.TemporaryDirectory() as directory:
++                out = Path(directory)
++                expected, _, _ = pilot_config('buitrago_patio', None, None, False, variant)
++                with patch('generate_ballasted.generate', return_value=out/'world.sdf') as generate:
++                    _, config = prepare_case(out, 'central_gust', 'buitrago_patio', variant)
++                self.assertEqual(yaml.safe_load(config.read_text()), expected)
++                self.assertEqual(generate.call_args.kwargs['variant'], variant)
++        patio, _, _ = pilot_config('buitrago_patio')
++        pisos, _, _ = pilot_config('buitrago_entre_pisos')
++        self.assertEqual(patio, pisos)
++        self.assertEqual(patio['terrain'], [[0, 0], [8.6, 3.2]])
++
++    def test_historical_loop_options_are_preserved(self):
++        for case, dt, shape_period, gust in self.cases:
++            with self.subTest(case=case), tempfile.TemporaryDirectory() as directory:
++                out = Path(directory)
++                with patch('run_loop_guarded.read_config', return_value={'dt': .002, 'shape_period': .02}), \
++                        patch('run_loop_guarded.generate', return_value=out/'world.sdf') as generate:
++                    _, config = prepare_case(out, case)
++                self.assertEqual(yaml.safe_load(config.read_text()), {'dt': dt, 'shape_period': shape_period})
++                generate.assert_called_once_with(
++                    config, out/'generated',
++                    mode='central_only' if case == 'central_gust' else 'central_local',
++                    gust=gust, stop_at_end=True)
++
++
+ if __name__ == '__main__':
+     unittest.main()

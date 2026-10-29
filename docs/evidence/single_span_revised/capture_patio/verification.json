@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "checks": {
+    "gazebo_clean_exit": true,
+    "no_capture_errors": true,
+    "complete_core_cycle": true,
+    "live_sensor": true,
+    "coverage_follow": true,
+    "coverage_lower": true,
+    "coverage_overview": true,
+    "coverage_upper": true,
+    "decode_gazebo.mp4": true,
+    "frames_gazebo.mp4": true,
+    "decode_follow.mp4": true,
+    "frames_follow.mp4": true,
+    "parity_global.csv": true,
+    "parity_carriers.csv": true,
+    "parity_cables.csv": true,
+    "parity_bases.csv": true,
+    "parity_geometry.csv": true,
+    "reserve_preserved": true
+  },
+  "coverage": {
+    "follow": {
+      "frames": 816,
+      "first_s": 0.04,
+      "last_s": 163.0,
+      "max_gap_s": 0.20000000000001705
+    },
+    "lower": {
+      "frames": 816,
+      "first_s": 0.04,
+      "last_s": 163.0,
+      "max_gap_s": 0.20000000000001705
+    },
+    "overview": {
+      "frames": 816,
+      "first_s": 0.04,
+      "last_s": 163.0,
+      "max_gap_s": 0.20000000000001705
+    },
+    "upper": {
+      "frames": 816,
+      "first_s": 0.04,
+      "last_s": 163.0,
+      "max_gap_s": 0.20000000000001705
+    }
+  },
+  "videos": {
+    "gazebo.mp4": {
+      "stream": {
+        "width": 1280,
+        "height": 800,
+        "r_frame_rate": "20/1",
+        "duration": "40.800000",
+        "nb_read_frames": "816"
+      },
+      "decode_exit_code": 0,
+      "decode_error": ""
+    },
+    "follow.mp4": {
+      "stream": {
+        "width": 1280,
+        "height": 800,
+        "r_frame_rate": "20/1",
+        "duration": "40.800000",
+        "nb_read_frames": "816"
+      },
+      "decode_exit_code": 0,
+      "decode_error": ""
+    }
+  },
+  "parity": {
+    "global.csv": {
+      "native_sha256": "3c3842053c5b07f36deaccebf5e9f75caaa8a8b9fd54a14afc75d3f577d4df01",
+      "reference_sha256": "3c3842053c5b07f36deaccebf5e9f75caaa8a8b9fd54a14afc75d3f577d4df01",
+      "identical": true
+    },
+    "carriers.csv": {
+      "native_sha256": "70c4098732085b2071c17e68dff61251983175a00fa68a9e82e3c859bbcb312c",
+      "reference_sha256": "70c4098732085b2071c17e68dff61251983175a00fa68a9e82e3c859bbcb312c",
+      "identical": true
+    },
+    "cables.csv": {
+      "native_sha256": "c014e6621dfa569087a83eb169728c2bd49dc9ed07851bc077d0b9ba4dcf7cca",
+      "reference_sha256": "c014e6621dfa569087a83eb169728c2bd49dc9ed07851bc077d0b9ba4dcf7cca",
+      "identical": true
+    },
+    "bases.csv": {
+      "native_sha256": "30d96e36fa574fe576147028fc8370caced437688438d8917ec8f8b74f1bc1d7",
+      "reference_sha256": "30d96e36fa574fe576147028fc8370caced437688438d8917ec8f8b74f1bc1d7",
+      "identical": true
+    },
+    "geometry.csv": {
+      "native_sha256": "69daf52d43fb2f66452d4dd1ab41763870cef7ca3e66b96cd56ceca68d934260",
+      "reference_sha256": "69daf52d43fb2f66452d4dd1ab41763870cef7ca3e66b96cd56ceca68d934260",
+      "identical": true
+    }
+  },
+  "min_host_free_gib": 6.868873596191406,
+  "peak_tree_rss_gib": 2.7914276123046875,
+  "physical_validation": false,
+  "visual_review_required": true,
+  "known_geometry_conflicts_not_cleared": true
+}

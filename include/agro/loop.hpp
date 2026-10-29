@@ -30,6 +30,11 @@ inline double wrap(double s,double L) {s=std::fmod(s,L);return s<0?s+L:s;}
 inline void require(bool yes,const std::string &why) {if(!yes) throw std::runtime_error(why);}
 
 struct Config {
+  int single_span=0;
+  double descending_payload=10;
+  double tractor_lift=.8,base_offset=0;
+  double ballast_litres=600,ballast_fill=.8,station_dry_mass=85,base_x=2.8,base_y=3.3;
+  double soil_mu=.55,tractor_pretension=100,tank_bottom=.22,tank_height=1,dry_cg_z=.8;
   int carriers_per_lane=3, supports_per_segment=4, cable_segments=12;
   double dt=.002, shape_period=.02, log_period=.05, visual_period=.05;
   double support_height=6, lane_half_width=2, gauge=.8, guide_half_length=.8;
@@ -51,13 +56,21 @@ struct Config {
     require(carriers_per_lane>=1&&carriers_per_lane<=12,"carriers_per_lane outside [1,12]");
     require(supports_per_segment>=3&&supports_per_segment<=8,"supports_per_segment outside [3,8]");
     require(cable_segments>=6&&cable_segments<=48,"cable_segments outside [6,48]");
-    require(terrain.size()==5,"need exactly valley-peak-valley-peak-valley");
+    require(single_span==0||single_span==1,"invalid topology selector");
+    require(terrain.size()==(single_span?2:5),"terrain count incompatible with topology");
+    if(single_span) require(carriers_per_lane==1&&descending_payload>=0,"single span needs two carriers and nonnegative descending load");
+    if(single_span) {
+      require(std::isfinite(tractor_lift)&&tractor_lift>=.3&&std::isfinite(base_offset)&&base_offset>=0,"invalid tractor/base geometry");
+      for(double v:{ballast_litres,station_dry_mass,base_x,base_y,soil_mu,tractor_pretension,tank_height,dry_cg_z})
+        require(std::isfinite(v)&&v>0,"invalid ballast/station parameter");
+      require(std::isfinite(ballast_fill)&&ballast_fill>=0&&ballast_fill<=1&&tank_bottom>=0,"invalid filling/tank level");
+    }
     for(size_t i=0;i<terrain.size();++i) {
       require(std::isfinite(terrain[i].first)&&std::isfinite(terrain[i].second),"nonfinite terrain");
       if(i) require(terrain[i].first>terrain[i-1].first,"terrain x must increase");
     }
     require(terrain.front().first==0,"terrain must start at x=0");
-    require(terrain[1].second>terrain[0].second&&terrain[1].second>terrain[2].second&&
+    if(!single_span) require(terrain[1].second>terrain[0].second&&terrain[1].second>terrain[2].second&&
       terrain[3].second>terrain[2].second&&terrain[3].second>terrain[4].second&&
       terrain[3].second>terrain[1].second&&terrain[4].second>terrain[0].second,"invalid terrain extrema");
     for(double v:{dt,shape_period,log_period,visual_period,support_height,lane_half_width,gauge,
@@ -82,12 +95,15 @@ struct Config {
     std::string key;double v;
     while(f>>key) {
       if(key[0]=='#') {std::string tail;std::getline(f,tail);continue;}
-      if(key=="terrain") {int n=0;require(bool(f>>n)&&n==5,"invalid terrain count");c.terrain.clear();
+      if(key=="terrain") {int n=0;require(bool(f>>n)&&(n==2||n==5),"invalid terrain count");c.terrain.clear();
         for(int i=0;i<n;++i) {double x=0,z=0;require(bool(f>>x>>z),"invalid terrain point");c.terrain.emplace_back(x,z);}continue;}
       require(bool(f>>v)&&std::isfinite(v),"invalid config value for "+key);
 #define P(name) if(key==#name) {c.name=v;continue;}
 #define I(name) if(key==#name) {require(v==std::floor(v),"integer expected: "+key);c.name=int(v);continue;}
-      I(carriers_per_lane) I(supports_per_segment) I(cable_segments)
+      I(single_span) P(descending_payload) I(carriers_per_lane) I(supports_per_segment) I(cable_segments)
+      P(tractor_lift) P(base_offset)
+      P(ballast_litres) P(ballast_fill) P(station_dry_mass) P(base_x) P(base_y)
+      P(soil_mu) P(tractor_pretension) P(tank_bottom) P(tank_height) P(dry_cg_z)
       P(dt) P(shape_period) P(log_period) P(visual_period) P(support_height) P(lane_half_width) P(gauge)
       P(guide_half_length) P(guide_lift) P(slack) P(cable_EA) P(cable_kg_per_horizontal_m)
       P(bogie_mass) P(hanger_mass) P(pallet_mass) P(nominal_payload) P(suspension)
@@ -172,7 +188,8 @@ class Route {
   std::array<std::vector<Span>,2> spans;
   explicit Route(Config cfg):c(std::move(cfg)) {
     c.validate();
-    for(int j=0;j<4;++j)for(int k=0;k<c.supports_per_segment-1;++k)
+    if(c.single_span) support_x.push_back(c.terrain.front().first);
+    else for(int j=0;j<4;++j)for(int k=0;k<c.supports_per_segment-1;++k)
       support_x.push_back(c.terrain[j].first+(c.terrain[j+1].first-c.terrain[j].first)*k/(c.supports_per_segment-1));
     support_x.push_back(c.terrain.back().first);
     for(int lane=0;lane<2;++lane)for(size_t i=1;i<support_x.size();++i) {
@@ -191,13 +208,21 @@ class Route {
     if(x>=c.terrain.back().first)return c.terrain.back().second;
     for(size_t j=1;j<c.terrain.size();++j)if(x<=c.terrain[j].first) {
       auto a=c.terrain[j-1],b=c.terrain[j];double u=(x-a.first)/(b.first-a.first);
-      return a.second+(b.second-a.second)*(.5-.5*std::cos(pi*u));}
+      return a.second+(b.second-a.second)*(c.single_span?u:(.5-.5*std::cos(pi*u)));}
     throw std::runtime_error("unreachable terrain interval");
   }
   double xFromArc(double s) const {
     s=std::clamp(s,0.,lane_length);auto it=std::upper_bound(arc_s.begin(),arc_s.end(),s);
     size_t j=std::min<size_t>(arc_s.size()-1,std::max<size_t>(1,it-arc_s.begin()));
     double u=(s-arc_s[j-1])/(arc_s[j]-arc_s[j-1]);return arc_x[j-1]*(1-u)+arc_x[j]*u;
+  }
+  double guideZ(double x) const {
+    if(!c.single_span)return ground(x)+c.support_height+c.guide_lift;
+    double X=c.terrain.back().first,slope=(c.terrain.back().second-c.terrain.front().second)/X;
+    double d=std::min(x,X-x),u=std::clamp(d/c.guide_half_length,0.,1.);
+    double rise=c.guide_half_length*(2*u*u-u*u*u)*slope;
+    if(d<c.guide_half_length)return (x<X/2?c.terrain.front().second+rise:c.terrain.back().second-rise)+c.support_height+c.guide_lift;
+    return ground(x)+c.support_height+c.guide_lift;
   }
   RoutePoint at(double s) const {
     s=wrap(s,total);double L=lane_length,r=c.lane_half_width,X=c.terrain.back().first;
@@ -207,7 +232,7 @@ class Route {
       int i=int(std::min<size_t>(support_x.size()-2,std::max<size_t>(1,it-support_x.begin())-1));
       double d=std::min(std::abs(x-support_x[i]),std::abs(x-support_x[i+1]));
       double wgt=smooth(d/c.guide_half_length);
-      double z=(1-wgt)*(ground(x)+c.support_height+c.guide_lift)+wgt*spans[lane][i].z(x);
+      double z=(1-wgt)*guideZ(x)+wgt*spans[lane][i].z(x);
       return {{x,lane==0?-r:r,z},lane,i,wgt};
     }
     if(s<L+pi*r) {double a=-pi/2+(s-L)/r;
@@ -226,7 +251,7 @@ class Route {
       if(a.lane==p.lane&&a.span==p.span&&a.cable_weight>1e-10)
         loads.push_back({a.p.x-span.x0,masses[j]*g*.5*a.cable_weight});}
     span.solve(std::move(loads),false);
-    p.p.z=(1-p.cable_weight)*(ground(p.p.x)+c.support_height+c.guide_lift)+p.cable_weight*span.z(p.p.x);
+    p.p.z=(1-p.cable_weight)*guideZ(p.p.x)+p.cable_weight*span.z(p.p.x);
     return p.p;
   }
   void equilibrium(const std::vector<double> &positions,const std::vector<double> &masses) {
@@ -243,6 +268,18 @@ class Route {
 };
 
 struct Motion {double s=0,v=0,a=0;};
+class Simulation;
+// Optional causal service controller. The legacy scripted run remains the default.
+// The controller owns scheduling only; all motion and energy remain integrated here.
+struct Program {
+  virtual ~Program()=default;
+  virtual Motion reference(double time) const=0;
+  virtual double duration() const=0;
+  virtual void beforeStep(Simulation &,double)=0;
+  virtual void afterStep(Simulation &)=0;
+  virtual double loadedMass() const {return 0;}
+  virtual double unloadedMass() const {return 0;}
+};
 struct Leg {
   double distance,speed,tau,cruise,duration;
   Leg(double d,const Config &c):distance(d),speed(c.max_speed) {
@@ -278,11 +315,12 @@ class Simulation {
   bool gust_end_recorded=false;
   int stage=0,load_status=0,unload_status=0;double operation_start=-1;
   std::vector<V3> path_d,path_dd;
+  Program *program=nullptr; // non-owning; callers keep the program alive past Simulation
   Simulation(Config cfg,bool use_local=true,bool use_gust=true):c(std::move(cfg)),route(c),
     first(route.lane_length,c),second(route.total-route.lane_length,c),hybrid(use_local),gust(use_gust) {
     for(int lane=0;lane<2;++lane)for(int j=0;j<c.carriers_per_lane;++j) {
       Carrier a;a.phase=(lane?route.lane_length+pi*c.lane_half_width:0)+route.lane_length*j/c.carriers_per_lane+c.station_start_offset;
-      a.payload=lane?c.nominal_payload*(j%2? .5:1):0;carts.push_back(a);}
+      a.payload=c.single_span?0:(lane?c.nominal_payload*(j%2? .5:1):0);carts.push_back(a);}
     updateShape();
     // Initialise passive couplings near loaded equilibrium; do not start with six
     // artificially released springs. This is an initial condition, not a reset in motion.
@@ -299,8 +337,9 @@ class Simulation {
   double topArrival() const {return c.initial_dwell+first.duration;}
   double secondStart() const {return topArrival()+c.station_dwell;}
   double finalArrival() const {return secondStart()+second.duration;}
-  double duration() const {return finalArrival()+c.final_dwell;}
+  double duration() const {return program?program->duration():finalArrival()+c.final_dwell;}
   Motion reference(double time) const {
+    if(program)return program->reference(time);
     if(time<c.initial_dwell)return {};
     if(time<topArrival())return first.at(time-c.initial_dwell);
     if(time<secondStart())return {route.lane_length,0,0};
@@ -330,6 +369,13 @@ class Simulation {
     const auto &a=carts.front();double d=wrap(q+a.phase+a.offset-s+route.total/2,route.total)-route.total/2;
     return std::abs(d)<c.station_tolerance&&std::abs(v)<c.stop_speed&&std::abs(a.offset_speed)<c.stop_speed;
   }
+  double payloadSpecificEnergy(size_t id) const {
+    const auto &a=carts[id];const auto &d=path_d[id];
+    // Derivative of energy() with respect to payload at fixed shape and state.
+    // Keep the same separated translational/pendulum kinetic approximation.
+    return .5*d.dot(d)*sq(v+a.offset_speed)+.5*sq(c.suspension)*(sq(a.wx)+sq(a.wy))+
+      g*a.pivot.z-g*c.suspension*std::cos(a.tx)*std::cos(a.ty);
+  }
   void operation(double h) {
     bool loading=stage==0,unloading=stage==2;if(!loading&&!unloading)return;
     int &status=loading?load_status:unload_status;
@@ -339,12 +385,20 @@ class Simulation {
       events.push_back({t,loading?"load_begin":"unload_begin",0,carts[0].payload,loading?c.nominal_payload:0});}
     if(status==1) {
       require(stoppedAt(target),"load/unload outside stopped station");
-      auto &a=carts[0];double before=a.payload,u=smooth((t+h-operation_start)/c.payload_ramp);
-      a.payload=c.nominal_payload*(loading?u:1-u);
+      for(size_t i=0;i<(c.single_span?carts.size():1);++i) {
+      auto &a=carts[i];double before=a.payload,u=smooth((t+h-operation_start)/c.payload_ramp);
+      if(c.single_span) {
+        double expected=i?(loading?route.lane_length+pi*c.lane_half_width:2*route.lane_length+pi*c.lane_half_width):target;
+        double error=wrap(q+a.phase+a.offset-expected+route.total/2,route.total)-route.total/2;
+        require(std::abs(a.offset_speed)<c.stop_speed&&std::abs(error)<c.station_tolerance,"carrier not present/stopped during service");
+      }
+      double payload=i?c.descending_payload:c.nominal_payload;
+      a.payload=payload*(loading?u:1-u);
       // Mass/energy enter or leave through the loading operation, not through the motor.
-      load_energy+=(a.payload-before)*(g*a.pallet.z+.5*a.velocity.dot(a.velocity));
-      if(t+h-operation_start>=c.payload_ramp) {status=2;events.push_back({t+h,loading?"load_end":"unload_end",0,
-        loading?0:c.nominal_payload,a.payload});}
+      load_energy+=(a.payload-before)*payloadSpecificEnergy(i);
+      if(t+h-operation_start>=c.payload_ramp) {status=2;events.push_back({t+h,loading?"load_end":"unload_end",int(i),
+        loading?0:payload,a.payload});}
+      }
     }
   }
   double energy() const {
@@ -357,7 +411,8 @@ class Simulation {
   double residual() const {return energy()-energy0-(drive_work+local_work+wind_work+load_energy-loss_work-stop_loss);}
   void step(double h) {
     require(h>0&&h<=.01,"bad integration step");if(complete)return;
-    h=std::min(h,duration()-t);stage=stageAt(t);operation(h);
+    h=std::min(h,duration()-t);
+    if(program)program->beforeStep(*this,h);else {stage=stageAt(t);operation(h);}
     if(t-last_shape>=c.shape_period-1e-10)updateShape();
     auto ref=reference(t);double coupling_sum=0;std::vector<V3> d,dd;
     for(size_t j=0;j<carts.size();++j) {auto &a=carts[j];
@@ -423,9 +478,52 @@ class Simulation {
       for(size_t k=j+1;k<carts.size();++k) {double gap=(a.pallet-carts[k].pallet).norm();min_gap=std::min(min_gap,gap);
         require(gap>1.5,"pallet envelopes overlap");}}
     require(std::isfinite(q)&&std::isfinite(v)&&std::isfinite(energy()),"nonfinite state");
-    if(t>=duration()-1e-8) {require(load_status==2&&unload_status==2,"script did not service loading stations");
+    if(program)program->afterStep(*this);
+    else if(t>=duration()-1e-8) {require(load_status==2&&unload_status==2,"script did not service loading stations");
       require(std::abs(q-route.total)<c.station_tolerance,"full loop incomplete");complete=true;
       events.push_back({t,"complete",-1,0,0});}
   }
 };
+// Static force envelope, not native support dynamics or structural approval.
+// Two symmetric cables per lane; vertical reactions include cable self-weight.
+struct BallastResult {
+  double water_kg,mass_kg,cg_z,normal_N,horizontal_N,moment_Nm,sliding_margin,overturn_margin,pressure_Pa;
+  bool in_domain;
+};
+inline BallastResult ballast(const Simulation &s,int station) {
+  const auto &c=s.c;require(c.single_span&&(station==0||station==1),"ballast requires two-station topology");
+  double water=1000*(c.ballast_litres/1000)*c.ballast_fill,mass=c.station_dry_mass+water;
+  double cg=(c.station_dry_mass*c.dry_cg_z+water*(c.tank_bottom+c.tank_height*c.ballast_fill/2))/mass;
+  double horizontal=0,vertical=0,moment=0;
+  for(auto &lane:s.route.spans) {
+    const auto &span=lane.front();horizontal+=2*span.H;
+    vertical+=2*(station?span.rightReaction():span.leftReaction());
+  }
+  double X=c.terrain.back().first,Z=c.terrain.back().second-c.terrain.front().second;
+  double slope=Z/X;
+  // Conservative branch tension bound: T0 and T0+abs(motor force).
+  // No claim of a resolved tractor sag/tension field.
+  double tractorH=(2*c.tractor_pretension+std::abs(s.main_force))/std::hypot(1.,slope);
+  vertical+=(station?1:-1)*tractorH*slope;
+  moment=horizontal*c.support_height+tractorH*(c.support_height+c.tractor_lift)+c.base_offset*std::abs(vertical);
+  horizontal+=tractorH;
+  for(const auto &a:s.carts) {
+    auto p=s.route.at(s.q+a.phase+a.offset);
+    double guideFraction=1-p.cable_weight;
+    int end=p.p.x<X/2?0:1;
+    if(end==station) {
+      double weight=(c.tare()+a.payload)*g*guideFraction;
+      vertical+=weight;
+      moment+=weight*std::abs(p.p.x-(station?X+c.base_offset:-c.base_offset)); // conservative overturn envelope
+    }
+    // Bound the entire horizontal aerodynamic force at each station separately;
+    // no claim that this is an identified dynamic load-sharing law.
+    double windBound=std::hypot(a.wind_force.x,a.wind_force.y);
+    horizontal+=windBound;moment+=windBound*c.support_height;
+  }
+  double normal=mass*g+vertical;
+  double slide=c.soil_mu*normal/std::max(1e-9,horizontal);
+  double overturn=normal*std::min(c.base_x,c.base_y)/2/std::max(1e-9,moment);
+  return {water,mass,cg,normal,horizontal,moment,slide,overturn,normal/(c.base_x*c.base_y),normal>0&&slide>=1&&overturn>=1};
+}
 } // namespace agro::loop

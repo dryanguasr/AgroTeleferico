@@ -1,0 +1,21 @@
+{
+  "schema": "agro-demand-execution-v1",
+  "binary": "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/install/agro_teleferico/lib/agro_teleferico/agro_loop_cli",
+  "binary_sha256": "7b43f9e24ca9adab42108d64be9fc4cf3630284a1a2105b1a71e897c1fcbcb57",
+  "dataset_manifest_sha256": "df146af2f438e7e21a71a20cb4900fa6eff1f570879f7f00af2a4ff7d4dbce60",
+  "frozen_files": {
+    "dispatch.params": "b901c17a88ad939d1b9d97bce5a08b92a2734ccb7858bf08bd1588ec7959685d",
+    "loop.params": "f52ea7c278654aa9eabd99e6753bae5590860a266ecdf912174bb402b2e11c76",
+    "predictor.csv": "40018fdc7ebcbcb7833f8e98fba2050444b038a6835af13f8665e4668906274f"
+  },
+  "runner_sha256": "c4e5424aee2120aeb9a46e1965b0fff22e43bfd18495371b97c33f81554d21ce",
+  "host_memory": "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/demand_campaign_guard_02/host_memory.json",
+  "git_head": "6a824b4dc03be8e2cdb4bf4200c7289bdf7cd7cb",
+  "source_sha256": {
+    "include/agro/demand.hpp": "935a3cede89567ddc3134a89c55669629cd5557f5b425a5612c17ccc72a9c0a0",
+    "include/agro/loop.hpp": "b379f8224fc41f5d2233f3ff6b5da790ccf26d841461fcf9d158946de1bb102d",
+    "include/agro/loop_log.hpp": "aa48b90cca9ab2ea2834e1049cfc6f645c7ff351e994eebc25391241341a7355",
+    "include/agro/physics.hpp": "5021a0570ba2ec2e2e36c21e3ffa48fbebf2d210eba2ff33951fc75b9d5eb39a",
+    "src/loop_cli.cpp": "c2bcc38876324a0623a4f48037be2e19e905aa67de28cf87aca31ea05edd2a29"
+  }
+}

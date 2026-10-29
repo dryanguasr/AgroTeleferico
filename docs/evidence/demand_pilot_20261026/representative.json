@@ -1,0 +1,19 @@
+{
+  "selected": true,
+  "seed": 26,
+  "dataset": "alternating_r24_s026",
+  "rate_per_hour": 24,
+  "pattern": "alternating",
+  "selection": "closest baseline A drive_positive_J to eligible-seed median; ties use lower seed",
+  "eligible_seeds": 30,
+  "baseline_median_positive_J": 1961.246381675,
+  "baseline_selected_positive_J": 1968.93736918,
+  "runs": {
+    "A": "runs/alternating_r24_s026/A/attempt_001",
+    "B": "runs/alternating_r24_s026/B/attempt_001",
+    "C": "runs/alternating_r24_s026/C/attempt_001",
+    "D": "runs/alternating_r24_s026/D/attempt_001"
+  },
+  "input_path": "inputs/alternating_r24_s026/requests.csv",
+  "input_sha256": "74855b3e1cf420c7472597d7fad56161fc8728aae15aaf38a92c852740c45122"
+}

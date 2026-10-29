@@ -1,0 +1,58 @@
+{
+  "core": {
+    "single_span": 1,
+    "carriers_per_lane": 1,
+    "support_height": 2.4,
+    "lane_half_width": 1.1,
+    "gauge": 0.42,
+    "guide_half_length": 0.6,
+    "guide_lift": 0.02,
+    "slack": 0.001,
+    "cable_EA": 80000,
+    "cable_kg_per_horizontal_m": 0.08,
+    "cable_segments": 32,
+    "bogie_mass": 3,
+    "hanger_mass": 0.6,
+    "pallet_mass": 1.4,
+    "nominal_payload": 5,
+    "descending_payload": 10,
+    "suspension": 0.48,
+    "max_speed": 0.2,
+    "max_accel": 0.04,
+    "main_equivalent_mass": 45,
+    "main_force_limit": 600,
+    "coupling_k": 1800,
+    "coupling_c": 70,
+    "local_damping_gain": 0,
+    "wind_speed": 2,
+    "min_clearance": 0.4,
+    "area_empty": 0.12,
+    "area_per_kg": 0.006,
+    "max_tension": 4000,
+    "station_start_offset": 0,
+    "dt": 0.002,
+    "visual_period": 0.1,
+    "tractor_lift": 0.35,
+    "base_offset": 0.9
+  },
+  "station": {
+    "dry_mass_kg": 85,
+    "capacity_litres": 600,
+    "fill_fraction": 0.8,
+    "water_density_kg_m3": 1000,
+    "footprint_x_m": 2.8,
+    "footprint_y_m": 3.3,
+    "tank_bottom_m": 0.22,
+    "tank_height_m": 1.0,
+    "dry_cg_z_m": 0.8,
+    "friction_coefficient": 0.55,
+    "tractor_pretension_N": 100,
+    "note": "Assumed nominal volume, not a safe capacity. Fixed bases; analytic screening only."
+  },
+  "variant": "compact_candidate_not_accepted",
+  "scenario_overrides": {
+    "buitrago_entre_pisos": {
+      "span_horizontal_m": 8.6
+    }
+  }
+}

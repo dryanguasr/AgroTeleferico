@@ -1,0 +1,23 @@
+{
+  "classification": "verified derived computational statistics",
+  "input_sha256": "6c672767bb9dc4e12fad34f01fa13873291a355d1b80365e077e483469fb332d",
+  "script_sha256": "6b661b33b8631747bb0be8218d35d2ecbe991ec092c0f9d55b86f3b43f2a1ffb",
+  "bootstrap_replicates": 10000,
+  "method": "paired seed resampling; same deterministic keys as main analysis",
+  "metrics": [
+    "positive_J_per_useful_kg",
+    "loss_work_J",
+    "load_energy_J",
+    "residual_J",
+    "predictor_absolute_error_J",
+    "trips",
+    "handling_s",
+    "restoration_time_s",
+    "operator_busy_lower_fraction",
+    "operator_busy_upper_fraction"
+  ],
+  "n_per_group": 30,
+  "excluded_pairs": 0,
+  "occupancy": "operator busy time divided by whole run time; stations reported separately",
+  "energy_per_kg": "ratio per seed before paired subtraction; no ratio of means"
+}

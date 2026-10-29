@@ -1,0 +1,135 @@
+{
+  "classification": "verified measurements; tree RSS and host free memory are different quantities",
+  "profiles_gib": {
+    "CLI_admission": 6,
+    "native_admission": 7,
+    "headless_demand_video_admission": 7.5,
+    "preventive_stop_below": 5,
+    "reserve": 4
+  },
+  "capture_peak_tree_rss_gib": 2.242351531982422,
+  "capture_min_host_free_gib": 5.028133392333984,
+  "guard_results": {
+    "demand_campaign_guard_02": {
+      "exit_code": 0,
+      "reason": null,
+      "wall_s": 6741.761382992,
+      "min_host_free_gib": 7.674766540527344,
+      "peak_tree_rss_gib": 0.0787353515625,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_native_guard_02": {
+      "exit_code": 1,
+      "reason": null,
+      "wall_s": 811.1585907380002,
+      "min_host_free_gib": 5.507820129394531,
+      "peak_tree_rss_gib": 1.3893165588378906,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_native_guard_03": {
+      "exit_code": 0,
+      "reason": null,
+      "wall_s": 767.750822603,
+      "min_host_free_gib": 5.728763580322266,
+      "peak_tree_rss_gib": 1.3872528076171875,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_media_guard_02": {
+      "exit_code": 1,
+      "reason": null,
+      "wall_s": 6.132769493000069,
+      "min_host_free_gib": 7.830162048339844,
+      "peak_tree_rss_gib": 0.06121826171875,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_media_guard_03": {
+      "exit_code": 1,
+      "reason": null,
+      "wall_s": 1832.442573802,
+      "min_host_free_gib": 5.028133392333984,
+      "peak_tree_rss_gib": 2.242351531982422,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_capture_verify_d_guard_02": {
+      "exit_code": 0,
+      "reason": null,
+      "wall_s": 18.335215470000094,
+      "min_host_free_gib": 11.191032409667969,
+      "peak_tree_rss_gib": 0.11388397216796875,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_compose_a_guard_01": {
+      "exit_code": 1,
+      "reason": null,
+      "wall_s": 0.5437489600000163,
+      "min_host_free_gib": 9.42007064819336,
+      "peak_tree_rss_gib": 0.00983428955078125,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_compose_a_guard_02": {
+      "exit_code": 0,
+      "reason": null,
+      "wall_s": 169.545990567,
+      "min_host_free_gib": 7.143951416015625,
+      "peak_tree_rss_gib": 0.9389686584472656,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_compose_b_guard_01": {
+      "exit_code": 0,
+      "reason": null,
+      "wall_s": 168.3196532909999,
+      "min_host_free_gib": 7.161312103271484,
+      "peak_tree_rss_gib": 0.9388809204101562,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_compose_c_guard_01": {
+      "exit_code": 0,
+      "reason": null,
+      "wall_s": 98.76129771399974,
+      "min_host_free_gib": 9.654037475585938,
+      "peak_tree_rss_gib": 0.9333648681640625,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    },
+    "demand_compose_d_guard_01": {
+      "exit_code": 0,
+      "reason": null,
+      "wall_s": 107.26136737399975,
+      "min_host_free_gib": 9.66183853149414,
+      "peak_tree_rss_gib": 0.9333267211914062,
+      "escalations": [],
+      "reserve_gib": 4,
+      "descendant_cleanup": [],
+      "remaining_owned_pids": []
+    }
+  }
+}

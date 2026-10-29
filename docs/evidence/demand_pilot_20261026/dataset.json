@@ -1,0 +1,1822 @@
+{
+  "schema": "agro-demand-dataset-v1",
+  "synthetic": true,
+  "config_sha256": "f93a3f07ab58af6436d61ddec232a34cfc41641b73a80884ccb142a037d018f0",
+  "generator_sha256": "c4e5424aee2120aeb9a46e1965b0fff22e43bfd18495371b97c33f81554d21ce",
+  "datasets": [
+    {
+      "id": "balanced_r12_s000",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 0,
+      "requests": 12,
+      "useful_mass_kg": 57,
+      "path": "inputs/balanced_r12_s000/requests.csv",
+      "sha256": "ac85cb29ef9ea542451411ace608f9029e2e55d3e5a8454abcffa6cfd3984d62"
+    },
+    {
+      "id": "balanced_r12_s001",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 1,
+      "requests": 14,
+      "useful_mass_kg": 70,
+      "path": "inputs/balanced_r12_s001/requests.csv",
+      "sha256": "53e74d4add88d23260bdcf4fdbcda747a69df685de9a1678d5d5f1b34ab8c1a7"
+    },
+    {
+      "id": "balanced_r12_s002",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 2,
+      "requests": 11,
+      "useful_mass_kg": 43,
+      "path": "inputs/balanced_r12_s002/requests.csv",
+      "sha256": "66d0ed42120492a1f3efb7a2eb12f18fd03689ba413e09729737e1fe64b80cb7"
+    },
+    {
+      "id": "balanced_r12_s003",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 3,
+      "requests": 12,
+      "useful_mass_kg": 57,
+      "path": "inputs/balanced_r12_s003/requests.csv",
+      "sha256": "11de88f4a4586c26ca767fffd5d1a8bb2b2c7a966875f6c161fde019b42120be"
+    },
+    {
+      "id": "balanced_r12_s004",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 4,
+      "requests": 13,
+      "useful_mass_kg": 56,
+      "path": "inputs/balanced_r12_s004/requests.csv",
+      "sha256": "1fc2fd09e32af82e538994367ce89490299f5426eb1d190b356c95ebf5605b93"
+    },
+    {
+      "id": "balanced_r12_s005",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 5,
+      "requests": 9,
+      "useful_mass_kg": 42,
+      "path": "inputs/balanced_r12_s005/requests.csv",
+      "sha256": "28f21b6a015dcfe2737375f65adb971a57e29365d183ca939b226eb1113fb5b3"
+    },
+    {
+      "id": "balanced_r12_s006",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 6,
+      "requests": 8,
+      "useful_mass_kg": 46,
+      "path": "inputs/balanced_r12_s006/requests.csv",
+      "sha256": "093c6367f1d942ae90b68858c859a88c86323008c6cce683875f825369d73af1"
+    },
+    {
+      "id": "balanced_r12_s007",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 7,
+      "requests": 11,
+      "useful_mass_kg": 46,
+      "path": "inputs/balanced_r12_s007/requests.csv",
+      "sha256": "022eb83a7c512b2778b705cc55f1dc14badcb0adee46ecd44629f335867588a9"
+    },
+    {
+      "id": "balanced_r12_s008",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 8,
+      "requests": 17,
+      "useful_mass_kg": 67,
+      "path": "inputs/balanced_r12_s008/requests.csv",
+      "sha256": "51995b8f696aafc37fe0f9984f76ec3040811795501210a4b0bd7f0263839b5e"
+    },
+    {
+      "id": "balanced_r12_s009",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 9,
+      "requests": 9,
+      "useful_mass_kg": 39,
+      "path": "inputs/balanced_r12_s009/requests.csv",
+      "sha256": "d855cd43874c414d51074692015192c4c608be3ca1c9649100f4287dfc0a776e"
+    },
+    {
+      "id": "balanced_r12_s010",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 10,
+      "requests": 8,
+      "useful_mass_kg": 25,
+      "path": "inputs/balanced_r12_s010/requests.csv",
+      "sha256": "55ab4db32ec6db87a8f5140b073a1f6f729a75a257b160527f47cb9fc779e422"
+    },
+    {
+      "id": "balanced_r12_s011",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 11,
+      "requests": 15,
+      "useful_mass_kg": 75,
+      "path": "inputs/balanced_r12_s011/requests.csv",
+      "sha256": "fea003d6b872de701ec89103ca8c22e63742efb59c641f263043dfeaa5e106d6"
+    },
+    {
+      "id": "balanced_r12_s012",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 12,
+      "requests": 13,
+      "useful_mass_kg": 71,
+      "path": "inputs/balanced_r12_s012/requests.csv",
+      "sha256": "4ddd4133497951cbca381923da0c6a30b7fd1e9cc534966c83e253e046e289c6"
+    },
+    {
+      "id": "balanced_r12_s013",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 13,
+      "requests": 15,
+      "useful_mass_kg": 48,
+      "path": "inputs/balanced_r12_s013/requests.csv",
+      "sha256": "cbd5ca8ac5848c5f2b232bba37953eeadf54d695517d97adca4105cdab3e1703"
+    },
+    {
+      "id": "balanced_r12_s014",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 14,
+      "requests": 8,
+      "useful_mass_kg": 37,
+      "path": "inputs/balanced_r12_s014/requests.csv",
+      "sha256": "6aa967bc5b5765142fdbc0f56b5efcc1b2c1d38f47f6c55f1e5cf16f94551fb6"
+    },
+    {
+      "id": "balanced_r12_s015",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 15,
+      "requests": 6,
+      "useful_mass_kg": 24,
+      "path": "inputs/balanced_r12_s015/requests.csv",
+      "sha256": "131d39d798f597167356612f2d0cbbb7a870939b7f84474ed5ce9f792018949b"
+    },
+    {
+      "id": "balanced_r12_s016",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 16,
+      "requests": 17,
+      "useful_mass_kg": 76,
+      "path": "inputs/balanced_r12_s016/requests.csv",
+      "sha256": "044b20e0203fce00f954d275d5aebe41b4128b8899be8acdea619d53182360f4"
+    },
+    {
+      "id": "balanced_r12_s017",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 17,
+      "requests": 4,
+      "useful_mass_kg": 14,
+      "path": "inputs/balanced_r12_s017/requests.csv",
+      "sha256": "60ba8e02ae17b137f3d2c5272c2f670d593272c7b168be76ca32d0c6da2d2a84"
+    },
+    {
+      "id": "balanced_r12_s018",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 18,
+      "requests": 12,
+      "useful_mass_kg": 42,
+      "path": "inputs/balanced_r12_s018/requests.csv",
+      "sha256": "c5bd99ed7057594109e2086e960696040a35066b6141497ee0f66d91bd33df03"
+    },
+    {
+      "id": "balanced_r12_s019",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 19,
+      "requests": 14,
+      "useful_mass_kg": 73,
+      "path": "inputs/balanced_r12_s019/requests.csv",
+      "sha256": "16cd2ca5536674f9e4b04a01e0e9e1609ee84efa5e2d255cda5f2c983bfef94c"
+    },
+    {
+      "id": "balanced_r12_s020",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 20,
+      "requests": 14,
+      "useful_mass_kg": 73,
+      "path": "inputs/balanced_r12_s020/requests.csv",
+      "sha256": "84a386e4783341afcd80741360dc21147c5131b013ebca023276770d3b08f11a"
+    },
+    {
+      "id": "balanced_r12_s021",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 21,
+      "requests": 13,
+      "useful_mass_kg": 56,
+      "path": "inputs/balanced_r12_s021/requests.csv",
+      "sha256": "389a0b475855250296757e9809482087e497498602630213952d36937e5c8122"
+    },
+    {
+      "id": "balanced_r12_s022",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 22,
+      "requests": 10,
+      "useful_mass_kg": 44,
+      "path": "inputs/balanced_r12_s022/requests.csv",
+      "sha256": "1c21a8d8f2489e8ae8c138ee6fbcb2249a2d862317f50216152ba4f69b1fe4ec"
+    },
+    {
+      "id": "balanced_r12_s023",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 23,
+      "requests": 12,
+      "useful_mass_kg": 51,
+      "path": "inputs/balanced_r12_s023/requests.csv",
+      "sha256": "c5f048dbddf6fbb54da9048f0643777612a337321289da8269f8b5d5b1fde444"
+    },
+    {
+      "id": "balanced_r12_s024",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 24,
+      "requests": 6,
+      "useful_mass_kg": 18,
+      "path": "inputs/balanced_r12_s024/requests.csv",
+      "sha256": "61c78147106cc3310680887000cf6529060f0135baa15048dd9c6df0704e9c26"
+    },
+    {
+      "id": "balanced_r12_s025",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 25,
+      "requests": 10,
+      "useful_mass_kg": 44,
+      "path": "inputs/balanced_r12_s025/requests.csv",
+      "sha256": "ef5cfc68698b1d79f131f005332a7be163882e61d1de79041d4b6c2ef302c053"
+    },
+    {
+      "id": "balanced_r12_s026",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 26,
+      "requests": 10,
+      "useful_mass_kg": 41,
+      "path": "inputs/balanced_r12_s026/requests.csv",
+      "sha256": "24d466ca418c74ba36593c9bbaedf160a11fdcaafd9cf36d4d131ece09798e7e"
+    },
+    {
+      "id": "balanced_r12_s027",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 27,
+      "requests": 9,
+      "useful_mass_kg": 27,
+      "path": "inputs/balanced_r12_s027/requests.csv",
+      "sha256": "cc5f6905cd75ed2dc02ffbe3fe5c95c9f2ceb1d41ec4b3051e5242303f75b4c9"
+    },
+    {
+      "id": "balanced_r12_s028",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 28,
+      "requests": 17,
+      "useful_mass_kg": 82,
+      "path": "inputs/balanced_r12_s028/requests.csv",
+      "sha256": "ae4eaed2ae8f44f46f47ab8e790d5ac3730fd8c1af876bf33566b4be6e8d4994"
+    },
+    {
+      "id": "balanced_r12_s029",
+      "rate_per_hour": 12,
+      "pattern": "balanced",
+      "seed": 29,
+      "requests": 13,
+      "useful_mass_kg": 65,
+      "path": "inputs/balanced_r12_s029/requests.csv",
+      "sha256": "0c223765c6be71fd855c7dbc086270218a6cde02f43a24e3712e361e9218424c"
+    },
+    {
+      "id": "alternating_r12_s000",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 0,
+      "requests": 15,
+      "useful_mass_kg": 72,
+      "path": "inputs/alternating_r12_s000/requests.csv",
+      "sha256": "deb333af06f597ff2324cee17f8eb82046528719923525caec1a76239a73f4e8"
+    },
+    {
+      "id": "alternating_r12_s001",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 1,
+      "requests": 14,
+      "useful_mass_kg": 64,
+      "path": "inputs/alternating_r12_s001/requests.csv",
+      "sha256": "7a76725914eaa69c9a53d7eea78ffbafc433608056a429f5b92bd66e3bace24a"
+    },
+    {
+      "id": "alternating_r12_s002",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 2,
+      "requests": 11,
+      "useful_mass_kg": 46,
+      "path": "inputs/alternating_r12_s002/requests.csv",
+      "sha256": "cf3b5e170f74e0c21955d066b16e977baab0e7e2b545f52f1e822203c24718d9"
+    },
+    {
+      "id": "alternating_r12_s003",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 3,
+      "requests": 15,
+      "useful_mass_kg": 57,
+      "path": "inputs/alternating_r12_s003/requests.csv",
+      "sha256": "a9148f11729de147460a7f7fafc4541dc4ceef916044e254c66e8bf419943b9a"
+    },
+    {
+      "id": "alternating_r12_s004",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 4,
+      "requests": 8,
+      "useful_mass_kg": 34,
+      "path": "inputs/alternating_r12_s004/requests.csv",
+      "sha256": "db7cb79f23ca951494426a57a5367359a44bc8c6e9f2291d09f4f4b6f1c746cd"
+    },
+    {
+      "id": "alternating_r12_s005",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 5,
+      "requests": 7,
+      "useful_mass_kg": 29,
+      "path": "inputs/alternating_r12_s005/requests.csv",
+      "sha256": "ad6720e3ea7fef6d95427dc0503841f0d801640ec11532717f2648cb637638c3"
+    },
+    {
+      "id": "alternating_r12_s006",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 6,
+      "requests": 16,
+      "useful_mass_kg": 65,
+      "path": "inputs/alternating_r12_s006/requests.csv",
+      "sha256": "539521ff493c911ea4bf7e23f465e3ac1158a6927b237fbf76b70deb98b1ebe5"
+    },
+    {
+      "id": "alternating_r12_s007",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 7,
+      "requests": 11,
+      "useful_mass_kg": 61,
+      "path": "inputs/alternating_r12_s007/requests.csv",
+      "sha256": "4c088785eea2a489c6abed5c3fc7ac8f1191f5152c137e7d3f515ffcae9079ad"
+    },
+    {
+      "id": "alternating_r12_s008",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 8,
+      "requests": 12,
+      "useful_mass_kg": 51,
+      "path": "inputs/alternating_r12_s008/requests.csv",
+      "sha256": "edc8bf47ab3e4b2f8bfb7c34ec8fe24bd331c2f225f77bbf93ca0fbf04202667"
+    },
+    {
+      "id": "alternating_r12_s009",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 9,
+      "requests": 12,
+      "useful_mass_kg": 51,
+      "path": "inputs/alternating_r12_s009/requests.csv",
+      "sha256": "91a6b1e83dd9a97a0aeb219cb2f660e703477639436571b659abc7a037adb329"
+    },
+    {
+      "id": "alternating_r12_s010",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 10,
+      "requests": 12,
+      "useful_mass_kg": 51,
+      "path": "inputs/alternating_r12_s010/requests.csv",
+      "sha256": "258509703963fc92ec8eba6e9e7eb2a589ba8c00869811187c0d4f6644472f44"
+    },
+    {
+      "id": "alternating_r12_s011",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 11,
+      "requests": 14,
+      "useful_mass_kg": 49,
+      "path": "inputs/alternating_r12_s011/requests.csv",
+      "sha256": "1fd0e45a895c855d3526a64a410f9f2263ab78366dd9b4afec37b287decb7548"
+    },
+    {
+      "id": "alternating_r12_s012",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 12,
+      "requests": 18,
+      "useful_mass_kg": 81,
+      "path": "inputs/alternating_r12_s012/requests.csv",
+      "sha256": "353e636dadd1a63797dbf0639910eedf8fdbe50d7bfcc33308f1fa26d3104964"
+    },
+    {
+      "id": "alternating_r12_s013",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 13,
+      "requests": 18,
+      "useful_mass_kg": 84,
+      "path": "inputs/alternating_r12_s013/requests.csv",
+      "sha256": "491fcff8a02991885b974facf83570a551ac01b1cba1116121199b9f4fd8cb38"
+    },
+    {
+      "id": "alternating_r12_s014",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 14,
+      "requests": 13,
+      "useful_mass_kg": 50,
+      "path": "inputs/alternating_r12_s014/requests.csv",
+      "sha256": "7a9acf10041d13cfe6d52a525391fd23681f1dbde73ab6edb67c52f4c9b713e9"
+    },
+    {
+      "id": "alternating_r12_s015",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 15,
+      "requests": 17,
+      "useful_mass_kg": 79,
+      "path": "inputs/alternating_r12_s015/requests.csv",
+      "sha256": "32d0173d44a7e59fc1ce18c9f1c169be66c01d065757dde7e7f31243213fd0f0"
+    },
+    {
+      "id": "alternating_r12_s016",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 16,
+      "requests": 14,
+      "useful_mass_kg": 61,
+      "path": "inputs/alternating_r12_s016/requests.csv",
+      "sha256": "865f025a727e19a35496c2eaa17eaf4780398cd5563da74211b1b237d65cda9f"
+    },
+    {
+      "id": "alternating_r12_s017",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 17,
+      "requests": 13,
+      "useful_mass_kg": 68,
+      "path": "inputs/alternating_r12_s017/requests.csv",
+      "sha256": "bc061a4f3b623ba353a6338d564f3fdacd533c4d41e2a543902389535dd7efd2"
+    },
+    {
+      "id": "alternating_r12_s018",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 18,
+      "requests": 16,
+      "useful_mass_kg": 83,
+      "path": "inputs/alternating_r12_s018/requests.csv",
+      "sha256": "ad76d245550e84ca107c7f05bb373e91222904b2279ab3cef22d4c0b37209598"
+    },
+    {
+      "id": "alternating_r12_s019",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 19,
+      "requests": 11,
+      "useful_mass_kg": 43,
+      "path": "inputs/alternating_r12_s019/requests.csv",
+      "sha256": "27bf2244133c98090b1e73c29506435aacc7e3b6f754b7623380844dcc3d453a"
+    },
+    {
+      "id": "alternating_r12_s020",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 20,
+      "requests": 11,
+      "useful_mass_kg": 58,
+      "path": "inputs/alternating_r12_s020/requests.csv",
+      "sha256": "40409da24c573d1212e2d82f4a6dda906c8d8bbe615815a7ae2d5815cd059b1a"
+    },
+    {
+      "id": "alternating_r12_s021",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 21,
+      "requests": 11,
+      "useful_mass_kg": 37,
+      "path": "inputs/alternating_r12_s021/requests.csv",
+      "sha256": "8cd3faf31dd9374e9855cb9d5029e181571f3683efb37c98b2cfa0ef813c8c16"
+    },
+    {
+      "id": "alternating_r12_s022",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 22,
+      "requests": 9,
+      "useful_mass_kg": 36,
+      "path": "inputs/alternating_r12_s022/requests.csv",
+      "sha256": "105422ecb4645b7a1bb0de4c8f78048599deacc9e7a8d7e34a808f121a4c1c0f"
+    },
+    {
+      "id": "alternating_r12_s023",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 23,
+      "requests": 10,
+      "useful_mass_kg": 50,
+      "path": "inputs/alternating_r12_s023/requests.csv",
+      "sha256": "a009debf7041725bbbdbdf2aad0732f5a4656e503928a5c32241401060e80838"
+    },
+    {
+      "id": "alternating_r12_s024",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 24,
+      "requests": 12,
+      "useful_mass_kg": 51,
+      "path": "inputs/alternating_r12_s024/requests.csv",
+      "sha256": "d039d8d80239a550769683700210729c05819b3e3a26c38907eb0430760191ba"
+    },
+    {
+      "id": "alternating_r12_s025",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 25,
+      "requests": 6,
+      "useful_mass_kg": 21,
+      "path": "inputs/alternating_r12_s025/requests.csv",
+      "sha256": "9d577d937e84c6a0f33c89086633274f8477575ffc8556af7953700b9a9687b3"
+    },
+    {
+      "id": "alternating_r12_s026",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 26,
+      "requests": 15,
+      "useful_mass_kg": 72,
+      "path": "inputs/alternating_r12_s026/requests.csv",
+      "sha256": "19c3dbbdcca89827e6d1b141c5501de15f70b01b10f67e5a0a9772281c5cf302"
+    },
+    {
+      "id": "alternating_r12_s027",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 27,
+      "requests": 8,
+      "useful_mass_kg": 40,
+      "path": "inputs/alternating_r12_s027/requests.csv",
+      "sha256": "822427d1539dfaa08dd444f941669d33bbe964c5f17883ee87bd553fe20c15a8"
+    },
+    {
+      "id": "alternating_r12_s028",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 28,
+      "requests": 17,
+      "useful_mass_kg": 70,
+      "path": "inputs/alternating_r12_s028/requests.csv",
+      "sha256": "625d52100bfdd7cb7b523402c4caf0290f2679c714813bb025351e4be4df2ae6"
+    },
+    {
+      "id": "alternating_r12_s029",
+      "rate_per_hour": 12,
+      "pattern": "alternating",
+      "seed": 29,
+      "requests": 16,
+      "useful_mass_kg": 65,
+      "path": "inputs/alternating_r12_s029/requests.csv",
+      "sha256": "e74afb35ee748a6566ea7b515842876b46f087d718c767fbb98fa3a98ad53cdd"
+    },
+    {
+      "id": "balanced_r24_s000",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 0,
+      "requests": 22,
+      "useful_mass_kg": 101,
+      "path": "inputs/balanced_r24_s000/requests.csv",
+      "sha256": "19e15c47be7d369692292cc2445ad5ae727785e72f5afc60225317eb432b509f"
+    },
+    {
+      "id": "balanced_r24_s001",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 1,
+      "requests": 21,
+      "useful_mass_kg": 102,
+      "path": "inputs/balanced_r24_s001/requests.csv",
+      "sha256": "27f25d91ed796bdc902b3d91389ed2e964850d3bbcb12b17b86662231cba0760"
+    },
+    {
+      "id": "balanced_r24_s002",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 2,
+      "requests": 13,
+      "useful_mass_kg": 59,
+      "path": "inputs/balanced_r24_s002/requests.csv",
+      "sha256": "19b4de1ed44ecbc2eb871bddd471e6bf392e1cec0ec9a95034219d3ec77f1b7a"
+    },
+    {
+      "id": "balanced_r24_s003",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 3,
+      "requests": 20,
+      "useful_mass_kg": 79,
+      "path": "inputs/balanced_r24_s003/requests.csv",
+      "sha256": "b40a074fe080455873848c406d7e360d5374e6ce6d82da178649b04debb755b0"
+    },
+    {
+      "id": "balanced_r24_s004",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 4,
+      "requests": 19,
+      "useful_mass_kg": 77,
+      "path": "inputs/balanced_r24_s004/requests.csv",
+      "sha256": "6cf500a58845cd5df83c97362007253082355fe94b5c6a57724a855f791b0f31"
+    },
+    {
+      "id": "balanced_r24_s005",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 5,
+      "requests": 22,
+      "useful_mass_kg": 95,
+      "path": "inputs/balanced_r24_s005/requests.csv",
+      "sha256": "d91d859a813590e3ce5c76b3b757bcc61526332d50cff29934bc418fa6a6b2b9"
+    },
+    {
+      "id": "balanced_r24_s006",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 6,
+      "requests": 18,
+      "useful_mass_kg": 87,
+      "path": "inputs/balanced_r24_s006/requests.csv",
+      "sha256": "9d2142556a2f7dce0fa62d4d15158c25b4b7933c02ef79574d0a746d8e76c3e4"
+    },
+    {
+      "id": "balanced_r24_s007",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 7,
+      "requests": 19,
+      "useful_mass_kg": 71,
+      "path": "inputs/balanced_r24_s007/requests.csv",
+      "sha256": "829d70ecce90a7b6ba8f494235e363e78ab989d9c7415d956d676f0a2092906c"
+    },
+    {
+      "id": "balanced_r24_s008",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 8,
+      "requests": 27,
+      "useful_mass_kg": 117,
+      "path": "inputs/balanced_r24_s008/requests.csv",
+      "sha256": "836577cf3ec1f5f0cc93e6b3c108b101c567c0afced2bceaff273c100e2260ef"
+    },
+    {
+      "id": "balanced_r24_s009",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 9,
+      "requests": 22,
+      "useful_mass_kg": 86,
+      "path": "inputs/balanced_r24_s009/requests.csv",
+      "sha256": "a5ed055e6dc74d7a8bac8a168252d1976b666143d43d8973f479153e710f4754"
+    },
+    {
+      "id": "balanced_r24_s010",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 10,
+      "requests": 27,
+      "useful_mass_kg": 120,
+      "path": "inputs/balanced_r24_s010/requests.csv",
+      "sha256": "483b27135319faeac23d31c43540c8b286268927fd75a3a20732db450b6c27f2"
+    },
+    {
+      "id": "balanced_r24_s011",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 11,
+      "requests": 35,
+      "useful_mass_kg": 145,
+      "path": "inputs/balanced_r24_s011/requests.csv",
+      "sha256": "ed2da238bce98d177293cb2fd5c7793e19adf28f8a44f67cda914f7b1ea32cc3"
+    },
+    {
+      "id": "balanced_r24_s012",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 12,
+      "requests": 26,
+      "useful_mass_kg": 115,
+      "path": "inputs/balanced_r24_s012/requests.csv",
+      "sha256": "946bcfe7889df264ad21ffa197b615dd0f07618b530c3fbf012cfa5b259606e6"
+    },
+    {
+      "id": "balanced_r24_s013",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 13,
+      "requests": 18,
+      "useful_mass_kg": 72,
+      "path": "inputs/balanced_r24_s013/requests.csv",
+      "sha256": "a59ad8ba2b695bad72240b3e18adf2d5b2c7699cf81fd977b814036243a49552"
+    },
+    {
+      "id": "balanced_r24_s014",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 14,
+      "requests": 14,
+      "useful_mass_kg": 52,
+      "path": "inputs/balanced_r24_s014/requests.csv",
+      "sha256": "4e70117ad44f449fcb1c92276b6662ca0d357af368ac509fbea3f54d0056b734"
+    },
+    {
+      "id": "balanced_r24_s015",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 15,
+      "requests": 28,
+      "useful_mass_kg": 131,
+      "path": "inputs/balanced_r24_s015/requests.csv",
+      "sha256": "1945ed8cbfd4a52e74b2f621ede1b6866964e4e1cb101bc4d4b1f719fe67e33c"
+    },
+    {
+      "id": "balanced_r24_s016",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 16,
+      "requests": 26,
+      "useful_mass_kg": 112,
+      "path": "inputs/balanced_r24_s016/requests.csv",
+      "sha256": "cde0749f3b2caace0c9676f0d49b852da11169dc1201c52efc45ef2be5cdf263"
+    },
+    {
+      "id": "balanced_r24_s017",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 17,
+      "requests": 27,
+      "useful_mass_kg": 96,
+      "path": "inputs/balanced_r24_s017/requests.csv",
+      "sha256": "b2be46c25ad23033ed72b86d9e77753be5213f85b208ba831c895cfcbbf2fb25"
+    },
+    {
+      "id": "balanced_r24_s018",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 18,
+      "requests": 31,
+      "useful_mass_kg": 158,
+      "path": "inputs/balanced_r24_s018/requests.csv",
+      "sha256": "32aa844dea2c8b8f2b331d061b38fb216a0e850dd099d471e03b66812236c35b"
+    },
+    {
+      "id": "balanced_r24_s019",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 19,
+      "requests": 40,
+      "useful_mass_kg": 179,
+      "path": "inputs/balanced_r24_s019/requests.csv",
+      "sha256": "afdccfbefa682ae2620d0b430490dbac100cdea5a7032fcf40c61bfc97cf651f"
+    },
+    {
+      "id": "balanced_r24_s020",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 20,
+      "requests": 24,
+      "useful_mass_kg": 102,
+      "path": "inputs/balanced_r24_s020/requests.csv",
+      "sha256": "b6c7e9ff0db04497a4d6f70bb8002b0ff6003b1ba77fbc5d53b7fd1f4d8d5657"
+    },
+    {
+      "id": "balanced_r24_s021",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 21,
+      "requests": 18,
+      "useful_mass_kg": 96,
+      "path": "inputs/balanced_r24_s021/requests.csv",
+      "sha256": "2e7abbe7793bcadd7f2af43c6f74f0f811a9411af72f0ad047e498b8a2138784"
+    },
+    {
+      "id": "balanced_r24_s022",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 22,
+      "requests": 27,
+      "useful_mass_kg": 114,
+      "path": "inputs/balanced_r24_s022/requests.csv",
+      "sha256": "60bddc5c72ba29acde362fbd5d962f5cafc600e887bf649c198b46732bb61630"
+    },
+    {
+      "id": "balanced_r24_s023",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 23,
+      "requests": 25,
+      "useful_mass_kg": 101,
+      "path": "inputs/balanced_r24_s023/requests.csv",
+      "sha256": "f44e31eb8b93a25fb7d35382b49ed54d3f94337e0d1f60c032882088c3a7dcda"
+    },
+    {
+      "id": "balanced_r24_s024",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 24,
+      "requests": 22,
+      "useful_mass_kg": 95,
+      "path": "inputs/balanced_r24_s024/requests.csv",
+      "sha256": "b0888bbe56cc69eb16e344001a699a01ade195bf9db4f0fba71ef644f84de8d8"
+    },
+    {
+      "id": "balanced_r24_s025",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 25,
+      "requests": 23,
+      "useful_mass_kg": 112,
+      "path": "inputs/balanced_r24_s025/requests.csv",
+      "sha256": "23df1c972a1418ccd5970894530ceb5e5f05eca2fd7dd49c00ec63424cf8052c"
+    },
+    {
+      "id": "balanced_r24_s026",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 26,
+      "requests": 21,
+      "useful_mass_kg": 99,
+      "path": "inputs/balanced_r24_s026/requests.csv",
+      "sha256": "9e1b8954d2ee7b84e4b787a390bd3b84fb040de4ec5f125188d590c6a204fe7e"
+    },
+    {
+      "id": "balanced_r24_s027",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 27,
+      "requests": 32,
+      "useful_mass_kg": 130,
+      "path": "inputs/balanced_r24_s027/requests.csv",
+      "sha256": "50996edc4169d2e396dad9b7d9a6bcbc5ca4c81e9ab0b7a8476534223478857d"
+    },
+    {
+      "id": "balanced_r24_s028",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 28,
+      "requests": 25,
+      "useful_mass_kg": 119,
+      "path": "inputs/balanced_r24_s028/requests.csv",
+      "sha256": "80205cf90ef0afdcde1a50d951a03549e9c52653ade532e2a036582446b3c9ff"
+    },
+    {
+      "id": "balanced_r24_s029",
+      "rate_per_hour": 24,
+      "pattern": "balanced",
+      "seed": 29,
+      "requests": 29,
+      "useful_mass_kg": 115,
+      "path": "inputs/balanced_r24_s029/requests.csv",
+      "sha256": "14db381caeee063c7b818643494c1ae7deea0de54621cca645fb5ad2dbb0901c"
+    },
+    {
+      "id": "alternating_r24_s000",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 0,
+      "requests": 30,
+      "useful_mass_kg": 123,
+      "path": "inputs/alternating_r24_s000/requests.csv",
+      "sha256": "91d12b6e90e8cb6b1b8b83e94e09bbd09a047282b878c9af055e7fe197bc2e59"
+    },
+    {
+      "id": "alternating_r24_s001",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 1,
+      "requests": 23,
+      "useful_mass_kg": 85,
+      "path": "inputs/alternating_r24_s001/requests.csv",
+      "sha256": "3d7094349df86120f99238c22d0da06dfe49cab13cb2bb1d384b66c311e7a202"
+    },
+    {
+      "id": "alternating_r24_s002",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 2,
+      "requests": 16,
+      "useful_mass_kg": 65,
+      "path": "inputs/alternating_r24_s002/requests.csv",
+      "sha256": "7cef74a86c66d61f136be70207196693e296b8c4769e806076798726ad7c2e7f"
+    },
+    {
+      "id": "alternating_r24_s003",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 3,
+      "requests": 25,
+      "useful_mass_kg": 107,
+      "path": "inputs/alternating_r24_s003/requests.csv",
+      "sha256": "a1d7ab4eedcc853ba7d1efbc882b3f21cf6245104e6c51127ea1f920fad64cbc"
+    },
+    {
+      "id": "alternating_r24_s004",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 4,
+      "requests": 30,
+      "useful_mass_kg": 117,
+      "path": "inputs/alternating_r24_s004/requests.csv",
+      "sha256": "739df14b78ea1fa000619b0067288611b33fd3722c4465a5c4dd0cbb51c103a5"
+    },
+    {
+      "id": "alternating_r24_s005",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 5,
+      "requests": 19,
+      "useful_mass_kg": 83,
+      "path": "inputs/alternating_r24_s005/requests.csv",
+      "sha256": "5b2c964afb7284f9d991cab6febf535ee401df91ef56aed992fae7275b71393b"
+    },
+    {
+      "id": "alternating_r24_s006",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 6,
+      "requests": 28,
+      "useful_mass_kg": 107,
+      "path": "inputs/alternating_r24_s006/requests.csv",
+      "sha256": "fc343e4b69dbca1b25c1202cbfc2cc69c5a90c246f4b2964bac3abbcff8d5162"
+    },
+    {
+      "id": "alternating_r24_s007",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 7,
+      "requests": 23,
+      "useful_mass_kg": 100,
+      "path": "inputs/alternating_r24_s007/requests.csv",
+      "sha256": "8e5a618a6dd1e28e367ed2c9e24d8d135ad00169f9fbe4aa97910374b11f3486"
+    },
+    {
+      "id": "alternating_r24_s008",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 8,
+      "requests": 31,
+      "useful_mass_kg": 125,
+      "path": "inputs/alternating_r24_s008/requests.csv",
+      "sha256": "c2d1aa50d22dde90d435f8bf6da653946f13ce288a2431c07af785228ba4c5c9"
+    },
+    {
+      "id": "alternating_r24_s009",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 9,
+      "requests": 25,
+      "useful_mass_kg": 107,
+      "path": "inputs/alternating_r24_s009/requests.csv",
+      "sha256": "73fc236dbb810771343a2c81f99e7da49cf3b4dcffb653290663ecbd829080ca"
+    },
+    {
+      "id": "alternating_r24_s010",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 10,
+      "requests": 28,
+      "useful_mass_kg": 110,
+      "path": "inputs/alternating_r24_s010/requests.csv",
+      "sha256": "4bf929cceee6514f87c4e6d127510a9ed0b20b40129e8311ece7d10b3c3fbb38"
+    },
+    {
+      "id": "alternating_r24_s011",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 11,
+      "requests": 24,
+      "useful_mass_kg": 96,
+      "path": "inputs/alternating_r24_s011/requests.csv",
+      "sha256": "eb18405f87c2e4c94bf689750baa5640608a36b2ac99e4d1e6ac186f688c7da6"
+    },
+    {
+      "id": "alternating_r24_s012",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 12,
+      "requests": 25,
+      "useful_mass_kg": 98,
+      "path": "inputs/alternating_r24_s012/requests.csv",
+      "sha256": "4abc44ae00e20893af8d135a5972731cf9c4d91e892dc087d3c61f77e21882bb"
+    },
+    {
+      "id": "alternating_r24_s013",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 13,
+      "requests": 31,
+      "useful_mass_kg": 128,
+      "path": "inputs/alternating_r24_s013/requests.csv",
+      "sha256": "1f0b8d786788ac7a9414c10ea21221edce4656344d77fad9377954b0628a4225"
+    },
+    {
+      "id": "alternating_r24_s014",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 14,
+      "requests": 21,
+      "useful_mass_kg": 102,
+      "path": "inputs/alternating_r24_s014/requests.csv",
+      "sha256": "1571aedaed4f17893a8e9b9a2ffd1e0ab1e1cc60cb1677450be057db7146c8e0"
+    },
+    {
+      "id": "alternating_r24_s015",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 15,
+      "requests": 30,
+      "useful_mass_kg": 138,
+      "path": "inputs/alternating_r24_s015/requests.csv",
+      "sha256": "717e93fbd63a2cad25898146983668bead996281f4000f2a717239faf8276de4"
+    },
+    {
+      "id": "alternating_r24_s016",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 16,
+      "requests": 25,
+      "useful_mass_kg": 119,
+      "path": "inputs/alternating_r24_s016/requests.csv",
+      "sha256": "2928a5b718a17b7e0343235bd3f4660e15a333f48f235f315a555612e1aa48c5"
+    },
+    {
+      "id": "alternating_r24_s017",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 17,
+      "requests": 21,
+      "useful_mass_kg": 90,
+      "path": "inputs/alternating_r24_s017/requests.csv",
+      "sha256": "be3d8f5e9aa6827c1dd22bffa16ef720cd5dd71570ed9ca0dd3a984c975d81f0"
+    },
+    {
+      "id": "alternating_r24_s018",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 18,
+      "requests": 25,
+      "useful_mass_kg": 95,
+      "path": "inputs/alternating_r24_s018/requests.csv",
+      "sha256": "7e687b7e7d6985f111a6ab1d722e2f0a4f208c2ad44447d050473cf5e9c088c5"
+    },
+    {
+      "id": "alternating_r24_s019",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 19,
+      "requests": 24,
+      "useful_mass_kg": 105,
+      "path": "inputs/alternating_r24_s019/requests.csv",
+      "sha256": "f9c791a184379a02f6659b2a8e302b77a6ab5bd740a8c0b4b12ada3b7c54dccf"
+    },
+    {
+      "id": "alternating_r24_s020",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 20,
+      "requests": 26,
+      "useful_mass_kg": 100,
+      "path": "inputs/alternating_r24_s020/requests.csv",
+      "sha256": "34df486868d3d374522ae2a76b9e5f70ee5c0e220625907952937ca5b0a8868a"
+    },
+    {
+      "id": "alternating_r24_s021",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 21,
+      "requests": 41,
+      "useful_mass_kg": 208,
+      "path": "inputs/alternating_r24_s021/requests.csv",
+      "sha256": "bfc957e7dd2a08ceb5f12e83b1dcae4ef9ff74c028b021aaa2f70c202f136145"
+    },
+    {
+      "id": "alternating_r24_s022",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 22,
+      "requests": 18,
+      "useful_mass_kg": 93,
+      "path": "inputs/alternating_r24_s022/requests.csv",
+      "sha256": "5f06170ed121940f0959c8e3cd6f8867aca944756f840dc13aac5faf742a1deb"
+    },
+    {
+      "id": "alternating_r24_s023",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 23,
+      "requests": 19,
+      "useful_mass_kg": 83,
+      "path": "inputs/alternating_r24_s023/requests.csv",
+      "sha256": "de6f6a71c7dafeebcaec57a8601f1d5212624731ffae7285fefae578acaea67f"
+    },
+    {
+      "id": "alternating_r24_s024",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 24,
+      "requests": 18,
+      "useful_mass_kg": 81,
+      "path": "inputs/alternating_r24_s024/requests.csv",
+      "sha256": "73caed6d402c320f7d86dfc02bd077011a18221ea4ee9b89e44488ec8a042659"
+    },
+    {
+      "id": "alternating_r24_s025",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 25,
+      "requests": 12,
+      "useful_mass_kg": 63,
+      "path": "inputs/alternating_r24_s025/requests.csv",
+      "sha256": "4ffae36af3c80a0ce6fecf6aae6360092fcdc7aa52bd3f086b5bdb2167d734fa"
+    },
+    {
+      "id": "alternating_r24_s026",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 26,
+      "requests": 19,
+      "useful_mass_kg": 110,
+      "path": "inputs/alternating_r24_s026/requests.csv",
+      "sha256": "74855b3e1cf420c7472597d7fad56161fc8728aae15aaf38a92c852740c45122"
+    },
+    {
+      "id": "alternating_r24_s027",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 27,
+      "requests": 27,
+      "useful_mass_kg": 138,
+      "path": "inputs/alternating_r24_s027/requests.csv",
+      "sha256": "f4d58814329ad044f9278be4fbe5bfa0021a09161fe5f7754662ebbae7d7d72a"
+    },
+    {
+      "id": "alternating_r24_s028",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 28,
+      "requests": 28,
+      "useful_mass_kg": 116,
+      "path": "inputs/alternating_r24_s028/requests.csv",
+      "sha256": "778c446cd3e3c617f16a06484074d8bfb02f0aa41d1749fa9659a67abac2677e"
+    },
+    {
+      "id": "alternating_r24_s029",
+      "rate_per_hour": 24,
+      "pattern": "alternating",
+      "seed": 29,
+      "requests": 23,
+      "useful_mass_kg": 91,
+      "path": "inputs/alternating_r24_s029/requests.csv",
+      "sha256": "c135a80fc5d60ec88eb78b2daad7037e8f7ee76647408d9dc07548a8f5ee07cf"
+    },
+    {
+      "id": "balanced_r36_s000",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 0,
+      "requests": 38,
+      "useful_mass_kg": 154,
+      "path": "inputs/balanced_r36_s000/requests.csv",
+      "sha256": "75804c6aa5b44ab401e02b293d3d6dff2f885a2b667b5ef2f185627f41da0f0b"
+    },
+    {
+      "id": "balanced_r36_s001",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 1,
+      "requests": 32,
+      "useful_mass_kg": 151,
+      "path": "inputs/balanced_r36_s001/requests.csv",
+      "sha256": "30f7219985c777029f5c912502ff216bbf0119b7605016f8aa74fe8b739b641a"
+    },
+    {
+      "id": "balanced_r36_s002",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 2,
+      "requests": 36,
+      "useful_mass_kg": 177,
+      "path": "inputs/balanced_r36_s002/requests.csv",
+      "sha256": "664d16e337ea1909c8467a11c822939efb84cf2d7db78e80a1e0d35f47e0bd87"
+    },
+    {
+      "id": "balanced_r36_s003",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 3,
+      "requests": 40,
+      "useful_mass_kg": 155,
+      "path": "inputs/balanced_r36_s003/requests.csv",
+      "sha256": "a1cba79be79f9ad36092236d1d057c931f6b9435e4942999152e4ff2f75fa160"
+    },
+    {
+      "id": "balanced_r36_s004",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 4,
+      "requests": 40,
+      "useful_mass_kg": 185,
+      "path": "inputs/balanced_r36_s004/requests.csv",
+      "sha256": "0d22ff0a2165c9a2c903719b99e880049ec1a962aefe7e45e675d31fd9c442be"
+    },
+    {
+      "id": "balanced_r36_s005",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 5,
+      "requests": 35,
+      "useful_mass_kg": 136,
+      "path": "inputs/balanced_r36_s005/requests.csv",
+      "sha256": "93b8ef506ed6b4d5e5d4fcda66c373c6866ae8182ba1c5116abfda80fd5fa094"
+    },
+    {
+      "id": "balanced_r36_s006",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 6,
+      "requests": 30,
+      "useful_mass_kg": 111,
+      "path": "inputs/balanced_r36_s006/requests.csv",
+      "sha256": "bc04f863b61ada2964252cca7b11fbaada1cbce60e22d6b3ed59b043859e7e06"
+    },
+    {
+      "id": "balanced_r36_s007",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 7,
+      "requests": 37,
+      "useful_mass_kg": 170,
+      "path": "inputs/balanced_r36_s007/requests.csv",
+      "sha256": "ccdc3c4086d630b6364045b4a6e5e7590d712981231297b27163975a9de71d19"
+    },
+    {
+      "id": "balanced_r36_s008",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 8,
+      "requests": 30,
+      "useful_mass_kg": 141,
+      "path": "inputs/balanced_r36_s008/requests.csv",
+      "sha256": "bd4c215140541866c3d063b8614ab221cd8d55243d357adda81c75c225dd3160"
+    },
+    {
+      "id": "balanced_r36_s009",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 9,
+      "requests": 39,
+      "useful_mass_kg": 150,
+      "path": "inputs/balanced_r36_s009/requests.csv",
+      "sha256": "35eb5dc2048332f9c5e301cb038b84ae869882d8f9739206e8148e9724a66306"
+    },
+    {
+      "id": "balanced_r36_s010",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 10,
+      "requests": 27,
+      "useful_mass_kg": 111,
+      "path": "inputs/balanced_r36_s010/requests.csv",
+      "sha256": "1ddd41df5cfdc280a72f9774140878df7358409994a10cfedbc282a88be40df2"
+    },
+    {
+      "id": "balanced_r36_s011",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 11,
+      "requests": 43,
+      "useful_mass_kg": 179,
+      "path": "inputs/balanced_r36_s011/requests.csv",
+      "sha256": "fd2453063839ef85963cc4c8681f5b440de2c751aff7b2617bd56b5ddb8f0219"
+    },
+    {
+      "id": "balanced_r36_s012",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 12,
+      "requests": 35,
+      "useful_mass_kg": 148,
+      "path": "inputs/balanced_r36_s012/requests.csv",
+      "sha256": "b91ba721c46d1fe5ed13326fbed5eff1d44b9ffae218094347d12d44c48f2465"
+    },
+    {
+      "id": "balanced_r36_s013",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 13,
+      "requests": 32,
+      "useful_mass_kg": 160,
+      "path": "inputs/balanced_r36_s013/requests.csv",
+      "sha256": "4c4ac1bf92b7c63bc907f709a9e5ef41fed7f0765b28d7d61001bde04428c5fc"
+    },
+    {
+      "id": "balanced_r36_s014",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 14,
+      "requests": 40,
+      "useful_mass_kg": 200,
+      "path": "inputs/balanced_r36_s014/requests.csv",
+      "sha256": "86fbe7b3815d07c7909b6a8dbf10a44dedc2193225c82047fb7aba1c2e4b63f6"
+    },
+    {
+      "id": "balanced_r36_s015",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 15,
+      "requests": 41,
+      "useful_mass_kg": 181,
+      "path": "inputs/balanced_r36_s015/requests.csv",
+      "sha256": "818499dd65126a222fa021a9b27ff4d1f008c4bb61a9ffe1c3e9fb980e8ae506"
+    },
+    {
+      "id": "balanced_r36_s016",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 16,
+      "requests": 30,
+      "useful_mass_kg": 129,
+      "path": "inputs/balanced_r36_s016/requests.csv",
+      "sha256": "6690695bd1f128175985081fac3246c9d1f894279ddf7c37ea5f3281d278ac48"
+    },
+    {
+      "id": "balanced_r36_s017",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 17,
+      "requests": 42,
+      "useful_mass_kg": 198,
+      "path": "inputs/balanced_r36_s017/requests.csv",
+      "sha256": "141e7251f0d4817da7c675ffacbbef79384200b63f7e6b4d2257fb1e5c0d3d12"
+    },
+    {
+      "id": "balanced_r36_s018",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 18,
+      "requests": 28,
+      "useful_mass_kg": 131,
+      "path": "inputs/balanced_r36_s018/requests.csv",
+      "sha256": "4be237e80b8fb14fd3d94504446a40b3f3a589b7b5736f04caa355bdea73e3b3"
+    },
+    {
+      "id": "balanced_r36_s019",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 19,
+      "requests": 35,
+      "useful_mass_kg": 151,
+      "path": "inputs/balanced_r36_s019/requests.csv",
+      "sha256": "756e84a3cadee14a9045b2e01b0d6cdec989c51451197d374f9528a933cb0712"
+    },
+    {
+      "id": "balanced_r36_s020",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 20,
+      "requests": 36,
+      "useful_mass_kg": 150,
+      "path": "inputs/balanced_r36_s020/requests.csv",
+      "sha256": "f885e3c0e3b659d4e1aff533d6176aee0530f7f5e27d5aa7a49745720cc879cb"
+    },
+    {
+      "id": "balanced_r36_s021",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 21,
+      "requests": 37,
+      "useful_mass_kg": 173,
+      "path": "inputs/balanced_r36_s021/requests.csv",
+      "sha256": "2f7da195ff6803e13213de54900bc630e646e21379104975727a2615509e56de"
+    },
+    {
+      "id": "balanced_r36_s022",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 22,
+      "requests": 33,
+      "useful_mass_kg": 135,
+      "path": "inputs/balanced_r36_s022/requests.csv",
+      "sha256": "7b58ca1fb99307b008f87992d73c1d4e6e494a47aa11bdc01971cbe4b8567f4c"
+    },
+    {
+      "id": "balanced_r36_s023",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 23,
+      "requests": 32,
+      "useful_mass_kg": 130,
+      "path": "inputs/balanced_r36_s023/requests.csv",
+      "sha256": "1500e0e0e07c09471e9dc2dd794c42e392624c6228dfe5660ac94845d67ffc89"
+    },
+    {
+      "id": "balanced_r36_s024",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 24,
+      "requests": 40,
+      "useful_mass_kg": 164,
+      "path": "inputs/balanced_r36_s024/requests.csv",
+      "sha256": "7af0c4991d15584c728157b2923d658b3c47843e8a59ce0eaaf704e969919a73"
+    },
+    {
+      "id": "balanced_r36_s025",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 25,
+      "requests": 40,
+      "useful_mass_kg": 158,
+      "path": "inputs/balanced_r36_s025/requests.csv",
+      "sha256": "f810daf3413158f1a94a146f2f768898de6591dc92a6d8077f419e1b26cd1309"
+    },
+    {
+      "id": "balanced_r36_s026",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 26,
+      "requests": 30,
+      "useful_mass_kg": 138,
+      "path": "inputs/balanced_r36_s026/requests.csv",
+      "sha256": "f917f42ba982f0709399445d5e867be78815758a0d0cb27b58275339607b50c5"
+    },
+    {
+      "id": "balanced_r36_s027",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 27,
+      "requests": 46,
+      "useful_mass_kg": 191,
+      "path": "inputs/balanced_r36_s027/requests.csv",
+      "sha256": "42d4ac1cae2867d0726a142e70481a71a629a3b99692e96c434a708cbbfc7d5f"
+    },
+    {
+      "id": "balanced_r36_s028",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 28,
+      "requests": 32,
+      "useful_mass_kg": 133,
+      "path": "inputs/balanced_r36_s028/requests.csv",
+      "sha256": "7fc56b46f8858e517484717581899629aaec4c7b2bd69a8e4349e9ff96f34bf2"
+    },
+    {
+      "id": "balanced_r36_s029",
+      "rate_per_hour": 36,
+      "pattern": "balanced",
+      "seed": 29,
+      "requests": 36,
+      "useful_mass_kg": 159,
+      "path": "inputs/balanced_r36_s029/requests.csv",
+      "sha256": "3b6652057ae17d0ddbdd88f747c4fdb236b6464a824589ae3a81817063c3b0c6"
+    },
+    {
+      "id": "alternating_r36_s000",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 0,
+      "requests": 40,
+      "useful_mass_kg": 179,
+      "path": "inputs/alternating_r36_s000/requests.csv",
+      "sha256": "687bdde0a3741de433d9088366dd2755653e724d8b714b219f05a9c69003916b"
+    },
+    {
+      "id": "alternating_r36_s001",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 1,
+      "requests": 38,
+      "useful_mass_kg": 154,
+      "path": "inputs/alternating_r36_s001/requests.csv",
+      "sha256": "55cb83a0c8699d3ecced114f6776823ad210625efd944eda36581f7577535888"
+    },
+    {
+      "id": "alternating_r36_s002",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 2,
+      "requests": 43,
+      "useful_mass_kg": 182,
+      "path": "inputs/alternating_r36_s002/requests.csv",
+      "sha256": "ae35ee87bcab2923fb455b65b517cbe0c79a8894e457e22eea924dc7f98e2e9b"
+    },
+    {
+      "id": "alternating_r36_s003",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 3,
+      "requests": 36,
+      "useful_mass_kg": 165,
+      "path": "inputs/alternating_r36_s003/requests.csv",
+      "sha256": "9c2f27189ecfd77f696c32ef0925b08b57f0fee401e04feaeeb16187accb1b97"
+    },
+    {
+      "id": "alternating_r36_s004",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 4,
+      "requests": 51,
+      "useful_mass_kg": 243,
+      "path": "inputs/alternating_r36_s004/requests.csv",
+      "sha256": "8d68b853283a8d6c6e0a8810cad3881c3daebdaadb1261f425d5c39104722114"
+    },
+    {
+      "id": "alternating_r36_s005",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 5,
+      "requests": 41,
+      "useful_mass_kg": 166,
+      "path": "inputs/alternating_r36_s005/requests.csv",
+      "sha256": "7e1b3d4a19183276334aebd5b07c0662f103153de4f033054d9bd39dcf5a9805"
+    },
+    {
+      "id": "alternating_r36_s006",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 6,
+      "requests": 25,
+      "useful_mass_kg": 95,
+      "path": "inputs/alternating_r36_s006/requests.csv",
+      "sha256": "fd0439b5dc295ac707c0e10eed06d12e7d6e5f38ea5e9831495870c47135febe"
+    },
+    {
+      "id": "alternating_r36_s007",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 7,
+      "requests": 38,
+      "useful_mass_kg": 172,
+      "path": "inputs/alternating_r36_s007/requests.csv",
+      "sha256": "9b9519a178615c52b21ac1520229adc28d3c1d5f78e049e4541fbbb7c8085726"
+    },
+    {
+      "id": "alternating_r36_s008",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 8,
+      "requests": 41,
+      "useful_mass_kg": 178,
+      "path": "inputs/alternating_r36_s008/requests.csv",
+      "sha256": "93a086866276f206e57d70e0eef372398833d6cdffb3a46faa1d4c3f5955f1c4"
+    },
+    {
+      "id": "alternating_r36_s009",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 9,
+      "requests": 27,
+      "useful_mass_kg": 117,
+      "path": "inputs/alternating_r36_s009/requests.csv",
+      "sha256": "4709454e7881dd7f415ab56d7d1a94d7283875984381a955c3dc5ac72f68230a"
+    },
+    {
+      "id": "alternating_r36_s010",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 10,
+      "requests": 38,
+      "useful_mass_kg": 151,
+      "path": "inputs/alternating_r36_s010/requests.csv",
+      "sha256": "a998ce2d283578c65889f27c4d4d1014491b2bfc2bf6cb176ad8654565816747"
+    },
+    {
+      "id": "alternating_r36_s011",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 11,
+      "requests": 32,
+      "useful_mass_kg": 142,
+      "path": "inputs/alternating_r36_s011/requests.csv",
+      "sha256": "5ca50eb17037078cfafc8180f2036ee82a9dde0a9e3bdeac0e3cfe3e20bc7cb5"
+    },
+    {
+      "id": "alternating_r36_s012",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 12,
+      "requests": 34,
+      "useful_mass_kg": 125,
+      "path": "inputs/alternating_r36_s012/requests.csv",
+      "sha256": "878fe1f7cba94dcbe84b7a228f809ffeba4d5bee5ca8619cfd375554224a30ff"
+    },
+    {
+      "id": "alternating_r36_s013",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 13,
+      "requests": 44,
+      "useful_mass_kg": 211,
+      "path": "inputs/alternating_r36_s013/requests.csv",
+      "sha256": "b10e92c3f74c00d32a4d5bc15fd593365f01bfeac9b23596eeaa284b0a671d9a"
+    },
+    {
+      "id": "alternating_r36_s014",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 14,
+      "requests": 43,
+      "useful_mass_kg": 188,
+      "path": "inputs/alternating_r36_s014/requests.csv",
+      "sha256": "d641954b1c94e838ae899a4db32b6527e8f6fe53be18efa0928147fd0b095b8c"
+    },
+    {
+      "id": "alternating_r36_s015",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 15,
+      "requests": 38,
+      "useful_mass_kg": 169,
+      "path": "inputs/alternating_r36_s015/requests.csv",
+      "sha256": "c4f575d6aef8ccf38615fe8a39f2e971f31955c7e2032f24580f96c3ccae0d86"
+    },
+    {
+      "id": "alternating_r36_s016",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 16,
+      "requests": 35,
+      "useful_mass_kg": 136,
+      "path": "inputs/alternating_r36_s016/requests.csv",
+      "sha256": "93c85d2067a40abd83fa0fe1edce990e783ce46b42c7194eb66c31ae2a2ddb31"
+    },
+    {
+      "id": "alternating_r36_s017",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 17,
+      "requests": 36,
+      "useful_mass_kg": 174,
+      "path": "inputs/alternating_r36_s017/requests.csv",
+      "sha256": "f3ac8e19fcab150d09db78b2cf753595387457baa9de35ffa98d495123519bc6"
+    },
+    {
+      "id": "alternating_r36_s018",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 18,
+      "requests": 30,
+      "useful_mass_kg": 117,
+      "path": "inputs/alternating_r36_s018/requests.csv",
+      "sha256": "d3e2586fdbad8fa1c7f5557aded9aa0c9c17b96500c6ad69380469147121221d"
+    },
+    {
+      "id": "alternating_r36_s019",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 19,
+      "requests": 33,
+      "useful_mass_kg": 150,
+      "path": "inputs/alternating_r36_s019/requests.csv",
+      "sha256": "df9f6e823bd4d01d4f0c8175601c3914025b01634ec8365a1d2ee4d76d085f2e"
+    },
+    {
+      "id": "alternating_r36_s020",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 20,
+      "requests": 38,
+      "useful_mass_kg": 172,
+      "path": "inputs/alternating_r36_s020/requests.csv",
+      "sha256": "e72d9998d1b8146a96560b9d84f052070351ad3de224f9e6e51aa5cc0692eb89"
+    },
+    {
+      "id": "alternating_r36_s021",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 21,
+      "requests": 27,
+      "useful_mass_kg": 123,
+      "path": "inputs/alternating_r36_s021/requests.csv",
+      "sha256": "9d398958ae24ce7ac3d6220c439eeb972544d7366417692d0e1648ac573df371"
+    },
+    {
+      "id": "alternating_r36_s022",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 22,
+      "requests": 29,
+      "useful_mass_kg": 142,
+      "path": "inputs/alternating_r36_s022/requests.csv",
+      "sha256": "f5b90c9323bba4e9085e8653e11bed428891d239e4255d64f1ac59dac3b42e04"
+    },
+    {
+      "id": "alternating_r36_s023",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 23,
+      "requests": 34,
+      "useful_mass_kg": 167,
+      "path": "inputs/alternating_r36_s023/requests.csv",
+      "sha256": "b1887eef2970aaca1be16f688ab5871b658e6c261674e71ec3d6695c08eea45c"
+    },
+    {
+      "id": "alternating_r36_s024",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 24,
+      "requests": 38,
+      "useful_mass_kg": 175,
+      "path": "inputs/alternating_r36_s024/requests.csv",
+      "sha256": "6758a4c81e13425c96095d420ea29c538df31d6f3e60c302039851594164528b"
+    },
+    {
+      "id": "alternating_r36_s025",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 25,
+      "requests": 28,
+      "useful_mass_kg": 131,
+      "path": "inputs/alternating_r36_s025/requests.csv",
+      "sha256": "f91857e4c11d38f29e151c8ab861c1744c6dcb1e05f4470273e44bfbba9500b6"
+    },
+    {
+      "id": "alternating_r36_s026",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 26,
+      "requests": 32,
+      "useful_mass_kg": 139,
+      "path": "inputs/alternating_r36_s026/requests.csv",
+      "sha256": "a84829a65218aad4159e715fdc202646e66436b939030ec5cbdfb5a9b5decc93"
+    },
+    {
+      "id": "alternating_r36_s027",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 27,
+      "requests": 36,
+      "useful_mass_kg": 168,
+      "path": "inputs/alternating_r36_s027/requests.csv",
+      "sha256": "0ce99a57da3796a6b1df26fded55f3814a4f58c63349094ec9de95a890495068"
+    },
+    {
+      "id": "alternating_r36_s028",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 28,
+      "requests": 40,
+      "useful_mass_kg": 170,
+      "path": "inputs/alternating_r36_s028/requests.csv",
+      "sha256": "46cba4dff9db61241b86244455f9c83c5fffee2e1149968805af1f9e1540e6e9"
+    },
+    {
+      "id": "alternating_r36_s029",
+      "rate_per_hour": 36,
+      "pattern": "alternating",
+      "seed": 29,
+      "requests": 33,
+      "useful_mass_kg": 132,
+      "path": "inputs/alternating_r36_s029/requests.csv",
+      "sha256": "f851d693af7573c58d8b12226fd532265cbaed4a359f0a7154b66ca422444e58"
+    }
+  ],
+  "frozen_files": {
+    "dispatch.params": "b901c17a88ad939d1b9d97bce5a08b92a2734ccb7858bf08bd1588ec7959685d",
+    "loop.params": "f52ea7c278654aa9eabd99e6753bae5590860a266ecdf912174bb402b2e11c76",
+    "predictor.csv": "40018fdc7ebcbcb7833f8e98fba2050444b038a6835af13f8665e4668906274f"
+  },
+  "dataset_count": 180,
+  "planned_runs": 720,
+  "policies": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "rng": "Python random.Random with SHA-256 keyed independent streams"
+}
