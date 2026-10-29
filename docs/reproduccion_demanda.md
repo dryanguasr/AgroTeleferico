@@ -2,8 +2,11 @@
 
 El camino mínimo reproduce una demanda fija de dos pedidos sobre el patio con
 soportes revisados, dos carros, control central y calma. Ejecuta la política C:
-5 kg suben y 2 kg bajan, ambos pedidos conocidos al inicio, manejo de 20 s y
-plazos de 400 s. Las llegadas terminan a los 60 s; el simulador continúa hasta
+8 kg suben al inicio y 8 kg se solicitan para bajar a los 70 s; ambos pedidos
+son conocidos al inicio, con manejo de 20 s y plazos de 500 s. En esta prueba
+la capacidad de mercancía adelantable es cero para exigir viajes separados;
+los módulos auxiliares permanecen habilitados. Las llegadas terminan a los 90 s;
+el simulador continúa hasta
 entregar los pedidos, restituir los módulos y volver al estado terminal. El
 límite de 900 s simulados detecta servicios que no cierren.
 

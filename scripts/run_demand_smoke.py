@@ -94,12 +94,14 @@ def main():
         config = json.loads((Path(get_package_share_directory('agro_teleferico'))/'config/demand_pilot.json').read_text())
         world = generate('buitrago_patio', out/'preparation', calm=True, variant='revised_supports')
         params = world.parent/'loop.params'
-        settings = dict(config['dispatch'], horizon_s=60, max_time_s=900)
+        # Disable early goods staging in this fixture so the second known order
+        # must travel on the return leg. Auxiliary modules remain enabled.
+        settings = dict(config['dispatch'], horizon_s=90, max_time_s=900, early_capacity_kg=0)
         dispatch = out/'dispatch.params'
         dispatch.write_text(''.join(f'{key} {value}\n' for key, value in settings.items()))
         requests = out/'requests.csv'
         requests.write_text('id,known_s,requested_s,deadline_s,origin,mass_kg,load_s,unload_s\n'
-                            'up,0,0,400,0,5,20,20\ndown,0,0,400,1,2,20,20\n')
+                            'up,0,0,500,0,8,20,20\ndown,0,70,500,1,8,20,20\n')
         run([str(binary), '--config', str(params), '--output', str(out/'calibration'), '--build-predictor'], 'calibration', 300)
         predictor = out/'calibration/predictor.csv'
         bound = [params, dispatch, requests, predictor, binary, Path(__file__)]
