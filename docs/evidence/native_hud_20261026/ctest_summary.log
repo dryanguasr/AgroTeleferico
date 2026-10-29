@@ -1,0 +1,24 @@
+Internal ctest changing into directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build/agro_teleferico
+Test project /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build/agro_teleferico
+    Start 1: ballasted_core
+1/9 Test #1: ballasted_core ...................   Passed    0.02 sec
+    Start 2: loop_core
+2/9 Test #2: loop_core ........................   Passed    0.03 sec
+    Start 3: ballasted_assets
+3/9 Test #3: ballasted_assets .................   Passed    0.40 sec
+    Start 4: ballasted_geometry
+4/9 Test #4: ballasted_geometry ...............   Passed    0.25 sec
+    Start 5: loop_assets
+5/9 Test #5: loop_assets ......................   Passed    0.36 sec
+    Start 6: loop_guard
+6/9 Test #6: loop_guard .......................   Passed    0.62 sec
+    Start 7: ros_interface_unit
+7/9 Test #7: ros_interface_unit ...............   Passed    0.11 sec
+    Start 8: telemetry_hud_unit
+8/9 Test #8: telemetry_hud_unit ...............   Passed    0.27 sec
+    Start 9: physics
+9/9 Test #9: physics ..........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 9
+
+Total Test time (real) =   2.15 sec

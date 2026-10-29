@@ -6,3 +6,8 @@ docs/evidence/single_span_revised/** -text -whitespace
 # Preserve measured artifacts byte-for-byte, including original log whitespace.
 docs/evidence/loop/native/** -text -whitespace
 docs/evidence/loop/garruchas/** -text -whitespace
+docs/evidence/model_consistency_20261026/** -text -whitespace
+docs/evidence/native_hud_20261026/** -text -whitespace
+docs/evidence/demand_pilot_20261026/** -text -whitespace
+# The delivery manifest also records the exact report bytes.
+docs/resultados_demanda.md -text -whitespace

@@ -1,0 +1,43 @@
+{
+  "files": {
+    "global.csv": {
+      "cli_sha256": "adc71a51bc6a04fc03792ceca135ff6bdb3f53b2200eac5462dcbd1caf864c4c",
+      "gazebo_sha256": "adc71a51bc6a04fc03792ceca135ff6bdb3f53b2200eac5462dcbd1caf864c4c",
+      "cli_rows": 86,
+      "gazebo_rows": 86,
+      "exactly_equal": true
+    },
+    "carriers.csv": {
+      "cli_sha256": "3f904d8ca0d1aa8413e67235150ecc39fb7bf3cce56f779deacdc128925ce8a4",
+      "gazebo_sha256": "3f904d8ca0d1aa8413e67235150ecc39fb7bf3cce56f779deacdc128925ce8a4",
+      "cli_rows": 172,
+      "gazebo_rows": 172,
+      "exactly_equal": true
+    },
+    "cables.csv": {
+      "cli_sha256": "d362011f1df42436411feed7d008723cf2f749858bc27cf0a8b34c0725828cfd",
+      "gazebo_sha256": "d362011f1df42436411feed7d008723cf2f749858bc27cf0a8b34c0725828cfd",
+      "cli_rows": 172,
+      "gazebo_rows": 172,
+      "exactly_equal": true
+    },
+    "bases.csv": {
+      "cli_sha256": "e828c203baf6b7b36b0e5bcadc6e3f90fac17f24ed2854b48ab8ea5ed48d0d4e",
+      "gazebo_sha256": "e828c203baf6b7b36b0e5bcadc6e3f90fac17f24ed2854b48ab8ea5ed48d0d4e",
+      "cli_rows": 172,
+      "gazebo_rows": 172,
+      "exactly_equal": true
+    },
+    "geometry.csv": {
+      "cli_sha256": "e1cf48626348cbc1d89a2f952f8a1937713fdd7fc5da15f2eff25a15aac4eeaf",
+      "gazebo_sha256": "e1cf48626348cbc1d89a2f952f8a1937713fdd7fc5da15f2eff25a15aac4eeaf",
+      "cli_rows": 172,
+      "gazebo_rows": 172,
+      "exactly_equal": true
+    }
+  },
+  "passed": true,
+  "scope": "Pre-reset 4.2 s segment; compare after Reset flushes logs, before stepping reset_1",
+  "same_events": true,
+  "same_mode_and_wind": true
+}

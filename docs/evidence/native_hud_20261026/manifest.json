@@ -1,0 +1,250 @@
+{
+  "schema": "agro-native-hud-evidence-v1",
+  "date": "2026-10-26",
+  "timezone": "America/Bogota",
+  "git_base": "6a824b4dc03be8e2cdb4bf4200c7289bdf7cd7cb",
+  "branch": "feat/ballasted-two-carrier-demo",
+  "revision": "working tree identified by source_sha256 and source_snapshot.zip; not a new commit",
+  "variant": "revised_supports",
+  "verification": {
+    "classification": "verificada",
+    "native_checks_passed": 19,
+    "native_checks_total": 19,
+    "native_five_csv_exact": true,
+    "ros_scenarios_passed": {
+      "single": true,
+      "spider": true
+    },
+    "ctest_passed": 9,
+    "ctest_total": 9,
+    "ctest_elapsed_s": 2.15,
+    "ros_unit_cases": 21,
+    "hud_unit_cases": 8,
+    "historical_artifacts_unchanged": 47,
+    "no_new_full_campaign": true
+  },
+  "inferences": {
+    "classification": "inferida",
+    "shutdown_failure": "Race between asynchronous context shutdown and message take is suggested, not demonstrated; unexpected RuntimeError remains propagated.",
+    "historical_command_failure": "Late discovery remains a hypothesis, with no new causal proof."
+  },
+  "pending": {
+    "classification": "pendiente",
+    "items": [
+      "independent cable-pendulum energy coupling and impulses",
+      "native wheel-cable contact",
+      "base and liquid dynamics",
+      "soil/slab capacity and structural strength/fatigue/tolerances",
+      "exhaustive shutdown-race stress testing",
+      "new full campaign across all variants"
+    ]
+  },
+  "captures": {
+    "patio": {
+      "classification": "verificada",
+      "source_run": "model_consistency_patio_capture_03",
+      "hud_run": "model_consistency_patio_hud_02",
+      "frames": 351,
+      "simulation_range_s": [
+        0.04,
+        70.0
+      ],
+      "actual_core_stop_s": 70.12,
+      "duration_s": 17.55,
+      "camera_timestamps_identical": true,
+      "max_hud_sample_lag_s": 0.04,
+      "csv_parity": {
+        "global.csv": true,
+        "carriers.csv": true,
+        "cables.csv": true,
+        "bases.csv": true,
+        "geometry.csv": true
+      },
+      "min_host_free_gib": 9.548233032226562,
+      "peak_tree_rss_gib": 2.6429367065429688,
+      "visual_review": "sampled beginning, travel, endpoint and wind; readable HUD",
+      "complete_service": false
+    },
+    "ladera": {
+      "classification": "verificada",
+      "source_run": "model_consistency_ladera_capture_01",
+      "hud_run": "model_consistency_ladera_hud_01",
+      "frames": 676,
+      "simulation_range_s": [
+        0.04,
+        135.0
+      ],
+      "actual_core_stop_s": 135.04,
+      "duration_s": 33.8,
+      "camera_timestamps_identical": true,
+      "max_hud_sample_lag_s": 0.04,
+      "csv_parity": {
+        "global.csv": true,
+        "carriers.csv": true,
+        "cables.csv": true,
+        "bases.csv": true,
+        "geometry.csv": true
+      },
+      "min_host_free_gib": 9.48895263671875,
+      "peak_tree_rss_gib": 2.547107696533203,
+      "visual_review": "sampled beginning, travel, endpoint and wind; readable HUD",
+      "complete_service": false
+    }
+  },
+  "binary_sha256": {
+    "plugin": {
+      "sha256": "11774155f737b6a76d0c62e7e1c2513d44477a5a8531de0af9b3f625e11b1d4d",
+      "matches_native_run": true
+    },
+    "cli": {
+      "sha256": "f549718ab33403e4acaaaf4824eefe96b984b72ab15f06999fd1bc6e73e2559c",
+      "matches_native_run": true
+    }
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "6cf091b8e07a3f17e64b9a26d8a2b5245b6252def694a9b3e4bc04afe117b3bb",
+    "README.md": "49cbd3ef677ee114362b9251e3dc91980e9edb82f03c4fc919a4e1695fd4728d",
+    "config/ballasted_common.json": "7cb4af0790afd20c6d8128c1911ffca15e2df97c1a7798a354609d9962b46339",
+    "config/ballasted_compact_candidate.json": "27bba116130b95fc1ae5ced5a1572978edcbad5447bb1013cac5c0633a830117",
+    "config/ballasted_revised_supports.json": "d88f3983153a5cc5160b04a0ff76b1641849c41d0c77fad891ffcff695006767",
+    "config/buitrago_entre_pisos.json": "74a220654aaaf1ff5e616b590a5f152e894b71b56c0baf3823dd371d46946efa",
+    "config/buitrago_patio.json": "dc29ab63ee79d99d73f15b92e1a1613a9e5293bff4933349a176897c1c0d9ff9",
+    "config/ladera_agricola.json": "73678a8bf559221c9ce95a0f23cfcce39372e96de4089c8989701d6fcfe9d8ce",
+    "config/legacy/buitrago_patio.json": "f8b4d9fd51cef9ac82184281c416500d14df7bcf77c71651523f1cf6c56ba799",
+    "config/loop.yaml": "22dbea562f5cef630db199587540f830b2cd4f1830dc1b4a76590ee03f8e8305",
+    "docs/consolidacion_modelo.md": "436e3528c20243cfbbb05ee1f3004fe191aaedfde36fb983b680fc7944bca908",
+    "docs/modelo_vigente.md": "a61c0ff75abe11b2cd950f0d019106fdb9060b0bdbba26cb7b3b221c5e7f27ee",
+    "docs/validacion_minima_20261026.md": "56f164d20ebc36c4aeab802b7c5dacd97dd490f7be53020f774f81c40d78d990",
+    "include/agro/loop.hpp": "e63005586d45923ca62109341459781e144c4e4acdabbf9d9cda959faa7dff2d",
+    "include/agro/loop_log.hpp": "7d629ccf7af9574fd3290a4d82a30b92b0b0530768ed26f380a6df4dc670e219",
+    "scripts/audit_support_clearance.py": "4d1230f40bc8c01343b791bde96205fab638d1c99890b4544228cb3a3fed9a18",
+    "scripts/capture_loop.py": "16e6ae11f8d5a7119c4a06c4c15e69ca2ad6536e81d43d2e56b90be36e202c0e",
+    "scripts/check_ballasted.py": "ad44d8bc2aad3eb0658836dc758c37fee9a6310c3ecbac8dc2d887c14ea2e185",
+    "scripts/compose_telemetry_hud.py": "3ed433d9fada99789ef56191c10864a555d0dc67ee8746a82ccb40200e11632a",
+    "scripts/export_ballasted_evidence.py": "e3f6dca533f7da537d5c0e3803c169a38070bbdd3a46fad9d6736a7709026379",
+    "scripts/generate_ballasted.py": "146e7f567da59e366391c4bcd528047b2b5ce31656e14fb5ef517f8d465ac00d",
+    "scripts/generate_loop.py": "9538aec5b406e0eb5725d130d7062ad7e11f35a5aa06121b4736137a9d0b9f0f",
+    "scripts/ros_interface.py": "5febc0ade37fe6872d9185d6a71a4e33071f6450eac5139ca7524eb0fb7c1c38",
+    "scripts/run_ballasted_core.py": "0b96e031d0a3d39ee6334068137f0d0e3c9ae406208823881332eeb564f98614",
+    "scripts/run_loop_guarded.py": "0314bd1dc490bd430ce7cba2f94b960d561759aa1f9636e6c85dc01d508e44ff",
+    "scripts/run_loop_suite.py": "9396719566ab53f3f7c21ad5e338475245254032eb2717789adf4022c881262b",
+    "scripts/summarize_ballasted.py": "cd814dec008d1715a72f81d677aef805ce56b7205ec0bf53a37ac2dcab9ffd05",
+    "scripts/verify_ballasted_capture.py": "5792e3154334555b7a0ea1f5441e74713535c77ddf673049003a1c7905e56494",
+    "scripts/verify_ballasted_excerpt.py": "4fe4d3a38e74e1efc3d45d0d5a9229249d798a7a43f0e59da94cd9c2cab71cb9",
+    "scripts/windows/run_guarded_loop.ps1": "152f63d8278d698b34b8e158634d670d2940a80307b20d3eebb2d0809c9dd2ea",
+    "scripts/windows/run_guarded_validation.ps1": "8c799cd247aaa02ae71715c4fdd8bb4e5eee49cc9b7d12dab6877c04e5cb151b",
+    "src/loop_system.cpp": "49f53e13544cae7a0b2a22b15a5b5e70b48dee441be5e8e897fcdebd9fe2415e",
+    "tests/test_ballasted.cpp": "dc28e9db2dc77a19a91bca278f25613f6ab4b1a7b66554467ae44571fb5ef23a",
+    "tests/test_ballasted_assets.py": "eaab44fc9f5ad486b8c87c5568a449ae28d36781cb6120227d79818922448e31",
+    "tests/test_ballasted_geometry.py": "560029e388ef9bb5870d78bd2574c2494e75fff0882c5aa943cd5a6db8009c71",
+    "tests/test_ballasted_native.py": "7260fe4deaf2a7c073c76d2a94fb2b7cc3fe7b1b6e3e9214e6374aa77c9500d0",
+    "tests/test_loop.cpp": "4709478a6012a9c1d055dcad192f93b50d555f5b3f39fb34e2fbae1fdb46d821",
+    "tests/test_loop_assets.py": "c8edc2b31f1347f9206a63bcde3348dda71fd9dcdc22a2a05cd813e2d7fc995e",
+    "tests/test_loop_guard.py": "bb7d0fd2718e7524acdfe44d68ab2034594d7ca91ec1f35e943d94da23fbbd97",
+    "tests/test_ros_interface.py": "a1762d8b1c58ee670e63221ec31b08ad9d097cd472004cac3f43cda714212d16",
+    "tests/test_ros_smoke.py": "487f046ea89619e6f3a50942b4379f0aeafa53b6c96bcfebf5d9243f477fbee3",
+    "tests/test_telemetry_hud.py": "94a581c674f230e114c038e5fb155f7e0110bda464e10c1a19b111db7c1b0d25"
+  },
+  "files": {
+    "admissions.json": {
+      "bytes": 1893,
+      "sha256": "56875c2146f97b82a3d2df8d661874882d94e936648cf898b4f456187183aec3"
+    },
+    "ctest_detailed.log": {
+      "bytes": 6988,
+      "sha256": "bcaadb5da100c4bd59777cbf015cf8cfe631811d6b341021f874d929b6c15783"
+    },
+    "ctest_summary.log": {
+      "bytes": 1192,
+      "sha256": "72503ced902ee349230f67e75f284f6a86ca14ca39f5af85c6789a2d7d54ae96"
+    },
+    "environment.txt": {
+      "bytes": 597,
+      "sha256": "35bd8a9e72849e79771aa70bf1e1d2bec78f68c178a10948143e4e6fd0dada71"
+    },
+    "hud_failed_before_fix.log": {
+      "bytes": 2096,
+      "sha256": "b43445d3789cd176460210171778bafb9df3a0a382465848d5220d39cc9e3201"
+    },
+    "ladera_excerpt_verification.json": {
+      "bytes": 3720,
+      "sha256": "b9fc684ea411c6053b6f7c40611e01ee4cf830d2df4fa3df2fac4bb7dd65c313"
+    },
+    "ladera_hud.mp4": {
+      "bytes": 4178408,
+      "sha256": "71c88193462b911f95d252b8614aeebdad3866ecf762643d3a6b0fc6cca3ee9b"
+    },
+    "ladera_hud_audit.json": {
+      "bytes": 4663,
+      "sha256": "982cc8531f58a1bbb84d739f35fa43050f2ef6fe83e9e41154ae04bec575b5ef"
+    },
+    "ladera_preview.png": {
+      "bytes": 659330,
+      "sha256": "c08baf7f8f84f10ab527bf6ec6185788e342d23df98d2794d3243a1a7852500f"
+    },
+    "ladera_reproduction.zip": {
+      "bytes": 7089854,
+      "sha256": "4ade3b25c8f116b18756c79df18744829a93a9deb71063dfeb2b3ff48d8e6d98"
+    },
+    "native_build.log": {
+      "bytes": 103,
+      "sha256": "03a909d843a5dbab17d4b0ab3c7360bc17991d0c368e559dbc93ac7dd9883073"
+    },
+    "native_checks.json": {
+      "bytes": 34259,
+      "sha256": "37f445acfc56e9a02ebdaa097a96d4b997b692033ff7c9f15fcbe9620bf75d13"
+    },
+    "native_parity.json": {
+      "bytes": 1603,
+      "sha256": "295c8ef03f9f5b644d462cd2fc46483c0226e301ee3de6b1f82f156a5e2e1472"
+    },
+    "native_smoke.zip": {
+      "bytes": 101787,
+      "sha256": "f93f178ad1dfb2fc9d2d01a977ae5f18fd0375c453ba386761ddf1438d96e930"
+    },
+    "patio_excerpt_verification.json": {
+      "bytes": 3732,
+      "sha256": "8bf0607a02bb9249623fd994b974f0b27239adbe92f4877168fcf220c9c19a33"
+    },
+    "patio_hud.mp4": {
+      "bytes": 2540685,
+      "sha256": "73e2e045c8b6a92b99a01dbf99b88258c9893773616147810c741b6cfd3b5229"
+    },
+    "patio_hud_audit.json": {
+      "bytes": 4649,
+      "sha256": "0c78a4232dce0b7f5f3e5dcf6c6ba1d591723321300e98d84c38e8771420114d"
+    },
+    "patio_preview.png": {
+      "bytes": 503056,
+      "sha256": "1ec859f0b7b08b5c1d7768c9d04b62dbbe93588b2ea16591794643f08edeb4bd"
+    },
+    "patio_reproduction.zip": {
+      "bytes": 4224624,
+      "sha256": "094017c804b61a571f0244ec5823afc694984f1fe4b9b90b53aae5d42cf5ce27"
+    },
+    "ros_failed_before_signal_fix.zip": {
+      "bytes": 19193,
+      "sha256": "52a2f3f74ab131c17e5ea18c124c384d0ba7f165d6be9b42a7f5f5cc78c1ac85"
+    },
+    "ros_smoke.zip": {
+      "bytes": 65836,
+      "sha256": "de177a5d703dff832762361aab714e3559d0483e2f1a28c79cd9c82b1b06cc5a"
+    },
+    "signal_fix_build.log": {
+      "bytes": 12854,
+      "sha256": "c5b9f8e8e99df1e521e7f47661c5db00ffa5843bd0dbfee990d2e479242eba77"
+    },
+    "signal_fix_install.log": {
+      "bytes": 8459,
+      "sha256": "f1aab88538ab288c4a09374e9093a29667d5a1d3fc149ed7224e7a4a7f85e389"
+    },
+    "source_snapshot.zip": {
+      "bytes": 119528,
+      "sha256": "2a9c7e02e47b6c173b48ac985a0f0e54f83c2c7161155dd6291ce14da3a0be0b"
+    },
+    "tracked_changes.patch": {
+      "bytes": 22793,
+      "sha256": "9637bc94301a560668503e7e0fa519fefc55fa0eb49e00d7059a748d94e5aa09"
+    }
+  }
+}

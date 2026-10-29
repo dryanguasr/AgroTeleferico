@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Objetivos ROS 2 y telemetría tipada; la física y el control interno usan simTime."""
 import math
+import signal
 import rclpy
 from rclpy.node import Node
+from rclpy.executors import ExternalShutdownException
+from rclpy.signals import SignalHandlerOptions
 from geometry_msgs.msg import PoseStamped, TwistStamped
 from std_msgs.msg import Float64, Float64MultiArray, Bool
 
@@ -32,7 +35,12 @@ class Interface(Node):
 
     def state(self, msg):
         d = msg.data
-        if len(d) != 50:
+        # Validate the complete row before publishing any derived message.
+        # builtin_interfaces/Time uses signed int32 seconds and nanoseconds
+        # in [0, 1e9); this interface accepts only nonnegative simulation time.
+        if len(d) != 50 or not all(math.isfinite(value) for value in d):
+            return
+        if not 0 <= d[0] < 2**31:
             return
         p = PoseStamped()
         p.header.frame_id = 'world'
@@ -55,15 +63,47 @@ class Interface(Node):
 
 
 def main():
-    rclpy.init()
-    node = Interface()
+    node = None
+    original_error = None
+    stop_requested = False
+    previous_handlers = {}
+
+    def request_stop(signum, frame):
+        nonlocal stop_requested
+        stop_requested = True
+
     try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
+        for signum in (signal.SIGINT, signal.SIGTERM):
+            previous_handlers[signum] = signal.signal(signum, request_stop)
+        # Keep the context alive while a subscription callback is being taken.
+        # Our handlers request a stop; cleanup follows the last spin_once.
+        rclpy.init(signal_handler_options=SignalHandlerOptions.NO)
+        node = Interface()
+        while not stop_requested and rclpy.ok():
+            rclpy.spin_once(node, timeout_sec=.1)
+    except (KeyboardInterrupt, ExternalShutdownException):
         pass
+    except BaseException as error:
+        original_error = error
+        raise
     finally:
-        node.destroy_node()
-        rclpy.shutdown()
+        cleanup_errors = []
+        # External code may already have closed the context. Always attempt
+        # destruction, idempotent shutdown, and restoration of our handlers.
+        cleanup = ([node.destroy_node] if node is not None else []) + [rclpy.try_shutdown]
+        cleanup += [lambda signum=signum, handler=handler: signal.signal(signum, handler)
+                    for signum, handler in previous_handlers.items()]
+        for close in cleanup:
+            try:
+                close()
+            except BaseException as error:
+                cleanup_errors.append(error)
+        if cleanup_errors:
+            primary = original_error if original_error is not None else cleanup_errors.pop(0)
+            for error in cleanup_errors:
+                primary.add_note(f'ROS cleanup failed: {error!r}')
+            if original_error is None:
+                raise primary
 
 
 if __name__ == '__main__':

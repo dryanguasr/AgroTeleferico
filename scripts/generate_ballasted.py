@@ -16,7 +16,7 @@ SCENARIOS = ('buitrago_patio', 'buitrago_entre_pisos', 'ladera_agricola')
 STEEL = '.35 .42 .46 1'
 
 
-def config(scenario, fill=None, dt=None, calm=False, variant='revised_supports'):
+def config(scenario, fill=None, dt=None, calm=False, variant='revised_supports', shape_period=None):
     spec = json.loads((ROOT/'config'/f'{scenario}.json').read_text())
     if variant not in ('baseline','compact_candidate','revised_supports'):raise ValueError('Unknown equipment variant')
     if scenario=='buitrago_patio' and variant!='revised_supports':
@@ -30,6 +30,8 @@ def config(scenario, fill=None, dt=None, calm=False, variant='revised_supports')
     core['terrain'] = [[0, 0], [spec['span_horizontal_m'], spec['floor_rise_m']]]
     if dt is not None:
         core['dt'] = dt
+    if shape_period is not None:
+        core['shape_period'] = shape_period
     if fill is not None:
         if not math.isfinite(fill) or not 0 <= fill <= 1:
             raise ValueError('Fill fraction outside [0,1]')
@@ -142,8 +144,8 @@ def stations(c, b):
     return a
 
 
-def generate(scenario, directory, fill=None, dt=None, calm=False, stop_at_end=True, descending_payload=None, variant='revised_supports'):
-    c,b,spec=config(scenario,fill,dt,calm,variant)
+def generate(scenario, directory, fill=None, dt=None, calm=False, stop_at_end=True, descending_payload=None, variant='revised_supports', shape_period=None):
+    c,b,spec=config(scenario,fill,dt,calm,variant,shape_period)
     if descending_payload is not None:
         if not math.isfinite(descending_payload) or descending_payload<0:
             raise ValueError('Descending payload must be finite and nonnegative')
@@ -221,7 +223,8 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--scenario',choices=SCENARIOS,required=True);p.add_argument('--output',required=True)
     p.add_argument('--fill',type=float);p.add_argument('--dt',type=float);p.add_argument('--calm',action='store_true')
+    p.add_argument('--shape-period',type=float)
     p.add_argument('--descending-payload',type=float)
     p.add_argument('--variant',choices=('baseline','compact_candidate','revised_supports'),default='revised_supports')
     p.add_argument('--gui',action='store_true',help='Keep world open at completion; launch with gz sim -r')
-    a=p.parse_args();print(generate(a.scenario,a.output,a.fill,a.dt,a.calm,not a.gui,a.descending_payload,a.variant))
+    a=p.parse_args();print(generate(a.scenario,a.output,a.fill,a.dt,a.calm,not a.gui,a.descending_payload,a.variant,a.shape_period))

@@ -1,0 +1,2891 @@
+{
+  "classification": "verified computational reconstruction",
+  "definition": "mass times nominal trip arc divided by 2 carriers * 10 kg * total nominal trip arc; includes empty trips and restoration",
+  "useful_mass": "whole loaded orders not yet delivered at the departure instant; handling at rest is excluded from distance",
+  "analytical_check": "10 kg across two carriers over 10 m, then empty over 10 m -> useful occupancy 25 percent",
+  "script_sha256": "1804615bbfb3e9099fcca04c7fad96e8c9b55a700a586c2b28c899ec6647eea4",
+  "input_sha256": {
+    "balanced_r12_s000/A": {
+      "trips.csv": "199085dc175cbb5b6a55ee04d41dd60864299218bf6f6c8c248cf80d73f805dc",
+      "orders.csv": "a923f67224dc62e164dc5f6eb53bd3088a54eae9cf244d6a9c1b4d91ce1b8425"
+    },
+    "balanced_r12_s000/B": {
+      "trips.csv": "dcbdcd31045edf2c7373c46fa9a21c845f603575fbde28356598227e649bb643",
+      "orders.csv": "5bed58e05542845727e615d362fa433976ba4b78715413327c143bd5334c2bcc"
+    },
+    "balanced_r12_s000/C": {
+      "trips.csv": "7d3a556ccf0ce41f328b562a6063ec398a29b45f780824eb984b47ada4b63f8d",
+      "orders.csv": "3c8f7322d7310598883b26af3aacc810460fd60243efdcb3a30c06b9884079aa"
+    },
+    "balanced_r12_s000/D": {
+      "trips.csv": "731455c3c189003dcb41d8d0e9db371cf8a2e4d1b63504cf7f02e5b272f2c9f0",
+      "orders.csv": "1eed8f76ee6c771428312dd6ab508d654ccc330ea6ad79681cfd50714f0d91eb"
+    },
+    "balanced_r12_s001/A": {
+      "trips.csv": "214953200ff8efedc2b76d62ac2eb47dff324b9c725c96c4d61fa240d451fe58",
+      "orders.csv": "d341b2ff7d8206524edaa67f193dde8bc6389698193bb04c5907d62b1aa8665a"
+    },
+    "balanced_r12_s001/B": {
+      "trips.csv": "a1839cfd25672d75fc68a761f679334345c15adc2f39d130145b2a0d50b9fc3d",
+      "orders.csv": "8c5343aebed396ad2bc924713551309c898f339e5945723e1dad89f813c92865"
+    },
+    "balanced_r12_s001/C": {
+      "trips.csv": "c0d4e9bee8047799c47bcf85a33506c69e6bb533ca55db6dc19c36f37084f5fa",
+      "orders.csv": "d341b2ff7d8206524edaa67f193dde8bc6389698193bb04c5907d62b1aa8665a"
+    },
+    "balanced_r12_s001/D": {
+      "trips.csv": "ec4178a184329adcf620c2cfe878fd301b47f01ca4fc23a5ab7e4d6a836bf5e6",
+      "orders.csv": "8c5343aebed396ad2bc924713551309c898f339e5945723e1dad89f813c92865"
+    },
+    "balanced_r12_s002/A": {
+      "trips.csv": "24d706d421c016f0201463a52263b7d740beafbc84aab351d297fc758852ee4e",
+      "orders.csv": "2788ef73363f74751355afcdabc36be91bc1a732c18a34ef4c93099c311cef3d"
+    },
+    "balanced_r12_s002/B": {
+      "trips.csv": "a7ee837504aeec70e81513809ae6c6b8ecdc0dcb4ebecf731653db927463af5a",
+      "orders.csv": "8554d90f6f66baf3d4b2022b60e5038939e21fb338824eeb46a4750d848bb77a"
+    },
+    "balanced_r12_s002/C": {
+      "trips.csv": "fb3734b1d2475d513c59e2792c8925938f1e8dd174e926b44bbd6b1f9649eee7",
+      "orders.csv": "2788ef73363f74751355afcdabc36be91bc1a732c18a34ef4c93099c311cef3d"
+    },
+    "balanced_r12_s002/D": {
+      "trips.csv": "55ccbf1c83ba31f93f01f81009bfee5448478611e97b753d6c2d5b2dea4aef00",
+      "orders.csv": "8554d90f6f66baf3d4b2022b60e5038939e21fb338824eeb46a4750d848bb77a"
+    },
+    "balanced_r12_s003/A": {
+      "trips.csv": "f49354585a6c920d4760711ad49f5be11b4615a6dc4731dfe0c276f309852b5b",
+      "orders.csv": "f44f5055f8bdd6d093e12b5c8fafb533ee8c74ccdb8f4339231fcd37e48d36e8"
+    },
+    "balanced_r12_s003/B": {
+      "trips.csv": "030bf44f7562a1216fcdb55712da848067ced9789dbd7a0534c158cdc8bb15b6",
+      "orders.csv": "5039f5c469941c0a111d3d81f52dad3aa2250292e32101baac1f4fdc06986874"
+    },
+    "balanced_r12_s003/C": {
+      "trips.csv": "5de8c2505798835576ad763e0a5270cba367daa02a2a6053109891ef087d028f",
+      "orders.csv": "064c436364544fcfb1392f0674e5ddb3322ad301a75cc5004813fe45f72424be"
+    },
+    "balanced_r12_s003/D": {
+      "trips.csv": "c3250a787fc75f969b6b9aa04795b9d0c8ce37039e5929cb2d1eea14665a3ec3",
+      "orders.csv": "df4283de1a60f646333dbb3b018b3bc28e1a616ea7987f1d343cd17f73b65ba6"
+    },
+    "balanced_r12_s004/A": {
+      "trips.csv": "bb7a0fd69a257c122bf3195cb7e57337141b0bd992f00cbb8192830ad64160cf",
+      "orders.csv": "f02cc80ed6a182bc19f28eef4a6a25635b9a84136a3c7d72aa2cf5d30c81c092"
+    },
+    "balanced_r12_s004/B": {
+      "trips.csv": "5608e396ee78174c10cb2d1ea83fc25565cca8e3ed97e73e410aade332aa87b7",
+      "orders.csv": "00bdb994c5337c5f53f460f3b7aa495083f76f1525f6923d46a9caa95302ed94"
+    },
+    "balanced_r12_s004/C": {
+      "trips.csv": "16caa403b73ecd1d14f91d0022c20be811c9730f0f0d9c9f39b24a37bf848669",
+      "orders.csv": "559c34f0352c46c4eb75187280bb37320412d7a441d7b1d0ddfc30877646d987"
+    },
+    "balanced_r12_s004/D": {
+      "trips.csv": "805b1d59e92023c5f868b6346e84234341471d6a839afbb3e5ec459af7f6ca3f",
+      "orders.csv": "a6ce119db3572ef4b9fa195b1042e651f0886cc90ce0e81645f6863a0cbb50db"
+    },
+    "balanced_r12_s005/A": {
+      "trips.csv": "0b2c7a9b01c569bb577b40cf9cca742fe9fe08cba5c45afb911646417b89a918",
+      "orders.csv": "bd765975a4dbcb24eaa6722110b8f7604cdbd2458a94158169fcd2606be149c0"
+    },
+    "balanced_r12_s005/B": {
+      "trips.csv": "3f2645630a2a4d9a481acc6e0276ea6628556449e989102a3af6590cb9e3ab13",
+      "orders.csv": "7cea3c365e1e0b744f0fb51f94809491f9da3e33a6193bef2243d1133ab0a429"
+    },
+    "balanced_r12_s005/C": {
+      "trips.csv": "1ae5dd0abf91b5d9b6e127506b631d3f653dee915b7bf7b614d1bace7e8fd993",
+      "orders.csv": "bd765975a4dbcb24eaa6722110b8f7604cdbd2458a94158169fcd2606be149c0"
+    },
+    "balanced_r12_s005/D": {
+      "trips.csv": "f79685049c44056a2dac5f9bf8c3218931303c6fdd21693d5bd7a7eff65d57e7",
+      "orders.csv": "7cea3c365e1e0b744f0fb51f94809491f9da3e33a6193bef2243d1133ab0a429"
+    },
+    "balanced_r12_s006/A": {
+      "trips.csv": "bc40b4e71b41aa6c23ff6be41e3f910acb20297de5603f54db0e62b43344d32d",
+      "orders.csv": "558cbb340715eacc82c0056833a81de5f019fd4ac8c0e3f926c9a3fdd7fe60a2"
+    },
+    "balanced_r12_s006/B": {
+      "trips.csv": "f09bea6a79bb290df082b12efb732ff82a962d89a9ac9ad4e73cc855864bd4ee",
+      "orders.csv": "c22356cbb264fe36f1c1640fc6e74a7f66546f02af71946c49fb3b63db824269"
+    },
+    "balanced_r12_s006/C": {
+      "trips.csv": "17abc982f1448811a2811efdb6bd150386183c1d7ee4e556345ac8140258121b",
+      "orders.csv": "1ed1fad8c5c1d018fdacf77a483c909309de1f92b8b0ad181836fdcc1f11b014"
+    },
+    "balanced_r12_s006/D": {
+      "trips.csv": "c951591299e9fa56657f42a1ea16388bd2cf2d13daecedebbce171b1771eeda1",
+      "orders.csv": "c22356cbb264fe36f1c1640fc6e74a7f66546f02af71946c49fb3b63db824269"
+    },
+    "balanced_r12_s007/A": {
+      "trips.csv": "292b0510b93ffb173b809b2181028f36ede82c14e5247387a7beaa9e48c71150",
+      "orders.csv": "a8a8fb0545bc3802a8eec25e7c2581727d1e55b83131ec5d77804a2cbd22fa2c"
+    },
+    "balanced_r12_s007/B": {
+      "trips.csv": "e45c0f375ddb0015f689f7816aa9453c7a38041c1c8abaa06d36e60fb2848d9f",
+      "orders.csv": "4149d482a64b697a919c31930ce0386bc42a0a87cbb87bcfae66ada91cc8e66d"
+    },
+    "balanced_r12_s007/C": {
+      "trips.csv": "e28893b63ac4beb5f8be29b6f629eacf128cc1e0ef358d8d61fb954003ed285f",
+      "orders.csv": "a8a8fb0545bc3802a8eec25e7c2581727d1e55b83131ec5d77804a2cbd22fa2c"
+    },
+    "balanced_r12_s007/D": {
+      "trips.csv": "0fc0586045cd55424ccc192e68e239a448dbf7db2a61cff4e3b1e3af78d6a4a0",
+      "orders.csv": "4149d482a64b697a919c31930ce0386bc42a0a87cbb87bcfae66ada91cc8e66d"
+    },
+    "balanced_r12_s008/A": {
+      "trips.csv": "f0631e6d987d2c638bfe17c151feb9a4710cda6dee19a8f771229f3333674325",
+      "orders.csv": "6eadef9faae7110df834c29d84f552e44dc07a51521e6b382f5f136e22a1c83b"
+    },
+    "balanced_r12_s008/B": {
+      "trips.csv": "e064bb09e71d24c7885237b562ff5e87edcffeee52d0c7e666a37e26a5df3d3e",
+      "orders.csv": "5ef52df43f54be9ec791f009c9449cfccec856f1bbd3bef2218955b42c6ca5fe"
+    },
+    "balanced_r12_s008/C": {
+      "trips.csv": "8d1e6760b82f686e5e941239b1299331ab42a9e65344a58c4dd9b3f1e46c8e8b",
+      "orders.csv": "48c9b7ce48459188f77d24f4678c02ac9e642d6b6cdab828019167d2a0bab99b"
+    },
+    "balanced_r12_s008/D": {
+      "trips.csv": "8dbb2ddd117c2785c36d7ce195fb506c2c06a0a8724bb8e4ceee293866cc6ee8",
+      "orders.csv": "ea9bfe655cccbde9d686636d0dcaab1499631230395c21f9e69ecd9d978d4cdc"
+    },
+    "balanced_r12_s009/A": {
+      "trips.csv": "3d5f75cb6ff12a2a7723279004157230c1888e00b8153c5aa6d228408cc8dd4c",
+      "orders.csv": "7973d26c7d42c1fd8c05918f5a3a1a7886ae4eedcc4b409f24c92d4106b58b48"
+    },
+    "balanced_r12_s009/B": {
+      "trips.csv": "0d02647385b41e07f3faa4cc977e5477c959e218e5c4db7c6d214dfb75c46ab5",
+      "orders.csv": "d245ab0fcee55e15ebe6584b5f72c87ad8d3263a0649e5c53e5ceac5e7b1fd17"
+    },
+    "balanced_r12_s009/C": {
+      "trips.csv": "f7e07fe360f3d2c515b52c41ff8ca999361362ca38c18ccd1c330a466da18b6a",
+      "orders.csv": "7973d26c7d42c1fd8c05918f5a3a1a7886ae4eedcc4b409f24c92d4106b58b48"
+    },
+    "balanced_r12_s009/D": {
+      "trips.csv": "1506e39a3407aa81d76caa93fc6a0e203a270ffd1f7df126921b0b2a36cdca24",
+      "orders.csv": "d245ab0fcee55e15ebe6584b5f72c87ad8d3263a0649e5c53e5ceac5e7b1fd17"
+    },
+    "balanced_r12_s010/A": {
+      "trips.csv": "74763385f343edf86a9a12a810b654003582563959175d76b338ebef2d7d5fa2",
+      "orders.csv": "b83d469f479d027aeb2ee09b2b884bc1322f2d2be2c8a9763fddd735cdf0d3e3"
+    },
+    "balanced_r12_s010/B": {
+      "trips.csv": "9360effba4a01ce880f8d786dc43eeb1d45db0f109a3f8493f493ba0db0e64bd",
+      "orders.csv": "279be38cf33141575078c01b126e23f704592175ddc43ad9cdb831a760dba57e"
+    },
+    "balanced_r12_s010/C": {
+      "trips.csv": "80a435454d77155580e81ca56c7a82aad8e535f934511111ff04a6a252836a78",
+      "orders.csv": "2d41e9d004cf7793dfb0add1c91e6e38ac3b279fbb1ed013697c1e68f07929a6"
+    },
+    "balanced_r12_s010/D": {
+      "trips.csv": "8144cf4dba157c093be3ea15dc1d5a3745fdeacadf46ed65bc370536a22d1393",
+      "orders.csv": "279be38cf33141575078c01b126e23f704592175ddc43ad9cdb831a760dba57e"
+    },
+    "balanced_r12_s011/A": {
+      "trips.csv": "99e19eea9145821a760a054e3f197dc83a0985f4d22b9b6648326c8c1f1ce168",
+      "orders.csv": "443b7a3dd55763a5d0c4abaccbc282bfd5013376d6fe52dddc738a16bf81709d"
+    },
+    "balanced_r12_s011/B": {
+      "trips.csv": "3f4819ba4dbd12c1238da30615ffb2d4adb7ea7afce0db23ff1025cb00bfad10",
+      "orders.csv": "0938177837a8da89f6c230e6fe89770f73764725201d3b6326d0051fba766bc9"
+    },
+    "balanced_r12_s011/C": {
+      "trips.csv": "bc759e395cb425a3247f8d01cbc88e631bcc0a231176fd71d146279d26c1d744",
+      "orders.csv": "086fe9d1c94dc832ba76fb0ea622b9089da013171e86c6b059c59a662bd8e3a9"
+    },
+    "balanced_r12_s011/D": {
+      "trips.csv": "1c52bc9e71636ce78519c45364638f6ef638cbbff69f93a45bfd59e58c2590de",
+      "orders.csv": "0938177837a8da89f6c230e6fe89770f73764725201d3b6326d0051fba766bc9"
+    },
+    "balanced_r12_s012/A": {
+      "trips.csv": "b221baa9753078263381718d0cffd2394f482fba95dfceaa1459ef896652e275",
+      "orders.csv": "fbd41fc013d5a0fac1d43898a2389c0fa56945edae7e6f3ded076676524d72f1"
+    },
+    "balanced_r12_s012/B": {
+      "trips.csv": "93b856b0db902419ec8431ca5688f5a6842d1893564f59094e3abba17b91a3bb",
+      "orders.csv": "dd814ef82b683e24de9e1275ad44c951ac713421ea8634e6f72332f4dc447a4f"
+    },
+    "balanced_r12_s012/C": {
+      "trips.csv": "d0a836dfdd10702f6cf72732afa3c69cda4c8a8084e90550f263a241d16500d8",
+      "orders.csv": "542897559ff7bfeffeacfb62d03c5969ed976fbf85aef0891f58235148246119"
+    },
+    "balanced_r12_s012/D": {
+      "trips.csv": "70f5e20e8fb20f8c572fd345211db08388085ee293553c641b286bf8c7f87b66",
+      "orders.csv": "1c6025032ba2fd16c830f80f1c5ac855d421ade7babad9f3ddef4fe3105f524f"
+    },
+    "balanced_r12_s013/A": {
+      "trips.csv": "17ce5b7ab5a6d4308b0e2eaa315b79f78bdda27a447a1ee99440f7223ed09a43",
+      "orders.csv": "4eecb8c88f04a59ffb1d8d762d5ef9af9530cb1a79d7897387cb0aad47e1d53f"
+    },
+    "balanced_r12_s013/B": {
+      "trips.csv": "069ab9cde5c21e5c9ddcdf67b566f7c5f03ca3d3804cb6e71b755a5e2fc33067",
+      "orders.csv": "1c6102c5c4e27a510159261305186306ac9f4d0f9dec9c9dc88c96262b438046"
+    },
+    "balanced_r12_s013/C": {
+      "trips.csv": "c588bb685161574cc187f3effb4e88168e406332dbcf227adb1719033d6cb6ba",
+      "orders.csv": "a0109c36f3f3339abc70840cf98b344b60ee83d01135bcca3a6ca19a6b00c3cb"
+    },
+    "balanced_r12_s013/D": {
+      "trips.csv": "f74523b2b750af8ca9dbc1c0d9d5ff5e95d2accddbcceaba7bb962ed730821c6",
+      "orders.csv": "ce424ee223682b6731006d1f69ce045fd366e67ec99746e85077b859a51f59a4"
+    },
+    "balanced_r12_s014/A": {
+      "trips.csv": "653eea3d9a51ff0a90612314682b32bfa17348e192ec5699706a049237d588ff",
+      "orders.csv": "cae2906168a59cabf6d6d0327a70844807cce5a74a87567de4aedeaa888d2560"
+    },
+    "balanced_r12_s014/B": {
+      "trips.csv": "b588cc3692d6cf431470b9f94d6b91c1156f7bfd4ace0850389593b9f49e7828",
+      "orders.csv": "9580d153be778b0684427e58156d2a3d3a2af62c2d189bcc9eb0b56a48a38a17"
+    },
+    "balanced_r12_s014/C": {
+      "trips.csv": "b62f5bc13b9d11eec9f281f41fcc7c0fe7a706c1a3879d487786f3bf3eef2813",
+      "orders.csv": "cae2906168a59cabf6d6d0327a70844807cce5a74a87567de4aedeaa888d2560"
+    },
+    "balanced_r12_s014/D": {
+      "trips.csv": "f383483cd8768909015553481527c44ada746188c03d10ec53f080f899c63aa5",
+      "orders.csv": "9580d153be778b0684427e58156d2a3d3a2af62c2d189bcc9eb0b56a48a38a17"
+    },
+    "balanced_r12_s015/A": {
+      "trips.csv": "03506e88875c35bcf77961f25026fbe521ba76e708a0aebdd15245731c8cf9a2",
+      "orders.csv": "e7d8a22c54c4d8a4a8a48015407a2a5f63fabd7cbca483f206de3c3d3d6ac91c"
+    },
+    "balanced_r12_s015/B": {
+      "trips.csv": "908acf3e885edecbd58b98c8f69cf05dee855bd5e83578fb5709a84412d3e954",
+      "orders.csv": "0a3b1048c4292e71701976898bce3f53d69b191c0ba642a2c66373a59ae5bea6"
+    },
+    "balanced_r12_s015/C": {
+      "trips.csv": "be4cc1b19a135ea3e48d983f84ba6d3709d3f5fb129951063f8ff9fc0a2749bd",
+      "orders.csv": "bf15ae00626cc561f2c4961da642a8fdadce01910db33b161051553ce395c16e"
+    },
+    "balanced_r12_s015/D": {
+      "trips.csv": "2820c7046a6581ba31a601fcaa3ef178a197171aaeb0bd4036c6e188520a530b",
+      "orders.csv": "f5f3c3011bce87c45b4ea19f82bf28cba75e10e24ddb65ede6680a99ebc1af6e"
+    },
+    "balanced_r12_s016/A": {
+      "trips.csv": "1acbb1f9ad29954144f8924fca45b5616fc7232f9e5186cace1682326f89d5fa",
+      "orders.csv": "213a578384e07fec79b6a37c8b7994c0c993c05a890be5f3a51cf15e2c5f8f53"
+    },
+    "balanced_r12_s016/B": {
+      "trips.csv": "5b24af3118bca869613d7da9b9287d6bf743d60f68e1a3cf9b7e1a395e5f9f65",
+      "orders.csv": "c3105a58e786d3df63c359ad4ae88143527649f4f30e3be2b70d62b3bdc57106"
+    },
+    "balanced_r12_s016/C": {
+      "trips.csv": "2eaa9ea7985037e4ce1e9939f89bf6d6d26fce5d2d71661d225f6c6da8867e3b",
+      "orders.csv": "7872f827cb7dd09a8461073bd7e2281179129126577fabbac1a9cf6ed8bae582"
+    },
+    "balanced_r12_s016/D": {
+      "trips.csv": "0b7c82b8f9a49e18be4ba1ad866367368b64887af833eb5bf295682b3e6aced0",
+      "orders.csv": "79d674ddc608ce83f7f7265b7839cc309d82c752dc6f15d1db9ce23034d721d9"
+    },
+    "balanced_r12_s017/A": {
+      "trips.csv": "9dea0c81527ca2521add44384331d3a2a58fdfb8548891a7f7a9dbef9483b2d5",
+      "orders.csv": "7be86c719cc3c8466572751e5e15ced4f124473b379fc3512187a34ced0559ea"
+    },
+    "balanced_r12_s017/B": {
+      "trips.csv": "e070afb2da76dab7c0ed8244b144c5c93b83ee98a4d1a4eafba15fbf47963de9",
+      "orders.csv": "11a9bdaef15fbac6f3adbd8758cc0d7a7c2521af837279180abb7e20ee9bd5ad"
+    },
+    "balanced_r12_s017/C": {
+      "trips.csv": "cfcda62982d1a73d08885596e93d4bf099ee6d00fb1a458b0136291618020d5f",
+      "orders.csv": "7be86c719cc3c8466572751e5e15ced4f124473b379fc3512187a34ced0559ea"
+    },
+    "balanced_r12_s017/D": {
+      "trips.csv": "37aacc6e007d258a6495d736650dafb5d763f6bfdb9425be3f071dfed43ed813",
+      "orders.csv": "11a9bdaef15fbac6f3adbd8758cc0d7a7c2521af837279180abb7e20ee9bd5ad"
+    },
+    "balanced_r12_s018/A": {
+      "trips.csv": "367f3200e4af0fe0c80583942b2909fb6805615fb3a9a311fa9b9ec16b694d7d",
+      "orders.csv": "a657cc7b67cae15c65e72ff5b903029a8e9aea28e17d009ef829d20863793ef1"
+    },
+    "balanced_r12_s018/B": {
+      "trips.csv": "29c5e8704f478e2c39ef795153c3620762057835020e3aed431ae685a6765a77",
+      "orders.csv": "eb25160519848c8d93ba1b3243e56d969cba819a7db0ad64d3adb4e249bc49ad"
+    },
+    "balanced_r12_s018/C": {
+      "trips.csv": "6e84b8dc051ed25f6edf05d6fdcc7337fa33ca43dba97eb16d3711d643670427",
+      "orders.csv": "c76f1a4841040a4e3aad9163437e72c622257b765848bbbf9b033d325445163f"
+    },
+    "balanced_r12_s018/D": {
+      "trips.csv": "405c01ce175f944066042ecabcbd322dfa4931c05d24caed8325ce90d738eb9f",
+      "orders.csv": "9a285c36003c4d12ecb271407c2815a23fb51b65bcb2fb16dfb4f4ba539098d6"
+    },
+    "balanced_r12_s019/A": {
+      "trips.csv": "afd25641682213cb886ea007ca10e370175c68889b340c3d0d61817e3bf75002",
+      "orders.csv": "42ef714fb3030147cc02e2ff32784a713c535657abad4b6f314a2d056c90ef88"
+    },
+    "balanced_r12_s019/B": {
+      "trips.csv": "5f9e8e79b1a603169d9f22cf059ed77993f3e6cbcd36e28c836ee42f50ad46fa",
+      "orders.csv": "8e90521a55702e23c21d9f66b1a7ff73a92cdcb046b023b18b539673eadd63fc"
+    },
+    "balanced_r12_s019/C": {
+      "trips.csv": "ad1c2d55df30d0f6166100e353e8b337bcd58c05797a683c3eb95aeb21c9e590",
+      "orders.csv": "5bdab25a07c3d8d96d577b9ed3c7eb1ec4212be94ed788691248f584273daa2d"
+    },
+    "balanced_r12_s019/D": {
+      "trips.csv": "3e01b35393d2677835728336859a0077ecc20254962287da1f2d0fce7b961f17",
+      "orders.csv": "8e90521a55702e23c21d9f66b1a7ff73a92cdcb046b023b18b539673eadd63fc"
+    },
+    "balanced_r12_s020/A": {
+      "trips.csv": "4252aa96296d9e99bcec090cdfa16720ad5b4a8dd0a82f4b6b88c5c1eef17ba3",
+      "orders.csv": "63818e0039f5c9ef499bfc27604bd01c5f21c7cf4d386c7826ce1a5f29ae80ca"
+    },
+    "balanced_r12_s020/B": {
+      "trips.csv": "96774c0d5f3882662c5e0e90497c0b23d74232c728eace72818dd6f8b0e71c42",
+      "orders.csv": "b9a1a0856e0298482692055a17f7623b6107bf451bc13de0e6182d0164c40b4c"
+    },
+    "balanced_r12_s020/C": {
+      "trips.csv": "1ac5d9736f906ae00737cb52260d15897747e362bdce7931a724dab923530052",
+      "orders.csv": "6f19a91b5550a9747b4bc6bbd14ee0dd5fdf08d235fc7cd11d17f0169ce07e34"
+    },
+    "balanced_r12_s020/D": {
+      "trips.csv": "eeb78f0ad3401346927b135ec25889558cc8809c23e075af83954a959240367a",
+      "orders.csv": "eb70e8bc8207af9bf3570d63843971fdb0c20764e804e63c2ac56495c8bdaf7a"
+    },
+    "balanced_r12_s021/A": {
+      "trips.csv": "eca2b0636073ccbdfc9a464d645c9f1d08e2a41a304a48352814c640d66dad69",
+      "orders.csv": "4f42c6b7fd9150150d9ab123b9ad5731fc3b662696bbbb3c521a676347bfc20d"
+    },
+    "balanced_r12_s021/B": {
+      "trips.csv": "234f4e0dda5896283beee291032575c30b1e9190e0452d72329bfa6b2492a74f",
+      "orders.csv": "1f3acf672d2085b7684f0462cea73f98b1d772e725b71bb290140bdbf61bc76b"
+    },
+    "balanced_r12_s021/C": {
+      "trips.csv": "d98462b9f1ac7c448ada31ba1e0c6daf8dc396e67b43e22ad8a8281fe7fc7c7d",
+      "orders.csv": "4f42c6b7fd9150150d9ab123b9ad5731fc3b662696bbbb3c521a676347bfc20d"
+    },
+    "balanced_r12_s021/D": {
+      "trips.csv": "5e9751760d9455cbe801216cc11fc92f2ad948ff08dba89ec7b27acb9c7f87d2",
+      "orders.csv": "1f3acf672d2085b7684f0462cea73f98b1d772e725b71bb290140bdbf61bc76b"
+    },
+    "balanced_r12_s022/A": {
+      "trips.csv": "285fe3c037cb881f8706189b9466db3f7e1a694b4e7d0f0c679d0f211cdae457",
+      "orders.csv": "217b3dc9df2478abfa9fe9d036cd3424c0564f9681f495b18e414189c20c356b"
+    },
+    "balanced_r12_s022/B": {
+      "trips.csv": "f3e85ddfd228a6741959918dd93cb73f4d3147d403cbff8c72d5dbc97fe90fb8",
+      "orders.csv": "58c9a1f6b0f82adc58e13f3fda5e60f6324f35c93c6e07142f4266e76ad47975"
+    },
+    "balanced_r12_s022/C": {
+      "trips.csv": "6377c6af2723a8487c41ea3dc48a42f7dcb145a26b5cd646d17d823c64014dee",
+      "orders.csv": "217b3dc9df2478abfa9fe9d036cd3424c0564f9681f495b18e414189c20c356b"
+    },
+    "balanced_r12_s022/D": {
+      "trips.csv": "982b792c833027689ca3509ebc86dd8e68435fb62677c32c7a55623f1a54533a",
+      "orders.csv": "58c9a1f6b0f82adc58e13f3fda5e60f6324f35c93c6e07142f4266e76ad47975"
+    },
+    "balanced_r12_s023/A": {
+      "trips.csv": "d32a11b9dd0236765048fe2233ad1e88d69fc76e04b21a92693bde8d95dac708",
+      "orders.csv": "d4ec8d1d65606977bc5cec4b509bdca0ed3faa6c5b5988a5e154ecff51872d7d"
+    },
+    "balanced_r12_s023/B": {
+      "trips.csv": "b9f3c729dae735761930e6c0871303a22eb7c26419c28eda84cf45e0f0b8aca5",
+      "orders.csv": "115ac9c3ba4f33c319b28f8ff79aa4d8199027afb88a2ad38d1fd50b4269ad16"
+    },
+    "balanced_r12_s023/C": {
+      "trips.csv": "79f49ea8514b6284f5f1cd361d40e15ea848c5d924bf8913699e6af8501f8367",
+      "orders.csv": "d4ec8d1d65606977bc5cec4b509bdca0ed3faa6c5b5988a5e154ecff51872d7d"
+    },
+    "balanced_r12_s023/D": {
+      "trips.csv": "d744c1a51257e5eead60751880b1c33e9f0a8ef9e3e306d752de4edb6dee5ead",
+      "orders.csv": "115ac9c3ba4f33c319b28f8ff79aa4d8199027afb88a2ad38d1fd50b4269ad16"
+    },
+    "balanced_r12_s024/A": {
+      "trips.csv": "9b18a68d0ebfe6af447301fd358147c60e8be0d011ed2515871696da231c2b8f",
+      "orders.csv": "60e06d33bb8c12219e9e6e53636cc935e1b8f344086ddc515cd26b1095878322"
+    },
+    "balanced_r12_s024/B": {
+      "trips.csv": "28b0145b82392c0d0bc1705eb1dfd57b408a8edbf0f08fdd6e78caf01ee053f7",
+      "orders.csv": "7bbdc84bfb12e8113bf32231d8f969621d52dc3f5d4fe23cf433cbf01277595b"
+    },
+    "balanced_r12_s024/C": {
+      "trips.csv": "9b18a68d0ebfe6af447301fd358147c60e8be0d011ed2515871696da231c2b8f",
+      "orders.csv": "60e06d33bb8c12219e9e6e53636cc935e1b8f344086ddc515cd26b1095878322"
+    },
+    "balanced_r12_s024/D": {
+      "trips.csv": "3a2a85d518ca3796c90fddf756ae5911fb3e76fa031db052f5e9c618db10b478",
+      "orders.csv": "7bbdc84bfb12e8113bf32231d8f969621d52dc3f5d4fe23cf433cbf01277595b"
+    },
+    "balanced_r12_s025/A": {
+      "trips.csv": "d6107046e918fe5221c9c3be76b08875cbf723aa858d291bc26d24a5e89aeec8",
+      "orders.csv": "6b06197af0a9042f8e8dcd2d0d1b429d76d113ee93c6c330d133006ae55a1c07"
+    },
+    "balanced_r12_s025/B": {
+      "trips.csv": "22d4fe4f78dc5a7101d36962ca995bf14b09eb62d89a23b867c15ea98e1fc6c3",
+      "orders.csv": "ac225d117cdd6447defdc6d7618ae1eccac074b0d409cfd23623db15d675653b"
+    },
+    "balanced_r12_s025/C": {
+      "trips.csv": "03bfe8bbbeebd1f532e711c5e1092c8e733ccb554d3247919f1dfdca282b4c32",
+      "orders.csv": "6b06197af0a9042f8e8dcd2d0d1b429d76d113ee93c6c330d133006ae55a1c07"
+    },
+    "balanced_r12_s025/D": {
+      "trips.csv": "1b92a42ab0fd75d95c38792c56fe0459b178bf38c493b4b24e32dde45b67faca",
+      "orders.csv": "ac225d117cdd6447defdc6d7618ae1eccac074b0d409cfd23623db15d675653b"
+    },
+    "balanced_r12_s026/A": {
+      "trips.csv": "2524058e3e6bccc164dee21fa0622607d89d2957d85926e0628e2b5cf39b76ae",
+      "orders.csv": "73c024d66087208b004ebe1bb6f1af11cc6820b5c1cafd1d5604b4f599f6715a"
+    },
+    "balanced_r12_s026/B": {
+      "trips.csv": "0d1a7eb0950fe447dc1974cc7219d97d34d55acd8e18a901d19428c17c03949b",
+      "orders.csv": "0a637db7811ee911eeda3bf4011ddad448859c75b498efb93d6b594b2b97db99"
+    },
+    "balanced_r12_s026/C": {
+      "trips.csv": "e67505bab659cb861143e8bbce432e28c3af895c8f2f0de677f2d034076f97b6",
+      "orders.csv": "73c024d66087208b004ebe1bb6f1af11cc6820b5c1cafd1d5604b4f599f6715a"
+    },
+    "balanced_r12_s026/D": {
+      "trips.csv": "3822c5bd9c9164a54f57108236503abfe61aaa538d8a68480b375bd36364e534",
+      "orders.csv": "0a637db7811ee911eeda3bf4011ddad448859c75b498efb93d6b594b2b97db99"
+    },
+    "balanced_r12_s027/A": {
+      "trips.csv": "911e40dcf1f8a2212de319f15da89aff34b7fc111a128f1ae598c0ad0d6bfb3b",
+      "orders.csv": "741a1d7c345a20aa3f5409d68f2cc0f492d3655fccdc6612df406855f3c4e5ec"
+    },
+    "balanced_r12_s027/B": {
+      "trips.csv": "fc5274a7fe186b0fc92f3a29b5517e836ca4c7c91533022090abd894434df3c0",
+      "orders.csv": "d22324cbf5df92552fc0525f01d2d5541890d331c6bb2e5e6832f8df135283fa"
+    },
+    "balanced_r12_s027/C": {
+      "trips.csv": "203e88ae4226f814b587cd95f47f889674ee86f5fc8bd6d6ffd3c9dc2e19fa54",
+      "orders.csv": "741a1d7c345a20aa3f5409d68f2cc0f492d3655fccdc6612df406855f3c4e5ec"
+    },
+    "balanced_r12_s027/D": {
+      "trips.csv": "1d72d9a8607dc1ded85894921d45d5dbe40a22a0b49375f6fec2ad3eaecbadf3",
+      "orders.csv": "d22324cbf5df92552fc0525f01d2d5541890d331c6bb2e5e6832f8df135283fa"
+    },
+    "balanced_r12_s028/A": {
+      "trips.csv": "f34096be11fdff1b61c4ada8466db0dd32b5455cdeacebe62cb4137769009707",
+      "orders.csv": "915013b2308aa4476820c392edcacd4082e67f71fc6b6816f809b7699c62c7da"
+    },
+    "balanced_r12_s028/B": {
+      "trips.csv": "28a64467b2781c34d295c3887bfef089a70ba7772c36ccca786cad0fcd6a8b1d",
+      "orders.csv": "52570ba852d8e21da7db17c18b74c192fe929a26fa04a3ffc861920fb2fc5202"
+    },
+    "balanced_r12_s028/C": {
+      "trips.csv": "3fe3198332e5525fd38841bfd304e72566324dcf1c7c0eff273f89b2c9fc3840",
+      "orders.csv": "915013b2308aa4476820c392edcacd4082e67f71fc6b6816f809b7699c62c7da"
+    },
+    "balanced_r12_s028/D": {
+      "trips.csv": "98d0d61f0bb06bd82113636abef671abd094a2e386c19a2352ed57d415ee853b",
+      "orders.csv": "52570ba852d8e21da7db17c18b74c192fe929a26fa04a3ffc861920fb2fc5202"
+    },
+    "balanced_r12_s029/A": {
+      "trips.csv": "0dcc3e90a122ecf88d8e4edb7c1b2dbb4686aa2e8e503734bb600dd4e0549241",
+      "orders.csv": "93062b44dd9ce62c54807fe8333bb1b55326889dea07ee63fee94de50328b977"
+    },
+    "balanced_r12_s029/B": {
+      "trips.csv": "97eda85b4d55f8c62b358e9af14f9c5580fb4fc80a2c62f38fb35bb31ca878eb",
+      "orders.csv": "475d064470b53ee10a7b8efbef0567b550fd3a36243ef3a76ac0796187c5ab87"
+    },
+    "balanced_r12_s029/C": {
+      "trips.csv": "c546b0bb78ba6def60293f5e06f22238276cfac566043e05acfb5983a83f3d92",
+      "orders.csv": "d5717fc23dd0c8f965459ef5c2a0ff76fa33d7238fa08c1cea6194bf3d668a8f"
+    },
+    "balanced_r12_s029/D": {
+      "trips.csv": "3f2f8326166f682c6346bcd34f423cb7d70155ebdc36e895fc0e1702d8350912",
+      "orders.csv": "4b3386564600292594514c1da011fb98229792c3b45fca232c40f5da8569c4d4"
+    },
+    "alternating_r12_s000/A": {
+      "trips.csv": "e14810b99192fc181d6e991b3a47cbb11bb3fa56d624df2ce69c99c3c7c18ca0",
+      "orders.csv": "b37754f1f1471e65328d51be6adb08cb157c63f9ab7c697bc66746836ce86139"
+    },
+    "alternating_r12_s000/B": {
+      "trips.csv": "88eb53c5dcec527c9d70e872530cc5eececac2d5f4c2777850dfe013bd8b52df",
+      "orders.csv": "62d900d83cb10dc4410826fedabf7604a647c73cd979509c205afda56d82b83f"
+    },
+    "alternating_r12_s000/C": {
+      "trips.csv": "0eb7fb331ac69418aeb194a6cd1be6c855a999b7642108c61e45d60563b4e598",
+      "orders.csv": "b37754f1f1471e65328d51be6adb08cb157c63f9ab7c697bc66746836ce86139"
+    },
+    "alternating_r12_s000/D": {
+      "trips.csv": "1f01ba3ad03aebd5c79cbfe48c118c4a5fd021700fb8dc1dd4878cd16efc3b48",
+      "orders.csv": "62d900d83cb10dc4410826fedabf7604a647c73cd979509c205afda56d82b83f"
+    },
+    "alternating_r12_s001/A": {
+      "trips.csv": "c3326f7df33ad399d92e4953cfabc804732baed7c47ed4996727d62aadf249f8",
+      "orders.csv": "3db4e12ff36c951cb880ec551f23f372f2d69354afc2bd3638d72ea59b836ce9"
+    },
+    "alternating_r12_s001/B": {
+      "trips.csv": "bd2a0384ad7077858f4172af85816cd4a8dc7c354ea3554db796452bb49140a0",
+      "orders.csv": "2b2233496c6e9011fd78f7de7b0430270376f6526bdd897fb75cfc1c2ecd7a3d"
+    },
+    "alternating_r12_s001/C": {
+      "trips.csv": "68a156a025b4d2d7cc131599500a64d59232edfb91fe16bf20a05d23c825d0a7",
+      "orders.csv": "3db4e12ff36c951cb880ec551f23f372f2d69354afc2bd3638d72ea59b836ce9"
+    },
+    "alternating_r12_s001/D": {
+      "trips.csv": "3408871c9f808943a8034d318fa722794efe7189ad2ca4a2c1af7d88fe08a388",
+      "orders.csv": "bf47426418b103714a39cd2e7654a2d96c645e72698a425dea03277972380ae4"
+    },
+    "alternating_r12_s002/A": {
+      "trips.csv": "b938c85046f0ba1917539d14efc6b354beedc6f99c515d62d04ee301235aea5e",
+      "orders.csv": "565a6750b8b78d50ef7131988a88fc620c0f823cd54d6412b765195bbb0a62a3"
+    },
+    "alternating_r12_s002/B": {
+      "trips.csv": "8ab008cd9b864a940ff132fa50a93204adcfae570d8d7270ead2b1fa9e2d75d0",
+      "orders.csv": "ec154345f1ced9a23c9d664a47797ba9ef4655976433ead6ce696d0730170af1"
+    },
+    "alternating_r12_s002/C": {
+      "trips.csv": "0b162e70e46096a78e8128be54a7ddfab0c671d470901d7205be2400abc005db",
+      "orders.csv": "565a6750b8b78d50ef7131988a88fc620c0f823cd54d6412b765195bbb0a62a3"
+    },
+    "alternating_r12_s002/D": {
+      "trips.csv": "556c1c0bd3c7696da001922fced7a6077a08f83a5707b83a79763bcb40e66eb4",
+      "orders.csv": "ec154345f1ced9a23c9d664a47797ba9ef4655976433ead6ce696d0730170af1"
+    },
+    "alternating_r12_s003/A": {
+      "trips.csv": "8541d5e8fa1c54516007eccb41fe0d3d297222b70468d34ee1afece2ec5f3eef",
+      "orders.csv": "b95d997ceaf6c20163d97e40750d19673388af293d6affaaaf53895b12f26045"
+    },
+    "alternating_r12_s003/B": {
+      "trips.csv": "dfc3c8adfb1b4cae6a27454fd3fc813ce6a3a8cb7e782becabb5b270f367272a",
+      "orders.csv": "8361038797d1e74ff9e8737a518d2c874ad94f770a5fdc18406ac720b157cd55"
+    },
+    "alternating_r12_s003/C": {
+      "trips.csv": "bb97436c1a536c468979ee2ee3b9c0e18c578ba4f308d863b9b9744161b63d4d",
+      "orders.csv": "b95d997ceaf6c20163d97e40750d19673388af293d6affaaaf53895b12f26045"
+    },
+    "alternating_r12_s003/D": {
+      "trips.csv": "ac820a0e7815c7481e4d113049d53552eab4dc0760d416194178fa6ceae1a591",
+      "orders.csv": "8361038797d1e74ff9e8737a518d2c874ad94f770a5fdc18406ac720b157cd55"
+    },
+    "alternating_r12_s004/A": {
+      "trips.csv": "92652534811b503d31786bac6354e73a04ac3ec7bca871cd1304b79cfe886e1f",
+      "orders.csv": "b65637fb4723bbd8871a3f0bbc503005811d0c4995b8ec413b2ef2427d1e298f"
+    },
+    "alternating_r12_s004/B": {
+      "trips.csv": "5352a8b8102ea46109a2f2ec2d64839547227ddfac3f0a3fa13e990636102697",
+      "orders.csv": "4fe6397995efb115f6bff1fbe9d68235a561b69dfbc3e3627339319c42eeeb73"
+    },
+    "alternating_r12_s004/C": {
+      "trips.csv": "e98b4645a4f0e1bba837fbb96ddb492488219b828d3f47c5195ba69270084692",
+      "orders.csv": "b65637fb4723bbd8871a3f0bbc503005811d0c4995b8ec413b2ef2427d1e298f"
+    },
+    "alternating_r12_s004/D": {
+      "trips.csv": "217251681268c66dffe69dc0f4aae63f80ce2e3226c346e4c5d2e8176048aca0",
+      "orders.csv": "4fe6397995efb115f6bff1fbe9d68235a561b69dfbc3e3627339319c42eeeb73"
+    },
+    "alternating_r12_s005/A": {
+      "trips.csv": "b550f52c07569987ba0f2ffda5a1b01f8a4bec63ffddfb4d760954aca156a023",
+      "orders.csv": "9d2fb3c7078041b44e36ec5509e2f4fbd1171552bbfc992dc4c7a740ed187610"
+    },
+    "alternating_r12_s005/B": {
+      "trips.csv": "96e7847e44e349585a2105c21d5476cd76fa453f2a8c867d55c5554b405d8079",
+      "orders.csv": "22bf26c68ddc6a5cbb6cbd94620e6f2aa802f1b37ecdaae65b33eb169d8038cb"
+    },
+    "alternating_r12_s005/C": {
+      "trips.csv": "6e4d83b9026537acf986e73681bd84400073f49ea81f21b8c7af83d1d3b1ad0b",
+      "orders.csv": "9d2fb3c7078041b44e36ec5509e2f4fbd1171552bbfc992dc4c7a740ed187610"
+    },
+    "alternating_r12_s005/D": {
+      "trips.csv": "05fde7a4d410cdc7c0aede81a494a5c7c668f3eda660e203587bf4b50e47b110",
+      "orders.csv": "22bf26c68ddc6a5cbb6cbd94620e6f2aa802f1b37ecdaae65b33eb169d8038cb"
+    },
+    "alternating_r12_s006/A": {
+      "trips.csv": "985912b4b8417e2802d8f3a979da69e9f590ec457ffa9273f39868c232ce2388",
+      "orders.csv": "1742bb055ddee5c5d4d1a4c768f846addefbf66509173a25e9d4906bfd39d0aa"
+    },
+    "alternating_r12_s006/B": {
+      "trips.csv": "f0f1b28e0b62d7657b441bb39cbda0df767799a7b09280105b00527a4d90e34c",
+      "orders.csv": "568279acb21646b29d816f3864efaf890657abb48309baec276c7a93d83a52df"
+    },
+    "alternating_r12_s006/C": {
+      "trips.csv": "6a8ccc7d0a347e8b8e1962f822d49e8580b60d4db5685fb67f7fd34f8c22f558",
+      "orders.csv": "9961af02381748f26880b9d4bad5bc7102cb5e0690a99a122f33f291e205c464"
+    },
+    "alternating_r12_s006/D": {
+      "trips.csv": "0b9d98f72033d6bb96b926737d91c1ea692117dc2247dd6d822b9efc2276881f",
+      "orders.csv": "62aa2bd953e1e5f8f19dfe2492c70c02e222f54b7c15e04bec35650f745e652b"
+    },
+    "alternating_r12_s007/A": {
+      "trips.csv": "e3537af51ab8b8d3d6459447b491d7cf5d275a3c8a2c9f6fff6d1447104852f1",
+      "orders.csv": "07a012cfd5ca8b3dfb2705e94385fd7ace0f14b1df50263104414c5f79098c6b"
+    },
+    "alternating_r12_s007/B": {
+      "trips.csv": "58c2d6985f699f9e927cebec0af1b44bc42f9fc748b3979f5844da56a5318c9c",
+      "orders.csv": "bc699d14d51daa5b802c5a4c98ef9e1a104ad5ba02fb221eecce5a16c6b12747"
+    },
+    "alternating_r12_s007/C": {
+      "trips.csv": "a8187b98e0400281a92cd6e2e676a1f53e222ca5bb574e38e861c7486566411b",
+      "orders.csv": "07a012cfd5ca8b3dfb2705e94385fd7ace0f14b1df50263104414c5f79098c6b"
+    },
+    "alternating_r12_s007/D": {
+      "trips.csv": "6b7eacb24036481380a131c4c3c312558c117e740dee12e1e64f310fa2f95c73",
+      "orders.csv": "bc699d14d51daa5b802c5a4c98ef9e1a104ad5ba02fb221eecce5a16c6b12747"
+    },
+    "alternating_r12_s008/A": {
+      "trips.csv": "df5c9ad62338a201df01cfd44418c89935a67f84b3680d8e44ad000040711c62",
+      "orders.csv": "f064afdc628294bb9eb2280ad1552fb15c7d650861e9f104a7363be7e43ae43f"
+    },
+    "alternating_r12_s008/B": {
+      "trips.csv": "6ce8df79d20b82e5aeacc6e0dfa41fab7273f97cc9ace92bfd2f3ac4f7e21a51",
+      "orders.csv": "feee8fd754829728a15e015c5f0e366aa9cfa06b662019ac80d2cdea53e75ca0"
+    },
+    "alternating_r12_s008/C": {
+      "trips.csv": "8063ea29d1d5d2fffb41b32a44fee716f9dcbbd45f9181c1721ffc4a1888e94c",
+      "orders.csv": "40ec47d878483ec5e2bab730d7036f349d54cbb8c1aa4e3ce546e886e3c68e05"
+    },
+    "alternating_r12_s008/D": {
+      "trips.csv": "454662c83af5d0437637b1ad8cffac3795c99b90dcf355b52209870a00e88404",
+      "orders.csv": "b79f8b00f4b5db0bf3d9a8553fe70a13c734bebd7165070db1f894aa05117fbe"
+    },
+    "alternating_r12_s009/A": {
+      "trips.csv": "67448c34badad559e4b06c879d9082b9d7e871b955a203258a6a9bbf1a603ecd",
+      "orders.csv": "2939c532b0f2c0bc36fba111b85a0eac66bef07504b2dade96315cdbee5933ed"
+    },
+    "alternating_r12_s009/B": {
+      "trips.csv": "8b3585f39eb382d0b604aafca5afd6d101ade771e580c2974a36547e92e3395c",
+      "orders.csv": "079ed90792dbf7cf05309e8de30bad8443c5184712afe2aaa2447c9dd64e099c"
+    },
+    "alternating_r12_s009/C": {
+      "trips.csv": "2c212ce5b00bc52fcef3cdd5e15900beb122d400a89993f46959924d593946fb",
+      "orders.csv": "f95ef88568af5acc9faaf4d44df019ba8a26527a0ffe12bdf16c70ae6090dd8d"
+    },
+    "alternating_r12_s009/D": {
+      "trips.csv": "f5d0055fa6641de581992dd53eb2cdc967945b2f4fad20a95c2583dea938e4fb",
+      "orders.csv": "46848f9d693fa6e01a4ce3db38658b2fee0e8dd02baad331c54cf7e2c6afeca2"
+    },
+    "alternating_r12_s010/A": {
+      "trips.csv": "e053773c7b3678977d84d298fd3a4c333f1930f5f5b1b4bc6ca06529a107dab2",
+      "orders.csv": "63f0b46a27949de889eaf563fc1db4f3c2678bb97d6ce867a24b7aa9a8a035e7"
+    },
+    "alternating_r12_s010/B": {
+      "trips.csv": "4cc8adc6761753a37972c41517fba071539a79b9416f1730bf78c67635e530b9",
+      "orders.csv": "1b2bbf848fe4dd1230a2dbbd9ddca99c9dc2d05d4b11cd827bc261c49899ed55"
+    },
+    "alternating_r12_s010/C": {
+      "trips.csv": "0e8cf06f1464306379870162b96917e82fb19a0d4c076917a3864c3ab9532dd0",
+      "orders.csv": "63f0b46a27949de889eaf563fc1db4f3c2678bb97d6ce867a24b7aa9a8a035e7"
+    },
+    "alternating_r12_s010/D": {
+      "trips.csv": "432dd0aa0ef942b8f9b46d60cbb1679c6bc7ce618b967b323fed2004fbaf68ff",
+      "orders.csv": "1b2bbf848fe4dd1230a2dbbd9ddca99c9dc2d05d4b11cd827bc261c49899ed55"
+    },
+    "alternating_r12_s011/A": {
+      "trips.csv": "9dcefb1fa560c8043f738827760e80927340a052f480c2cb8eef65df48dd30ac",
+      "orders.csv": "09be4fe5b3e05462545122abefda2500c28b8262cb602cce42d14b1c4868b666"
+    },
+    "alternating_r12_s011/B": {
+      "trips.csv": "d7f5c76fa7763dbebf74639aacb08c8efce9406e98f4656fac209bf5bb3cf002",
+      "orders.csv": "e1da5db757eb356b3fb1d17395fdedf5762c05250f7f5ffae3952bdb22a02ba9"
+    },
+    "alternating_r12_s011/C": {
+      "trips.csv": "dc521e804c8e88989656f9b73bce6e3bb3f4d0232b415b5438da12b193f8cebe",
+      "orders.csv": "33051a427b543371ffdf8416d20128fa810f83d530edb42d0ff6f8787bad9e26"
+    },
+    "alternating_r12_s011/D": {
+      "trips.csv": "4d867269f881d43f5556a03863743380257222e7972bc538b7e76ef18dc0a66f",
+      "orders.csv": "e1da5db757eb356b3fb1d17395fdedf5762c05250f7f5ffae3952bdb22a02ba9"
+    },
+    "alternating_r12_s012/A": {
+      "trips.csv": "334f81f23c4206c7c8411975135aebd8a149ef34364e5fceda5c54f0e74cfbc6",
+      "orders.csv": "dbfec030ddd0fbface9a7fc6f05c62b4840d187c74bf7d1870af087d40fd6d38"
+    },
+    "alternating_r12_s012/B": {
+      "trips.csv": "a219b56b35e40064da450d0642ed510b13575ff6f09f282d20e58050b461e0af",
+      "orders.csv": "d798d7c48ed14ce8acaa5171a098aa7bd344ae04dba450501eb10af7780e3d94"
+    },
+    "alternating_r12_s012/C": {
+      "trips.csv": "761ca38ff7c5914703cef50b781d1739de9b1d20d2f0566fff16c8b21abbe56a",
+      "orders.csv": "a7c860f685a11a7846d3b99a7d475cba374128d87a5298aa4e94353ba9761d66"
+    },
+    "alternating_r12_s012/D": {
+      "trips.csv": "96cb037dce645a927cffdfe69c6530475b90a6f36d59da379d2d39feed9b19ad",
+      "orders.csv": "b68ef44dd4b00f98598317346788e5d201c7b4f2cd49fcc0650daa971584a7f1"
+    },
+    "alternating_r12_s013/A": {
+      "trips.csv": "e76da0f8a4cfe167865e7009494df2768d9fe8f18e76d9275a8e393f58f6bf5c",
+      "orders.csv": "ff98695aa34d4415dcbe856b686ab3ed34798cc9bfcb234b62836da8492ea0dc"
+    },
+    "alternating_r12_s013/B": {
+      "trips.csv": "24f3c93921baba2ece1e188dbca1da279ea9eb096b562cf1d190426e69279cbb",
+      "orders.csv": "f1cb1a98cbdaf99a8fd06034589c7c4fc1790a9c43e6331ccd2fcdd048903587"
+    },
+    "alternating_r12_s013/C": {
+      "trips.csv": "5e8ac92f429ecd93fd554e4dd7a44229cd4e531af0df3e0731f2d43cd5854fcd",
+      "orders.csv": "6ee326b95c314a93eba43d9a7a85b50ea1799ecef09d31a6cfd059bd8a390c0e"
+    },
+    "alternating_r12_s013/D": {
+      "trips.csv": "37e6f955441326aefe203e2f444229e55dbd441ebb3f0f398cf54b019a14aa9e",
+      "orders.csv": "adee7d22c817ae932315bc222b55d510bbec2f81644bd9fad2a2fb4218d94fe9"
+    },
+    "alternating_r12_s014/A": {
+      "trips.csv": "557962c671361b92b7b406b2fa3ab44995ec648a91affe8ff7d6af15274671fd",
+      "orders.csv": "028d3a123a1486ac0c7953a55c6483c32e2858466120bb8075a87da3c39cf564"
+    },
+    "alternating_r12_s014/B": {
+      "trips.csv": "0b455cb965ec3d1f51671ea3102d33e5204deadd6aadd07f7f811b5de1abc6f8",
+      "orders.csv": "9ff62a358ae8ad24f3157a2b48b590c78b68840ea7b76e6a0038c5e7aa6bc400"
+    },
+    "alternating_r12_s014/C": {
+      "trips.csv": "d9700ec35510e6bdea9c4ebe030f8053335fd975a7c132f979c468fb0d5dbee1",
+      "orders.csv": "99b3e1817215bbfcf37ce434ba81f4b241ebcf1233d87dc5e7d02206a059967e"
+    },
+    "alternating_r12_s014/D": {
+      "trips.csv": "14ff341291120626228a13c7afe549de2544337bf568b060aa307db7ff42eaa3",
+      "orders.csv": "24d54032f26b1118f8d19a7d4cce888adf0f77a0693ae33245a0560d3480d7bb"
+    },
+    "alternating_r12_s015/A": {
+      "trips.csv": "169337673c2070d584ef2721dd703a71bbd537eb2ad9bd7a489c762d785b8162",
+      "orders.csv": "86248237905f11059949ba8d17ac0d8472698881c0b13b0e31fb10d1bff5e494"
+    },
+    "alternating_r12_s015/B": {
+      "trips.csv": "fa60672a340801f9b203e9b6d3583ff51039b3306eae8424513bd562909442ed",
+      "orders.csv": "870a4b608330d3c4753df6f370d3bef3e7f36494f84507be909a56d709b35463"
+    },
+    "alternating_r12_s015/C": {
+      "trips.csv": "8ac3286488b324607545621f7275ad243a9388ed787e99a16804082ec34620c4",
+      "orders.csv": "9afc63cbd5180a7227f4160642cd1df2d6bb0a8d3aac3b9bafe66ddbff918a0e"
+    },
+    "alternating_r12_s015/D": {
+      "trips.csv": "7e925499f6c45dcffbc1c083cd30e6a268068fbb1db6f474b989b342ff779b0d",
+      "orders.csv": "977af4e1cf5537a6ca832c2a0e41b84ab4034d365356bf39569e4fd36044f5f1"
+    },
+    "alternating_r12_s016/A": {
+      "trips.csv": "b95e3829a0937912ac13a2fb32f83a6a987af8d945ed99cf451addeed172caef",
+      "orders.csv": "0c9dafef632cf4b1bde399ed794866ded7e1d7a2c193f0a4ab28605f6d7de026"
+    },
+    "alternating_r12_s016/B": {
+      "trips.csv": "d6c079fd5b5f608d27693d45c549bcb785c289f982bcd74ec67b7f9c4050cceb",
+      "orders.csv": "20c38842e5fc15fe874da8d8c294126c91ff1b268c44c365fee8ce86f5fc4efe"
+    },
+    "alternating_r12_s016/C": {
+      "trips.csv": "8209536fb226128a52224f1a0327ae4fce80a7aa051723e5acb7c34d2879651b",
+      "orders.csv": "ab3f8078a69f45006c8ec0595d04992d4971c1282a8320c8cff4564d97c5b0d8"
+    },
+    "alternating_r12_s016/D": {
+      "trips.csv": "aeee3e29d2f51f2f42658c6205ec471a2a110412b4caff432a2bea9789fe8ac6",
+      "orders.csv": "8f92cf6096e4be042745605bd95c1e2d17ec79f23c9b9ad6068b8fcfe1e6fc0d"
+    },
+    "alternating_r12_s017/A": {
+      "trips.csv": "6cf4088ead04049194ddd2e5d3cd46ad4b2f86a65426029bad34d70f0f1689bf",
+      "orders.csv": "6964fa83a10cc2a4959a93d76088693068ea0c8fe8b7e9a488997141b0e223f6"
+    },
+    "alternating_r12_s017/B": {
+      "trips.csv": "bfc768a5cb1639635368cec358497fa64b07cb45f5e927edf15b79cabf8c360b",
+      "orders.csv": "25c244d2584fff7526dd6086485705239cb43647ef3be927acaa30e64591c8f2"
+    },
+    "alternating_r12_s017/C": {
+      "trips.csv": "626afcb35dfa0f48f7459a5aba63492501dafd364efff19c623ea698b5cb3849",
+      "orders.csv": "3f7608f4246c9f05f7b6858cd7bea8a19d666f5e01a0acaf0d9e96f553d4ce27"
+    },
+    "alternating_r12_s017/D": {
+      "trips.csv": "0499fee292cb7088eee30bc2ac06469062c207334080a74594a40190764c3bd3",
+      "orders.csv": "25c244d2584fff7526dd6086485705239cb43647ef3be927acaa30e64591c8f2"
+    },
+    "alternating_r12_s018/A": {
+      "trips.csv": "1394e090fa88f77f644e9ed4415aa446ad75f16d35c1bdb5377697d16a8c04f1",
+      "orders.csv": "2da4999803245987139ba8e240a0c498ba10946b2017aed43e7564976c1def59"
+    },
+    "alternating_r12_s018/B": {
+      "trips.csv": "482be4c694585344796cc1a737387486f6118892cc248cd46de1ae550856b726",
+      "orders.csv": "309a3b494fb4d37d27c0b2381627f2cab3f0b09fb2be077146caf6913e391bfe"
+    },
+    "alternating_r12_s018/C": {
+      "trips.csv": "7cc102db5b8b2056bef1dbd3462eea9d7abbcdee0e0b21f6f40bd96bf69f95a6",
+      "orders.csv": "2da4999803245987139ba8e240a0c498ba10946b2017aed43e7564976c1def59"
+    },
+    "alternating_r12_s018/D": {
+      "trips.csv": "a0e1e4868ddde04f0bb38bc800ba6e27b7f00d7a7761407eb31b2586fc307fcc",
+      "orders.csv": "309a3b494fb4d37d27c0b2381627f2cab3f0b09fb2be077146caf6913e391bfe"
+    },
+    "alternating_r12_s019/A": {
+      "trips.csv": "f5695ec5e56508f3caae0e2e3ecd69ab11932965c0ae9f8a6b2ef1ac7dde8333",
+      "orders.csv": "a79a4cbb827a512d65ddd3e93a87b2d58a2d28d456e4b1d195996df0419f1bd2"
+    },
+    "alternating_r12_s019/B": {
+      "trips.csv": "8f639fcfc7ab143d54546bfb4b46c051e0a94a6054fc19e51a74d0f2b0cca531",
+      "orders.csv": "21c9e315911ac5caec3bbb6432832e394d790da21d088dab1c38c61fd03f0c02"
+    },
+    "alternating_r12_s019/C": {
+      "trips.csv": "70e5a57310ff4f2ec50bc4b5f789c81412464d0a9294b14f3d7e74da077c9ef9",
+      "orders.csv": "a79a4cbb827a512d65ddd3e93a87b2d58a2d28d456e4b1d195996df0419f1bd2"
+    },
+    "alternating_r12_s019/D": {
+      "trips.csv": "8dd96ab91bce07177c36a1f30580a4d4969ada78bc2222c5b47d55713124a17b",
+      "orders.csv": "21c9e315911ac5caec3bbb6432832e394d790da21d088dab1c38c61fd03f0c02"
+    },
+    "alternating_r12_s020/A": {
+      "trips.csv": "a418933a0c35d4095fbdb7235f08649853bf3e564bc9eab16b31f18e645db131",
+      "orders.csv": "1f77b483ecc173ea8ae52ee05ce59be3fea7560b77dacba05f1c2a420328b961"
+    },
+    "alternating_r12_s020/B": {
+      "trips.csv": "9b156ce11d33c681e8001a03c6e216cf1b8072c4ab2dd44ca1a1a5bfb481bb12",
+      "orders.csv": "9a88ff4e9f525c94e7c6df2cb14aacfb14a4f5b143f82bf351d515a1c3bb1b0b"
+    },
+    "alternating_r12_s020/C": {
+      "trips.csv": "b0b88d46d99d089c1d60c1dcf70b2b24197c8305964fff1cbb1f91061f5105d3",
+      "orders.csv": "1f77b483ecc173ea8ae52ee05ce59be3fea7560b77dacba05f1c2a420328b961"
+    },
+    "alternating_r12_s020/D": {
+      "trips.csv": "237b678064720bb2323dd11b4c742ee358f4f3cf9a74ff2a9cfeb8446d197bb8",
+      "orders.csv": "9a88ff4e9f525c94e7c6df2cb14aacfb14a4f5b143f82bf351d515a1c3bb1b0b"
+    },
+    "alternating_r12_s021/A": {
+      "trips.csv": "0e10f5ec5305ff17e036b56da254345091bd6ee4e45ed0331ad602b81cf359bc",
+      "orders.csv": "fd51ff849a1ea6dc39cf1f3a003ba1b24be06d0292fd3cf3fe2f77391843eea2"
+    },
+    "alternating_r12_s021/B": {
+      "trips.csv": "018856905f1638d1403640fe9c1dd5d5ae9df91ed6f8073772f20cf0218e545b",
+      "orders.csv": "f0e0c281cada5f2f4593250cc067e21c5d8ba84cdeebe220b7a25e18bc8b33e9"
+    },
+    "alternating_r12_s021/C": {
+      "trips.csv": "dcf27aa5fae574bbd04c8f66449abd1413e12874c75609626f43d5cfbc7cab3c",
+      "orders.csv": "9695ad661f03d5b6c7e0c1063c6a09e3141e2b9c68db0e9293979b6845eb938d"
+    },
+    "alternating_r12_s021/D": {
+      "trips.csv": "a0ad74fb125679baed37997dfc27adf0f48f7d1f28ab555016559fc2d7f059fe",
+      "orders.csv": "f0e0c281cada5f2f4593250cc067e21c5d8ba84cdeebe220b7a25e18bc8b33e9"
+    },
+    "alternating_r12_s022/A": {
+      "trips.csv": "158519144741a54cff49c785def5aa127f089af639ee218a323b887ca003d92e",
+      "orders.csv": "caf3d3c911f576f0a8b1fc3c3cdf09acfc79892d3dc803700e46d6e4d22bca0e"
+    },
+    "alternating_r12_s022/B": {
+      "trips.csv": "b5b4a72de8433536a0c4a4058c2822ebad8e26b5a3f19c74c64773349cf8a3ec",
+      "orders.csv": "a572b28d0316c5d075cd9cfad4dc29c7b0d51a046bc29e56a0ac0eba6119f7bb"
+    },
+    "alternating_r12_s022/C": {
+      "trips.csv": "a51f44213a9b04a57bac2b86d7e80149e9f0345a3bbfda4c3a0c7866968aa560",
+      "orders.csv": "a4462419410fade5feb04963f246dc1fb086512844511c96c89f9368c6e31924"
+    },
+    "alternating_r12_s022/D": {
+      "trips.csv": "843a0d3a6fd74d395054f7768e11fad7b49a2214618622fe121f591d8da6b732",
+      "orders.csv": "6f50b4cb11d79387a862b2a2ed224f0d4074be97294cd40b9c03e982472e8804"
+    },
+    "alternating_r12_s023/A": {
+      "trips.csv": "d1012cdb6c12a7ade34d83a615b58cfff00673d6ea49a3f5cc0e1fba18f1505a",
+      "orders.csv": "4f80282f334cf83abf53831c445baaa1f3346baabbe627fbca1779c5e318264b"
+    },
+    "alternating_r12_s023/B": {
+      "trips.csv": "8d53840861be1585f130ea8d6a7b0c1c826861ff66134a610502275198c6bb51",
+      "orders.csv": "15a57d864c3fd7f4a564acd9fcf6d7f54f5707051a4ccb11fc938cf0668f141f"
+    },
+    "alternating_r12_s023/C": {
+      "trips.csv": "0b638ee5c8ee66befc59f1ca6e5262d2025dda811bd2d35f87f4074f0520d7b5",
+      "orders.csv": "4f80282f334cf83abf53831c445baaa1f3346baabbe627fbca1779c5e318264b"
+    },
+    "alternating_r12_s023/D": {
+      "trips.csv": "d4c83f3c2b616411590690df91c34b409a2d7f29d96b0bc28cec002bda3e1297",
+      "orders.csv": "15a57d864c3fd7f4a564acd9fcf6d7f54f5707051a4ccb11fc938cf0668f141f"
+    },
+    "alternating_r12_s024/A": {
+      "trips.csv": "f9e1fe7cfe1e922dabb542bfae9a4f5cc5926820be5b027d90bdee9b4aad4187",
+      "orders.csv": "dd793ffb9c7f02417d1f213b8daf7b379afb8800f71319e6a90da0c7955373d4"
+    },
+    "alternating_r12_s024/B": {
+      "trips.csv": "cd4e7b05a9a18f0d8eb81393fabf65a1a065f9a289343570855fb42b4eeb9e37",
+      "orders.csv": "005f38b689869c2dee846965f954a4615362f78787353d50f87a17ac8da6b6d6"
+    },
+    "alternating_r12_s024/C": {
+      "trips.csv": "54beb3481b78897cc42fd51cca772bca46ea3005fff2801e91925571f221a80b",
+      "orders.csv": "dd793ffb9c7f02417d1f213b8daf7b379afb8800f71319e6a90da0c7955373d4"
+    },
+    "alternating_r12_s024/D": {
+      "trips.csv": "e5fb20872f5e990d730ba91b806de9872ebcfa25fd0196dded68f8dcfc2691e2",
+      "orders.csv": "005f38b689869c2dee846965f954a4615362f78787353d50f87a17ac8da6b6d6"
+    },
+    "alternating_r12_s025/A": {
+      "trips.csv": "c9e625f653eff46e417083548519f03214cde1a321dc5270ab8141f5a2267ecb",
+      "orders.csv": "8994b982fd57e7f4d900f1fc7024d77ec2a809688833ae26831ce75046337bf2"
+    },
+    "alternating_r12_s025/B": {
+      "trips.csv": "f3c5a2eecda320c93a33415767e82f0aeb269f033a62ba963866f369d4b33968",
+      "orders.csv": "03285bfb8ad05f89a43f62b4310f6e11ccfe1918c397877109b470f5d9671fa8"
+    },
+    "alternating_r12_s025/C": {
+      "trips.csv": "e1fc7dc55658ba57be1b7ca28aec88ab53acdc0393ce369014195e2375b88bd9",
+      "orders.csv": "8994b982fd57e7f4d900f1fc7024d77ec2a809688833ae26831ce75046337bf2"
+    },
+    "alternating_r12_s025/D": {
+      "trips.csv": "12f37071ea07a86dee4769bb03ed738caa50a86386f46c79269d5dadc59ecaee",
+      "orders.csv": "03285bfb8ad05f89a43f62b4310f6e11ccfe1918c397877109b470f5d9671fa8"
+    },
+    "alternating_r12_s026/A": {
+      "trips.csv": "391b0cc5687239a90d4b3714f37c5c6f5ca4648e8b27d6f263f0e79a428e3193",
+      "orders.csv": "14d6f80e24626a611f4ba7dc247b8e94d1d9469396d0ab41cc8ca73dfafa9f8d"
+    },
+    "alternating_r12_s026/B": {
+      "trips.csv": "2d6dc78b4ebcb3f73c3729ba420dc8ba0a6c4b35d8bc464f8d235468ee9b7763",
+      "orders.csv": "139eb6f81fba7a96707c585c3c02777bca79fa2bf35f4bf8ba665a16bfc8ec49"
+    },
+    "alternating_r12_s026/C": {
+      "trips.csv": "dfa277da7d32000dd738ab060e3c22fa25515cef35d11a526ad465259fbabed7",
+      "orders.csv": "14d6f80e24626a611f4ba7dc247b8e94d1d9469396d0ab41cc8ca73dfafa9f8d"
+    },
+    "alternating_r12_s026/D": {
+      "trips.csv": "09e82031ac731d095552f07ceeacb4a2d91099300336285979ebbf6de03adfff",
+      "orders.csv": "0e1b34487cb632584e2cd7f958aa88b20abaad4f1bd86b1c8a1ca0e7438c0809"
+    },
+    "alternating_r12_s027/A": {
+      "trips.csv": "6a97e050e14bdf774e7e39472d3850d6c27ac9210c575de2250f024483f6c7a8",
+      "orders.csv": "8f0134c2656b94b34cb6662030c3512640d4457707615abbd3c570ef2ac8ec18"
+    },
+    "alternating_r12_s027/B": {
+      "trips.csv": "94caab24f8f534944d1b267b3d410994e5ee7bc5adc77c0d8ef42c32559064e1",
+      "orders.csv": "5f08bdbd769175d6379d73790affbc3eb85d80d4bcb878e19453abe5cab03adc"
+    },
+    "alternating_r12_s027/C": {
+      "trips.csv": "bf973d8a354938f95dc7c3fce6312824305d4279e3e344401413e5aff82dcf33",
+      "orders.csv": "0c107135e3b8ea1450550178c25473f5460c6b9d9eb46b329e83c00f6773f05c"
+    },
+    "alternating_r12_s027/D": {
+      "trips.csv": "89d00efeb07ed8c78d1443989480b693c616b4f608d7732371c43b82a8b4e2cd",
+      "orders.csv": "c3c6d30486f6e6e2a9f49ea92516d175a08892ee0a86c5e81b0317afacd856bb"
+    },
+    "alternating_r12_s028/A": {
+      "trips.csv": "d40e38676b53c439e455fde847f2b655fa5a90295d1ffd8b8f17c2fb25e4b22b",
+      "orders.csv": "53db2a230bac7f7cf1de09b256ae6720d5659ef723ab91ac8d85b9abe5b2537a"
+    },
+    "alternating_r12_s028/B": {
+      "trips.csv": "6241da95d28aac073a0d9587c07cbc735aa53f7271d3affb0ebbec38e272fe6d",
+      "orders.csv": "d6e396aeab18bd7cb686fe79020bb6e46dcf41efa254581fe82b83928b174b9a"
+    },
+    "alternating_r12_s028/C": {
+      "trips.csv": "64237f1f5b547d9033185d6e5a71eed65618a6121fd298aaee17613ef3ca8f19",
+      "orders.csv": "9fc0b3d6c42acfa4ce6645e958beac7f347ab3ff61ff3ff0e7cf697602b50901"
+    },
+    "alternating_r12_s028/D": {
+      "trips.csv": "19de0c3c009e531070e295f39c4f84836b919cbdc18aa8cfc54a10b3fcde3184",
+      "orders.csv": "400630928cd0fdaa35fa1a0915b6c52071c39819b38f55e5cb043a06d7fa2f19"
+    },
+    "alternating_r12_s029/A": {
+      "trips.csv": "3f48cff0c6b916abda91337b2c80fba1ecc3e64498e5d6d44af489a07f3f0f22",
+      "orders.csv": "cfb9c54d2bd62bc52fb64283d5e14149f960b2d21c970b84fc9e4647b517aac5"
+    },
+    "alternating_r12_s029/B": {
+      "trips.csv": "dd4ce3e764936248479857d20c4f2317548e3a4d1f25e4416a55818483a7d3f5",
+      "orders.csv": "58a2a0e18dccebee1dd18b833e65409ed7a9378a419afdf250be8730dad5c55b"
+    },
+    "alternating_r12_s029/C": {
+      "trips.csv": "fa12a5cf6fefb4901d92d061112b5df4b774e6e1d468e9bf5c2c74a3dd5a98b4",
+      "orders.csv": "182616d9ee432597a5699f09e6f95d934b45a14395852fd55fb7938b9de1f2ab"
+    },
+    "alternating_r12_s029/D": {
+      "trips.csv": "af5d36015590c20481a66d496aee3e39f15197d3a9dd6626f971d15fc08360b9",
+      "orders.csv": "58a2a0e18dccebee1dd18b833e65409ed7a9378a419afdf250be8730dad5c55b"
+    },
+    "balanced_r24_s000/A": {
+      "trips.csv": "6b992530bae0272f652b6ed1e71fdc3b7a2acff4bece2c512045c190b4019645",
+      "orders.csv": "3b79bff445b5bdff0459a72846f8662639410ff291ce48846db93ed90ef2e224"
+    },
+    "balanced_r24_s000/B": {
+      "trips.csv": "53b7ae4fb86cb5f2b12f487ec35ce627f16749eed552a179bcd6311a7d17f6ae",
+      "orders.csv": "63de7bd759ddb9f6a66fec05e35450e24e029fbbed4c18c2573dd61999adafe2"
+    },
+    "balanced_r24_s000/C": {
+      "trips.csv": "bdd1ea299dc514bf3be1a3fe40c4e7181b48e62637d911e311b6f7b69bf20c98",
+      "orders.csv": "0455fcb932230c262e4cde8fc443c464af3183ecde9d1955c54f2fd35d34b2ea"
+    },
+    "balanced_r24_s000/D": {
+      "trips.csv": "ac170853039a48bd3bce7d99cd814c186ac060e6ca46cc0b7db87981074d35ff",
+      "orders.csv": "e32b2b6e0fe254b012003c22f3d448a541b4dc46a691552027e4dd43b0a051c7"
+    },
+    "balanced_r24_s001/A": {
+      "trips.csv": "54909b47492dcd480207b7e91c93081849a8ade24af60b691904fcdfff9a4474",
+      "orders.csv": "23f0c133f648b1b88d9dd99bfea76afec5bb5c44bb16e99615a8b57503ec130a"
+    },
+    "balanced_r24_s001/B": {
+      "trips.csv": "f3c3c7c7caedd67a8c2a7acbe7596261d0c056cb9e6cb6e26d25835a96b08eda",
+      "orders.csv": "0898f0cd13f4c51b22bc35f17689cb1110964e99ea2b292d6e318e4fc06a2b21"
+    },
+    "balanced_r24_s001/C": {
+      "trips.csv": "e02b3e898708a5d3113c48941daefc53358e88079b1d46cba5bd48c49f673f1d",
+      "orders.csv": "58cdc1acb98333bad465eb7a2d73a8b731bb56720173aaa0ea00399088096ae6"
+    },
+    "balanced_r24_s001/D": {
+      "trips.csv": "09c860a122092b3f72f590bbe77c3a0eaf8114b85bcd87f4d886950b394314e8",
+      "orders.csv": "9769b383317b0c374a016db3538970d63fa3e6943524fbf2a6eef33b394fce1e"
+    },
+    "balanced_r24_s002/A": {
+      "trips.csv": "e6a4edbbc19520f59275ef87c4e099a72170912ca2753f9e2e97707319195a06",
+      "orders.csv": "6424689cd7d89160d049e7fadd3699e5d3132593afbc664b11cb148cc8dd9ab1"
+    },
+    "balanced_r24_s002/B": {
+      "trips.csv": "b9a44208a1185a6f659106605c258c90d77f09933188d2eb7e60ff98f44bf3af",
+      "orders.csv": "80a654cd227a0dc779141a6ef4887a82ab18fc600209869f052ddc491d560e78"
+    },
+    "balanced_r24_s002/C": {
+      "trips.csv": "903f54e8b744f7bd5d4a7c122f97619a3b1a34e627a6992318ffe5958d682a08",
+      "orders.csv": "21354a0dc1eb6c433bfd29925f673e00b907d262c0073b97df0f1ccab1002be5"
+    },
+    "balanced_r24_s002/D": {
+      "trips.csv": "eda0232f6731ef45bffd56e0d23ca1a87a5f424cdc0a760d3e3e932c3bbd3272",
+      "orders.csv": "fafeecea96200f9e283ec139adaee1efb277ade7d75fb55cad3fc8bac98db721"
+    },
+    "balanced_r24_s003/A": {
+      "trips.csv": "e6bccf20bdef0d0fb4b905bed61e827623c39a3ac0228c4049b015f11463f529",
+      "orders.csv": "d146005f9cc2eb39cbf15ded323a24c9bbf1448221e018033b794b194f2acb5b"
+    },
+    "balanced_r24_s003/B": {
+      "trips.csv": "b1874089cf41d34d473c14a95a4363c370031d48500f4b391191bd6e4e063773",
+      "orders.csv": "af288c1baa532617b94d891ecc47f13f8a1720a48cf8f1e3d7a4d6c5d6e5f145"
+    },
+    "balanced_r24_s003/C": {
+      "trips.csv": "9f2c6c8409ebff35c18b8bc6e1c26003ea1f52ab3582367414bf248069dec216",
+      "orders.csv": "6e02d935d629217f9dedf1cbf6c3ebf7f1a18889076ac321178fa8595e1caf60"
+    },
+    "balanced_r24_s003/D": {
+      "trips.csv": "aacbe0aabef2ea9ab8302134b78dbed8e09550b7c99c8f83599c7de9e0b7a43e",
+      "orders.csv": "66a7c84e87b593f119730fa21a2b68d03183216941030c63a6b371f642586cdc"
+    },
+    "balanced_r24_s004/A": {
+      "trips.csv": "e98de672f643abd76c38a5f88dadcab742d22ec6bba847573a996e23d8a56a48",
+      "orders.csv": "8f70f0ec7f9f5e95ac8a69202dbfc514344c3a34482c2063636d98ce5f2b80f8"
+    },
+    "balanced_r24_s004/B": {
+      "trips.csv": "5eba1593cf4b13a8e7dd2cd263e93868d3db8cff8b4f232c7d9b49e6636844be",
+      "orders.csv": "ebc2e7d435b44bb1ce519912f8e00383a832d868a6c44c322f7954573acf09fa"
+    },
+    "balanced_r24_s004/C": {
+      "trips.csv": "aec157e1531c075c095c0d3a21c77d773c7d9d54c736b0f7dc7196ef94981b0b",
+      "orders.csv": "8f70f0ec7f9f5e95ac8a69202dbfc514344c3a34482c2063636d98ce5f2b80f8"
+    },
+    "balanced_r24_s004/D": {
+      "trips.csv": "f7b28deb8d63268a2b0e624f03cf1c215ecdff97931d7bf94d6fd1ef3b4bfb47",
+      "orders.csv": "bfcba258dc3b5f148c395b61fef6444c671466d53949cce6baa8baf0832b1e34"
+    },
+    "balanced_r24_s005/A": {
+      "trips.csv": "c35e04cff1ac6e52fa487d009b987e4fb9f19360b62f50cd7c7cba67110ffe82",
+      "orders.csv": "6915d2d05eca657b743911e738945022b00d99c4247f7d2337c376d1916b5d1c"
+    },
+    "balanced_r24_s005/B": {
+      "trips.csv": "151468d4c2ec2df3ffe168a69edd565e3d075eb43153cb5e1105a5d99f260636",
+      "orders.csv": "5ab1170a343428a1927f6ce47980a08d5395a7819360d6ade80840e9b65132e3"
+    },
+    "balanced_r24_s005/C": {
+      "trips.csv": "35d0b8b0db549b119fe766ca4f395d5a8083dff666e986decb64e8f5df89232b",
+      "orders.csv": "1dc255422ff7955e2a778f907722f73db1a16188d02d7afcb9afd2b9622492ab"
+    },
+    "balanced_r24_s005/D": {
+      "trips.csv": "4fd02588170c6d93e40e9a9192af8ea2b4d87ba0d2c6106e43891ac9575e2670",
+      "orders.csv": "24ae7357c524e512671b1ba456ab3ffe4443d497953ccd2c45abf3438c3f9c39"
+    },
+    "balanced_r24_s006/A": {
+      "trips.csv": "d58dc4e4904553fca3b3a09bbc9028792741e4fc830cad8d1e05208a97ffa2db",
+      "orders.csv": "f9a74294ea3b744bdf807927baa980d7423937ee46c8035d758c084ddc71f1c4"
+    },
+    "balanced_r24_s006/B": {
+      "trips.csv": "060974b8721366ee1b784986112a3d0fba263f6ce69b2169686725247468612e",
+      "orders.csv": "5f17365ded5255845912141d33c8245dc9bc2da06c56c044a9215e83605709ef"
+    },
+    "balanced_r24_s006/C": {
+      "trips.csv": "f7a806593c9bad200f0d2f3ac8e851436245e56fbc100005f8f101ccedfef7e0",
+      "orders.csv": "d1588ff9276b3fc1a56f9df640c13b22e4f559936e32ec46b9e0ec88ecebd01f"
+    },
+    "balanced_r24_s006/D": {
+      "trips.csv": "e052b47b28fc1178c213ebd706cc2c07406bf4d7e6dc5c9ba7a71aabbaf28dc8",
+      "orders.csv": "c748c8d6097bacfbf931d761d56a31d1117c6369c06c399977f9f68c77d5695b"
+    },
+    "balanced_r24_s007/A": {
+      "trips.csv": "d1015ee3368b211dbd57b74d01504191713ba1514d0dd4785648daaefc9770d5",
+      "orders.csv": "92709f0d06002d59ff24880b9683c1f3bb78a6092cdbbb8892be535de5e60b57"
+    },
+    "balanced_r24_s007/B": {
+      "trips.csv": "5f8b3b3baf8a69ce25db4ac61ef9d7efdd2d5315b02452daab45d10584bc1aac",
+      "orders.csv": "fd1cd0e2ea42e8f8e1ede0ef5f8765d9d4797c89453465787274fdf8ad8ac562"
+    },
+    "balanced_r24_s007/C": {
+      "trips.csv": "65c60b82d119e127dfb9ea9cab3b3f9fd6b2ab3b8a07bb17d2f7a5f8e5d8fdd3",
+      "orders.csv": "d9da8fee7e8b9229cc190d75579253bb23626c83f1625ca4c51b848c0faed103"
+    },
+    "balanced_r24_s007/D": {
+      "trips.csv": "7df1a32167dc25e1a16a156a082c5853b0fdbbda34aadecc2775f7a865e0a6dd",
+      "orders.csv": "a1672121c7c5e09bb2b099390b73f776408eab66724773a734141189688a356d"
+    },
+    "balanced_r24_s008/A": {
+      "trips.csv": "f50e3bc8ee84c7186baf151395f060c87c5c8505dfe7ad287f21c599a746ed8a",
+      "orders.csv": "641c4006fcbf919b1d801dd21bbf99b5212246f125598775c8db0f5b1d9d615a"
+    },
+    "balanced_r24_s008/B": {
+      "trips.csv": "d81279134564f363db721fc8851a98973885b183f30079ffa29f8dc6dc20bdbd",
+      "orders.csv": "8668bf0ed10b3750ef11b3244323f0ad54a1108f21e1afe5e4750201a7c05c40"
+    },
+    "balanced_r24_s008/C": {
+      "trips.csv": "23e87478f98743f01e8885a07b5fef8578c7a033fba3ca0f25ae7916490a9d7b",
+      "orders.csv": "a59774ea05160253b5f8fee8041176a0d19c97a56f009a4953645d269edd4287"
+    },
+    "balanced_r24_s008/D": {
+      "trips.csv": "7fcdb079e623a264efec831e41b13bbcce409924327746234cb221204013a4e2",
+      "orders.csv": "2ec8495392a1f50237eae3464777709766e77b6654e316d6d244a3eb6578a2b6"
+    },
+    "balanced_r24_s009/A": {
+      "trips.csv": "64cb65370cdd1df4b6b840882a8b687b91ad7dc6988817508446ccca3c3fb864",
+      "orders.csv": "f81b032e4e8add49d71c158b00076100cdd8f0ff32d8e18f52deeb7714390529"
+    },
+    "balanced_r24_s009/B": {
+      "trips.csv": "a8a47d190fd49c4b3653a913c72295d3751244ec228766e3f29e3e9477131db6",
+      "orders.csv": "9cdd88133e930029037df5df63270c217de061eebd02f06055a486dd1ecb88d7"
+    },
+    "balanced_r24_s009/C": {
+      "trips.csv": "cd305e216f229ff8d6db690e92f1328bc4dfe08ac9f96730ea4cc16822d1728d",
+      "orders.csv": "469aa4d7d2448b238ebc33907738504659145593d64de6dd06c6ea7d1489b5a1"
+    },
+    "balanced_r24_s009/D": {
+      "trips.csv": "60e8bc864617a0670375c9132b5f7b106228a81066745e79db88155bf1c0686e",
+      "orders.csv": "9cdd88133e930029037df5df63270c217de061eebd02f06055a486dd1ecb88d7"
+    },
+    "balanced_r24_s010/A": {
+      "trips.csv": "367305411079769321cef6c59829d0e0a3a40d89b82a37f30220c37c3f02f37c",
+      "orders.csv": "72083476c7ecbdd0d09d8ea980b0eb91ecdfd5c378bd9656dd1be0fdb4668cfc"
+    },
+    "balanced_r24_s010/B": {
+      "trips.csv": "b6d086030c47c9e14acc3439110b722d1a424134e1a9ea287e28c989b04c7174",
+      "orders.csv": "6952ea25eabf2fad0607ab3935a03e51d0969a07a7813a9193698f97ff6e1034"
+    },
+    "balanced_r24_s010/C": {
+      "trips.csv": "31fd266dfd1a3e658f77e65fbea30439e4c4e6604e54d58fb449318f0ba17216",
+      "orders.csv": "72083476c7ecbdd0d09d8ea980b0eb91ecdfd5c378bd9656dd1be0fdb4668cfc"
+    },
+    "balanced_r24_s010/D": {
+      "trips.csv": "55b86c16eb447ece84a8475f0f37f4db13e214ce85917eb1db29288a7bee9de3",
+      "orders.csv": "6952ea25eabf2fad0607ab3935a03e51d0969a07a7813a9193698f97ff6e1034"
+    },
+    "balanced_r24_s011/A": {
+      "trips.csv": "e72af55ad4f31a01156d466712a67fc268dde75bb068e88e62704485df7a6e63",
+      "orders.csv": "1a407d62a78b37cf5d99f626e31ccefed5bb323207de2ab8fdb9e8dc2da65049"
+    },
+    "balanced_r24_s011/B": {
+      "trips.csv": "f65dc1d497290d9bf4b7b4426435182222ae68bdcbb324f83ab99d9966c9cb19",
+      "orders.csv": "69f0e7f3fa0053723f1e022e1798343b4cce3b8bafdb9d2a34cffda5837c4e4a"
+    },
+    "balanced_r24_s011/C": {
+      "trips.csv": "974cb0cb0cc216c540b6e5fa696a97f7e0eb66c962f009efdce5d0aa5da7c65c",
+      "orders.csv": "43de454f3aa18a9c3125c8ae62d9e5cc2713d4975638f1cb5e72382985763590"
+    },
+    "balanced_r24_s011/D": {
+      "trips.csv": "dcfb345f5ff63ebfa2b4daf3681428a241138db9238791643519df6c7fb89859",
+      "orders.csv": "9f7cb241e2705f062e2fb45b535ab76deedf6b86884521de580808be59da0313"
+    },
+    "balanced_r24_s012/A": {
+      "trips.csv": "29bc40591069b4fb1e93722049a6f5cd2520dc8c59fd98311f62bed2a9459c88",
+      "orders.csv": "b8e92b334afc5e51ba86988436cc53f69d33e5226c52fc27c54fbc9751bc126d"
+    },
+    "balanced_r24_s012/B": {
+      "trips.csv": "766524c9432b1ff32dce6e83543a109ece5c2a960270b364810afcec58e97bf3",
+      "orders.csv": "9cb7035c5fc44da62facc7e2a4dcc9c7a2dde9b76ce94f4403a6c85d22468089"
+    },
+    "balanced_r24_s012/C": {
+      "trips.csv": "910fe2d2a8dcc2e7ff54e422a3fbed91ce70620a8bb5ea96fb02da9cc2d04a88",
+      "orders.csv": "b8e92b334afc5e51ba86988436cc53f69d33e5226c52fc27c54fbc9751bc126d"
+    },
+    "balanced_r24_s012/D": {
+      "trips.csv": "48e0f5f4b779ac49455cd583d5030e3a777efa264d8a8a8dbbf0520279df026b",
+      "orders.csv": "04fa638cac23f9915f49c58dde8ee184d64b45b93131a1d6a348f54fff646564"
+    },
+    "balanced_r24_s013/A": {
+      "trips.csv": "79e93d981466d3a4e056405409630f268d65b8ae9abe329a91292a8b598d628b",
+      "orders.csv": "0c5133c65e9ecd52c300044810195a54a6166d77e9cd2748cca574014c1b3f69"
+    },
+    "balanced_r24_s013/B": {
+      "trips.csv": "132c0ff04dced6e430780f101f9ebf32b3595dd1dbdb004e08c392fa96a62de6",
+      "orders.csv": "c8900c017dccfe21af7e0f0f2bb8d3cb915d18c6f7c342f72f335f7d2d9c0e5a"
+    },
+    "balanced_r24_s013/C": {
+      "trips.csv": "051ecf23c4a744bc9c08aa058622ab6bce3ed0d70a02487cf024f0d576527386",
+      "orders.csv": "fd5cd8db7cfb86320d1c416d06687b01299578bfa1fb7e045f9e2cbf5544706b"
+    },
+    "balanced_r24_s013/D": {
+      "trips.csv": "5dfe629927f20f815fd36ef879acfcd937941a3d4bbb2194a9d7c3d1c2dd302e",
+      "orders.csv": "fc921b6805fbaddf6e1bc8ddf9b26a71b00765ebe71a04aa0ec0767b16a6813c"
+    },
+    "balanced_r24_s014/A": {
+      "trips.csv": "a398be0d97dc4fb16d118657031578e6e8cf53a45498f0393413a66faeb3117a",
+      "orders.csv": "bca0ffa2d312b6899bbc638263265da9bddd45fbea2a0c10d74aa462be191fe3"
+    },
+    "balanced_r24_s014/B": {
+      "trips.csv": "7af186eac50069a5e04ae8e21460f8bf2bf9e81e179bc4cd45e0cfe17eb1ddca",
+      "orders.csv": "3279f574a6d2f8c7f7e677b8b1eb3d672e65be99bb225413a46da0709ffc80e0"
+    },
+    "balanced_r24_s014/C": {
+      "trips.csv": "6d2e77021f7bf902143cf3ad78c52f84db8835f72cdc08fb97a83fbe6bbc9f1d",
+      "orders.csv": "a0ba24166c1c7908a1e1142e50e9911842a3b44b8f8125c3d70840d7d7951fd5"
+    },
+    "balanced_r24_s014/D": {
+      "trips.csv": "dbcc8d1db9ff3a2bc1b69d54ee4a541e5852b3dad8b53c9cc3d34690b7d8d71c",
+      "orders.csv": "cdd5db3e3290f4306e4c0e2054d67726a14989ccf9f5c7f575ee51b75804c6d7"
+    },
+    "balanced_r24_s015/A": {
+      "trips.csv": "61df11141a018c24eb81d5afcc50c2f15bd3aa54d23fae224124fc50eb2c88e7",
+      "orders.csv": "6497b6b96ae4268579edbc92c20257790cbef1e5bb75fbab4e94c54db6c663fd"
+    },
+    "balanced_r24_s015/B": {
+      "trips.csv": "6c7cd5ad45aa379e98c51b3b9e7fd59c2c3035b9679d0d9fc969dcfa7aab87d8",
+      "orders.csv": "18280c19fae7c00649f18f2cf943eb97ce5a1a825d36df5bfbcae12a978c44d2"
+    },
+    "balanced_r24_s015/C": {
+      "trips.csv": "a0f114492d47080d33e9ade85c8219dac0de2b2b30a3f61113a4b5878344fa87",
+      "orders.csv": "d0bc9e63efdf230b0b5e8694a36637158071b5596dad340e4b8a6cd19d299817"
+    },
+    "balanced_r24_s015/D": {
+      "trips.csv": "e09bfe34865df2d973dcea35e87079c62cfbcb2662c84b3f05d3dbf890683378",
+      "orders.csv": "87a4b9a0ed82fd1aa39be67ab12483d146d51764ff31cab8e3ea8b053f19b76c"
+    },
+    "balanced_r24_s016/A": {
+      "trips.csv": "ff525945f934b1527d49e3911d01c6c80c9972838059c350103b932c6b0857bb",
+      "orders.csv": "835fcad25cd7812f4d428c972cbeb3d5fa56e523ee04df73c7abc3c6ba3b02d9"
+    },
+    "balanced_r24_s016/B": {
+      "trips.csv": "697b1a3814f4532a8dc66e7046f60f613b5af33331089a242dd66638dc5b23c0",
+      "orders.csv": "757931f33d7022c2ed7b226d15ebb7beb61dad72b2772a6778a95153602ee8c6"
+    },
+    "balanced_r24_s016/C": {
+      "trips.csv": "f5c43c8cbb515f234cda5359952c2d77779f6cc9ddc465d091d572a7d03588a2",
+      "orders.csv": "ab9f9087fcd8bdacb3e9b5c56028bbd2bf84731712cb6d6727c30a2297b1e381"
+    },
+    "balanced_r24_s016/D": {
+      "trips.csv": "4b076583eb3fb885f691940071ef06b2e74f9a80ec82a2fb90dc1e8d643eb396",
+      "orders.csv": "04e19334513e7063597379a4a7961af843a0f4427cb77b587931910e4a92fedd"
+    },
+    "balanced_r24_s017/A": {
+      "trips.csv": "01bfc90f3dff00c7975d6105a5732fd869db3f1e407c27a49acd5b3f506bea20",
+      "orders.csv": "d338b0e47f7d277c0b2827c37f2e6b599229171b3da5195cc488732415ff5a9f"
+    },
+    "balanced_r24_s017/B": {
+      "trips.csv": "87b5f956406c9d1f4d5f0040add57db1540813306cd848ae7a6b7da7a43aaceb",
+      "orders.csv": "7fee1ac555eeb49cc8a6dbe8e4b3ba56df31ca9b4d10e8e3866133324c48afe8"
+    },
+    "balanced_r24_s017/C": {
+      "trips.csv": "e74f8f46e4ef2fea0283d8d0ae24c1ab060b4c4483d216b5953264824c062454",
+      "orders.csv": "6f73e2063c4cd92dad01d795b2fd560c0f2d90aebeec0b56c717f716ce1fd886"
+    },
+    "balanced_r24_s017/D": {
+      "trips.csv": "f9f9b2a8ceee9c156fa1a7e568f4f7685a29f0c7e34eacb9d5b5fb9b120d36f3",
+      "orders.csv": "c12e547a13670ff9af50d17fcff1b43568078f1a73306e0ff15e90eeb625b187"
+    },
+    "balanced_r24_s018/A": {
+      "trips.csv": "b09bbcf84c168cd99f030dde0f512d33a1d353d97f2dd620be852b6c81f11dd8",
+      "orders.csv": "241619a256d99b37fc0702317efbb075b8eb1301091018dd6e0d86c157ed22cc"
+    },
+    "balanced_r24_s018/B": {
+      "trips.csv": "1684ca6684a501e484016d243bdba2f7fde3f1b0472305966690797281a4c620",
+      "orders.csv": "e36e7ecbbbde101cc1c159c5b1eb2ba007a4e59d7868256879aebd003ab7b65a"
+    },
+    "balanced_r24_s018/C": {
+      "trips.csv": "f7d39acdd8b1782ccee72e69aea70a23259e0bf29c8273ad0ecae9437b751ede",
+      "orders.csv": "ad62477ec504e5a31489c46bb8ce31af98b64ba3072dd893f3f283ad86a727a1"
+    },
+    "balanced_r24_s018/D": {
+      "trips.csv": "4fc5c8a8a7b728078b347a224c1d2858fa5c9663e281922bb9cf8f94eba4f929",
+      "orders.csv": "70599f191c108c41c7b9cd07c49e3c0966d3d75975fb2de554afd6e7ec0d845f"
+    },
+    "balanced_r24_s019/A": {
+      "trips.csv": "441e8f9be45d0bbd54af97a504dd28cb4ab9f8e639efe78e8f9aaf013e43e998",
+      "orders.csv": "2e5e2cbcab214b32a9749c9f312110ce9b3b984268a737b75cab7c822c528866"
+    },
+    "balanced_r24_s019/B": {
+      "trips.csv": "124335e69b8fe2b3e2d87cefe3fe3b17fa604a1adc4d2536db3b25d37e247586",
+      "orders.csv": "69c7aadb01f042102450e836206964a905bfcf3b3485a055dd13928734ad2992"
+    },
+    "balanced_r24_s019/C": {
+      "trips.csv": "94f2c42fae6bce2cf4c3b4296589b9854b26e55ec3c711b1bf7b415744106d16",
+      "orders.csv": "e0703704ecb38be5ee43221e0356854e59edfbd459d934482624901cfea4b2aa"
+    },
+    "balanced_r24_s019/D": {
+      "trips.csv": "6c1b8ea5310888d376dd05737f839d904e08c25284d693c1131306537b885317",
+      "orders.csv": "8a35d68093b4e0fb58df4b3557bc6fb63beb4bd7dd7eb03f1a15cee6980a4811"
+    },
+    "balanced_r24_s020/A": {
+      "trips.csv": "9d34857e4a0393e93190b5d561c5cfab6ba5f6b41bb0696bc84eda3415d55111",
+      "orders.csv": "50c851daf60531f22d563745ea0b1502f2ddfe9edcb30eae77115224053898d7"
+    },
+    "balanced_r24_s020/B": {
+      "trips.csv": "95e13b4ac3de49e2da2190fcd060525a8e9228af56d19c1c28fad6f49a1dfb37",
+      "orders.csv": "ab3d24f5f0c36400e27351781ceb17cbb8264043f5ed282d6b07613bf63c4dc0"
+    },
+    "balanced_r24_s020/C": {
+      "trips.csv": "438f5ef50de113007bd8a967b9029efd01efe089911bf56464cbb824122d5f52",
+      "orders.csv": "8f56d7603c7434d6a2b50724dfeb9b62257a6767164f515ad18f5b2d974780f6"
+    },
+    "balanced_r24_s020/D": {
+      "trips.csv": "779db1a4b1f9c3b49a73b0deb8672a8f06b660488cbd453f75eba8e8915b4991",
+      "orders.csv": "721c00525cf46210a0ed63cd71f9b80f4712b009b5fc1214a6f95696fe90aa00"
+    },
+    "balanced_r24_s021/A": {
+      "trips.csv": "04cdadc4adb49b072be18ef51486010e53e550eed8735ddf7fd851b811ba1a6c",
+      "orders.csv": "5e34cc6bcaa726669fb26ee41550d810a0b285f5bc4ad9f67c4ea6f3608fe815"
+    },
+    "balanced_r24_s021/B": {
+      "trips.csv": "ae5168c171c86b7aa98afcbde4aab3e5c6891699b1d0413fc7b44e8a41f76ab1",
+      "orders.csv": "5a51534534257ef0a00b3bcdcc26d16d247d4b5b700422b28c9d6a19ffc14d39"
+    },
+    "balanced_r24_s021/C": {
+      "trips.csv": "d318267cbc4de900a34df56923548841e80a2065c6fe0c2969ac94595a13c92e",
+      "orders.csv": "2c7792c27c5f6c8c7fa6193c60906c8bd48c429bc703541f9fa5b633ee012184"
+    },
+    "balanced_r24_s021/D": {
+      "trips.csv": "abbbb7d436c7a3f97c4adc46fbe69408f91a57ac2f0d0a6ffe72173d35522548",
+      "orders.csv": "bc087d3ae70c24a8b0ba3905925c60179be62addd61a1294a18916eaf664eb2a"
+    },
+    "balanced_r24_s022/A": {
+      "trips.csv": "ceab77df5f46b7d5684e39013bef3f5e1ec6b83627311ce18695e2e9b3649518",
+      "orders.csv": "31bb7aee2c638417af3e578f3f5ba959c1d986016b4361a6a7195e90e77ef84d"
+    },
+    "balanced_r24_s022/B": {
+      "trips.csv": "4b3daa8336aeee0fa8d792610fefac5ec172ece38af76266874fc27b97735085",
+      "orders.csv": "7a60a29a8341d451d68b854d5607f5c8851523d412cfd69fa1824de1dec6389c"
+    },
+    "balanced_r24_s022/C": {
+      "trips.csv": "c0bf70e08112af1975598f2f14ba25da5a602d0ba35d6a312904cb1d23f35278",
+      "orders.csv": "c988ffea855e65cd7c0ebbecea57036aab296a485a3ce6903d18e5c96753913e"
+    },
+    "balanced_r24_s022/D": {
+      "trips.csv": "5e55a478a9bd886facaf20ccb214ab98a7b59f0216a29aec6ac0687877664857",
+      "orders.csv": "84300cb34938ae93331cbe7a7230b89fb3dcabdaba3e28b97b401bda9a2c90ab"
+    },
+    "balanced_r24_s023/A": {
+      "trips.csv": "bb454421dbde15fa0df0467f65d8d31662b6ca3813e33f87e013bd04154e59f0",
+      "orders.csv": "a8eae9036a7c1b3715da9cf076b520f6bdf2e8f1cbe991f31eadcd58c85f6789"
+    },
+    "balanced_r24_s023/B": {
+      "trips.csv": "56900d90c05e910261a6c544b32920d8cd4180f6b3e785608e5ebd759b97935e",
+      "orders.csv": "8b4a3bb8124c0097b73465cf818574f52ee17cf597ab46776b1aacf565738b37"
+    },
+    "balanced_r24_s023/C": {
+      "trips.csv": "20d0bcfedacfe20e531a37a34ffd9cad4c113e3733d46455216f2e532ea0f5bb",
+      "orders.csv": "9814e036ab17b3fc90ca85d7c59273e4ef9eba206b5e8661205d8b7f3495d5a8"
+    },
+    "balanced_r24_s023/D": {
+      "trips.csv": "406efde056aad525310fc83d3400957b15c699c5de80aed4eede66efa9cc3956",
+      "orders.csv": "7b7b69b2ed756f2e6a90b315bf0638b95a1f8e278a9f958a56430fbf49e9cd60"
+    },
+    "balanced_r24_s024/A": {
+      "trips.csv": "45a9e66b6b8652de16c7cd80027460a5f24f76da2ceaf49234e1fd278c368697",
+      "orders.csv": "1baa29899ed31de84f80dbe8eea361e599b3602544dd3765f3a0931dccf474f8"
+    },
+    "balanced_r24_s024/B": {
+      "trips.csv": "fc2da50263c5a28b3342c1b5d5ade1b65d878bf99f66bbeb7a8c14d6c3e7ad14",
+      "orders.csv": "bc1adbdd3daa95665793c7469559cb74fd220658b5724d11e3b51120a0910488"
+    },
+    "balanced_r24_s024/C": {
+      "trips.csv": "63a01082ccf3e27a354a2e23cb04da20c0daffe9bc756b8731e01ec3142ab445",
+      "orders.csv": "f443488cd5fb6e4bda60113005f1c5cd98cb9fb52fd50e01e0e6ffc60b7f7c3d"
+    },
+    "balanced_r24_s024/D": {
+      "trips.csv": "b1bf379a161194992419199f1eddd9b687ddf9613de6fc3115998f47fab6018d",
+      "orders.csv": "466e9927cf1e02da099cf67b2fee9ed51c2831f87133e65ece8eb6e4cba96222"
+    },
+    "balanced_r24_s025/A": {
+      "trips.csv": "31eddf427b7819f9c99e0725e74298d7bc16a84ccc44a12ce7deb1c0c253cd5e",
+      "orders.csv": "a2c6f4759f6b06828e441872d5199ef66a407d23dcae32bb3cb349d614b2fb4a"
+    },
+    "balanced_r24_s025/B": {
+      "trips.csv": "6e419dd7efbe316e53f1cb17d8ac05d4a9ae4f0d946d5f6147aad9ccfdad90e8",
+      "orders.csv": "53e9e2cda74b4c75889bc61ce26430e603b5ca8ba92d906741fef24f528a019f"
+    },
+    "balanced_r24_s025/C": {
+      "trips.csv": "a574ce3157301c2747273145e06900d064cd689d0479eed5a4b3072a3372fffb",
+      "orders.csv": "68ea5c11926cdad1cf224774b46f78bd3c844f0ff2fb0b79c8be9a78b92ef717"
+    },
+    "balanced_r24_s025/D": {
+      "trips.csv": "3e05b5e02d0f445dbdf99c446a4d6ba165cd4a6a11fac5266e5298a67640f18f",
+      "orders.csv": "3acff05649f138b89fa1954b003221a970f77ce4df7dfe8f59699a13a97f829b"
+    },
+    "balanced_r24_s026/A": {
+      "trips.csv": "69a265b043de3b7c2687ba314e3e3f2e0a415b8effff9643bd57047ec318c562",
+      "orders.csv": "8d3671b5fe105462edeebdc5ae6570d5a396e75df3aa4d7c7ecbcf40c676e024"
+    },
+    "balanced_r24_s026/B": {
+      "trips.csv": "d8f94aff7bdef0c6a9500de83e57442f6d466f4f5324fcae6f6b1e3fdcd7abd7",
+      "orders.csv": "e45c4257b68d0bb04c79336bb0a4023b447515adffe9f5ad245437af18f5c982"
+    },
+    "balanced_r24_s026/C": {
+      "trips.csv": "0f0e65557638b124cb21ce620e9d2c4f84480c6e57104058f7bee037b67058de",
+      "orders.csv": "1be959c2ced5b5085870710f215c556e9873384042ca84556e131743e52f1ac5"
+    },
+    "balanced_r24_s026/D": {
+      "trips.csv": "b53ab8cb81f822a5f78b0ba3a704faecb172e637c925e3f80f6a9b05764e5c3f",
+      "orders.csv": "107559fa76263f3ec0ea9667802eab05f5d33586e419e7a8ea56dbd866d0d77d"
+    },
+    "balanced_r24_s027/A": {
+      "trips.csv": "3467231295e86a38601f5994ac9ce2a7251624ce5b06e596a0e5be1532578e75",
+      "orders.csv": "51e311e80eed65c9622ed477c2808a1eb1651ebb2fde0921afbdde9dfadfb5b5"
+    },
+    "balanced_r24_s027/B": {
+      "trips.csv": "2ad3a92be91a7ea379e751e704f17632ad439f280c7b9ce9f832d39dcf86ffd2",
+      "orders.csv": "ff4dac9d5e3382dcff3e9fdbd6553a3716b1515da614911e177835515127f78a"
+    },
+    "balanced_r24_s027/C": {
+      "trips.csv": "7ecc68eea8f98e74a36d4acfb9d23c0701913ca3b55d970bdfb9dcfddf826b86",
+      "orders.csv": "bd1e468660707efb07f14a5d3bca345d933782ca8c3b66678db7573952bed43a"
+    },
+    "balanced_r24_s027/D": {
+      "trips.csv": "37541c16451108eb9b15e552104e6d923ae27fe3a528dead2cbaa1e87401ceb6",
+      "orders.csv": "ff4dac9d5e3382dcff3e9fdbd6553a3716b1515da614911e177835515127f78a"
+    },
+    "balanced_r24_s028/A": {
+      "trips.csv": "fb3b0dbc659eecf387a6b157b35387d37e99c358d8c21212140c73da27978db4",
+      "orders.csv": "2bb091b58371145a56f929b42bfd39347ff5fca9d306c5b52a6546c69ad3a2c2"
+    },
+    "balanced_r24_s028/B": {
+      "trips.csv": "49aad6b7ccd19af450c218e6ef33b7b4ac3d76da50d58079ae57ab13a88fa50b",
+      "orders.csv": "55ce7282f6a41053e77afa93b9727552b47b54950a13c468e2506952ddde248b"
+    },
+    "balanced_r24_s028/C": {
+      "trips.csv": "86134877f780210452f5d904674b0d4b9acced502ff7770c1c4b3cb4150fe50c",
+      "orders.csv": "36c7880666b63dc7ad23e6835ee49c7a2e9a78fd4eb5c0c87ff71494b0bb10b1"
+    },
+    "balanced_r24_s028/D": {
+      "trips.csv": "e827069fb85c1c73dc5d6417e68875a504dd23701109c9bb49369924ac81a427",
+      "orders.csv": "d7ae42e0f7a565b98ee658eb6efe4b7c48ebb9b29c2b29952647bd04a023ebc1"
+    },
+    "balanced_r24_s029/A": {
+      "trips.csv": "7d70a16aec35b29b56e7021821c1cc51156f17206cd17d16b40991c94c6bd46f",
+      "orders.csv": "dce9d8abae4408e10864d07e68266ee134ad083b862e09d53a10b640caa4208c"
+    },
+    "balanced_r24_s029/B": {
+      "trips.csv": "79f26aca7cd1f480daf663d666537bc59d59c44b898c035e488c4effa804497f",
+      "orders.csv": "8d68e0b828e1ca16e7cb97ba0ff2ba5ed95dd62f54d1742b4fea7003e5accf8e"
+    },
+    "balanced_r24_s029/C": {
+      "trips.csv": "4d2a5c06539c182c56a7aa1c839f6902c82072f2ef1484d7e1933175d3c86e96",
+      "orders.csv": "2265745283a59544a935c5b1590c2277c8842828ade424bf7f868dbdec1167c6"
+    },
+    "balanced_r24_s029/D": {
+      "trips.csv": "f57c5a584d92e8f38f31078ff93623a4ce94b5bc87f428b6ccbda5fe564bd53e",
+      "orders.csv": "cd5b3fb97b1751b3185c99ebdb8eb5592ab192dea49df0996e29500518c7efac"
+    },
+    "alternating_r24_s000/A": {
+      "trips.csv": "c269224a2bf9f8cfff4252d6585bd538aea5cf1fc8ef99788ce2f9decb68e5c7",
+      "orders.csv": "2f0b6524d2fb89d83f495e79c1d013887dff1ab407557ba2318bfcbadbb01b6f"
+    },
+    "alternating_r24_s000/B": {
+      "trips.csv": "ce9e81ad65b73d71524d04e6924637b8b19c31223b505e8ff1afda713dc21419",
+      "orders.csv": "812788e7a1e925667afdaf309142d5d0211bbcea11780bf674d345813d324da9"
+    },
+    "alternating_r24_s000/C": {
+      "trips.csv": "b46a7633d17e3e397903b1c567f56728694f8c863ca43f8498531314f89aa644",
+      "orders.csv": "b68a50135d4f78fe41796b25419560cd77cb99d87c6555575154619414feda1e"
+    },
+    "alternating_r24_s000/D": {
+      "trips.csv": "bc89a1d9dbaba38683380134957c91401a62d97fd51be93acccff2713878d75a",
+      "orders.csv": "2769db83cd0f86c0d487a5a79bcb550a2bb3a6e475bd059e3c9e814476f5eda1"
+    },
+    "alternating_r24_s001/A": {
+      "trips.csv": "669e4e5c8afd17c339d692d782e19445302b427c3226cfe0624afb5a20805dd6",
+      "orders.csv": "e7bfbcdb45b0e2ed19b01848053fdf2d9f64070d83ff31e77debb7dc80146f09"
+    },
+    "alternating_r24_s001/B": {
+      "trips.csv": "11b54f0423910ebcfa3bd5f6834b99e9c44ec5c5371fc8e75d7c4636bb6b24d0",
+      "orders.csv": "25c0fdde392abb017d332b2e528e8070ef52083841f3549e1a26a29ff09bdc3f"
+    },
+    "alternating_r24_s001/C": {
+      "trips.csv": "e9b4e98e51bbb708a5827b959b09fb35260e8a226eeae426660996f98d4f89c5",
+      "orders.csv": "e7bfbcdb45b0e2ed19b01848053fdf2d9f64070d83ff31e77debb7dc80146f09"
+    },
+    "alternating_r24_s001/D": {
+      "trips.csv": "4afef7c207367529beb8b4bc9f64c5eaea8ad6c54eb622f3dac087d359e8fb34",
+      "orders.csv": "37353abe083616d189e26dee0426e181994c4db5a956d282c05ca29268c9d003"
+    },
+    "alternating_r24_s002/A": {
+      "trips.csv": "1836b232278c37082d86060aded0b736dbfb35e6c80ae9e1b9732b49ac67d151",
+      "orders.csv": "5b08173dfed41fee0b2f99d98b4881fb3edcc79714c22ae33fe387a09b696d14"
+    },
+    "alternating_r24_s002/B": {
+      "trips.csv": "4665b7f7caae43f143ddacc0030cda28ad4a7510d6e8356f4a69d257dac6cc33",
+      "orders.csv": "64c5e4089513028f93ab1626baa3d3fe77d35fb68c67842b788714866b388940"
+    },
+    "alternating_r24_s002/C": {
+      "trips.csv": "2e7237fde9675bef029a479ae76c1d5e94472304ca48cc10c0c78e5287cc3922",
+      "orders.csv": "ed4d0d69457efa058d0ef834ca34f573c751d7263bfb37c1ed99f2501f333bfb"
+    },
+    "alternating_r24_s002/D": {
+      "trips.csv": "bca6cd69ff9a9541b587372b4a5c877571fbee0f13e3fe646ef1395bc9bd32c3",
+      "orders.csv": "4141621edac411d9855591765282c2d463d57cd76ca33c1b34d4beb659e9ebb3"
+    },
+    "alternating_r24_s003/A": {
+      "trips.csv": "97d2b80a7947e7f8256fd36832f83426139ceafedf2c6e0430e18d5da0fa75cc",
+      "orders.csv": "773b973c735fe605609b7d951d0c6c165a3e2830b2010cd6fd3d8fb96570b964"
+    },
+    "alternating_r24_s003/B": {
+      "trips.csv": "10b68c606f777e192659d9a2eebb399fd45986016620bfe75ad1c3fecb7dafcb",
+      "orders.csv": "e640089e2885588a3477f2ff5e1a2199b17542c960dee410a8f454cbe34fbefd"
+    },
+    "alternating_r24_s003/C": {
+      "trips.csv": "d12590c3f4f9d0b7387975495c97193f3ec89a46b632ad4dac4436b7a84eba04",
+      "orders.csv": "e0ab56773e2801a4f04ff03a7a868ea41c985f52d1832fbefafe3960456f15ec"
+    },
+    "alternating_r24_s003/D": {
+      "trips.csv": "1ab16d44d83b78f81db817e93cc6275b93de819bc274517f76fe51b45f44f2a8",
+      "orders.csv": "35843a37b8f84ee8799b1187a2711bd7bad76c57bf9ade6519f7e5698e39d2eb"
+    },
+    "alternating_r24_s004/A": {
+      "trips.csv": "bcff1d6a3b03acd6c0cf434edd04fce0c28caa18c4d7e7ac6e17a05c80bcd451",
+      "orders.csv": "552173925d2d231370440180d9e1843b83ec135c973b624be313ae6ec4bc5e32"
+    },
+    "alternating_r24_s004/B": {
+      "trips.csv": "8e3d78123c2c86a126193fd938e512d65177addaad9dfd2895fd68378b763815",
+      "orders.csv": "809164e77a8f10313a2d0bc9a0a23327f1ca93515b52c69252c6257fe53ff841"
+    },
+    "alternating_r24_s004/C": {
+      "trips.csv": "380c8a25031c5df1defd4567504ecba039de1dca0fe35bd73d6b639490d4a23d",
+      "orders.csv": "9b083352f7e8597c37ed071e24efe64f78f84b4cb4c4affd06f8eae623a9e2f5"
+    },
+    "alternating_r24_s004/D": {
+      "trips.csv": "174fbf99b07a1c3e948f03c7298d9970615403b4f11a3479b444c072fc1ce424",
+      "orders.csv": "5620fdcab69e979c3a20e8a2f377e3f094284681f5674cd0e3fb8f81a408b591"
+    },
+    "alternating_r24_s005/A": {
+      "trips.csv": "8479207e159266891112e0660b92d2b80c359f5f48139c280c55a8a1d07ab6bd",
+      "orders.csv": "77091ca64282fd64d1c294382ce95982e5e8ff67588a94aff985c887dd1a9173"
+    },
+    "alternating_r24_s005/B": {
+      "trips.csv": "f361a5c12dbfb70bcb6679a84fc38d0e1f3a061563dd1fb4d2a48dfd6e97bd8e",
+      "orders.csv": "53c1fb4ed8ecfa3d4db66cf9ec24a4524923a0adf89c1f7c77ee949685c34c35"
+    },
+    "alternating_r24_s005/C": {
+      "trips.csv": "5c52998f21c77426d3f8cc6fd329886c6c97370c5fb33539ef4fe42cfefded77",
+      "orders.csv": "5666964b6f41576ecbbbf57a3fea2570c6ff67db92352db65041046b1df47eb2"
+    },
+    "alternating_r24_s005/D": {
+      "trips.csv": "4073df20233972845cefbecd4c5c9d95b038f5722f2ee4f54e15619461513f41",
+      "orders.csv": "07296d0de5b8880ef3b0fdc8dda150aa278838df0d7a686c4b55f6f96b2fe8e4"
+    },
+    "alternating_r24_s006/A": {
+      "trips.csv": "ccb7609a26bd4a9d3b3130041a1a14b6a20e6f1bebdd29931a3b7c30c19ecc64",
+      "orders.csv": "30f9036b75de49771976dad023c23417de070d337a489ef5b508ecfd9a010167"
+    },
+    "alternating_r24_s006/B": {
+      "trips.csv": "454a47440db08225732548f02960462b270c29a554255288692c5267f061e9ed",
+      "orders.csv": "3757c4f0980182d466b515b5707ab09cfd1a85f457389f3b5134a13b728eee9f"
+    },
+    "alternating_r24_s006/C": {
+      "trips.csv": "b30ad9584de2ab77d95ba03605f95372c701dfd9174748e88df43312586b1e54",
+      "orders.csv": "0e06a5bb7fbed5bebbbd69cbb38de8ddc81bf69d7b7bb9eea944099539d1b045"
+    },
+    "alternating_r24_s006/D": {
+      "trips.csv": "5246c927a3324059ff3993e1e989a625d512c1dc5566fbf6ae6a43b71b294c1d",
+      "orders.csv": "5b7cf3a39a9f4e9985f3933e05210bf1862bdf0a78d928a2c829049555641c78"
+    },
+    "alternating_r24_s007/A": {
+      "trips.csv": "4b804c6f849494ea6017bf41769b7b37a591085db937f22c1beb909947bc8337",
+      "orders.csv": "ff6b6cccaa6f352eca1d385aeb36da9728347d239b7aa50f1a94975b10f4a4f0"
+    },
+    "alternating_r24_s007/B": {
+      "trips.csv": "b1356bd621c82cb871768fe7464af2bf29da0e1c9d4c74a01331cd3287db6801",
+      "orders.csv": "cb4f0116b92517865cacd931322ee5197646bfdff47a69c02b714aaabb8d6f0c"
+    },
+    "alternating_r24_s007/C": {
+      "trips.csv": "3b45fcbb9c65cd227c860bdf6bcd4375a988ec4a17cb2032d11e5df1074ebc17",
+      "orders.csv": "2b6a93413842b52a5174e201ea44a9de94edf5a30d5200c150b858a435a2f1f0"
+    },
+    "alternating_r24_s007/D": {
+      "trips.csv": "5c58baf6659344efb79ab4e107a90c47ab221e8433cbacdc2897bb9d2c172168",
+      "orders.csv": "66ad8f116eb856b8accac044bd6a1d956e3114ef2af175b045f09e4f9171e587"
+    },
+    "alternating_r24_s008/A": {
+      "trips.csv": "2050a5ccba32b5fb0618a97b0bbf263225044b0ea69035b5379a8f6ad45fc404",
+      "orders.csv": "a37d7cd69bf5ece5c81181b2f7c0257f6de310ea6c28c26d9f61467d501f981d"
+    },
+    "alternating_r24_s008/B": {
+      "trips.csv": "ffe52a2f2782f1cf02a5ddc4a3af95f9908a594c4d39c7588743f8cfc4f7b364",
+      "orders.csv": "4b97fc8ae17c87d3e3e9151d9c412fbc295cdbe49e5ceb2f45d0c6057e13c802"
+    },
+    "alternating_r24_s008/C": {
+      "trips.csv": "10c74fe32c2a5be65a5409472e4cf22d344a23c6e7e92c28c8cc64922f1d81b1",
+      "orders.csv": "4f3185098ae110002c14658fca26f4d63f74a402e7aa4135348462a0cf5d0c48"
+    },
+    "alternating_r24_s008/D": {
+      "trips.csv": "d2085441d915df969f4eb27f71a00e26a239eedc32a9ecf287e4c4ea5459cca5",
+      "orders.csv": "3de19f2799c70a8ccbf1518c47be2c9101841bee2deb597aafdae38cc7acd0e1"
+    },
+    "alternating_r24_s009/A": {
+      "trips.csv": "b2d6c00043bdc2288d4dcd3c847a184d333ccb063de539dcd9f6e39da088b782",
+      "orders.csv": "a0dc14e0a6e762a043624dbfa11eb92ccd8b94cd3df0ea6b9bb8e72cbd4f1057"
+    },
+    "alternating_r24_s009/B": {
+      "trips.csv": "9c35b35d8454af220c4ad0142778e5444720c584ffc2bcced22e6912ff3397b7",
+      "orders.csv": "1e72d278cf28b6c17fabce860b13015a2de44b29aa2ec29491a4517ade504dfb"
+    },
+    "alternating_r24_s009/C": {
+      "trips.csv": "07b0a9bac66865ba5819ef36f396a3a92093e0ee1ba69c4ac10b1e609f8a6372",
+      "orders.csv": "c5a6961d7b0b81912b8362a4784f8014550fae18cf5139cc5ec5c14ef090da67"
+    },
+    "alternating_r24_s009/D": {
+      "trips.csv": "53deb68c4b5ee69ef035e958ac84b1a17ea0664d66015cd2a72d62b13528d951",
+      "orders.csv": "278008d54db7d9aa3b95938cfafd85bf7d46fa0676969a8a1e86b88a5c544c26"
+    },
+    "alternating_r24_s010/A": {
+      "trips.csv": "f6a0a34aa062a5540112fe30bcdbc691ae7359e70be3489b6603f395e87056bd",
+      "orders.csv": "7eeda5a05ea3196b46950d6d1626d01e0622964a5751d0f2c51467758c52271b"
+    },
+    "alternating_r24_s010/B": {
+      "trips.csv": "45e308b29e092b03551322f4c34781cd64a77ec193ac9b272c56fb38d6014aae",
+      "orders.csv": "07b7e7d2ae75f3a6bfc1b111f2869c373e9471e713f6f4f7c3a5f762b4e8d258"
+    },
+    "alternating_r24_s010/C": {
+      "trips.csv": "76ac3ccb0d77ac3981f32c635ff813d54c8de35fee46a09460510331fd796bcb",
+      "orders.csv": "e0eef549d3020e3883bc23c193dfc464dbab466df3a291f11f8e224cbbd747a0"
+    },
+    "alternating_r24_s010/D": {
+      "trips.csv": "00886420b4e4c1c0be9c8457a5edfc004f9f1e74a21ee1d043198c72f1397e08",
+      "orders.csv": "c75627067913e79e6148902a48310ad1cc802a89640196767ef9e91679c21141"
+    },
+    "alternating_r24_s011/A": {
+      "trips.csv": "df1cfc7bc1bd75fc19e1127a7fce98f4087fc7ecaee7ac0fd7245f8918cbc6c6",
+      "orders.csv": "402666f08e23a496be89daac58ff5fa0dfe15432530420b50badd2a704a8b20e"
+    },
+    "alternating_r24_s011/B": {
+      "trips.csv": "0bbe3c99cb32acd237017b1572fe7952e6103df877979107ecba7c8e0810def0",
+      "orders.csv": "27b50bd753a9a82547e9562728fa155c63ba18616576c503da1a041330984e1d"
+    },
+    "alternating_r24_s011/C": {
+      "trips.csv": "84ec730a3a32f52e84aafbcea4d865def0a93f9495e1a11edebfef9c3db51cd1",
+      "orders.csv": "19d38b08b7af311f7012431b4cdd7cf1701372fc0af6e1af76c450d6d8028b61"
+    },
+    "alternating_r24_s011/D": {
+      "trips.csv": "3d73d32a5cc9b4f9fc04451488e0fabc9ca23eb87a2b68902f47d2a2ed57caa5",
+      "orders.csv": "65be162beeebaaa5962cbc823adb0d547cbc55ea96ead99b56e1e3fda587d949"
+    },
+    "alternating_r24_s012/A": {
+      "trips.csv": "956c5ccd1cbb67c9b9019f61a1eff443088036c22267791e5e6693e99f4c9265",
+      "orders.csv": "8c500a4a0a24d17751dd48be0867445d85781458a3d8eca6d0ae15e641ad5174"
+    },
+    "alternating_r24_s012/B": {
+      "trips.csv": "e3d9d9f68da91d992dd7dad147fe710c40fd6c7a9cd885c69cb4984db9194651",
+      "orders.csv": "39e099789f3adfdec1aebf89ba0982a0a496b736e1a497d791a6ff849674356d"
+    },
+    "alternating_r24_s012/C": {
+      "trips.csv": "3f883c5ecb18c65b9067b678784e6993083f520ba729b9c44888f2d33054c49b",
+      "orders.csv": "3bfa5083f350efdaf6294b1ccfce86f1f6e8af3bfdd321b12674f3c1f10b56d9"
+    },
+    "alternating_r24_s012/D": {
+      "trips.csv": "4f4f44fc25a53c0180c6549eac1629c27a7b239eed08fe510008efa94a1ad1bf",
+      "orders.csv": "d602faeaf3c990e76a49c746c876223976146a486c442ce4f6d1a0428ebe4077"
+    },
+    "alternating_r24_s013/A": {
+      "trips.csv": "3b5f45690171a31a46bee7f5a52f92c810cee0e1e6875ea93923134b4ae55888",
+      "orders.csv": "12a47340464753c2ff73be641b6495bb9889ec9f7087654eed3ee0ca99f6176d"
+    },
+    "alternating_r24_s013/B": {
+      "trips.csv": "2ffeb20b489896e37dcadd9d9455bd0a8313ec8b4290f9a8acf47fa926edbad2",
+      "orders.csv": "482908795730b1f76ac3817697ba648dbb04438cbd5473a7ef1124366500b5f1"
+    },
+    "alternating_r24_s013/C": {
+      "trips.csv": "27ded297cca0e3c58d649afa59c30f4d8aab74c5697288144b2a76d7490eb8bd",
+      "orders.csv": "aa18471946027a20bfa35f9003bcac6ec266512b270421ea9120924a8d350f46"
+    },
+    "alternating_r24_s013/D": {
+      "trips.csv": "27fb3d9022e3beb26ed33f9df3eda502a8574199cd987e60b675856e7f0ab2ff",
+      "orders.csv": "feb1b4af17b06368d0d2c387730ddc3d33c7d7e2766e8b3c8fbfee20eb6f0c3a"
+    },
+    "alternating_r24_s014/A": {
+      "trips.csv": "09e39f1fa5809684677426964158dd48f2339c57be72418f0d6e8adb402e5ffe",
+      "orders.csv": "110df9cb7ed0c17f7533b6aacba93ccb9f4086867570f0b5d823e9e61ac3f841"
+    },
+    "alternating_r24_s014/B": {
+      "trips.csv": "d82e4b5300b8e7d5b8fede4453d8d767f0b3dff4c3fdaa7e8a39a1ebae65d3c5",
+      "orders.csv": "6ddaf0bceeba15d19fec5efe76020287eb7b3e27e757f5d8c8708d73fbcaa9f8"
+    },
+    "alternating_r24_s014/C": {
+      "trips.csv": "e1c19b958e5315b8c1b0441644b8b8f5386ddfd1a8e3da848c99723fa00ad666",
+      "orders.csv": "91d848e97da105820cd17c6f330a9263c6bf268eed9981c977f7ec5a87b67682"
+    },
+    "alternating_r24_s014/D": {
+      "trips.csv": "4ad709012d6e32c8b3fa49c27d8e0e120cd2a67698fdfaa9ab9b612c72b43c18",
+      "orders.csv": "422f2bd84522b3f93f9eee3e408fd78ddf860732bbde9effaae370f14770343d"
+    },
+    "alternating_r24_s015/A": {
+      "trips.csv": "a5971e53f88e6fdd1f80bbfdc2be2884149539d85f0b595245b9495423b5267f",
+      "orders.csv": "7ba7a30f289b3e524b06919e4c4ed5d0b15c086521d49f85a78b5282faf69a9c"
+    },
+    "alternating_r24_s015/B": {
+      "trips.csv": "8aa6f7678b804ed02600cd8703573e1b7be3b38f5009017eb630f9fa3fc1db1a",
+      "orders.csv": "0ddb30556f49999e49cc6eedf91858235282bebfe895a50e709bc8d32317c561"
+    },
+    "alternating_r24_s015/C": {
+      "trips.csv": "03e64ce8c822c34048265ab1b23cdb54364ed13e7a0464242d8ce6faa4161641",
+      "orders.csv": "2257410d1863e53f339141df468cbaf29149ec23944dca11a24e987536903af0"
+    },
+    "alternating_r24_s015/D": {
+      "trips.csv": "c3e2d5e7ebe8a6db2176436563a13a3f4f3966b33cff2d564524f815e23ab6b1",
+      "orders.csv": "31369fa6b84899a67a88433e3b0014e8c1ca2c746f4698adc64bf8d4fb956bd5"
+    },
+    "alternating_r24_s016/A": {
+      "trips.csv": "895b6df6818308bf4f4975f62cab7fb85c9a6a03b5283f70a341e1cd71e89289",
+      "orders.csv": "3477ffb756373a2db5be26463400a84453658cd86ab82fc8f84cc5b466073d92"
+    },
+    "alternating_r24_s016/B": {
+      "trips.csv": "200985ccb1e88e76311a66e67354454faee6d2b86d3acddcccae90f8cdfa1ae4",
+      "orders.csv": "99b7fcc48516961e41cafc5b0811ce286b1f17a3108f81f5c4c4c129f96bd4ec"
+    },
+    "alternating_r24_s016/C": {
+      "trips.csv": "0bf6336ca9875da187a89f039750205eb0fcabdccc765116d33b2de95a03031f",
+      "orders.csv": "be3b2533634678ed898e1b1150fd6dbccc067deec3fb038e773e562170299205"
+    },
+    "alternating_r24_s016/D": {
+      "trips.csv": "18ebcf6757511e4fc589ad20e49004af701f6ce5f80cf616a70d1f374bd324d0",
+      "orders.csv": "208230358b68a4522bb5ca5bbc1ae98876e20002372505615f39751c342194e0"
+    },
+    "alternating_r24_s017/A": {
+      "trips.csv": "ea10ebbbe91e3ff28e81f288e6e0b7df78ccec2102977a885358adaba4a55918",
+      "orders.csv": "2379df52b856e6e7075ec6250bc31a4c2174fb2c5816fa7f92aaf8917d5368b5"
+    },
+    "alternating_r24_s017/B": {
+      "trips.csv": "2db7331f30a4a2a851226d3028a08741ca819b7a0b176514c99c2ee6d27a41bd",
+      "orders.csv": "461b427f1be78d4b729fca07fc3cc9ce4d27c2a255daf702bedf024ef66a6450"
+    },
+    "alternating_r24_s017/C": {
+      "trips.csv": "73f9a196856cef48f25b64aca34380e39fa496e967c6bcc2494437f6a19bee78",
+      "orders.csv": "2379df52b856e6e7075ec6250bc31a4c2174fb2c5816fa7f92aaf8917d5368b5"
+    },
+    "alternating_r24_s017/D": {
+      "trips.csv": "851bef49649f70fe17f896107990124672faa9a07a37968ca4aa9cc65ed6c4cb",
+      "orders.csv": "c809fdbee9afb85846a6ba6462c77bab1ff0eace2e4de767bc8e679d9faa0db4"
+    },
+    "alternating_r24_s018/A": {
+      "trips.csv": "3e40f8b8d0ef21bc905837f91d1c4c8445ee292f6ec33735fe6e0dce5cf80427",
+      "orders.csv": "a3a6f65d3d72ce2ee6ab5174ea700af83f84b1b70a6bb94bfca4a8c2a8442e31"
+    },
+    "alternating_r24_s018/B": {
+      "trips.csv": "21aee378552fe8692ba90218f2dbdc033955565ce51ea49903c2604a6ba6cb9f",
+      "orders.csv": "4c9940a953aa7006a8522cd2df0e84fc3cf486d1082f914e951d19fec760d626"
+    },
+    "alternating_r24_s018/C": {
+      "trips.csv": "4bb71d7887d4c60ce2bf815e4f70171c76e8c698602408135afad1b67c683d0d",
+      "orders.csv": "3c13fd6f2970b7b420b13876d75213852844635a7f1c11eff97a07492ef565d8"
+    },
+    "alternating_r24_s018/D": {
+      "trips.csv": "e14fde57b268d728f24180192dfe1659e6524b22e381515cc5dedd7b8106651b",
+      "orders.csv": "b3bce5dc2dfc8c6f39c3179cdb984cf344ed1bd573b1b125e07e48a2ad432072"
+    },
+    "alternating_r24_s019/A": {
+      "trips.csv": "e0dc194a559c1bf215eaff1ee6d852a37340840ad15fa21a6c4237747b2fe772",
+      "orders.csv": "2e672c7f47bff7ea874ce69cff5e819b1750a4c8cf31beab4dccfb5eb0676e10"
+    },
+    "alternating_r24_s019/B": {
+      "trips.csv": "89435fdd0bde96fe1d8790829eae9120b7c232b520e481f273f2709334e2f3ec",
+      "orders.csv": "a0c21b80afeaa59bfd33331ce831dc45422e79897f5cde92fd55e88f3a08df4b"
+    },
+    "alternating_r24_s019/C": {
+      "trips.csv": "75d2d75a868c715502b90868efb131e24eeb5f6b706b1247aabd496d4e2b4a1c",
+      "orders.csv": "fdcd1984b19b11633468f117125a130ee11df287effbb6d88814ab2f821ccde1"
+    },
+    "alternating_r24_s019/D": {
+      "trips.csv": "7376e9e4caf7c44ce9eb3279c4e9861e30502978e1d5a16b9f06bc11897919c4",
+      "orders.csv": "9bffc199f9aeb31944cafe725d1a71463bd2271327d0167f4bd1b69370313bb7"
+    },
+    "alternating_r24_s020/A": {
+      "trips.csv": "b3edffd0892d0f8236a066e35ca2a197f44a44d7eee6a2b06decfada3d97ca43",
+      "orders.csv": "2c6be298afaffbd755f5343e9528305c60b01711927ba420c930d4a940c512dd"
+    },
+    "alternating_r24_s020/B": {
+      "trips.csv": "611fe58c50d9ad714983a72b965688fe7f74ce06ad7d92dcffe82e4e288c04d5",
+      "orders.csv": "71b8f55a4608bae759c8995bec1bfac82fe92b1684f123b5d6b26c1608ae42d0"
+    },
+    "alternating_r24_s020/C": {
+      "trips.csv": "7af3728e64bedb0cf0a12988d38d9a872fdff77b30d491197daad89393bc35e6",
+      "orders.csv": "2c6be298afaffbd755f5343e9528305c60b01711927ba420c930d4a940c512dd"
+    },
+    "alternating_r24_s020/D": {
+      "trips.csv": "7b19a81daa5581e62fc4134fa70778585afd5cb5e5eaef1dc27000754fde0c77",
+      "orders.csv": "e4ffc042822b1fd9f2448322e65b9ac14b93bafb1b74d8e8e86c8e0f6ec2f8f0"
+    },
+    "alternating_r24_s021/A": {
+      "trips.csv": "1bdf8a5d5eb7e127caf21f29aa8785005b892a9e50f683b40a5f20e5bcf1cd0d",
+      "orders.csv": "fb4f5618b8c6a8061197d202c9fc457468dd9775a5f939818145fb3eca477f9f"
+    },
+    "alternating_r24_s021/B": {
+      "trips.csv": "1f560605ba09848226e92e650f5508d5d40631bb9636e1261738689d5993f2ea",
+      "orders.csv": "b4a2508bb63d3dfd6abadc3fdb54b34dc955fe231e4f3621935b728a26f13a51"
+    },
+    "alternating_r24_s021/C": {
+      "trips.csv": "ed9de7e3c70503a6a773ae25e64e527c003250900c989d838c820420f819c395",
+      "orders.csv": "fdceae92a260894948d4152404241993393ccb72c6787ebed80f8b838429588c"
+    },
+    "alternating_r24_s021/D": {
+      "trips.csv": "9c1d67999ac828cd3937b5524c665b20de8adecc133f0e31934cd13fa239826a",
+      "orders.csv": "79d0d14cf61537db93e659a14965539c0404a5deb7fe2547221a40ab3e87ebc1"
+    },
+    "alternating_r24_s022/A": {
+      "trips.csv": "d3ae0c53d210008fb18df01dd8b7b260fa2ff068514d3304cc277027b465ed8b",
+      "orders.csv": "964c0f6ad46bebefb93f49d809556ce91f9e0941701578ff9695852ac89bf459"
+    },
+    "alternating_r24_s022/B": {
+      "trips.csv": "47bd820e59a88f674cb1dae46bb0e900c345c2c0aaa70a9d486a98e9d88ee857",
+      "orders.csv": "c84c8969caccb981644cfe8188651704fc84f83fafbae1e54e0ec59b4aa735db"
+    },
+    "alternating_r24_s022/C": {
+      "trips.csv": "90c35886ad1b469943c3008fe59a7e38bbaf114a4d1304e7ccc5aa54642e9a3c",
+      "orders.csv": "202ede9ab9529121cfb96d026c827b119881a60eee815b3266d1e4c1cee23779"
+    },
+    "alternating_r24_s022/D": {
+      "trips.csv": "0d2b8d87d6e7a2b7d2b35de5b399ab6c42988eb744280c70eb0114163e275f29",
+      "orders.csv": "4f18de53fe479bd020010fb713e3d850b869645f62d8aaf49a16f9382b15d463"
+    },
+    "alternating_r24_s023/A": {
+      "trips.csv": "d9213509847f6d8dc4fa705dcc64f04698c819aaeae68506d8da90c6c6ad91ee",
+      "orders.csv": "3db07f61f9f4213fb561fbb2b86fcc5372aa2f6f7d1f8d971eaa24db3be08744"
+    },
+    "alternating_r24_s023/B": {
+      "trips.csv": "cbc3b091840eda6c6ff4c30f5b29dc57963fb80251b10e6b4f5288d4b9e5bede",
+      "orders.csv": "8be55b7510ade0690931c32ac81de108575e7654db0baac6b9ca0e25e47ddc36"
+    },
+    "alternating_r24_s023/C": {
+      "trips.csv": "90847906126c4ad92772565d7a0001288fa8ddbc9f28103ac976fac5195433fe",
+      "orders.csv": "3db07f61f9f4213fb561fbb2b86fcc5372aa2f6f7d1f8d971eaa24db3be08744"
+    },
+    "alternating_r24_s023/D": {
+      "trips.csv": "cd4f2f4f981f08a6d36a6dd554c2bbd2d51127994d69458a5126d1161ddb6ba7",
+      "orders.csv": "8be55b7510ade0690931c32ac81de108575e7654db0baac6b9ca0e25e47ddc36"
+    },
+    "alternating_r24_s024/A": {
+      "trips.csv": "e481fb3b0304b1aabfed07a12be64e4f2eb54b70a513253e70de236547a252e8",
+      "orders.csv": "d2b0de2f2466eee6ee066447ff573ec870bbefca0fa145feb68899e506d0b185"
+    },
+    "alternating_r24_s024/B": {
+      "trips.csv": "0dfa8323d00318bb230265cc72991848fc93be6bc018360e1fd583d4e5e027c0",
+      "orders.csv": "364b6b1f28c25b3de6da08fd8826c9641315fa10ed2d34cf7c39be70e46c42dc"
+    },
+    "alternating_r24_s024/C": {
+      "trips.csv": "cc80e779416f0336005270550eb620da35d5faa15724061ed7fab0104a4e7c7f",
+      "orders.csv": "d2b0de2f2466eee6ee066447ff573ec870bbefca0fa145feb68899e506d0b185"
+    },
+    "alternating_r24_s024/D": {
+      "trips.csv": "a871b0a07203c50c0195e9e71da06a72c55042037d75e74b3c9b0bcc91005196",
+      "orders.csv": "dd7b8eabdbec888253f37d7dbde1f15094aec0618be239967ba07d4893c6cb41"
+    },
+    "alternating_r24_s025/A": {
+      "trips.csv": "3611a42245bb09633e8f9c2c203c050b35d4612bab871712374a85d8b9123f3d",
+      "orders.csv": "787c9ed2bc14241e4ead7a6c3d0202fa9a0d0a264e09d8d11428d54978daf76e"
+    },
+    "alternating_r24_s025/B": {
+      "trips.csv": "d0a1093fa7a526af4871df8013bc2304f8df0d72c6f1a9c402363bfc44489911",
+      "orders.csv": "66e4eda5533f0eb67300e8e3a6d0b6ffdf52021acbcf6efbe267542d62de454c"
+    },
+    "alternating_r24_s025/C": {
+      "trips.csv": "6259186b36caa89146e60ebf9795df3fe900ab3dc8f4e8742fa92e872c3e8fc6",
+      "orders.csv": "787c9ed2bc14241e4ead7a6c3d0202fa9a0d0a264e09d8d11428d54978daf76e"
+    },
+    "alternating_r24_s025/D": {
+      "trips.csv": "7069a77f971984aa4f7e77be02e7dd2d413c58ee931677aabe5cb06a948ab4c0",
+      "orders.csv": "66e4eda5533f0eb67300e8e3a6d0b6ffdf52021acbcf6efbe267542d62de454c"
+    },
+    "alternating_r24_s026/A": {
+      "trips.csv": "962f0c89dea7adefff9e2a9268e218849a2389d284a51e25c191a0ade17d71f7",
+      "orders.csv": "cf150ea00ce3587e587ea2dedd21a0e0aa16c47a8269eed1ff4ca27016800500"
+    },
+    "alternating_r24_s026/B": {
+      "trips.csv": "e12821f30924d9096472dadc46dd609eea33fe4be03d176e8bc6dcd2751505a5",
+      "orders.csv": "248f63c42a96ad4f32e29fe8c25f3937b66af5cb9e5d5ca9ea4f46ef67613ab9"
+    },
+    "alternating_r24_s026/C": {
+      "trips.csv": "8e0f6bb3e8797d523414c96b04c7b87a35cf18736e3da061e923d7d7226d3a6b",
+      "orders.csv": "7c292d16a91a5b471ac998189d8d42ca9fa99baef3cc86fe7a43c4cf7cf5ac7f"
+    },
+    "alternating_r24_s026/D": {
+      "trips.csv": "5f96a1e55024f6afdc8e11c600c51e713ab48ab1c57d104ccb42349a2bae783c",
+      "orders.csv": "ab63b9ba2ea66d69db3fd4fc756e7019578a026bc432a27d9d95cb5d0d0d0076"
+    },
+    "alternating_r24_s027/A": {
+      "trips.csv": "e60957234f81159e1109e96d82c7a1b36415681403f025dda8f6ba71f8c4c866",
+      "orders.csv": "cd8db14106a96c46cc8ccb160d1dcfad1db6d5a282cb8e20ae8e6c77326c0290"
+    },
+    "alternating_r24_s027/B": {
+      "trips.csv": "f0568b5537abdeb037bf18aa1309f07f5d6192b4ab06d0e54e7bf7df0f9f6be7",
+      "orders.csv": "f85f87e296871554404ebd26a400d2e54feefe7d2441367a4907b25b9b51a102"
+    },
+    "alternating_r24_s027/C": {
+      "trips.csv": "60273ff1ba3ea41ca15e7c4b695612f0f4e9239e99e3e5e24d042dd8aa28397a",
+      "orders.csv": "cd8db14106a96c46cc8ccb160d1dcfad1db6d5a282cb8e20ae8e6c77326c0290"
+    },
+    "alternating_r24_s027/D": {
+      "trips.csv": "5dc87c57da6cb7622e336b42ebf76bd9b4510b6af4e449c00a24a03a10ed8975",
+      "orders.csv": "a6a0a6b049b6b8e3efee57a808c5ffd447b0e55f8bb034659a2d3eb241cacdbf"
+    },
+    "alternating_r24_s028/A": {
+      "trips.csv": "d3ae191f9c6bea0d09101c1721b135b5160b112e73493d7ad345bd91a8e312d6",
+      "orders.csv": "4aa8b12453c44aca4b50ebb23d196aace660713be9fde897d6103ceaf8f8f2f3"
+    },
+    "alternating_r24_s028/B": {
+      "trips.csv": "6010b25ffeade64e207808d2923224785e9c5198693d30cc865279a5e8234237",
+      "orders.csv": "f9962158f500fb48710623b194cecab1402f7485422d73b526c7d855141263bc"
+    },
+    "alternating_r24_s028/C": {
+      "trips.csv": "cc2c627b522638a6b2c6147b2d52d83b06721778325e35a04c393ec657365e16",
+      "orders.csv": "14b266d892b5ceefa3c46fd14f388793350ec523913393c6fe5f138306431c41"
+    },
+    "alternating_r24_s028/D": {
+      "trips.csv": "f8603bc71b85759f1b6f8bf12a9f0ac67587cce8f25e61f1eb7ee9601af6d546",
+      "orders.csv": "59613283b0978c8e09fe14a4347fd0c77f1aa2de6f1f729fda292e3859803412"
+    },
+    "alternating_r24_s029/A": {
+      "trips.csv": "221c8bb9dbae9f56afb928e5b1a06f6edef9b3f22242348634f8a7767c70c6e5",
+      "orders.csv": "f631d32b1a8281664919174acec15f5e7d099dca6bf037fd87d29bbd27f2bebc"
+    },
+    "alternating_r24_s029/B": {
+      "trips.csv": "f22859efbdcd08719a8f4f3a0fb6213117d2495fbbe5f5063dd837a96541787a",
+      "orders.csv": "c80f17f1fbb044f9c8e06034a8203a2205bbaa79ecf740d2b893c7066f04fa12"
+    },
+    "alternating_r24_s029/C": {
+      "trips.csv": "73d0ba5e310d815880173fdb078e9df2876d41514df1a0e4724219dc046e6a3f",
+      "orders.csv": "31ac4e0a142fe30c4dd17d65f5fa49ebc54bfb109dae87b25dc1b1faaab93512"
+    },
+    "alternating_r24_s029/D": {
+      "trips.csv": "7e99bf91d452c66ba612b57ac171eb5af43f3cd1b07eccf468e57a7d94fd82d7",
+      "orders.csv": "0ae68220d7106077205f14f7654b3369738b9df7b40eb37ec28d1e5ac2575a57"
+    },
+    "balanced_r36_s000/A": {
+      "trips.csv": "0bf9e370ca3f6ab15fd11f2711f9a6ebea0b21caae9d878306ab18c5a154dd6a",
+      "orders.csv": "0632cc81cb1a14cdbe67661886c1a3624333d1e49c9693bb0aaaec22db7e72f8"
+    },
+    "balanced_r36_s000/B": {
+      "trips.csv": "c7f12ff2a850e9e37404f26f880365797f35af8cab2e79a01462945f4bb572ba",
+      "orders.csv": "00df4e7f9dcbafed70ebd4d24cfd545b19570971a4d35390808c98dd488f4109"
+    },
+    "balanced_r36_s000/C": {
+      "trips.csv": "312fe7e1847b4a991f9e0894a708437f8acbb8656e5d6d99434386684564eed1",
+      "orders.csv": "e3c52ba9326483d982b14e44c273d0a2320ac2d352bb2abde459a359d028659e"
+    },
+    "balanced_r36_s000/D": {
+      "trips.csv": "150d3bacd8996dcccdebc1d38fed4aad0926c777c0f51d056bdc2e7673ba9ed4",
+      "orders.csv": "dc8eb1281759c540dedddd6b8cd36856edd39c17e0c98963c05088842f3b1b4b"
+    },
+    "balanced_r36_s001/A": {
+      "trips.csv": "ea77c46af0a9c9e9f6318a40fb1e2a2d47d933033624401e294b91bcbbc6e4cb",
+      "orders.csv": "63a9287349a3c307b3cecf5ba90ca9ca08c67531f28e7bcc408de6a9f3b2aecf"
+    },
+    "balanced_r36_s001/B": {
+      "trips.csv": "6e58334209300ee6ac37369984138b0ea3fe502acce7731ebfdd612520489b75",
+      "orders.csv": "b476579d86b70924cbcd19adf8e25c9105b5ee67b921c0fdd8c36f89fea22c14"
+    },
+    "balanced_r36_s001/C": {
+      "trips.csv": "423aa9f7c6b84e7f02e7a4f66fff634b0dd27da4458034ef95ce98607b0a4faf",
+      "orders.csv": "65a8260a5ccdf9b5bc9f088d3cc05cc9724ac8fdb0ef3861124fd3a8831e4586"
+    },
+    "balanced_r36_s001/D": {
+      "trips.csv": "c9638e6d19eab42ce5d90ec980b7cc5df60fd2d8db7adb63e419ab1c394f044b",
+      "orders.csv": "0e2597c8e5ed45458eca834509877d1cf6feac1e8c6bba698318d3a22d7c6fb8"
+    },
+    "balanced_r36_s002/A": {
+      "trips.csv": "10a2abe69ab2daea24018629f76797114022ddeb46cc64fdaa5a7afe29a7f294",
+      "orders.csv": "05ea4c891fdb34db674bd0bcd0eec129002049de2f66303c2634847275466375"
+    },
+    "balanced_r36_s002/B": {
+      "trips.csv": "2f420424f59fdf4be5f8549c5dcf737d72af9a5a044d9bd1d33c26e4c4e69b7e",
+      "orders.csv": "cc2ca72587edbb839d8fa774af47d9783836b22e8b3e2f76930da10a50c45cd8"
+    },
+    "balanced_r36_s002/C": {
+      "trips.csv": "41552e40cd178e537efee0f8f8bd564722a9bbf1599511ea18b58e327fbe3188",
+      "orders.csv": "7ba851d1282604561fc1108450ffdd47e4beb2e6df02678508c021ad982b245a"
+    },
+    "balanced_r36_s002/D": {
+      "trips.csv": "6f82ce1923251d9a076f60880eb2de084d8bc0e266f6080f4a21dd0990260df4",
+      "orders.csv": "52dc66574abad18dfbbb2ba19a8878872d901648bd9ada597ea806cb67bd7e44"
+    },
+    "balanced_r36_s003/A": {
+      "trips.csv": "acfd5240de115d15be657cd17aae1f9255f5b98434af240cd4a94f10bdd82428",
+      "orders.csv": "422f92fb39750ee1bb2c06b1d009cac9ebbdb4a1469369e9cba074fb1230cd7b"
+    },
+    "balanced_r36_s003/B": {
+      "trips.csv": "97178f3c50e56fdbcb50c7b9653db90c5b08b68ba6f21badaa8d424ef73c7d1e",
+      "orders.csv": "8a4deaeb1590e5926ac30833611a64a81428b324201d5d2093955a016efe4cb8"
+    },
+    "balanced_r36_s003/C": {
+      "trips.csv": "672b2d81253927fdcd21a7095ee9d548ef78a37e5a7a44f7af058cafbd44d284",
+      "orders.csv": "07a891f8e38f1c4ce0a830391064715d6272ce1a008a6f9b80ff8f3b963056e8"
+    },
+    "balanced_r36_s003/D": {
+      "trips.csv": "baf5c54dec578cb90eb352a200cecf4f1564c0571ba5c9015c9c7b5a096d9652",
+      "orders.csv": "b688b62acdc7fca560f3cdf3fa1a4224a600a2e50cf42f7bc83d6f3255062238"
+    },
+    "balanced_r36_s004/A": {
+      "trips.csv": "bb820f50ba2135f86e31c73834fd3a7aeaad810d53bda3f560b0581e3ff3bf02",
+      "orders.csv": "68e54b622eb7624d6b8dba4150376a138cf6c62500184e00ef80f2c910a800c7"
+    },
+    "balanced_r36_s004/B": {
+      "trips.csv": "9828bf3852e75a0eb6b102f02bd130e65c3ed1f9435d89bf1142208bad197f07",
+      "orders.csv": "4be07e047dbfd93e6de52f48c7ba91794c4048ab034e6a08f4e16a2965cdfedf"
+    },
+    "balanced_r36_s004/C": {
+      "trips.csv": "cd351638ccbe9575c7e9f7cc8ce38fa7d567db6bb7c045d41417093db9e81f1d",
+      "orders.csv": "8d2125826cb98077ec4d0c9ccf31b22cba84a94cbd1c4ff7e4756759c3461e57"
+    },
+    "balanced_r36_s004/D": {
+      "trips.csv": "8117194db64e0b646b752d1c121758e53e7fc067217953eed582f1695c047065",
+      "orders.csv": "d38f07772b8f4b5971295d5b72d146434714e245a44d6d5b713bb6285431c9f7"
+    },
+    "balanced_r36_s005/A": {
+      "trips.csv": "c3285621679069f8009c8be56a44541dcc27ca236cebf8a67c3f86490f2df9e7",
+      "orders.csv": "84178c2e53f72c2ae97013a639a5821359e697f78960ae017b448058826ef0ac"
+    },
+    "balanced_r36_s005/B": {
+      "trips.csv": "2bd532b1fff1005ad743352d0e702ac6c2759830d27320d423a0144263dd34a4",
+      "orders.csv": "9d09d16c34ad214aa480f6ba36f1da0c543814df57e509dca6086967e4d5b9bd"
+    },
+    "balanced_r36_s005/C": {
+      "trips.csv": "21351bf3608e785c0d310f9d106ce55a64b5ad82ff5ae15741d1e0a58899e1cc",
+      "orders.csv": "e0473422e7ab7855d79b4a7e4ed433cfdcc86df05c5c9c4b545eaeff2734f31e"
+    },
+    "balanced_r36_s005/D": {
+      "trips.csv": "3cddf6084ae9d26e1be689c2676957f6b1b38488b634eee880d2ccc972d664f6",
+      "orders.csv": "9d09d16c34ad214aa480f6ba36f1da0c543814df57e509dca6086967e4d5b9bd"
+    },
+    "balanced_r36_s006/A": {
+      "trips.csv": "268f53f8dfbee22e6725c623245b1830617085fba31c9a6425f527d4e26d5693",
+      "orders.csv": "0e073efe5b1f61031d70429fdfbc4376d8c143c170ce2b7668aa5fedc16ec2b6"
+    },
+    "balanced_r36_s006/B": {
+      "trips.csv": "dba2e7d18b3af7bed2d6fa6765e2d775c9b4bb9cb4923ed9163d048fd1512cbc",
+      "orders.csv": "79edb9793c1d9a2a4eee5e5a495d34c4e986ab676f87fb51002e5d3520fac5b1"
+    },
+    "balanced_r36_s006/C": {
+      "trips.csv": "a727494f4f5aa1674fd7c9a16cc11ac95c5fd551b368aa813638acf7c392686b",
+      "orders.csv": "07d5167ae337661113a32db7c8c73a88c1f0ffa272cf8442765fee8d473fb5eb"
+    },
+    "balanced_r36_s006/D": {
+      "trips.csv": "157a9766f7d2c7d7908bf97b52abb4129df88ab3dd4687a1f058205b3d9bf13c",
+      "orders.csv": "3326a2797340afa1e241083b449d29150518953107f75949115df27e8c221c37"
+    },
+    "balanced_r36_s007/A": {
+      "trips.csv": "20b5ea6cc1793edcc7fe1094ef5af82a536824950d63ca0d9770c1b3a596623b",
+      "orders.csv": "dd6595bfbef8b1221cf75039031d9841ec54609bc5522ba97b708a2881679906"
+    },
+    "balanced_r36_s007/B": {
+      "trips.csv": "bb87b8f32e92a48401a4ecc515341a59596e8a488db02ec00d3f7a0de6f33004",
+      "orders.csv": "b48eca64926cd42c71cf8692eff385aaa02778c84cfcaf83ea0eecc130b36820"
+    },
+    "balanced_r36_s007/C": {
+      "trips.csv": "20dd9d336c740fc1e8afb44d9df62b3bb8d185a168fac113fbb2d3f74f1c90e5",
+      "orders.csv": "4d37eaf7c32f700716365abc5fa3fc74d1c415e13ef86fe3a24e16f7dd0ffeb4"
+    },
+    "balanced_r36_s007/D": {
+      "trips.csv": "55581131cdc1003f7148753ca2ce1c43dae0418f6c072d6f52ab9dae281f24ee",
+      "orders.csv": "a96ac7e3d95553bb6761372a26c77526a30bb2bfbd5521856cae7d17e967ceda"
+    },
+    "balanced_r36_s008/A": {
+      "trips.csv": "11de6e01278c8c18981d0feb9f35a19fa6cc6aaddc4bdf976875a12803f63f30",
+      "orders.csv": "8978ea55d41149b93e0da80fa84db8ce71ec37472806e30e7072a56f118afc02"
+    },
+    "balanced_r36_s008/B": {
+      "trips.csv": "cfbacf1d41ed0f114e260bb91067748e2108ede9ba981edcf2248089acebf9b7",
+      "orders.csv": "31a645a53e5c0f6c604257a7bc71d2dd4ada37302374010b7f8f713031d0869e"
+    },
+    "balanced_r36_s008/C": {
+      "trips.csv": "5eb5eaa448d912679f8cab9186e82096e935da2b4b8501a9e4d057fd91953ca5",
+      "orders.csv": "7e11319bd4e1e9be20a35d040bb54855f1633ff80c82eb5a021800053e8380b4"
+    },
+    "balanced_r36_s008/D": {
+      "trips.csv": "e61e1b8b503fa9e2891c48db262cfcfb450949c3275910d1005539bfb63e55b5",
+      "orders.csv": "19d07103167f05d40c82b10eed1da694640911c01f70231eaf1be8d6d8b93516"
+    },
+    "balanced_r36_s009/A": {
+      "trips.csv": "3dea84b60bc08a6003f9d4afa6ce0af011024c6f6ed873390b83c3b201955764",
+      "orders.csv": "acaf29ebc1daac02635d7d6c84dad0b2b80fe16461f1091d4d60ff27bb3602e9"
+    },
+    "balanced_r36_s009/B": {
+      "trips.csv": "317b164514e5698b66d891f6f6e45a36fd4ba4a585dcfd2b91e4c8c2cac17d2d",
+      "orders.csv": "7a9e3a4fe3d502c2c38dcd0774dd43e04975c276d65d8051541b63602847e29c"
+    },
+    "balanced_r36_s009/C": {
+      "trips.csv": "91db8f0bb8b95da3b22702c12eead5a437d5d4d2dde4070536e49aa062d0033a",
+      "orders.csv": "83ce10639bbe075c32bea21f2c9e5b3e2bb458e667fffa9b510d3a4f5d9a10f6"
+    },
+    "balanced_r36_s009/D": {
+      "trips.csv": "c4cc13fb44982b00a26a50dd0da4ad7208382b996ea49ad42067f7f257bb828a",
+      "orders.csv": "6f40ef2cedd9917b052a0c4227aa92eb371ce0b4a34b488615d65dab8d8e6507"
+    },
+    "balanced_r36_s010/A": {
+      "trips.csv": "cce44626e3775dbc16cfd2f42f588002757f0d771eabf6ad90437703197b8380",
+      "orders.csv": "212a4f2bfbbc6668b07bc8716c39d652de461b9802642bb5affca53053c23ec7"
+    },
+    "balanced_r36_s010/B": {
+      "trips.csv": "19d990922c72b8252ea133fc629f23d071c62b33593b1d019a842a0f879ec9f8",
+      "orders.csv": "f71cb7e4777918f87edc7ec669b404c1515986fc245d834722fbd8bfd4e1df55"
+    },
+    "balanced_r36_s010/C": {
+      "trips.csv": "77995a2429a4b0641e049497a9e013ab00a274f7292044fa60c23ff2f302716c",
+      "orders.csv": "e34a72c26267ebb83a991c23d242722d95343e4b461d36a738a3f05a765925fc"
+    },
+    "balanced_r36_s010/D": {
+      "trips.csv": "91d2439058186977ecdad71074d1784623edbcf41df73738602f30860b203cdc",
+      "orders.csv": "8343ea066f03db05192308d490eee0ff319c014c0892a192ca59fba0053bfda2"
+    },
+    "balanced_r36_s011/A": {
+      "trips.csv": "4de83b1392a6a9fdb5045403d6b7e4559c8d2d006517a9e25c36e014fdd33fb1",
+      "orders.csv": "4eb2397b25d70ef54e7225a1201f37808a2de2af07a4cf2fcced8ac8d3b1c7a0"
+    },
+    "balanced_r36_s011/B": {
+      "trips.csv": "46ed0d4fc0f762fdbf27c3707ff52a4fa97960754b8f5eeb29e441fada222395",
+      "orders.csv": "1d46bf64df14dd6e02890a044be227b2d7151e95cfef6be1b178dfb2a6434ab4"
+    },
+    "balanced_r36_s011/C": {
+      "trips.csv": "a9f28c92abeed89fdd2ba3dc50d9ef9aaa233ce8422e9a8f4c0ba671d920847a",
+      "orders.csv": "90a1166b5935673da11ef8755724b016221f7580887a73cc62c30eae79b6d756"
+    },
+    "balanced_r36_s011/D": {
+      "trips.csv": "034f961be70d2102a7b6a05104d451a9a8af81dbc2c53162936d23ea73e70713",
+      "orders.csv": "79a1b996a5bdfa3a70baa5de4e25f3802e96f7c9cef6ad8c133d0bdda65c972a"
+    },
+    "balanced_r36_s012/A": {
+      "trips.csv": "9a61e24796273a15cf8e73e3ffef75334ff3272d229b09ea5ff487ecee7ade97",
+      "orders.csv": "524dff0d23eda0951c1281789975ab6e206cf907bd052d6d6bf181e386e0e716"
+    },
+    "balanced_r36_s012/B": {
+      "trips.csv": "042817445f0743b3bdc9b0128093f150b3afd9e36f5c71880410e6b4c4576710",
+      "orders.csv": "c8fd0e50c6914d14ebb40f700c7cf5c0ebcf23a3d050dcc949392132c2156542"
+    },
+    "balanced_r36_s012/C": {
+      "trips.csv": "d2e7cb1035636d9e0bbd4dd2a1117d451e5ba8bbf67c4d5aca6f7363bbc15f91",
+      "orders.csv": "379d199f0b4968f0f036921889990a3bf5f36eb4adf22f8b7fa84f382c3d5164"
+    },
+    "balanced_r36_s012/D": {
+      "trips.csv": "0f455f6d0fae1e216ce8737e4fe6bc0fd8ded2fcd0fbc81cce7e24d5699ed769",
+      "orders.csv": "3633aa8dbab21ec92c6f0b71ea9b25160cbedc9dc95b38f1fbf559374787d689"
+    },
+    "balanced_r36_s013/A": {
+      "trips.csv": "7f5e5c23b3d50b13b0c616b176a29627578489639864a0834e613662812a7e15",
+      "orders.csv": "e42604473b4363cebf81c47e0903691c0dc79175c3e88a6e4cb052034b131fb7"
+    },
+    "balanced_r36_s013/B": {
+      "trips.csv": "9dbdff94856df75cee3dc9f39299e215b18c91a9757edf3c0ebc5614d2759d7f",
+      "orders.csv": "88772a77adb8ea8411911be33a2d2921cd735f3d2ecb0ce890cd984a66bf6cc0"
+    },
+    "balanced_r36_s013/C": {
+      "trips.csv": "42710e95a6db2427c2ba4293067329fc29812a0e187432e97792fc3fc8dae32b",
+      "orders.csv": "088202da8b1988cee561837ae7575df8435651474433c7693cd269f51d879861"
+    },
+    "balanced_r36_s013/D": {
+      "trips.csv": "ae5bd2cb1b977b6424267ca9752a487dd794ac40780099477946aaa25d4f7fa7",
+      "orders.csv": "88772a77adb8ea8411911be33a2d2921cd735f3d2ecb0ce890cd984a66bf6cc0"
+    },
+    "balanced_r36_s014/A": {
+      "trips.csv": "a2a2b46677bcb602f1c570e653564ab953324bcd045cb91ab530e6c3ae496649",
+      "orders.csv": "ceb57263bb2f29fc20b6f28b38fa652d2b27a96fc797cdb6093fd6e4c0ac9fa5"
+    },
+    "balanced_r36_s014/B": {
+      "trips.csv": "ebc195bb1664b95ab273b8e9887a683de31d40064a1cd7b37ffa9e1611040b02",
+      "orders.csv": "9d2be000f8138ee0e87c7cf8a71ead464a6c6d7e54f124db92f887a865694b73"
+    },
+    "balanced_r36_s014/C": {
+      "trips.csv": "42c7efff9486874f7b5b2e31a020a1945b56cb1cdeb8e6d32dc8824e68cd1312",
+      "orders.csv": "03e11e1de49fb9efe3a9e2799ed1ccdc097ba423045e6df119ab48f437dd0c1e"
+    },
+    "balanced_r36_s014/D": {
+      "trips.csv": "5810b213a16ca32bd47c5e7eb4216ba6c7c11e05042651fc6a861d2b79e907eb",
+      "orders.csv": "4aeecdb06e24be8ffbf0389c6ecd7dcd8c8a98dae01b26e87fdbeb6dfd6408c4"
+    },
+    "balanced_r36_s015/A": {
+      "trips.csv": "27a26369f334ad3674fe29650b705a15d30d0033e8f77c083af888c41ad1f7e9",
+      "orders.csv": "0432f0f474be79357ac1942bb6c1a198d672e4f10c2a091861a2d0cd7c2fbeea"
+    },
+    "balanced_r36_s015/B": {
+      "trips.csv": "ae0f2f89d4a6fa6fb4ccbd06fce46ce6428a63a92747b69dea58d11cc4484bb4",
+      "orders.csv": "83dc3e6142fa3002bc5b45857d93ea03e0c64c762fcd68dc3ad942a503368f13"
+    },
+    "balanced_r36_s015/C": {
+      "trips.csv": "213bffcb8b841fd5d6be1ffa368053549e785c71c62ac174667795449075c5c2",
+      "orders.csv": "5823b20d053cc9128acb2f6c27e2a23d42df5f46e1cbf77b6e32a3c178438ae7"
+    },
+    "balanced_r36_s015/D": {
+      "trips.csv": "df8843b3b719c4e9e2b0bbed7ea65e09cddfe928816877a5f529d5b36bda83b1",
+      "orders.csv": "c50bee660978f5fc0070ad301afdc57b1863cb3de51effac343c35686db916f1"
+    },
+    "balanced_r36_s016/A": {
+      "trips.csv": "30f9b47d9a509f79b8f8d29a9b7ae6a725a1a55425afa627768cecaa494c91f4",
+      "orders.csv": "9c7619084f754a080fa287e21849be265671389e365237e8d012d16d5760696c"
+    },
+    "balanced_r36_s016/B": {
+      "trips.csv": "f2d1a6401b5f9663536c6d8c44bdc6151481ea090c00f04d0e1220e8bcd421e3",
+      "orders.csv": "71cf0c823bf6a8fd7f7e37eb1e0d806f5626606488c499680033889b0866b19d"
+    },
+    "balanced_r36_s016/C": {
+      "trips.csv": "f2a783c9b8b56315ae48e36758ba1f38aaa30512b62c27d7007f4a2e2fb575fe",
+      "orders.csv": "b0c70cbb34cab0d395befcc15020103486f46a8890bbe4d2aed0640d239236e0"
+    },
+    "balanced_r36_s016/D": {
+      "trips.csv": "55639228f09395717c25b947873606ecbe7c144a8c3358869a01f1dcb7e7de6e",
+      "orders.csv": "29ee12ed27b8ca512b80510eadcee3a88eaeaf2f5c1fb9b6c11a4a970d8b54bd"
+    },
+    "balanced_r36_s017/A": {
+      "trips.csv": "cb04dafe39a26faae78e4aa88e214dd09c8efe589c86ecf6235dca31a6f1c8cd",
+      "orders.csv": "5cbebf13bea95c5004dcd5ca3032ca81de7f2e772ca2433d33d40566105e080c"
+    },
+    "balanced_r36_s017/B": {
+      "trips.csv": "ec9c0468789558cd5ea206583fe5246c3f206e715b92fa988bf7827b48451530",
+      "orders.csv": "74a8d4ba637bc402f031baa9d99fb1f73ee23a9591bdac20f096b0975b6c3276"
+    },
+    "balanced_r36_s017/C": {
+      "trips.csv": "dcc7a9866964e0e2fb723838ee5717d3e2b3e56c21ed5147675e00c08aa22418",
+      "orders.csv": "572f192c91366a8026d4e0cc97106a6093bcb8980cb1e8f83557895acd555f23"
+    },
+    "balanced_r36_s017/D": {
+      "trips.csv": "d0c689f717d4158080f8eba44901dec8d19e74c826d165cda36e685be8c9f82c",
+      "orders.csv": "a15869a6d9a05b444e40d6e9bcbb1df4044010ff487208b747abf0568c51b771"
+    },
+    "balanced_r36_s018/A": {
+      "trips.csv": "560c600e83a009cc8852c96af89ada4256e40f5574504251b286a1011662a1d0",
+      "orders.csv": "b8e69a0e7b3367a5d19d8a9ccc52326802a4c091282c9573d80c2a93a738e6ec"
+    },
+    "balanced_r36_s018/B": {
+      "trips.csv": "2d82f5cc831ae4874707a175ed5ef7c801e977cc6d7cf4721bf2f0c0163b6630",
+      "orders.csv": "dee430105645e61d5d04e9ac535f16ff5a4c1b53d48dbbb9ef5362dc073154a5"
+    },
+    "balanced_r36_s018/C": {
+      "trips.csv": "a98cee5a37058ff1c835c633c2d532d2167b9150ca5c7f4d1f542d3c5c0d2608",
+      "orders.csv": "a214081aaac99aa90a3447761098be7f99f8d0e505f9e37c2cd1c47951d5da8f"
+    },
+    "balanced_r36_s018/D": {
+      "trips.csv": "94207219d1c1c41c53f69617e44bc1c48519c23d8fdfaff1fbe8db01dad1a5a1",
+      "orders.csv": "80435366d62990ad74926501a71d97b56f26ff4fc657d68a9bf5a13b19672ebd"
+    },
+    "balanced_r36_s019/A": {
+      "trips.csv": "eac15eeb43ee373891042237df97f97811b00e8b8f14b6f1604f9d4dee79db58",
+      "orders.csv": "313681afc02a1acf11067ef2565a4cae710ef749b2dad9e2be47de24f7bd83ed"
+    },
+    "balanced_r36_s019/B": {
+      "trips.csv": "6216c5a44d1308235ca9313e60f344fafeed258191b18377bc7ad092f1c6ce00",
+      "orders.csv": "ff188cf402176be77c20bd3e557ea5f65f68420230fa56f3e266c68bd853d8c3"
+    },
+    "balanced_r36_s019/C": {
+      "trips.csv": "6887c128ee068e03902fb00b1f668866c8998869444bb3a00a9bfaf648a3a1c2",
+      "orders.csv": "aae4d692e6c228f61c5952b3d223c5666a875ae7485bbc0c17bf9059cdc6b3d7"
+    },
+    "balanced_r36_s019/D": {
+      "trips.csv": "3cdf206dbe2f22b38232bcd9285f2588956fa7660039e0be1c50f82b165c7209",
+      "orders.csv": "ca4bedec13e13006b8a9f72ec7c37265b412e343b4b8aeecf96911bec475f0f6"
+    },
+    "balanced_r36_s020/A": {
+      "trips.csv": "cbde5199dbfc370513b7aa2f0ee541ba33cdb14599eeab2e8ef1bb2a95f0abe5",
+      "orders.csv": "077f4f86c026471c39317f1b6fcd1692ac6f7f80dfbc5445d9e17ebc4340bf63"
+    },
+    "balanced_r36_s020/B": {
+      "trips.csv": "c6d9fe67b1e6fe4553c5fb2727e50e48e45032a000371b2f0fa22b9a96ed95bf",
+      "orders.csv": "48352db7ab7db41465d2be0191a3793e6a8e203b7294ca2800cd3b70240e7652"
+    },
+    "balanced_r36_s020/C": {
+      "trips.csv": "d45893cafb6f819e1945002cbdaf1cd4b5e0f4c40e109ccbed07aa020c43f77e",
+      "orders.csv": "6e01f6544fc98547d60468c46ee608d073f3852b8cc56dc313fa09df54a95690"
+    },
+    "balanced_r36_s020/D": {
+      "trips.csv": "9fa812dfd79969ed31903a798e75cf276acfec9c675d76b0edf39e539e6b7319",
+      "orders.csv": "b06809944b19384a3213387a4576024d53b9bf838895ddb7e9ac73ebe94834be"
+    },
+    "balanced_r36_s021/A": {
+      "trips.csv": "64b77596ef2a09cb5e685acea5db45f8bb1cae88ec2e55ac6293a9ce3e64e9a6",
+      "orders.csv": "0e279c3880c4c7d31a61fa5a2008d6f785c9838a97ceeac0b507de0fdfec5390"
+    },
+    "balanced_r36_s021/B": {
+      "trips.csv": "2408e1c491a9151cbe93b452d286d99ed12da033242e2166df7870dd8c3b4fe7",
+      "orders.csv": "7abad094f12af40ddb2858d18ed15dbe0ecbd1fb723f980b0c4447355cb31964"
+    },
+    "balanced_r36_s021/C": {
+      "trips.csv": "39ea0c6f5079cd3b8edef154452ca40ce1142034b636e72ff8c985c6c5811997",
+      "orders.csv": "7800be61239bd3999e9db0a539d203b40eb505e9fb86e2222e023b54fe9a19f6"
+    },
+    "balanced_r36_s021/D": {
+      "trips.csv": "1b927c8c5e89c0b5affcb1804263f98d63c864fd88c8ee84bee09b0cc9dcc817",
+      "orders.csv": "bb71aa850999bfcd3503c7563c5b019ce9f92a43c9338b8ccc6a1b1aa15d2107"
+    },
+    "balanced_r36_s022/A": {
+      "trips.csv": "dd76a40b208a80b029add075c30569d6aa5baab41c2b2d02d770f3975c4f7360",
+      "orders.csv": "a8da0aa943e3366e67b27dfcabca8bafe18d9239ba6e801583f71e54fd910478"
+    },
+    "balanced_r36_s022/B": {
+      "trips.csv": "acdec9159043647279909d551d55a475f458c3b23407999c87501b8f122244e2",
+      "orders.csv": "06f2732ac1da44705ea679c803422a338619a8b72ee93d750fe96fed534af82d"
+    },
+    "balanced_r36_s022/C": {
+      "trips.csv": "0c029223ff3377aa3063805b8702e54beb40e1856737f04b241d0d01b4bbbbc2",
+      "orders.csv": "003f0eda46a74e60a3b5e6e2b626eb639271f9f657f94e765255d0b62f4b30d8"
+    },
+    "balanced_r36_s022/D": {
+      "trips.csv": "9632984f0d831302b08b886a15026b5e238566c9bbaff0a624050c5888a5e3f7",
+      "orders.csv": "29665f40e4cd51eb274046c73ad625ca4cf1a345c6025338936c74136be5a9d3"
+    },
+    "balanced_r36_s023/A": {
+      "trips.csv": "3edee1383e829edef7428baf19719d533810f61a229beb58a4a39e1c9b4ada17",
+      "orders.csv": "864eeab997603694a8304dbc467ca145639f8ce4d57b3d54f7cc9eae409b85b7"
+    },
+    "balanced_r36_s023/B": {
+      "trips.csv": "047ccc216c11e48d888c857468c950791d9b378da59f8edb2b602cb54fd19d33",
+      "orders.csv": "3f90f6ea6b60b9f91b9c5764d7a6c8d6fb819d93d8b35474edfe935bcb3eccbc"
+    },
+    "balanced_r36_s023/C": {
+      "trips.csv": "5479c33c8fafe1ce63978ff7cdc699bf032a6a1939e545eabbeec3daaa1b0608",
+      "orders.csv": "864eeab997603694a8304dbc467ca145639f8ce4d57b3d54f7cc9eae409b85b7"
+    },
+    "balanced_r36_s023/D": {
+      "trips.csv": "7874c9c17ff815ea343597173b41987e80deab7fa87f2d435a8bdb2eca5a0e93",
+      "orders.csv": "3f90f6ea6b60b9f91b9c5764d7a6c8d6fb819d93d8b35474edfe935bcb3eccbc"
+    },
+    "balanced_r36_s024/A": {
+      "trips.csv": "a3dbd369d3c52b2429c7019645db4a48162d76d88421b603a5fe22492fabb7be",
+      "orders.csv": "13ff65f1ddcb15643321ab088b82d9216f3e349dacee549c77fd6ccbf40f55f7"
+    },
+    "balanced_r36_s024/B": {
+      "trips.csv": "1f7c2b82de93213cf03191e678d52a6ff2e40ee7ab33a307d2a06875cd02d53a",
+      "orders.csv": "ad66724438dd47b16de79bbf82968aa490e84ce7b8e73400ee9208a7e31d9712"
+    },
+    "balanced_r36_s024/C": {
+      "trips.csv": "2727594040c146dabb22b01c7260c2c71a3b68c13604264fb8e2f7305c7aef48",
+      "orders.csv": "10d455123e948fd432ebdadb1dbb5a2b48b50b2ca92e145a6b0ca56731fce0c8"
+    },
+    "balanced_r36_s024/D": {
+      "trips.csv": "5ed6d323bb71a79d182c63f8a57c486c7cdb3a020b1a289221a3118c0725557c",
+      "orders.csv": "ad66724438dd47b16de79bbf82968aa490e84ce7b8e73400ee9208a7e31d9712"
+    },
+    "balanced_r36_s025/A": {
+      "trips.csv": "d1f85e68d1e4e3e1cab092cf4afdd7c7f76dcd9f749b656b11028d18b4be33e3",
+      "orders.csv": "b4f7013a874ee06ffbf37162eaf3a1039b9bc989ec2e6cdd8ed50c2be5cfffea"
+    },
+    "balanced_r36_s025/B": {
+      "trips.csv": "f7d5dc16b6a6841c985c2cd14a6d14e68efe6e39d5566b06f228383638c25b8b",
+      "orders.csv": "60123c65a6abef74dc6442eaf77a04b09fc6162c62867527b8aed088dc7e4c67"
+    },
+    "balanced_r36_s025/C": {
+      "trips.csv": "fdfcdab094100eda17a895090a29159e00126a7f2a12edb42bfa96722c5605eb",
+      "orders.csv": "b4f7013a874ee06ffbf37162eaf3a1039b9bc989ec2e6cdd8ed50c2be5cfffea"
+    },
+    "balanced_r36_s025/D": {
+      "trips.csv": "c5ec0530f506635a788e0f9878affd89a3afd69005fd3ce15e5262d0dbdcbf45",
+      "orders.csv": "2f7de1955a385df408de396ce0941e6b59b3e546f53b4fcc4bd5739fa72cc07f"
+    },
+    "balanced_r36_s026/A": {
+      "trips.csv": "159bc3ea9fd4ac66500faedc788e11a6c4412a71486717158843a5dabdf8beb1",
+      "orders.csv": "6f3c4a0acfdcbaf819129958418f8af9974ae853ed94d8184005d0d4a3b6c550"
+    },
+    "balanced_r36_s026/B": {
+      "trips.csv": "7e876fa708030fb661a365a2a5ebec07947ced51ff3b7e63b5eb9273c74ebc26",
+      "orders.csv": "aa72dd896eb0b9caffb35c859b1a47ec065c680ec5546756e2046dbad987de4a"
+    },
+    "balanced_r36_s026/C": {
+      "trips.csv": "0cbae27d871b27ced50d031f15999bb955a8f5c851ea5116aef4881c0823b67a",
+      "orders.csv": "97135bfca27e41ddf2394f45f0eb70308f0bda214e411226b05bd0f9ffee8daa"
+    },
+    "balanced_r36_s026/D": {
+      "trips.csv": "9df82a0092cf15a739d67e522d26e3bee27df62b0d32f016c1f55ed18d77e6bf",
+      "orders.csv": "adae348785c656fd0779585ff38d2a33d1a28200409c28d7d4b18a08c9da81c3"
+    },
+    "balanced_r36_s027/A": {
+      "trips.csv": "d0ba2f3c0b52eec3fa0df482a356d6e7a57418ae9acff142830a54b61d89a7fc",
+      "orders.csv": "c17feecb1a59950cb73f9fd694c1a5f3b5edc2d00c7247dd479cde30a92be3e3"
+    },
+    "balanced_r36_s027/B": {
+      "trips.csv": "28ca091b23cb664d2b680377951cf5d45b03fa660fefb7d528c4da8b38385b2f",
+      "orders.csv": "47f38012d65cfb5b1cf26414833904a69cacd447dbd4c70da1a5e5419d270719"
+    },
+    "balanced_r36_s027/C": {
+      "trips.csv": "28773051485e2f40a7816b2e7439252c73ef2f37262cc4e5635e88ee56d64638",
+      "orders.csv": "7bb6fd7de6a8a5365c3a95643fbccbc37f2ac3cddb51a60e16249fc4c640b54a"
+    },
+    "balanced_r36_s027/D": {
+      "trips.csv": "140ac41c925695f35d430b624ed18f79e1785fac85de0cc34dd94b62a7897568",
+      "orders.csv": "76ce2ca0a4c5c8c63514e6c2ce9382b6ccb6edd108d94548a39c9ffeb3847a74"
+    },
+    "balanced_r36_s028/A": {
+      "trips.csv": "2461823eb9ec00cca8575e431346c31562803ba9886c47e4755c49f91b4af6a7",
+      "orders.csv": "2f25aa582f9b8e3314681c3c0255820760b72c5369dfe4c7dddccd16238c5e9d"
+    },
+    "balanced_r36_s028/B": {
+      "trips.csv": "0612d5d67e6b3becbd5cbc738b75f8331f792c634422c0bac322ba3d02263c2d",
+      "orders.csv": "b3189ae32bb71be5c893d860feb98d5a88475b96e6e5544c306558b1403c3b12"
+    },
+    "balanced_r36_s028/C": {
+      "trips.csv": "0378971ec4534253bfb91b4b9734d87b6cd5f271510aab8028405bd4a71bd432",
+      "orders.csv": "2f25aa582f9b8e3314681c3c0255820760b72c5369dfe4c7dddccd16238c5e9d"
+    },
+    "balanced_r36_s028/D": {
+      "trips.csv": "2fe3f5eda58803f926ce06ec39fd00ec534d14ef455df856c873469a6bc2e2cd",
+      "orders.csv": "fdf4ff19352cd229525d8f79a84e396f0e910d2c5829f04b41ff131b43b70472"
+    },
+    "balanced_r36_s029/A": {
+      "trips.csv": "3125d3ba1e2956a8cfa9dc8a5129e509106ce1b61834ae73ff10e07e4aca8f35",
+      "orders.csv": "2e8baedd64f1c3ca6fc5f5cc100e73860975dd38f5c14d6a49c69234c2e7165c"
+    },
+    "balanced_r36_s029/B": {
+      "trips.csv": "d506b66fe0199c3caf7ec6f88369d273960cf5a9f4bf5ae082f87cc93f3aa904",
+      "orders.csv": "96ffe1231278239e9f5a94a4dee3eebf1537e60dba33a097c31c55a81906f869"
+    },
+    "balanced_r36_s029/C": {
+      "trips.csv": "9d84d02649b7fae0a961314eef22f22823ede429ce4a2fea7186655ea82faab3",
+      "orders.csv": "99ecb50398aaa2d5d6e6c4301a468d7e390d468ec39be8e6ac375d3e255c1a41"
+    },
+    "balanced_r36_s029/D": {
+      "trips.csv": "884699a03d2db8cd0f4eb8254978047a707367484ac3a1e6bdb0febcf62de5ec",
+      "orders.csv": "3f02530004c716ef0573b8e29173ff7d9ad8b5d0112a24295fb3ef19bcc2b69d"
+    },
+    "alternating_r36_s000/A": {
+      "trips.csv": "3109ef94f6c0ab1d607eec2a5f1172aa9aa06c15dd7f0bca755df6397bef0a0f",
+      "orders.csv": "511d70936a0f8cea991cf026411dfece719c1672704d071ffeb78aa695b9955c"
+    },
+    "alternating_r36_s000/B": {
+      "trips.csv": "97571e866b5c82cd05f869e1baed51ec86cc1d3f3eef01aa41f723c8cbc3478c",
+      "orders.csv": "69cd96f89f87a65915f539877b40f169b567b59b39628646ea9a722855d1f434"
+    },
+    "alternating_r36_s000/C": {
+      "trips.csv": "2fb9f79a2203d7b893085ed44988f7674d295a6494809117e97e9be7f9239b49",
+      "orders.csv": "221008ecb91d99cdba5965acef7a3580f15d3e67ac2f2d3190dd2e71920a6089"
+    },
+    "alternating_r36_s000/D": {
+      "trips.csv": "24a6f55d59eb9e2dcf63eb3328fb3e28150963a3fdb778a1322b3ede7515c9a3",
+      "orders.csv": "afd12e7918f25092df52b9d802c85079476e9b6906b39b13ef329a3dc4f40f78"
+    },
+    "alternating_r36_s001/A": {
+      "trips.csv": "934d835fee2e75a4eb0c83ba45aa85cb44dd3a39556a8cff5d8ea687a19ec6d1",
+      "orders.csv": "86bd699ed6253f34812a95b9a8b0a780d067d69442b656bce2a17a86bd5a3826"
+    },
+    "alternating_r36_s001/B": {
+      "trips.csv": "550cfc1325eca319a8ae3804fe509e6ea397a5b28fbe1e59562323201533ff60",
+      "orders.csv": "204487e0c8b98595def05eeae1ecb18e78d2c7352061b56b70de17510f04cad5"
+    },
+    "alternating_r36_s001/C": {
+      "trips.csv": "dfac5851a67fec4c5ee268f0246ad6e2d793edb61a74953a2806f994d3a1e07a",
+      "orders.csv": "9ebd7da39ed1db5b61641bd10f2faa58e4f45b53cb831497632a9cc07cde9d5b"
+    },
+    "alternating_r36_s001/D": {
+      "trips.csv": "b16997e1bce5265626f461efe107180626f165e3b10a060ec4ff009454afa3e4",
+      "orders.csv": "c5b10cf740a59211ac58c8d815bf1c68a68e13bd30be6adb5f72ac3f60f8c72a"
+    },
+    "alternating_r36_s002/A": {
+      "trips.csv": "eda746926c3dfc670f503bf448e3db0a7e12950a6f626d2c0aa3664627a750f8",
+      "orders.csv": "9d5799b09aa1b7ddfe422e46f545d25bb187b869673bd1211df9bbd640599ddf"
+    },
+    "alternating_r36_s002/B": {
+      "trips.csv": "b3ab6f17ade6084cfc8ddc0ad089745ab7e4b973b4ea6696e9428d644a854a59",
+      "orders.csv": "08855329a86c2b8c06e47fd9cdb3389b6bb889aff8b4470b931f688304df4295"
+    },
+    "alternating_r36_s002/C": {
+      "trips.csv": "e2e565e16f1a7fa8b109f37c2240aced98beb48c5344363e22788375125f8b83",
+      "orders.csv": "e3ca598f6205df4daa76b440f7b114636275ff2437e2e5e83c1dad3926f95433"
+    },
+    "alternating_r36_s002/D": {
+      "trips.csv": "5b72deec33ee0ab274786161cde30ddf239e80ecbe0d4421e1153d03f47d4911",
+      "orders.csv": "b481e7e8a8751318d57a37593cd8f581d86cfc4683d0b8b5720391b3f944e28f"
+    },
+    "alternating_r36_s003/A": {
+      "trips.csv": "d05fec0c5e36138d9f48ad51b86043a650457aa6c2fb5b0145c34c54ba4c28eb",
+      "orders.csv": "c42d922b550d917873a893747a4c7edfca27c025746eacf316d6e97ca3b05996"
+    },
+    "alternating_r36_s003/B": {
+      "trips.csv": "e89be3c381097ce620663eb074db07e07f6a6a0b1fa88be9950d4abddaf94a05",
+      "orders.csv": "b7f79987d9ee77d9efacdf946edbf403f6345e7ceb4a4ebce8d14b6c49400df5"
+    },
+    "alternating_r36_s003/C": {
+      "trips.csv": "9b607b3406b04cc1007887279b4eb3e075008b341d1f95ce6490b7996cc5dd09",
+      "orders.csv": "c42d922b550d917873a893747a4c7edfca27c025746eacf316d6e97ca3b05996"
+    },
+    "alternating_r36_s003/D": {
+      "trips.csv": "dbbdfd1243e2ea162a817488f863e559df4baed0a0cfe550aeb28cc086247bf0",
+      "orders.csv": "fa4ae37f0e0d075baa6feedc3cf1969e35f184c065c815d07cfb1d4c34b6dddf"
+    },
+    "alternating_r36_s004/A": {
+      "trips.csv": "0a70206f1790ce5dcac774d713c09df26e4b3dcb217d5a79a9239e6d3b0ace5e",
+      "orders.csv": "f06201fd02a08388678e6ee3a9b937417aee50ccb581d28cad4100e59d1310f7"
+    },
+    "alternating_r36_s004/B": {
+      "trips.csv": "72ee254b12d391ba4eb67830d4c2d9dacbe34a9456dbba0d4ba3014662bd0d71",
+      "orders.csv": "f8f14ba8b0cd7e6c30c597de362dabd672148a11b3814593e49ab61a41922fd1"
+    },
+    "alternating_r36_s004/C": {
+      "trips.csv": "e930c0633602684b0ade7fc4f15e7d6c8bdf67487ec7c077982a4bcb10662302",
+      "orders.csv": "5945d089f8e74caee56977f0d436f5476edfa357b996d8c827914b9f1f74caed"
+    },
+    "alternating_r36_s004/D": {
+      "trips.csv": "3fbf9b5baa36b5bb6b8e88df2338b0b3347f097f746aea7444dcf014ba9360a1",
+      "orders.csv": "9b1a665fd7eb12912ace14d4c417d3aecd8e95e5b0722ad85eca9cca26acb90c"
+    },
+    "alternating_r36_s005/A": {
+      "trips.csv": "d983f87de4807931ec8529a510e181cccdca34659f7ec06747a7b348a484824e",
+      "orders.csv": "48dfe2707a38b6f13b20674db7ac94e37762d1bdd43a1105b6695175fad6e58d"
+    },
+    "alternating_r36_s005/B": {
+      "trips.csv": "2875ade33d57c54600c67803f7660f98cb1e808002ac087e1b2dc4d7f8ece3e5",
+      "orders.csv": "593a4c679278ded56ad387113f9189cbc658b98dadac54ecf2c80fee5ee1ef5a"
+    },
+    "alternating_r36_s005/C": {
+      "trips.csv": "e484eefd4ea6bcc30cf63ccafe2ad7d87a8fc2da65c72a5e98e9cd6c05940b6f",
+      "orders.csv": "1a5ab57bf472026ddbe937e90fd34ff3aeacfde5697925f2c81be7ff80d077bf"
+    },
+    "alternating_r36_s005/D": {
+      "trips.csv": "a5fe2247ee97a41f373125d161469e39cd010e4d20e75888be8cfe79f6e608ee",
+      "orders.csv": "f5c646edf983e491c9fc4d8b751bc708855a6801131de41e56e7860c0955957b"
+    },
+    "alternating_r36_s006/A": {
+      "trips.csv": "773ada6dc18046ff03aa7f6a9f3651475e259129aebb6480017dd0a6f278a4d1",
+      "orders.csv": "2534601996d96808615ab0d71c8223930d1aa00dd515b6be628a9b137368fd4a"
+    },
+    "alternating_r36_s006/B": {
+      "trips.csv": "942a37a4be88259d1c9bebfc984b172e200a777e1c98a07304987e5087f3b9cf",
+      "orders.csv": "d9dc8004f9175a49b049f6450f0bc392304ba470c347de47c980ed2ec26c687e"
+    },
+    "alternating_r36_s006/C": {
+      "trips.csv": "be9e9b136135217828825b56393624780c28c589bd3d323ba8f1fd9a92b9f972",
+      "orders.csv": "eda66e4770ae4b7efbd8ed943b84bd956d2ca8d0578bed7601951972c6aabb82"
+    },
+    "alternating_r36_s006/D": {
+      "trips.csv": "dae10c30c9af8a9f6f5bef8c2b9d99d95dd40d0d8bcc074e7a1811288a7a329d",
+      "orders.csv": "211c3641c9ce5f7ec13e6e79ccda0834f50c4588cacb57fa89b4362dd8bdce6d"
+    },
+    "alternating_r36_s007/A": {
+      "trips.csv": "f9f892cf811f68fade4d56a9f624e5476161c0d6c4c47447f0ca19e650bacf96",
+      "orders.csv": "11fc6afb6a96e4ebf75a5a42dd9d3f1b27d13ccd2feb4a99911d667394c789f8"
+    },
+    "alternating_r36_s007/B": {
+      "trips.csv": "6e06a56708d9c374f1d4ef1946dc927ad76ac096d77b8254e4abf50da6ca2cf4",
+      "orders.csv": "2be2bf8e6ea267658f39fd1de5ae657f26269ec2f96e6350326f85fe651a2f11"
+    },
+    "alternating_r36_s007/C": {
+      "trips.csv": "03f05b300e63775f1bc1b17c99e1ff1af6e6944407eb61d2f3009fb39ed307e1",
+      "orders.csv": "3ccf1dec1fb5d8512325bdb3b9f80168de0e477aa82bbdb6a47870f892b1a167"
+    },
+    "alternating_r36_s007/D": {
+      "trips.csv": "39e662bc9777a721ce52c3e2dd93df500c0c993efcf425c02a5e84d9c1cbeb52",
+      "orders.csv": "2be2bf8e6ea267658f39fd1de5ae657f26269ec2f96e6350326f85fe651a2f11"
+    },
+    "alternating_r36_s008/A": {
+      "trips.csv": "24cde1380bb249b2223d850ec8a9a75978b6ce9c2d5d4d656b384f01a0259388",
+      "orders.csv": "e6fe45c425f6e4edd2d2a2945c3c10d64ca33c0db833b70259fefb64e9114398"
+    },
+    "alternating_r36_s008/B": {
+      "trips.csv": "f441074b4b35533572caa17b24537eb42f3faafbfce50e086d648194e59529bf",
+      "orders.csv": "b5f60fab6ee7114592feced7d2d9833a325abbcf003350e7ae3fab78ddf23135"
+    },
+    "alternating_r36_s008/C": {
+      "trips.csv": "d5d821f000bd45399894ad4892eb442fd11843cff8bd3ef89807da6e8b8dd90e",
+      "orders.csv": "e6fe45c425f6e4edd2d2a2945c3c10d64ca33c0db833b70259fefb64e9114398"
+    },
+    "alternating_r36_s008/D": {
+      "trips.csv": "45a1a65cfc85d7ebde1df4c87cbeac00d651efe09b348aa9aecd20d18c759042",
+      "orders.csv": "419f7fa0040d3fef968749e3dd83c3b312bc2c76b2d64d5f18f4ef6fd2c16927"
+    },
+    "alternating_r36_s009/A": {
+      "trips.csv": "44debf8bb20814985236d9b4b5dd054cbe79647d54c1d5d21ed21ec16b51d82d",
+      "orders.csv": "ee4c4a92cb5f52595e4df38844a2ba03b53287d994848cb86cdf8b48a0a5d48f"
+    },
+    "alternating_r36_s009/B": {
+      "trips.csv": "a796ac7775f02e218d82991147a8ec67a59166fc0658aedc334dcc1876c8ffe4",
+      "orders.csv": "c37dd005b9b045e66ba7f9b0e9197aa08c13add932301c6d704d0efaeb0ea105"
+    },
+    "alternating_r36_s009/C": {
+      "trips.csv": "d153093ffe329e5c3798a462ec497af1c72363b90f0e6052cc426e8da7741bf5",
+      "orders.csv": "ee4c4a92cb5f52595e4df38844a2ba03b53287d994848cb86cdf8b48a0a5d48f"
+    },
+    "alternating_r36_s009/D": {
+      "trips.csv": "30b670643376dd1092a7a35984a4b53c4e37663929ae6b2f08e3178531a583d2",
+      "orders.csv": "b1da2fae5e1c75079074e7c0e3a813f45713119517a3473b611139e956481cbc"
+    },
+    "alternating_r36_s010/A": {
+      "trips.csv": "de1982efc3f5bee7d0d335fe18712618569a74b3fefb900f90f153645ab585df",
+      "orders.csv": "19bb7ef671846b06614176430d52c01afea9589dd87dc34f20092e23631e0c05"
+    },
+    "alternating_r36_s010/B": {
+      "trips.csv": "1a0f460c7dbdb1cac7e6f0b22c6452a90e4dafc8fb0ee0149693e52f5a3b3edd",
+      "orders.csv": "0ee3c98799663d3300401aa2f081dbf8856c5fa727421694e4b15b1c51153f79"
+    },
+    "alternating_r36_s010/C": {
+      "trips.csv": "713a9c757f0bf1682cc84ba38530c08a2bab1d09faf7451b6e1fa3744afc00e8",
+      "orders.csv": "9d093ff11ff7f861a661e9afed1f79d204df12d78c49cea10df3d33a3bc50f97"
+    },
+    "alternating_r36_s010/D": {
+      "trips.csv": "e46aa6a9d3a7d4521a3d97bb3d7cc05b18525c83822f9ac00e62a3c17a433adc",
+      "orders.csv": "7bc49dc06b20fa1b016c1b773c8b1ed5c07734f0b96d808b34364e48af610ab5"
+    },
+    "alternating_r36_s011/A": {
+      "trips.csv": "4a7f029f25dd7ad9a93700b4f978c519d65f49bfa2ba3c79c02336875b3d4791",
+      "orders.csv": "a689dcdd08cc8dbd7d9c9b23553b4f132d1eb30302c9d4fedbc39036d1560fd2"
+    },
+    "alternating_r36_s011/B": {
+      "trips.csv": "a3a3e24c7db50ed96884d70a430c37bac2831978afe40740bedacdac94e9da39",
+      "orders.csv": "fa068708279d5ff6b0c76463b8df5a31c6dc826e12f4d192d86dc2581b7ce934"
+    },
+    "alternating_r36_s011/C": {
+      "trips.csv": "8382a0a873432fea155abed3e86aa56a8ca0d66e9caaa03d9ef4cb661d23e793",
+      "orders.csv": "e2e0e3071cd46b900ecb0e865c938cd0d49055ee4ce2ec7b1a1ff3bf8ecdb994"
+    },
+    "alternating_r36_s011/D": {
+      "trips.csv": "c284488e6df6f0a5734a3c29d8073f8dfe68fce5f39f13affbe6b2bc76d0fee4",
+      "orders.csv": "1dc39b0491565c9fc0dfbc97d22ec2539c42591835d4d60b96f28331969d3d31"
+    },
+    "alternating_r36_s012/A": {
+      "trips.csv": "763bd97828957548e6a24de4a355f5ea1219e1beb9cf10815a581c01d0048808",
+      "orders.csv": "4236afca9207ae55def39537b4f673c9b55185368b810cbb9045796493ca57fb"
+    },
+    "alternating_r36_s012/B": {
+      "trips.csv": "805a002404db865e550d1e29e70644e8ae1afcf425df7d00cc52e2fa9ecb69b1",
+      "orders.csv": "2450358e6bd90652374e240f5dd32340f966774c2cc9cf573857fe3f955b2597"
+    },
+    "alternating_r36_s012/C": {
+      "trips.csv": "8ae6bb62d5fe9ec5d3d3e8e27a17b9cdb703aa7f0eda39293d0f2cca77ac1184",
+      "orders.csv": "573060f04f5ab81730302e6cbc2bed2f0d08483b87d45d0edad3baf334e92874"
+    },
+    "alternating_r36_s012/D": {
+      "trips.csv": "fc5d8ebb14625c87bd101d490f041f7d215003a1a7d493320502adcd51d1e65f",
+      "orders.csv": "2450358e6bd90652374e240f5dd32340f966774c2cc9cf573857fe3f955b2597"
+    },
+    "alternating_r36_s013/A": {
+      "trips.csv": "482788b8a05f24fc653e6c7a5985e76ddb34f502d63eadafbe4c644390f260c5",
+      "orders.csv": "c8807e15838bffc50cfbe8e7bf5415b86f7f14d1bd863ae7e10184e819859cbf"
+    },
+    "alternating_r36_s013/B": {
+      "trips.csv": "a791beae9279ddd4d2fc99da28105ad98ce79dc8fd42b1e61a82ad284938a3ef",
+      "orders.csv": "61be813290b49e8cba25467879dc5b473bf422519e44ed40e88a915fea0edc88"
+    },
+    "alternating_r36_s013/C": {
+      "trips.csv": "8563c9816a5dc9a9bcd8d95e6946393c047d990d660325b7aa687fe45720eb34",
+      "orders.csv": "810c2027e43a9512d60d37a7387ca051818a36be0f884ecc48eb49d59bc0f6bc"
+    },
+    "alternating_r36_s013/D": {
+      "trips.csv": "a791beae9279ddd4d2fc99da28105ad98ce79dc8fd42b1e61a82ad284938a3ef",
+      "orders.csv": "61be813290b49e8cba25467879dc5b473bf422519e44ed40e88a915fea0edc88"
+    },
+    "alternating_r36_s014/A": {
+      "trips.csv": "edbdc6a962e1ed05b436c9bf4eb76bebc8b77e9d233034964ce3e88ba90395ce",
+      "orders.csv": "56ed3532debc012bc6cedb541da2dfb3c925019e77a3e76e49aef2ddc6bcf613"
+    },
+    "alternating_r36_s014/B": {
+      "trips.csv": "8a6cb5bfb206c297759bf9e7bca03be014078a221d02db7a80c86d56bad1f097",
+      "orders.csv": "f9f370881d4d5ab68f535a8f5b8839ecd43221ee374893442b647ebad3f87c54"
+    },
+    "alternating_r36_s014/C": {
+      "trips.csv": "967a95dc179fbcc224bf9ee5b020bf16082acedcbb04029d6ef31d8d34dbab35",
+      "orders.csv": "d1d76b06d936b7dbc0cc89de8005257538085afc1861318ff05e7098d69a3bf6"
+    },
+    "alternating_r36_s014/D": {
+      "trips.csv": "e87b61845c37d8043d624d7d1f141b230a2f8348d442e199af5a33a779e51d3b",
+      "orders.csv": "3ae0dedc11d717cce93319dd9f1c1a711d8ec84fa9df7ed9351b5eaf60424c8f"
+    },
+    "alternating_r36_s015/A": {
+      "trips.csv": "f0fe83e8d60bf2cbea3ea6ca3e6b2394b878ca88905db99b51e09ca6da8470ae",
+      "orders.csv": "547df98d63391b8e74b54cbe1ba0f87529ef8d182bc5f1e6d826d949df4a46ca"
+    },
+    "alternating_r36_s015/B": {
+      "trips.csv": "6d1fd80dc9e92fe14166dafd020694f0e1825b33a1d8194dedb59075c069abd3",
+      "orders.csv": "58a811bbc0d7e5be414c0b2687bfd1237b4ef7783856463d6bb2f4086d214a89"
+    },
+    "alternating_r36_s015/C": {
+      "trips.csv": "1b26079975ba54d07b3dac28d25451d80a7f086d0ba7bd5f4afeb6b129085419",
+      "orders.csv": "6d2548a4c607d7dfc197700c5aed1bbe54b2b446c74f33ff67ff2ebcea62b4ba"
+    },
+    "alternating_r36_s015/D": {
+      "trips.csv": "045da1d5be0f480e3342b7744430b158d40d88ae27db85e99a605f36e60ac033",
+      "orders.csv": "5d509886695d40d304628ec83f7924e059a567d89eaa0456034d2d6f3b63281a"
+    },
+    "alternating_r36_s016/A": {
+      "trips.csv": "55a2de2e7f253c06bb40975267e579993fea37ece01c76c2fbf08872706370cd",
+      "orders.csv": "c0fc04073ee3cc11942c83b1c64329be869fbade4b4d394aa1d72590904d50eb"
+    },
+    "alternating_r36_s016/B": {
+      "trips.csv": "c2ed3467dd2be59c371e6778d0895a002faf19c8b2956ff3d9936e7663b9c030",
+      "orders.csv": "ef617dcfb3a9e1b11bbdfbb5bd7c1410a9280894eabd9531ba4a9580a287462f"
+    },
+    "alternating_r36_s016/C": {
+      "trips.csv": "b07a6e3e20162c7154c87749a81641823ecea85acf74bce601727d9b962bffa9",
+      "orders.csv": "8c22d55cf601395644bd80719c2f0c6ac0f7acf5be3efdf39a5b6e0b471818e0"
+    },
+    "alternating_r36_s016/D": {
+      "trips.csv": "026615bb312ec5434ad5d830787e52c16a3b0b50b59553a6a4fc3cdebeee9dc5",
+      "orders.csv": "79d82c92d44560d49c1ca829769b2c660615c7875346eb315ca236943a1d69cb"
+    },
+    "alternating_r36_s017/A": {
+      "trips.csv": "0d564df68090ae2b79815be41defe24231fa1c01e5e27653c0651ebc597fb383",
+      "orders.csv": "9014a9a61858c05c206821e37aec423fa7a24d7181fb56b5c4e8099576ea846a"
+    },
+    "alternating_r36_s017/B": {
+      "trips.csv": "0ff07b50a3c48a2d0277908ef69dae73b443ec4aff9b11bf37c63c32320b65cd",
+      "orders.csv": "6ee750a7f55194286ce706c033dc40430dd39eb1b5ed57e5adbd6053eb0dd449"
+    },
+    "alternating_r36_s017/C": {
+      "trips.csv": "bb56c95233b9767bb873f47c29ada322e761d1ec0b8a9437e497b5ba9665c16e",
+      "orders.csv": "e8d5961d618562ffb41e42600ad12a926ada0352f33b6910562bdcf7d9e47e5f"
+    },
+    "alternating_r36_s017/D": {
+      "trips.csv": "766915352be7e490ee59941cc62cf0edff117ac1119c562ee523cbb6aecb2b3e",
+      "orders.csv": "5704f83af916b46e8d0513885a0fef4b800da6c68beff0b4fe5bcd0d02500e89"
+    },
+    "alternating_r36_s018/A": {
+      "trips.csv": "44bd19b037765f7e45c16388ebd47a5b3a31bcaefb8621c3f0e5ec441b73a750",
+      "orders.csv": "dc448fe0a6f0266998f07c67f4bde48dd568181a48d04994cca27db54be1f032"
+    },
+    "alternating_r36_s018/B": {
+      "trips.csv": "20ed1886d3deeff43a15f26977d185b7af8f0919aaddd25d09f4eb7a43025fb9",
+      "orders.csv": "e029bd77d9a8fc1999676adfa6744b69199762a8cd7f73b0d4d00cb80ae1b723"
+    },
+    "alternating_r36_s018/C": {
+      "trips.csv": "f5e31c01c85d11fa88d9c64767c803b6c69e080270b0698895e13441c0314102",
+      "orders.csv": "dc448fe0a6f0266998f07c67f4bde48dd568181a48d04994cca27db54be1f032"
+    },
+    "alternating_r36_s018/D": {
+      "trips.csv": "08ddf042ea9e6e6d7d9a208c3edbd309ff85cad8250ba40264e5e859b505f5f0",
+      "orders.csv": "e029bd77d9a8fc1999676adfa6744b69199762a8cd7f73b0d4d00cb80ae1b723"
+    },
+    "alternating_r36_s019/A": {
+      "trips.csv": "636ae0d69daa824421573a6c1fc3dbd1cf16aaa7143e0a40bc9ea0c44f14b007",
+      "orders.csv": "779fdce60cc630ae2c0d4dea2a8930c544e2408289d0fd2ff63bd75a03fdd141"
+    },
+    "alternating_r36_s019/B": {
+      "trips.csv": "2b8d8ba9a80ace9777ac48040147ba618ef4310cfbe9a97ea91c94faa88ec560",
+      "orders.csv": "0e813264f6e96e6231af179a5fca187c9f2e6a0070443622d20c67181f8216aa"
+    },
+    "alternating_r36_s019/C": {
+      "trips.csv": "11bb19d8073d41dffaba42ddc31deaea52d27dce9b3e5f39dfcc7abaf05879c4",
+      "orders.csv": "779fdce60cc630ae2c0d4dea2a8930c544e2408289d0fd2ff63bd75a03fdd141"
+    },
+    "alternating_r36_s019/D": {
+      "trips.csv": "2bcd742a878d09ca9628afd1a567b7c1c3346cca1a7c33d7824d967a6178355a",
+      "orders.csv": "0e813264f6e96e6231af179a5fca187c9f2e6a0070443622d20c67181f8216aa"
+    },
+    "alternating_r36_s020/A": {
+      "trips.csv": "4f4a555093e7a26c81d6cd143298e0508c1135b03db98b802c27909bbc30f6a6",
+      "orders.csv": "dcb7202c9530de4ef000ea1724ec63cb94ed42e1549f3b229584c6de398badf5"
+    },
+    "alternating_r36_s020/B": {
+      "trips.csv": "76f0df83c305dda7de6c9be6f5fe62cfc299173f8b35f0e79904fa46b7fa6d50",
+      "orders.csv": "a3ba3432a83f6fc2ec839efe3c33801eb36cc60d09d664af902d63b666c41ca7"
+    },
+    "alternating_r36_s020/C": {
+      "trips.csv": "4d8d6fd488f45862c605f50914c90f2ed603873914a8b409d213ddc85e658c33",
+      "orders.csv": "dcb7202c9530de4ef000ea1724ec63cb94ed42e1549f3b229584c6de398badf5"
+    },
+    "alternating_r36_s020/D": {
+      "trips.csv": "8a78e22b0aa4e42a623518d27b9cec246981a1bc1eed2191d6419bc63277e04e",
+      "orders.csv": "12ae323c4a8dbfbbadd00c37663fa7fa2ec2b350b58a4561668e5d03084ba0b6"
+    },
+    "alternating_r36_s021/A": {
+      "trips.csv": "678a1c91069fe83843701f0c1d0d45b366d4956c8565b078c92432f6de5b6f85",
+      "orders.csv": "00a89cf74ad52942f2cb0479ece8b44491ba03f511f6d3a15a5469c7beb1b5c6"
+    },
+    "alternating_r36_s021/B": {
+      "trips.csv": "17cf658a2ecb971d39222c315db74b7c6d5ec853d9c458303154b252e8ea6888",
+      "orders.csv": "81d23e09399da1b5b70fe4615d2f04386018b63755463f3643d8efa2dafb73b7"
+    },
+    "alternating_r36_s021/C": {
+      "trips.csv": "f66493cccca2e09f3fb8aec478a2d1242877df706955d8c9d9afefe5c1dd1a4f",
+      "orders.csv": "57113c87ed9d5aee9c67209480ae853cd86ec09004af20d4f2a8ada25cce136c"
+    },
+    "alternating_r36_s021/D": {
+      "trips.csv": "5047f2af8eb12c8222f5e233df0a37f71fa6a5f3e17a95a9216a849a76d54973",
+      "orders.csv": "ab5d7468916fd6fc0665eb907da6f3723890ee1f7c142591dd2ebbdd77e490b9"
+    },
+    "alternating_r36_s022/A": {
+      "trips.csv": "cb44ab8d764ce084ba4f73e18e5514c43f64a4321ac36ab25534cabe1ea1cf82",
+      "orders.csv": "712144ccbf639af219835d8f0f791cb386c0ed8d35396c990fcaf8ac5405b71f"
+    },
+    "alternating_r36_s022/B": {
+      "trips.csv": "8c9c269207c3c5a63f41a0f79883646fce4fda4e4647cf48e2d347c76ebd359f",
+      "orders.csv": "0bd4c3c886b0e0685d1db2687dab375f344a9d954e865f65348cf7da5ee43d95"
+    },
+    "alternating_r36_s022/C": {
+      "trips.csv": "b7347883b92d35e608f17816d9d28fa942f1c72ab851af28241c8111c3df00e2",
+      "orders.csv": "338a3c3269af3d97f205d3494670431a26ce46fe08127508ec3c5b322d7aaf9b"
+    },
+    "alternating_r36_s022/D": {
+      "trips.csv": "cc4cf916d9f631f67b85f2de340db18177656e2645270a0f044f30f69cd95d27",
+      "orders.csv": "0bd4c3c886b0e0685d1db2687dab375f344a9d954e865f65348cf7da5ee43d95"
+    },
+    "alternating_r36_s023/A": {
+      "trips.csv": "440c28e3f215820cbf35a8611468cbf93353a9ff0fdd5e902fc96f9cf55e5d0a",
+      "orders.csv": "9d092b3a5cfceed19f6081c3e80ebb6cbd3a136a3e6b3714a1391601dce735c2"
+    },
+    "alternating_r36_s023/B": {
+      "trips.csv": "91761e14d24cf4d3b9e1449353778310953b8d6be5342f1b811b2dd88a41d735",
+      "orders.csv": "fbe238fc5de8554b79e01f9be774b7ffdd6a6363f30074b6ce63010b57f748bd"
+    },
+    "alternating_r36_s023/C": {
+      "trips.csv": "0f3a394c79fd59e5e281faa769c56dab97863abf16e8ff676f95e953b53af98a",
+      "orders.csv": "aa40397676ce6d9b5ec933617cdf2ddab6a8f12f06cb7353aa52f1314bda92c0"
+    },
+    "alternating_r36_s023/D": {
+      "trips.csv": "c69a547c51ea70035bdf4bc7a1f8c6b4014ba1c9e6a0552e09002cbd4848f0ce",
+      "orders.csv": "31f9cf23425015db040ca355977fc95bc745ee92a9c9ecd18c53237001259402"
+    },
+    "alternating_r36_s024/A": {
+      "trips.csv": "c93b94b4c8c3b29ea538f869858f8c6dd2c5b82c2f4c69f909d25ca456e1945b",
+      "orders.csv": "edcfc775d5812af6cf16f612c061e1416a3b960a9bdf7f255951c9f9bd0c9131"
+    },
+    "alternating_r36_s024/B": {
+      "trips.csv": "2744558623c10da15a847e55c1bec4dbdfcfd4fc8b6a7c9a775e502876d0fe18",
+      "orders.csv": "f849c3e7fb84ec8316397fcde3e7168e9f49cfcff96dc3db0a4c5fd9732b1bfb"
+    },
+    "alternating_r36_s024/C": {
+      "trips.csv": "9682a80c1d7dae5fdfdccda1d0f21873de32f60d759d250551e2ca794ffc90be",
+      "orders.csv": "c467feb66b859afccbbab3c31e79833fe1fc219a074114e0d86b5b4f166ea7a5"
+    },
+    "alternating_r36_s024/D": {
+      "trips.csv": "62f68c085417318b0c3448d4f2ac14076073c6f06cd39b6ea2932c4c82c41a7f",
+      "orders.csv": "7ab0f6190953dd68a78d8ffad3507e626ef9cad3291037a7b67a77639c1f1f29"
+    },
+    "alternating_r36_s025/A": {
+      "trips.csv": "ebd962b52af28646635edddacf3b1e6ccc57e94f8cbaf993c9063af8bca554a1",
+      "orders.csv": "b280057fbbf2f911c554e7027d6dff9b170fe33c080d48f80a9bbc9bfb4cdc70"
+    },
+    "alternating_r36_s025/B": {
+      "trips.csv": "6a47bf4446966dfb74639278c84c53c88d9896b01533353d60553517024602e2",
+      "orders.csv": "d3d716bbdc613ecd8ab26321b95ae05f0f904a3ef996928cada15d9b064943fa"
+    },
+    "alternating_r36_s025/C": {
+      "trips.csv": "3d1c6bfca588b0e8d8f5e05bc4e8b1c2e53cbc92e565276bdb08b429b2c6af69",
+      "orders.csv": "c55a6523f1a7c9926f309340cbe8051b439d1cba8e05f7fe7ecde20980189104"
+    },
+    "alternating_r36_s025/D": {
+      "trips.csv": "bec075d5e212cd1f4d5586e19af20ffe5fda68e25bfd3956059c283f01acc792",
+      "orders.csv": "a3132750d33e23ef2cad5ce67fc4d6af7d4bea5675b629fc3158b5e5ccf4362e"
+    },
+    "alternating_r36_s026/A": {
+      "trips.csv": "2f7aac566569add6b9247c26b3c953e6ebf5fe24b15fae8c9d3ae949907365fc",
+      "orders.csv": "6b3e4fddf01f9b46402ba475388db3ee6c48554d28c548207de444a13798c0d8"
+    },
+    "alternating_r36_s026/B": {
+      "trips.csv": "b04e8acbba4ee34d708e8fbe088f045b36ff4f0e89abca59d51babbad2a3b077",
+      "orders.csv": "261eb7327c2fd794b3b8eaccf96dc1a280f29e9574e5c46b7bf27c649004c931"
+    },
+    "alternating_r36_s026/C": {
+      "trips.csv": "63ac2251a7fdd428305da6d74093a3044851fb4c7fa7cfa20c56af558e2e4527",
+      "orders.csv": "b57472f0e8139402998e343ed21c012dad7660e51abf0bf75ec60bf67d32e84e"
+    },
+    "alternating_r36_s026/D": {
+      "trips.csv": "1eac4f04e1a4b0a1b604046835d10e4a2f2e7a862e30cee0646ace717b223fcc",
+      "orders.csv": "b32033af9d2c041de8ea778e1c8b711477023d42fed6d7ea5fe7fbd5f8cbfa11"
+    },
+    "alternating_r36_s027/A": {
+      "trips.csv": "57f85a15a3ec7ad69e4c552e1ad6758ff94392f568cfdef5c34b6ea0ae0dac81",
+      "orders.csv": "9eb4466dece298452724793ec0e16e1c03cbb8c71d18707e161868cf02c4e60a"
+    },
+    "alternating_r36_s027/B": {
+      "trips.csv": "19fb4ba0b2d1ace7132853b8c940f26dac039edd9ef5cb09d1b61fb71ccc5734",
+      "orders.csv": "0b5193e65e4860d0df1e668a384b22a8e9f88f757e5d858f7aaf8c6163e9c60c"
+    },
+    "alternating_r36_s027/C": {
+      "trips.csv": "1b04e159a445ee00adfe9b79e69751a5bb97ce7a5b026a2802ea66ae46caaa06",
+      "orders.csv": "3e2d25850e43193dff4d137dc68f9ebbe11be83bb60e956025d7964870529a2a"
+    },
+    "alternating_r36_s027/D": {
+      "trips.csv": "4eb698c23ade463ae6804343bbcf314956f77bb9a4089c62d87361086bb148e8",
+      "orders.csv": "203ce60a7cee85b05caec4b2a63ed30e5d6200978aad745b382dce318425e862"
+    },
+    "alternating_r36_s028/A": {
+      "trips.csv": "5bfef0c49c97e6b364a2864ebe933a5145e7be624d929c1534b87fc9df577d6a",
+      "orders.csv": "07f4a38894c773e443ee31dcf814d8055fa1a0d23bb64072ac3ba03f16ab3d8b"
+    },
+    "alternating_r36_s028/B": {
+      "trips.csv": "1a9e0987d8689a1ec7ca3a10e4d708e3a9da6a80cb61b52f9c891dbfd7ef913a",
+      "orders.csv": "ed2e46d7b94eb8efaff7623e334d5fd80af2ad799c2b5c411d0ef8d569be5d02"
+    },
+    "alternating_r36_s028/C": {
+      "trips.csv": "7374b1b7621dd26ffbc4583fe7193982dc8eb2997d737c7c77a07eb54f25e554",
+      "orders.csv": "af5e6655932ba272f37a6ca43533613861bf3c177c257c4761cdaaa571c46ffb"
+    },
+    "alternating_r36_s028/D": {
+      "trips.csv": "224afc84095dbbc12652996bcd6cdf66f74f35b34777f0a4f9aa4c58c3b94838",
+      "orders.csv": "a5c0a19a934f6df1dc9087a954ecc0b213ecea9f617d013c124628eff98227a0"
+    },
+    "alternating_r36_s029/A": {
+      "trips.csv": "7a8678d57ac01abf6001a7f285c9edbdcf707be77a833fb262d3648280eb445c",
+      "orders.csv": "6b7853bec6eceb156832a20edd7e759219e87120a8118880ea4a3cb9639bd5bd"
+    },
+    "alternating_r36_s029/B": {
+      "trips.csv": "4c0e23c0323c4190a0d509c0266c3596c810dbab6b70bf52bc7d97ab41071d91",
+      "orders.csv": "930460461ce080952bff85e423e2113b4fd03553a61bcb1400a811c47b27254b"
+    },
+    "alternating_r36_s029/C": {
+      "trips.csv": "44098c93d14e62fd690fa73990491c4578e8aa1b8496e3f207b1c72597704805",
+      "orders.csv": "41c5ccf5588e41ba073483499fecc80e2a140635cdea1a9d2f9faac10d90c121"
+    },
+    "alternating_r36_s029/D": {
+      "trips.csv": "9896c4999f84ac0e46a97c2c62dd4643b236b76b288b5c6a8efa5baf7900b64f",
+      "orders.csv": "571270ecc0fb9e2ad03b4446192a3a7b52cf31ee0b7f385b57006a83cc8aa096"
+    }
+  },
+  "bootstrap_replicates": 10000,
+  "excluded_pairs": 0
+}

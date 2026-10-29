@@ -5,6 +5,7 @@ import hashlib
 import ctypes as C
 from functools import partial
 import json
+import math
 import os
 from pathlib import Path
 import signal
@@ -18,6 +19,34 @@ from PIL import Image,ImageDraw
 from ament_index_python.packages import get_package_prefix
 from generate_loop import generate
 from run_loop_guarded import read_host_memory, tree_rss
+from validate_demand_native import demand_inputs, configure_demand_world, in_video_window, validate_window
+
+
+def finish_encoder(process, label, errors):
+    """Always reap this encoder; preserve a failure as evidence, not an orphan."""
+    if process is None:
+        return
+    try:
+        if process.stdin is not None and not process.stdin.closed:
+            process.stdin.close()
+        process.wait(timeout=30)
+    except Exception as exc:
+        errors.append(label + ' encoder cleanup: ' + repr(exc))
+        for stop in (process.terminate, process.kill):
+            if process.poll() is not None:
+                break
+            try:
+                stop()
+            except ProcessLookupError:
+                pass
+            try:
+                process.wait(timeout=3)
+            except subprocess.TimeoutExpired:
+                continue
+            except Exception as cleanup_exc:
+                errors.append(label + ' encoder reap: ' + repr(cleanup_exc))
+    if process.returncode:
+        errors.append(label + ' encoder exited ' + str(process.returncode))
 
 
 def close_x11_windows(pid):
@@ -93,13 +122,32 @@ def main():
     parser.add_argument('--video', action='store_true')
     parser.add_argument('--all-views', action='store_true', help='Capture all three cameras in one live world; video uses --view')
     parser.add_argument('--follow-carrier', type=int, help='Additional live camera following this carrier; records follow.mp4')
-    parser.add_argument('--host-memory', type=Path, help='Fresh Windows samples; admission 14 GiB with GUI or 10 GiB without; stops below 5 GiB')
+    parser.add_argument('--host-memory', type=Path, help='Fresh Windows samples; admission 14 GiB with GUI, 7.5 GiB for headless demand, otherwise 10 GiB; stops below 5 GiB')
+    parser.add_argument('--demand', type=Path, help='Demand CSV; requires dispatch configuration, policy and predictor')
+    parser.add_argument('--dispatch-config', type=Path)
+    parser.add_argument('--policy', choices=list('ABCD'))
+    parser.add_argument('--predictor', type=Path)
+    parser.add_argument('--video-start', type=float, default=0, help='First included simulated timestamp')
+    parser.add_argument('--video-end', type=float, help='Exclusive final timestamp; simulation still starts at zero')
+    parser.add_argument('--real-time-factor', type=float, default=1., help='Requested wall-clock pacing; zero runs unthrottled')
     args = parser.parse_args()
+    inputs = demand_inputs(args.demand, args.dispatch_config, args.policy, args.predictor)
+    validate_window(args.video_start, args.video_end, args.until)
+    if not math.isfinite(args.real_time_factor) or args.real_time_factor < 0:
+        raise ValueError('--real-time-factor must be finite and nonnegative')
+    if inputs and (args.scenario not in ('buitrago_patio', 'buitrago_entre_pisos') or args.variant != 'revised_supports'):
+        raise ValueError('Demand capture requires the revised patio scene')
+    if inputs and not args.host_memory:
+        raise ValueError('Demand capture requires a fresh host memory feed')
     directory = Path(args.output).resolve()
     directory.mkdir(parents=True, exist_ok=False)
-    admission_gib = 14 if args.gui else 10
+    admission_gib = 14 if args.gui else (7.5 if inputs else 10)
     if args.host_memory and read_host_memory(args.host_memory) < admission_gib:
         raise RuntimeError(f'Render admission requires {admission_gib} GiB host free memory')
+    if inputs:
+        time.sleep(5)
+        if read_host_memory(args.host_memory) < admission_gib:
+            raise RuntimeError(f'Second render admission requires {admission_gib} GiB host free memory')
     gui_config = directory/'gui.config'
     if args.gui:
         template = Path(get_package_prefix('gz_sim_vendor'))/'opt/gz_sim_vendor/share/gz/gz-sim8/gui/gui.config'
@@ -113,11 +161,19 @@ def main():
 
     if args.scenario:
         from generate_ballasted import generate as generate_ballasted
-        world=generate_ballasted(args.scenario,directory/'pilot',stop_at_end=False,variant=args.variant)
+        world=generate_ballasted(args.scenario,directory/'pilot',stop_at_end=False,variant=args.variant,
+                                 calm=True if inputs else False)
     else:
         world = generate(args.config, directory/'generated', stop_at_end=False)
+    configure_demand_world(world, inputs)
     tree = ET.parse(world)
     root = tree.getroot().find('world')
+    root.find('physics/real_time_factor').text = str(args.real_time_factor)
+    metadata_file = world.parent/'metadata.json'
+    metadata = json.loads(metadata_file.read_text())
+    metadata['requested_real_time_factor'] = args.real_time_factor
+    metadata['demand_inputs'] = inputs
+    metadata_file.write_text(json.dumps(metadata, indent=2, ensure_ascii=False))
     poses = {'overview': '34 -43 30 0 .48 1.80',
              'lower': '-9 -12 11 0 .30 .92',
              'upper': '56 -12 14 0 .30 2.16'}
@@ -142,20 +198,32 @@ def main():
         'plugin_sha256':hashlib.sha256(plugin_file.read_bytes()).hexdigest(),
         'git_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         'git_status':subprocess.check_output(['git','status','--short'],text=True),
-        'sensor_images_with_caption':bool(args.scenario)},indent=2))
+        'sensor_images_with_caption':bool(args.scenario),
+        'demand_inputs': inputs,
+        'demand_input_sha256': {key:hashlib.sha256(Path(inputs[key]).read_bytes()).hexdigest()
+                                for key in ('demand','dispatch_config','predictor')} if inputs else None,
+        'recording_window_s': [args.video_start,args.video_end],
+        'requested_real_time_factor': args.real_time_factor},indent=2))
     done = threading.Event()
     node = Node()
     frames_by_view = {view: [] for view in views}
+    last_seen_by_view = {view: -1. for view in views}
     frames, errors = frames_by_view[args.view], []
     encoder = None
     follow_encoder = None
     if args.video:
-        encoder = subprocess.Popen(['ffmpeg', '-n', '-loglevel', 'error', '-f', 'rawvideo', '-pixel_format', 'rgb24', '-video_size', '1280x800', '-framerate', '20', '-i', '-', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', '-pix_fmt', 'yuv420p', str(directory/'gazebo.mp4')], stdin=subprocess.PIPE)
+        encoder = subprocess.Popen(['ffmpeg', '-n', '-loglevel', 'error', '-f', 'rawvideo', '-pixel_format', 'rgb24', '-video_size', '1280x800', '-framerate', '20', '-i', '-', '-c:v', 'libx264', '-threads', '2', '-preset', 'fast', '-crf', '23', '-pix_fmt', 'yuv420p', str(directory/'gazebo.mp4')], stdin=subprocess.PIPE)
         if args.follow_carrier is not None:
-            follow_encoder = subprocess.Popen(['ffmpeg', '-n', '-loglevel', 'error', '-f', 'rawvideo', '-pixel_format', 'rgb24', '-video_size', '1280x800', '-framerate', '20', '-i', '-', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', '-pix_fmt', 'yuv420p', str(directory/'follow.mp4')], stdin=subprocess.PIPE)
+            try:
+                follow_encoder = subprocess.Popen(['ffmpeg', '-n', '-loglevel', 'error', '-f', 'rawvideo', '-pixel_format', 'rgb24', '-video_size', '1280x800', '-framerate', '20', '-i', '-', '-c:v', 'libx264', '-threads', '2', '-preset', 'fast', '-crf', '23', '-pix_fmt', 'yuv420p', str(directory/'follow.mp4')], stdin=subprocess.PIPE)
+            except BaseException:
+                finish_encoder(encoder, 'Overview', errors)
+                raise
     checkpoints = [1, 4, 10, 60, 145, 150, 151, 153, 170, 180, 200, 212, 215, 218, 220, 228, 250, 300, 340]
     if args.scenario:
         checkpoints=[1,4,10,30,50,60,70,90,110,130,150,170,190]
+    if args.video_end is not None:
+        checkpoints=[int(args.video_start),int((args.video_start+args.video_end)/2),int(args.video_end-1)]
     saved_by_view = {view: set() for view in views}
     started = time.monotonic()
     capture_lock = threading.Lock()
@@ -169,6 +237,11 @@ def main():
             return
         try:
             stamp = msg.header.stamp.sec + msg.header.stamp.nsec*1e-9
+            last_seen_by_view[view] = stamp
+            if not in_video_window(stamp, args.video_start, args.video_end):
+                if all(last >= args.until-1e-7 for last in last_seen_by_view.values()):
+                    done.set()
+                return
             view_frames = frames_by_view[view]
             if not view_frames:
                 print(f'First {view} frame after {time.monotonic()-started:.3f} wall seconds', flush=True)
@@ -192,7 +265,7 @@ def main():
                 if stamp >= checkpoint and checkpoint not in saved_by_view[view]:
                     Image.frombytes('RGB', (msg.width, msg.height), pixels).save(directory/f'{view}_{checkpoint:03d}s.png')
                     saved_by_view[view].add(checkpoint)
-            if all(f and f[-1][0] >= args.until for f in frames_by_view.values()):
+            if all(last >= args.until-1e-7 for last in last_seen_by_view.values()):
                 done.set()
         except Exception as exc:
             errors.append(repr(exc))
@@ -207,7 +280,12 @@ def main():
     stop_requested = False
     returncode = None
     with (directory/'gazebo.log').open('w') as log, (directory/'gui.log').open('w') as gui_log, (directory/'resources.jsonl').open('w') as resources:
-        process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+        try:
+            process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+        except BaseException:
+            finish_encoder(encoder, 'Overview', errors)
+            finish_encoder(follow_encoder, 'Follow', errors)
+            raise
         if args.gui:
             gui = subprocess.Popen(['gz', 'sim', '-g', '--gui-config', str(gui_config), '-v', '3'], stdout=gui_log, stderr=subprocess.STDOUT, start_new_session=True, env={**os.environ, 'QT_QPA_PLATFORM': 'xcb'})
         (directory/'process.json').write_text(json.dumps({'pid': process.pid, 'gui_pid': gui.pid if gui else None, 'partition': os.environ['GZ_PARTITION'], 'command': command}))
@@ -263,22 +341,16 @@ def main():
                         os.killpg(process.pid, signal.SIGKILL)
                         process.wait(timeout=5)
             returncode = process.returncode
-            if encoder:
-                encoder.stdin.close()
-                encoder.wait(timeout=30)
-            if follow_encoder:
-                follow_encoder.stdin.close()
-                follow_encoder.wait(timeout=30)
-                if follow_encoder.returncode:
-                    errors.append('Follow camera encoder failed')
+            finish_encoder(encoder, 'Overview', errors)
+            finish_encoder(follow_encoder, 'Follow', errors)
             (directory/'frame_times.csv').write_text('simulation_s,wall_s\n' + '\n'.join(f'{s},{w}' for s, w in frames) + '\n')
             coverage = {}
             for view, recorded in frames_by_view.items():
                 (directory/f'frame_times_{view}.csv').write_text('simulation_s,wall_s\n'+'\n'.join(f'{s},{w}' for s,w in recorded)+'\n')
                 coverage[view] = {'frames': len(recorded), 'last_simulation_s': recorded[-1][0] if recorded else None, 'checkpoints': sorted(saved_by_view[view])}
             (directory/'camera_coverage.json').write_text(json.dumps(coverage, indent=2))
-            (directory/'capture.json').write_text(json.dumps({'command': command, 'view': args.view, 'follow_carrier': args.follow_carrier, 'live_gazebo_sensor': True, 'replay': False, 'video_speedup_nominal': 4, 'frames': len(frames), 'first_frame_wall_s': frames[0][1] if frames else None, 'last_simulation_s': frames[-1][0] if frames else None, 'gazebo_exit_code': returncode, 'gui_exit_code': gui.returncode if gui else None, 'stop_requested': stop_requested, 'stop_acknowledged': stop_acknowledged, 'errors': errors}, indent=2))
-    if errors or any(not f or f[-1][0] < args.until for f in frames_by_view.values()) or returncode != 0 or (gui and gui.returncode != 0) or (encoder and encoder.returncode):
+            (directory/'capture.json').write_text(json.dumps({'command': command, 'view': args.view, 'follow_carrier': args.follow_carrier, 'live_gazebo_sensor': True, 'replay': False, 'video_speedup_nominal': 4, 'frames': len(frames), 'first_frame_wall_s': frames[0][1] if frames else None, 'last_simulation_s': frames[-1][0] if frames else None, 'gazebo_exit_code': returncode, 'gui_exit_code': gui.returncode if gui else None, 'stop_requested': stop_requested, 'stop_acknowledged': stop_acknowledged, 'errors': errors, 'policy': args.policy, 'recording_window_s': [args.video_start,args.video_end], 'last_sensor_timestamp_s':last_seen_by_view, 'requested_real_time_factor':args.real_time_factor}, indent=2))
+    if errors or any(not f for f in frames_by_view.values()) or any(last < args.until-1e-7 for last in last_seen_by_view.values()) or returncode != 0 or (gui and gui.returncode != 0) or (encoder and encoder.returncode):
         raise RuntimeError('Capture incomplete; inspect capture.json and gazebo.log')
     print(f'Live capture saved to {directory}', flush=True)
 

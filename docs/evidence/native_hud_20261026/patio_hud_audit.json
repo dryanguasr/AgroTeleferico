@@ -1,0 +1,83 @@
+{
+  "schema": "agro-telemetry-hud-v1",
+  "passed": true,
+  "capture": "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture",
+  "historical_design_preview": false,
+  "simulation_started": false,
+  "synchronization": "exact camera timestamps; previous telemetry only; no interpolation",
+  "max_allowed_telemetry_lag_s": 0.051,
+  "physical_validation": false,
+  "source_sha256": {
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/gazebo.mp4": "57985150a56905cef64c84144f68b356052ef0882741667aa964bf88961f7d34",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/follow.mp4": "95752866dae3989e8610d024335381f075b6fe01f3752dc40d9b0b73a6133d0f",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/capture.json": "98eabbcc3690fa0f4d657dc96220ba4d9ab789c5164b84176f2c21406ec1dd8f",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/frame_times_overview.csv": "35c48bf3cf763888b5debde80e5be8ff82d9e2b7c68d30029b27b83a9bbbda78",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/frame_times_follow.csv": "cc1007d9b52815fd0a8cd4d493835eaaabaa9c9e39ef8be6ded0321c83e8c9de",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/pilot/generated/gazebo/global.csv": "908c28daffa1ca08527904070f60717fb589ab230dfce0d81529cb262fc8b349",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/pilot/generated/gazebo/carriers.csv": "79fecf512409dbb3e7c3a9707471289bf38323bed9a83af58f43933262977bca",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/pilot/generated/gazebo/cables.csv": "80225f3520235fe3b02cbc62939368c4e05067b7ed40bc67d3125ee689b5dd68",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/pilot/generated/gazebo/bases.csv": "c628f4bde194cbb39c56beed34e8da85003aae1709b3f21f18ad627de7b8d433",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/pilot/generated/gazebo/geometry.csv": "4e7af6e58627c7e0e998dac9c934a6848322334b203ff8b0ba81b20f39fc546e",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/pilot/generated/gazebo/summary.json": "9d1c9c57fe72130c6f8751a9342b29b705353f3bbaad5e5e64652bf0ef3ed61c",
+    "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/pilot/generated/metadata.json": "0a0b6e8288c98a621056c6ba4dd715ee87b3af6687301624af944c06e15810c4"
+  },
+  "composer_sha256": "3ed433d9fada99789ef56191c10864a555d0dc67ee8746a82ccb40200e11632a",
+  "input_videos": {
+    "gazebo.mp4": {
+      "width": 1280,
+      "height": 800,
+      "r_frame_rate": "20/1",
+      "duration": "17.550000",
+      "nb_read_frames": "351"
+    },
+    "follow.mp4": {
+      "width": 1280,
+      "height": 800,
+      "r_frame_rate": "20/1",
+      "duration": "17.550000",
+      "nb_read_frames": "351"
+    }
+  },
+  "input_frames": 351,
+  "simulation_range_s": [
+    0.04,
+    70.0
+  ],
+  "fps": "20/1",
+  "nominal_speedup": 4,
+  "max_telemetry_lag_s": {
+    "global": 0.04,
+    "carriers": 0.04,
+    "cables": 0.04,
+    "bases": 0.04,
+    "geometry": 0.04
+  },
+  "core_status": "interrupted",
+  "output_size": [
+    1920,
+    1080
+  ],
+  "matched_camera_timestamps": true,
+  "scene_changes": false,
+  "caption_replacement": "Existing 68 px overview caption strip; follow caption strip",
+  "derived_signals": {
+    "progress": "q_m/reference_loop_m",
+    "swing_degrees": "recorded swing_x/y_rad * 180/pi",
+    "route_marker": "recorded reference_s_m normalized; schematic only"
+  },
+  "output_video": {
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "20/1",
+    "duration": "17.550000",
+    "nb_read_frames": "351"
+  },
+  "output_sha256": "73e2e045c8b6a92b99a01dbf99b88258c9893773616147810c741b6cfd3b5229",
+  "output_decode_strict": true,
+  "input_decode_strict": true,
+  "screenshots": [
+    "qa_00000.png",
+    "qa_00175.png",
+    "qa_00350.png"
+  ]
+}

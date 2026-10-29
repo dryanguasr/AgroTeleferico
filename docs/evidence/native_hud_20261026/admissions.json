@@ -1,0 +1,71 @@
+{
+  "model_consistency_native_01": {
+    "admitted": false,
+    "second_free_gib": null,
+    "first_free_gib": 8.85293197631836,
+    "reserve_gib": 4,
+    "minimum_gib": 9
+  },
+  "model_consistency_native_02": {
+    "first_free_gib": 8.88729476928711,
+    "minimum_gib": 9,
+    "reserve_gib": 4,
+    "admitted": false,
+    "second_free_gib": null
+  },
+  "model_consistency_native_03": {
+    "second_free_gib": 11.240005493164062,
+    "first_free_gib": 11.3131103515625,
+    "admitted": true,
+    "separation_s": 5,
+    "minimum_gib": 9,
+    "reserve_gib": 4
+  },
+  "model_consistency_ros_01": {
+    "admitted": true,
+    "separation_s": 5,
+    "second_free_gib": 10.977344512939453,
+    "first_free_gib": 10.927295684814453,
+    "minimum_gib": 9,
+    "reserve_gib": 4
+  },
+  "model_consistency_ros_02": {
+    "reserve_gib": 4,
+    "minimum_gib": 9,
+    "first_free_gib": 14.419551849365234,
+    "second_free_gib": 14.321731567382812,
+    "admitted": true,
+    "separation_s": 5
+  },
+  "model_consistency_patio_capture_01": {
+    "second_free_gib": null,
+    "first_free_gib": 9.72829818725586,
+    "reserve_gib": 4,
+    "minimum_gib": 10,
+    "admitted": false
+  },
+  "model_consistency_patio_capture_02": {
+    "reserve_gib": 4,
+    "minimum_gib": 10,
+    "separation_s": 5,
+    "first_free_gib": 10.39242935180664,
+    "admitted": false,
+    "second_free_gib": 9.835830688476562
+  },
+  "model_consistency_patio_capture_03": {
+    "admitted": true,
+    "minimum_gib": 10,
+    "separation_s": 5,
+    "second_free_gib": 12.9814453125,
+    "first_free_gib": 13.231281280517578,
+    "reserve_gib": 4
+  },
+  "model_consistency_ladera_capture_01": {
+    "reserve_gib": 4,
+    "separation_s": 5,
+    "minimum_gib": 10,
+    "first_free_gib": 14.15194320678711,
+    "admitted": true,
+    "second_free_gib": 14.063404083251953
+  }
+}

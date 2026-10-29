@@ -61,7 +61,7 @@ class Log {
     J("governor_or_stop_count",stops);J("drive_positive_J",s.drive_positive);J("drive_absorbed_J",s.drive_absorbed);
     J("local_positive_J",s.local_positive);J("local_absorbed_J",s.local_absorbed);J("load_energy_J",s.load_energy);J("energy_residual_J",s.residual());
     double serviced=s.c.nominal_payload+(s.c.single_span?s.c.descending_payload:0);
-    J("loaded_kg",s.load_status==2?serviced:0);J("unloaded_kg",s.unload_status==2?serviced:0);
+    J("loaded_kg",s.program?s.program->loadedMass():(s.load_status==2?serviced:0));J("unloaded_kg",s.program?s.program->unloadedMass():(s.unload_status==2?serviced:0));
     J("gust_start_s",s.wind_on);J("gust_end_s",s.wind_end);
 #undef J
     f<<"  \"signal_provenance\": {\"poses_and_angles\": \"reduced_model_state\", \"cables\": \"quasistatic_elastic_equilibrium\", \"wind_and_dispatch\": \"scripted_inputs\", \"forces_and_energy\": \"reduced_model_estimates\"},\n";

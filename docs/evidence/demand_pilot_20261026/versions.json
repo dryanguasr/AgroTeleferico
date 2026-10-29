@@ -1,0 +1,15 @@
+{
+  "python": "3.12.3",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "Pillow": "10.2.0",
+  "numpy": "1.26.4",
+  "Gazebo": "Gazebo Sim, version 8.11.0",
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "ROS_DISTRO": "jazzy",
+  "git_head": "6a824b4dc03be8e2cdb4bf4200c7289bdf7cd7cb",
+  "Windows_analysis": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "scope": "carrier occupancy reconstruction and bootstrap; all physical simulations and main analysis ran in WSL"
+  }
+}

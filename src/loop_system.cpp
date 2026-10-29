@@ -1,4 +1,5 @@
 #include "agro/loop_log.hpp"
+#include "agro/demand.hpp"
 #include <gz/sim/System.hh>
 #include <gz/sim/Model.hh>
 #include <gz/sim/EventManager.hh>
@@ -19,11 +20,12 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
                   public gz::sim::ISystemPreUpdate,public gz::sim::ISystemReset {
   std::unique_ptr<loop::Simulation> sim;
   std::unique_ptr<loop::Log> log;
+  std::unique_ptr<demand::Engine> demand_engine;
   gz::sim::EventManager *events=nullptr;
   gz::transport::Node node;
   gz::transport::Node::Publisher status;
   std::map<std::string,gz::sim::Entity> entities;
-  std::string params,output,mode;
+  std::string params,output,mode,demand_path,dispatch_path,policy,predictor_path;
   bool gust=true,stop=false,finished=false,failed=false;
   int reset_count=0;
   int follow_carrier=-1;
@@ -32,9 +34,12 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
     return s->HasElement(key)?s->Get<T>(key):fallback;
   }
   void initialise() {
+    demand_engine.reset();
     sim=std::make_unique<loop::Simulation>(loop::Config::load(params),mode=="central_local",gust);
     std::string folder=output+(reset_count?"/reset_"+std::to_string(reset_count):"");
-    log=std::make_unique<loop::Log>(folder,"gazebo_live_reduced_model");log->record(*sim,true);
+    log=std::make_unique<loop::Log>(folder,"gazebo_live_reduced_model");
+    if(!demand_path.empty())demand_engine=std::make_unique<demand::Engine>(*sim,demand_path,dispatch_path,policy,predictor_path,folder);
+    log->record(*sim,true);
     finished=false;failed=false;visual_t=-1;accumulator=0;entities.clear();
   }
   void pose(gz::sim::EntityComponentManager &ecm,const std::string &name,loop::V3 p,const gz::math::Quaterniond &q={}) {
@@ -135,17 +140,19 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
     msg.set_data(text.str());status.Publish(msg);
   }
  public:
-  ~LoopSystem() override {if(log&&sim&&!finished&&!failed){try{log->finish(*sim,"interrupted");}catch(...) {}}}
+  ~LoopSystem() override {if(log&&sim&&!finished&&!failed){try{if(demand_engine)demand_engine->finish("interrupted");log->finish(*sim,"interrupted");}catch(...) {}}}
   void Configure(const gz::sim::Entity &,const std::shared_ptr<const sdf::Element> &s,
                  gz::sim::EntityComponentManager &,gz::sim::EventManager &manager) override {
     params=get<std::string>(s,"params","");output=get<std::string>(s,"output","results/loop");mode=get<std::string>(s,"mode","central_local");
+    demand_path=get<std::string>(s,"demand","");dispatch_path=get<std::string>(s,"dispatch_config","");
+    policy=get<std::string>(s,"policy","A");predictor_path=get<std::string>(s,"predictor","");
     loop::require(mode=="central_only"||mode=="central_local","invalid control mode");
     gust=get<bool>(s,"gust",true);stop=get<bool>(s,"stop_at_end",false);events=&manager;
     follow_carrier=get<int>(s,"follow_carrier",-1);
     status=node.Advertise<gz::msgs::StringMsg>("/agro_loop/status");initialise();
   }
   void Reset(const gz::sim::UpdateInfo &,gz::sim::EntityComponentManager &) override {
-    if(log&&sim&&!finished&&!failed) {log->finish(*sim,"reset_interrupted");}
+    if(log&&sim&&!finished&&!failed) {if(demand_engine)demand_engine->finish("interrupted");log->finish(*sim,"reset_interrupted");}
     ++reset_count;initialise();
   }
   void PreUpdate(const gz::sim::UpdateInfo &info,gz::sim::EntityComponentManager &ecm) override {
@@ -156,9 +163,9 @@ class LoopSystem: public gz::sim::System,public gz::sim::ISystemConfigure,
       // Fixed-step clock gives the same core trajectory as offline execution.
       while(accumulator>=sim->c.dt-1e-10&&!sim->complete) {sim->step(sim->c.dt);accumulator-=sim->c.dt;log->record(*sim);}
       if(sim->t-visual_t>=sim->c.visual_period-1e-8||sim->complete){draw(ecm);visual_t=sim->t;}
-      if(sim->complete) {log->finish(*sim);finished=true;if(stop)events->Emit<gz::sim::events::Stop>();}
+      if(sim->complete) {if(demand_engine){demand_engine->finish();log->finish(*sim,demand_engine->status());}else log->finish(*sim);finished=true;if(stop)events->Emit<gz::sim::events::Stop>();}
     }catch(const std::exception &e){gzerr<<"AgroLoopSystem: "<<e.what()<<std::endl;failed=true;
-      if(log&&sim) {log->finish(*sim,"failed");}
+      if(log&&sim) {if(demand_engine)demand_engine->finish("failed");log->finish(*sim,"failed");}
       events->Emit<gz::sim::events::Stop>();}
   }
 };

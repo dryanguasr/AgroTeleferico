@@ -14,6 +14,23 @@ soportes y edificio; no sustituye una validación estructural o de contacto.
 **[Seguimiento del carro](docs/evidence/single_span_revised/capture_patio/follow.mp4)** ·
 **[Resultados verificables](docs/evidence/single_span_revised/metrics.json)**
 
+**[Especificación matemática y contratos vigentes](docs/modelo_vigente.md)** ·
+**[Correcciones, pruebas y protocolo posterior](docs/consolidacion_modelo.md)**
+
+La [validación mínima del código corregido](docs/validacion_minima_20261026.md)
+se ejecutó en Gazebo y ROS: 19/19 comprobaciones nativas, cinco CSV idénticos
+a CLI, comandos y cierre ROS single/spider, y 9/9 pruebas CTest.
+Se conservan las campañas anteriores y se añaden dos fragmentos nuevos con
+indicadores de telemetría sincronizados, a 4×:
+
+| Patio: carga, viaje y descarga | Ladera: viaje y ráfaga |
+|---|---|
+| [![Patio con telemetría](docs/evidence/native_hud_20261026/patio_preview.png)](docs/evidence/native_hud_20261026/patio_hud.mp4) | [![Ladera con telemetría](docs/evidence/native_hud_20261026/ladera_preview.png)](docs/evidence/native_hud_20261026/ladera_hud.mp4) |
+
+Las imágenes proceden de sensores Gazebo; el HUD se compone después con los
+registros de cada captura. La paridad comprueba integración del mismo núcleo;
+no certifica contacto físico, resistencia ni seguridad.
+
 Las propuestas y capturas que siguen documentan etapas anteriores del proyecto.
 
 **Robots por cables para explorar el transporte agrícola en laderas.**
@@ -90,3 +107,12 @@ son supuestos de demostración; todavía no es un diseño listo para construir o
 instalar en una finca. [Alcance y validación](docs/validacion.md).
 
 Código bajo [licencia MIT](LICENSE).
+
+### Piloto comparativo de demanda
+
+El [piloto de demanda y buffers](docs/piloto_demanda.md) documenta las cuatro politicas, los supuestos sinteticos, las guardas medidas y el estado de sus entregables. El modo de demanda es opcional; el programa historico predeterminado se conserva.
+
+El [informe comparativo de demanda](docs/resultados_demanda.md) incluye las 720 ejecuciones auditadas, los intervalos pareados y los cuatro vídeos con HUD.
+
+Los [assets para la propuesta](docs/assets_propuesta.md) reúnen los cuatro vídeos,
+las miniaturas, la figura comparativa y las descargas de la publicación de GitHub.

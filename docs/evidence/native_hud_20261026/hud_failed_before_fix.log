@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/scripts/compose_telemetry_hud.py", line 362, in main
+    frame = hud.draw(pair.crop((0, 0, 1280, 800)), pair.crop((1280, 0, 2560, 800)), stamp, values, lags)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/scripts/compose_telemetry_hud.py", line 175, in draw
+    d.rounded_rectangle((1352, 238, 1352 + 520 * progress, 247), radius=4, fill=CYAN)
+  File "/usr/lib/python3/dist-packages/PIL/ImageDraw.py", line 387, in rounded_rectangle
+    self.draw.draw_rectangle((x0 + r + 1, y0, x1 - r - 1, y1), fill, 1)
+ValueError: x1 must be greater than or equal to x0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/scripts/compose_telemetry_hud.py", line 396, in <module>
+    main()
+  File "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/scripts/compose_telemetry_hud.py", line 375, in main
+    process.wait(timeout=10)
+  File "/usr/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2045, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['ffmpeg', '-v', 'error', '-xerror', '-err_detect', 'explode', '-threads', '2', '-i', '/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/gazebo.mp4', '-threads', '2', '-i', '/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/results/model_consistency_patio_capture_03/capture/follow.mp4', '-filter_complex_threads', '1', '-filter_complex', '[0:v][1:v]hstack=inputs=2', '-fps_mode', 'passthrough', '-threads', '2', '-pix_fmt', 'rgb24', '-f', 'rawvideo', '-']' timed out after 10 seconds

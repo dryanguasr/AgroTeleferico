@@ -1,0 +1,106 @@
+{
+  "schema": "agro-model-consistency-v1",
+  "date": "2026-10-26",
+  "timezone": "America/Bogota",
+  "git_base": "6a824b4dc03be8e2cdb4bf4200c7289bdf7cd7cb",
+  "branch": "feat/ballasted-two-carrier-demo",
+  "revision": "working tree identified by source_sha256; no new commit",
+  "variant": "revised_supports",
+  "scope": "internal model consistency and software contracts; no Gazebo execution or physical certification",
+  "verification": {
+    "standalone_build": {
+      "exit_code": 0,
+      "command": "cmake --build build-ballasted -j1"
+    },
+    "standalone_ctest": {
+      "passed": 7,
+      "elapsed_s": 2.1,
+      "log_sha256": "ca82cb57f36c79b4accb271f58cada95a0736266dc158c1b1b6d611245d42f3a",
+      "command": "ctest --test-dir build-ballasted --output-on-failure -j1",
+      "total": 7,
+      "exit_code": 0,
+      "log": "standalone_ctest.log"
+    },
+    "mass_transfer": {
+      "cases": 24,
+      "old_formula_negative_control": "failed as expected in temporary binary",
+      "absolute_tolerance_J": 1E-10,
+      "frozen_state_only": true
+    },
+    "guard": {
+      "gazebo_started": false,
+      "test_methods": 8,
+      "selectors": 5
+    },
+    "ros_interface": {
+      "test_methods": 16,
+      "uses_doubles": true,
+      "nonfinite_field_cases": 150
+    }
+  },
+  "historical_evidence": {
+    "sources_intentionally_changed_since_archive": [
+      "CMakeLists.txt",
+      "include/agro/loop.hpp",
+      "scripts/generate_ballasted.py",
+      "scripts/run_loop_guarded.py",
+      "tests/test_ballasted.cpp"
+    ],
+    "source_hashes_verified_before_edits": 25,
+    "manifest": "docs/evidence/single_span_revised/manifest.json",
+    "archive_rewritten": false,
+    "file_count": 47,
+    "file_hash_mismatches": []
+  },
+  "classifications": {
+    "verified": [
+      "frozen-state mass-transfer energy identity",
+      "effective generated configuration",
+      "ROS adapter local contracts with doubles",
+      "existing standalone regressions",
+      "historical evidence files unchanged"
+    ],
+    "inferred": [
+      "late discovery as historical command failure cause remains unproven"
+    ],
+    "pending": [
+      "rebuilt Gazebo plugin integration and lifecycle smoke",
+      "real ROS transport and process shutdown smoke",
+      "physical energy coupling, contact and structural assessment"
+    ]
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "5551612a630652acba927176e5cfeb8a13ffdcc9eb3b13d8b3aef2c7ea24729d",
+    "config/ballasted_common.json": "7cb4af0790afd20c6d8128c1911ffca15e2df97c1a7798a354609d9962b46339",
+    "config/ballasted_compact_candidate.json": "27bba116130b95fc1ae5ced5a1572978edcbad5447bb1013cac5c0633a830117",
+    "config/ballasted_revised_supports.json": "d88f3983153a5cc5160b04a0ff76b1641849c41d0c77fad891ffcff695006767",
+    "config/buitrago_entre_pisos.json": "74a220654aaaf1ff5e616b590a5f152e894b71b56c0baf3823dd371d46946efa",
+    "config/buitrago_patio.json": "dc29ab63ee79d99d73f15b92e1a1613a9e5293bff4933349a176897c1c0d9ff9",
+    "config/ladera_agricola.json": "73678a8bf559221c9ce95a0f23cfcce39372e96de4089c8989701d6fcfe9d8ce",
+    "config/legacy/buitrago_patio.json": "f8b4d9fd51cef9ac82184281c416500d14df7bcf77c71651523f1cf6c56ba799",
+    "config/loop.yaml": "22dbea562f5cef630db199587540f830b2cd4f1830dc1b4a76590ee03f8e8305",
+    "include/agro/loop_log.hpp": "7d629ccf7af9574fd3290a4d82a30b92b0b0530768ed26f380a6df4dc670e219",
+    "include/agro/loop.hpp": "e63005586d45923ca62109341459781e144c4e4acdabbf9d9cda959faa7dff2d",
+    "scripts/audit_support_clearance.py": "4d1230f40bc8c01343b791bde96205fab638d1c99890b4544228cb3a3fed9a18",
+    "scripts/capture_loop.py": "16e6ae11f8d5a7119c4a06c4c15e69ca2ad6536e81d43d2e56b90be36e202c0e",
+    "scripts/check_ballasted.py": "ad44d8bc2aad3eb0658836dc758c37fee9a6310c3ecbac8dc2d887c14ea2e185",
+    "scripts/export_ballasted_evidence.py": "e3f6dca533f7da537d5c0e3803c169a38070bbdd3a46fad9d6736a7709026379",
+    "scripts/generate_ballasted.py": "146e7f567da59e366391c4bcd528047b2b5ce31656e14fb5ef517f8d465ac00d",
+    "scripts/generate_loop.py": "9538aec5b406e0eb5725d130d7062ad7e11f35a5aa06121b4736137a9d0b9f0f",
+    "scripts/ros_interface.py": "a2c226cc4756aa5d99fb8d190269b3754d83c322c7301c9f52a6f4a1aa049894",
+    "scripts/run_ballasted_core.py": "0b96e031d0a3d39ee6334068137f0d0e3c9ae406208823881332eeb564f98614",
+    "scripts/run_loop_guarded.py": "0314bd1dc490bd430ce7cba2f94b960d561759aa1f9636e6c85dc01d508e44ff",
+    "scripts/run_loop_suite.py": "9396719566ab53f3f7c21ad5e338475245254032eb2717789adf4022c881262b",
+    "scripts/summarize_ballasted.py": "cd814dec008d1715a72f81d677aef805ce56b7205ec0bf53a37ac2dcab9ffd05",
+    "scripts/verify_ballasted_capture.py": "5792e3154334555b7a0ea1f5441e74713535c77ddf673049003a1c7905e56494",
+    "scripts/windows/run_guarded_loop.ps1": "152f63d8278d698b34b8e158634d670d2940a80307b20d3eebb2d0809c9dd2ea",
+    "src/loop_system.cpp": "49f53e13544cae7a0b2a22b15a5b5e70b48dee441be5e8e897fcdebd9fe2415e",
+    "tests/test_ballasted_assets.py": "eaab44fc9f5ad486b8c87c5568a449ae28d36781cb6120227d79818922448e31",
+    "tests/test_ballasted_geometry.py": "560029e388ef9bb5870d78bd2574c2494e75fff0882c5aa943cd5a6db8009c71",
+    "tests/test_ballasted.cpp": "dc28e9db2dc77a19a91bca278f25613f6ab4b1a7b66554467ae44571fb5ef23a",
+    "tests/test_loop_assets.py": "c8edc2b31f1347f9206a63bcde3348dda71fd9dcdc22a2a05cd813e2d7fc995e",
+    "tests/test_loop_guard.py": "bb7d0fd2718e7524acdfe44d68ab2034594d7ca91ec1f35e943d94da23fbbd97",
+    "tests/test_loop.cpp": "4709478a6012a9c1d055dcad192f93b50d555f5b3f39fb34e2fbae1fdb46d821",
+    "tests/test_ros_interface.py": "d5c3df1893e09f936767786ea82f09fc7b78feb72df91cf289d032bfd067cdbc"
+  }
+}

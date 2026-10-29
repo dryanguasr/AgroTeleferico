@@ -1,0 +1,136 @@
+Start testing: Oct 26 17:55 -05
+----------------------------------------------------------
+1/7 Testing: ballasted_core
+1/7 Test: ballasted_core
+Command: "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build-ballasted/test_ballasted"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build-ballasted
+"ballasted_core" start time: Oct 26 17:55 -05
+Output:
+----------------------------------------------------------
+24 frozen-state mass-transfer energy cases passed
+Two-carrier topology, continuity, fixed length, mass/CG/stability and domain checks passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"ballasted_core" end time: Oct 26 17:55 -05
+"ballasted_core" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/7 Testing: loop_core
+2/7 Test: loop_core
+Command: "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build-ballasted/test_loop"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build-ballasted
+"loop_core" start time: Oct 26 17:55 -05
+Output:
+----------------------------------------------------------
+Loop core assertions passed: geometry, closure, loading, reactions, compatibility, IDs, dwell, config.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"loop_core" end time: Oct 26 17:55 -05
+"loop_core" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: ballasted_assets
+3/7 Test: ballasted_assets
+Command: "/usr/bin/python3" "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/tests/test_ballasted_assets.py"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build-ballasted
+"ballasted_assets" start time: Oct 26 17:55 -05
+Output:
+----------------------------------------------------------
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.213s
+
+OK
+<end of output>
+Test time =   0.38 sec
+----------------------------------------------------------
+Test Passed.
+"ballasted_assets" end time: Oct 26 17:55 -05
+"ballasted_assets" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: ballasted_geometry
+4/7 Test: ballasted_geometry
+Command: "/usr/bin/python3" "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/tests/test_ballasted_geometry.py"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build-ballasted
+"ballasted_geometry" start time: Oct 26 17:55 -05
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+<end of output>
+Test time =   0.22 sec
+----------------------------------------------------------
+Test Passed.
+"ballasted_geometry" end time: Oct 26 17:55 -05
+"ballasted_geometry" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/7 Testing: loop_assets
+5/7 Test: loop_assets
+Command: "/usr/bin/python3" "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/tests/test_loop_assets.py"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build-ballasted
+"loop_assets" start time: Oct 26 17:55 -05
+Output:
+----------------------------------------------------------
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.225s
+
+OK
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"loop_assets" end time: Oct 26 17:55 -05
+"loop_assets" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/7 Testing: loop_guard
+6/7 Test: loop_guard
+Command: "/usr/bin/python3" "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/tests/test_loop_guard.py"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build-ballasted
+"loop_guard" start time: Oct 26 17:55 -05
+Output:
+----------------------------------------------------------
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.495s
+
+OK
+<end of output>
+Test time =   0.80 sec
+----------------------------------------------------------
+Test Passed.
+"loop_guard" end time: Oct 26 17:55 -05
+"loop_guard" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/7 Testing: ros_interface_unit
+7/7 Test: ros_interface_unit
+Command: "/usr/bin/python3" "/mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/tests/test_ros_interface.py"
+Directory: /mnt/c/Users/User/Documents/ChatGPT/AgroTeleferico 2/work/AgroTeleferico/build-ballasted
+"ros_interface_unit" start time: Oct 26 17:55 -05
+Output:
+----------------------------------------------------------
+................
+----------------------------------------------------------------------
+Ran 16 tests in 0.005s
+
+OK
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"ros_interface_unit" end time: Oct 26 17:55 -05
+"ros_interface_unit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 26 17:55 -05

@@ -268,6 +268,18 @@ class Route {
 };
 
 struct Motion {double s=0,v=0,a=0;};
+class Simulation;
+// Optional causal service controller. The legacy scripted run remains the default.
+// The controller owns scheduling only; all motion and energy remain integrated here.
+struct Program {
+  virtual ~Program()=default;
+  virtual Motion reference(double time) const=0;
+  virtual double duration() const=0;
+  virtual void beforeStep(Simulation &,double)=0;
+  virtual void afterStep(Simulation &)=0;
+  virtual double loadedMass() const {return 0;}
+  virtual double unloadedMass() const {return 0;}
+};
 struct Leg {
   double distance,speed,tau,cruise,duration;
   Leg(double d,const Config &c):distance(d),speed(c.max_speed) {
@@ -303,6 +315,7 @@ class Simulation {
   bool gust_end_recorded=false;
   int stage=0,load_status=0,unload_status=0;double operation_start=-1;
   std::vector<V3> path_d,path_dd;
+  Program *program=nullptr; // non-owning; callers keep the program alive past Simulation
   Simulation(Config cfg,bool use_local=true,bool use_gust=true):c(std::move(cfg)),route(c),
     first(route.lane_length,c),second(route.total-route.lane_length,c),hybrid(use_local),gust(use_gust) {
     for(int lane=0;lane<2;++lane)for(int j=0;j<c.carriers_per_lane;++j) {
@@ -324,8 +337,9 @@ class Simulation {
   double topArrival() const {return c.initial_dwell+first.duration;}
   double secondStart() const {return topArrival()+c.station_dwell;}
   double finalArrival() const {return secondStart()+second.duration;}
-  double duration() const {return finalArrival()+c.final_dwell;}
+  double duration() const {return program?program->duration():finalArrival()+c.final_dwell;}
   Motion reference(double time) const {
+    if(program)return program->reference(time);
     if(time<c.initial_dwell)return {};
     if(time<topArrival())return first.at(time-c.initial_dwell);
     if(time<secondStart())return {route.lane_length,0,0};
@@ -355,6 +369,13 @@ class Simulation {
     const auto &a=carts.front();double d=wrap(q+a.phase+a.offset-s+route.total/2,route.total)-route.total/2;
     return std::abs(d)<c.station_tolerance&&std::abs(v)<c.stop_speed&&std::abs(a.offset_speed)<c.stop_speed;
   }
+  double payloadSpecificEnergy(size_t id) const {
+    const auto &a=carts[id];const auto &d=path_d[id];
+    // Derivative of energy() with respect to payload at fixed shape and state.
+    // Keep the same separated translational/pendulum kinetic approximation.
+    return .5*d.dot(d)*sq(v+a.offset_speed)+.5*sq(c.suspension)*(sq(a.wx)+sq(a.wy))+
+      g*a.pivot.z-g*c.suspension*std::cos(a.tx)*std::cos(a.ty);
+  }
   void operation(double h) {
     bool loading=stage==0,unloading=stage==2;if(!loading&&!unloading)return;
     int &status=loading?load_status:unload_status;
@@ -374,7 +395,7 @@ class Simulation {
       double payload=i?c.descending_payload:c.nominal_payload;
       a.payload=payload*(loading?u:1-u);
       // Mass/energy enter or leave through the loading operation, not through the motor.
-      load_energy+=(a.payload-before)*(g*a.pallet.z+.5*a.velocity.dot(a.velocity));
+      load_energy+=(a.payload-before)*payloadSpecificEnergy(i);
       if(t+h-operation_start>=c.payload_ramp) {status=2;events.push_back({t+h,loading?"load_end":"unload_end",int(i),
         loading?0:payload,a.payload});}
       }
@@ -390,7 +411,8 @@ class Simulation {
   double residual() const {return energy()-energy0-(drive_work+local_work+wind_work+load_energy-loss_work-stop_loss);}
   void step(double h) {
     require(h>0&&h<=.01,"bad integration step");if(complete)return;
-    h=std::min(h,duration()-t);stage=stageAt(t);operation(h);
+    h=std::min(h,duration()-t);
+    if(program)program->beforeStep(*this,h);else {stage=stageAt(t);operation(h);}
     if(t-last_shape>=c.shape_period-1e-10)updateShape();
     auto ref=reference(t);double coupling_sum=0;std::vector<V3> d,dd;
     for(size_t j=0;j<carts.size();++j) {auto &a=carts[j];
@@ -456,7 +478,8 @@ class Simulation {
       for(size_t k=j+1;k<carts.size();++k) {double gap=(a.pallet-carts[k].pallet).norm();min_gap=std::min(min_gap,gap);
         require(gap>1.5,"pallet envelopes overlap");}}
     require(std::isfinite(q)&&std::isfinite(v)&&std::isfinite(energy()),"nonfinite state");
-    if(t>=duration()-1e-8) {require(load_status==2&&unload_status==2,"script did not service loading stations");
+    if(program)program->afterStep(*this);
+    else if(t>=duration()-1e-8) {require(load_status==2&&unload_status==2,"script did not service loading stations");
       require(std::abs(q-route.total)<c.station_tolerance,"full loop incomplete");complete=true;
       events.push_back({t,"complete",-1,0,0});}
   }

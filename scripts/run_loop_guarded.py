@@ -50,6 +50,34 @@ def tree_rss(pid):
     return sum(rss for p, parent, rss in records if p in selected)/1024**2, sorted(selected)
 
 
+def prepare_case(out, case, scenario=None, variant='revised_supports'):
+    """Generate the requested case without importing or starting ROS/Gazebo."""
+    out = Path(out)
+    calm = case == 'hybrid_calm'
+    if scenario:
+        from generate_ballasted import config as pilot_config, generate as generate_ballasted
+        values, _, _ = pilot_config(scenario, calm=calm, variant=variant)
+    else:
+        values = read_config(Path('config/loop.yaml').resolve())
+    if case == 'hybrid_half_dt':
+        values['dt'] *= .5
+    if case == 'hybrid_half_shape':
+        values['shape_period'] *= .5
+    config = out/'input.yaml'
+    config.write_text(yaml.safe_dump(values, sort_keys=False))
+    if scenario:
+        # These options must reach the generated params and SDF, not only the
+        # supervisor's record. Ballasted equipment always uses central_only.
+        world = generate_ballasted(scenario, out/'pilot', dt=values['dt'],
+                                   shape_period=values['shape_period'], calm=calm,
+                                   stop_at_end=True, variant=variant)
+    else:
+        world = generate(config, out/'generated',
+                         mode='central_only' if case == 'central_gust' else 'central_local',
+                         gust=not calm, stop_at_end=True)
+    return world, config
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--output', required=True)
@@ -75,21 +103,7 @@ def main():
 
     if host_free() < 9:
         raise RuntimeError('Admission requires 9 GiB host free memory (4 GiB workload, 4 GiB reserve, 1 GiB stop margin)')
-    values = read_config(Path('config/loop.yaml').resolve())
-    if args.scenario:
-        from generate_ballasted import config as pilot_config
-        values,_,_=pilot_config(args.scenario,variant=args.variant)
-    if args.case == 'hybrid_half_dt':
-        values['dt'] *= .5
-    if args.case == 'hybrid_half_shape':
-        values['shape_period'] *= .5
-    config = out/'input.yaml'
-    config.write_text(yaml.safe_dump(values,sort_keys=False))
-    if args.scenario:
-        from generate_ballasted import generate as generate_ballasted
-        world=generate_ballasted(args.scenario,out/'pilot',stop_at_end=True,variant=args.variant)
-    else:
-        world = generate(config, out/'generated', mode='central_only' if args.case=='central_gust' else 'central_local', gust=args.case!='hybrid_calm', stop_at_end=True)
+    world, config = prepare_case(out, args.case, args.scenario, args.variant)
     plugin = Path(get_package_prefix('agro_teleferico'))/'lib/libAgroLoopSystem.so'
     sources = [Path('src/loop_system.cpp'), Path('src/loop_cli.cpp'),
                *sorted(Path('include/agro').glob('loop*.hpp')),
