@@ -12,11 +12,13 @@ import uuid
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
 from generate_loop import generate
+from generate_ballasted import generate as generate_ballasted
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', required=True)
+    parser.add_argument('--scenario', choices=('ballasted', 'loop'), default='ballasted')
     args = parser.parse_args()
     out = Path(args.output).resolve()
     out.mkdir(parents=True, exist_ok=False)
@@ -34,8 +36,17 @@ def main():
     statuses, stats = [], []
     node.subscribe(StringMsg, '/agro_loop/status', lambda msg: statuses.append(json.loads(msg.data)))
     node.subscribe(WorldStatistics, '/world/agro_loop/stats', lambda msg: stats.append((msg.sim_time.sec+msg.sim_time.nsec*1e-9, msg.paused)))
-    world = generate(Path(__file__).resolve().parents[1]/'config/loop.yaml', out/'generated')
+    # CI exercises the current two-carrier platform. The nine-post extension
+    # remains an explicit opt-in and is not resumed by this lifecycle test.
+    if args.scenario == 'ballasted':
+        world = generate_ballasted('buitrago_patio', out/'pilot', calm=True, stop_at_end=False)
+    else:
+        world = generate(Path(__file__).resolve().parents[1]/'config/loop.yaml', out/'generated')
+    import xml.etree.ElementTree as ET
+    world_step = float(ET.parse(world).findtext('.//physics/max_step_size'))
+    native = world.parent/'gazebo'
     checks = {}
+    requests = []
 
     def wait_for(predicate, timeout=45):
         deadline = time.monotonic()+timeout
@@ -48,6 +59,7 @@ def main():
 
     def control(request):
         ok, response = node.request('/world/agro_loop/control', request, WorldControl, Boolean, 15000)
+        requests.append({'request': str(request), 'transport_ok': ok, 'response': bool(response.data)})
         if not ok or not response.data:
             raise RuntimeError('World control was not acknowledged')
 
@@ -67,24 +79,27 @@ def main():
             wait_for(lambda: len(statuses) > old_count)
             # Service acknowledgement queues the request; wait for all ten
             # iterations before reset, otherwise remaining steps re-pause it.
-            wait_for(lambda: stats[-1][1] and stats[-1][0] >= paused_time+.099)
+            wait_for(lambda: stats[-1][1] and stats[-1][0] >= paused_time+10*world_step-1e-6)
             checks['manual_step_advances_core'] = statuses[-1]['time_s'] > core_time
             request = WorldControl(pause=True)
             request.reset.all = True
             control(request)
-            wait_for(lambda: (out/'generated/gazebo/summary.json').exists())
-            first = json.loads((out/'generated/gazebo/summary.json').read_text())
+            # The old summary is written inside Reset, before the server has
+            # finished resetting. Wait for a fresh zero-clock paused sample.
+            wait_for(lambda: (native/'summary.json').exists() and stats[-1][1] and abs(stats[-1][0]) < 1e-9)
+            first = json.loads((native/'summary.json').read_text())
             checks['reset_preserves_interrupted_run'] = first['status'] == 'reset_interrupted'
             old_count = len(statuses)
-            control(WorldControl(pause=False))
-            wait_for(lambda: len(statuses) > old_count)
+            control(WorldControl(pause=True, multi_step=50))
+            wait_for(lambda: stats[-1][1] and abs(stats[-1][0]-50*world_step) < 1e-6 and len(statuses) > old_count)
             checks['reset_restarts_core_clock'] = statuses[old_count]['time_s'] < core_time
-            wait_for(lambda: statuses[-1]['time_s'] >= 1)
+            control(WorldControl(pause=False))
+            wait_for(lambda: stats[-1][0] > 50*world_step and statuses[-1]['time_s'] > 50*world_step)
             ok, response = node.request('/server_control', ServerControl(stop=True), ServerControl, Boolean, 5000)
             checks['stop_acknowledged'] = ok and response.data
             process.wait(timeout=25)
             checks['clean_exit'] = process.returncode == 0
-            reset = json.loads((out/'generated/gazebo/reset_1/summary.json').read_text())
+            reset = json.loads((native/'reset_1/summary.json').read_text())
             checks['reset_writes_separate_complete_files'] = reset['status'] == 'interrupted' and reset['simulated_s'] >= 1
         except Exception as exc:
             checks['error'] = repr(exc)
@@ -97,7 +112,7 @@ def main():
                 except subprocess.TimeoutExpired:
                     os.killpg(process.pid, signal.SIGKILL)
                     process.wait(timeout=5)
-            (out/'checks.json').write_text(json.dumps({'checks': checks, 'passed': bool(checks) and all(value is True for value in checks.values()), 'statuses': statuses, 'world_stats': stats, 'gazebo_exit_code': process.returncode}, indent=2))
+            (out/'checks.json').write_text(json.dumps({'checks': checks, 'requests': requests, 'scenario': args.scenario, 'passed': bool(checks) and all(value is True for value in checks.values()), 'statuses': statuses, 'world_stats': stats, 'gazebo_exit_code': process.returncode}, indent=2))
     if not all(value is True for value in checks.values()):
         raise RuntimeError('Lifecycle checks failed')
     print(json.dumps(checks, indent=2))
