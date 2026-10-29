@@ -191,6 +191,9 @@ def generate_dataset(config_path, output, params=None, predictor=None):
         if source is not None:
             shutil.copyfile(source, output / name)
             frozen_files[name] = sha256(output / name)
+    if predictor is not None and Path(str(predictor)+'.manifest').is_file():
+        shutil.copyfile(str(predictor)+'.manifest', output/'predictor.csv.manifest')
+        frozen_files['predictor.csv.manifest'] = sha256(output/'predictor.csv.manifest')
     records = []
     for rate in config['demand']['rates_per_hour']:
         for pattern in config['demand']['patterns']:
@@ -226,7 +229,7 @@ def load_dataset(directory):
         raise ValueError('Frozen dataset configuration changed')
     config = validate_config(read_json(directory / 'config.json'))
     for name, digest in manifest['frozen_files'].items():
-        if name not in ('loop.params', 'dispatch.params', 'predictor.csv') or sha256(directory / name) != digest:
+        if name not in ('loop.params', 'dispatch.params', 'predictor.csv', 'predictor.csv.manifest') or sha256(directory / name) != digest:
             raise ValueError(f'Frozen input changed: {name}')
     expected = {dataset_key(rate, pattern, seed) for rate in config['demand']['rates_per_hour']
                 for pattern in config['demand']['patterns'] for seed in range(config['demand']['seeds'])}
@@ -484,8 +487,8 @@ def run_campaign(campaign, binary, memory, resume=False, limit=None, timeout=Non
     from run_loop_guarded import read_host_memory, tree_rss
     campaign, binary, memory = Path(campaign).resolve(), Path(binary).resolve(), Path(memory).resolve()
     config, manifest = load_dataset(campaign)
-    if set(manifest['frozen_files']) != {'loop.params', 'dispatch.params', 'predictor.csv'}:
-        raise ValueError('Execution requires frozen loop.params, dispatch.params and predictor.csv')
+    if set(manifest['frozen_files']) != {'loop.params', 'dispatch.params', 'predictor.csv', 'predictor.csv.manifest'}:
+        raise ValueError('Execution requires frozen loop.params, dispatch.params, predictor.csv and predictor.csv.manifest')
     binary_hash = sha256(binary)
     binding = {'schema': 'agro-demand-execution-v1', 'binary': str(binary), 'binary_sha256': binary_hash,
                'dataset_manifest_sha256': sha256(campaign / 'dataset.json'),

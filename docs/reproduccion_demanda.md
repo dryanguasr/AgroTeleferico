@@ -80,7 +80,7 @@ todos sus checks en true. El programa genera y conserva:
 |---|---|
 | requests.csv y dispatch.params | Entradas fijas efectivamente utilizadas |
 | preparation/generated/loop.params | Configuración física del patio |
-| calibration/predictor.csv | 363 celdas recalibradas con ese núcleo y esa configuración |
+| calibration/predictor.csv y predictor.csv.manifest | 363 celdas recalibradas con ese núcleo y esa configuración |
 | smoke.json | Hashes, procesos, aceptación y métricas de la réplica |
 | native/validation.json | Cierre comparable y seis CSV idénticos entre Gazebo y CLI |
 | gazebo_audit.json y cli_audit.json | Auditorías independientes de pedidos, operaciones e inventarios |
@@ -89,8 +89,11 @@ todos sus checks en true. El programa genera y conserva:
 Se exige entregar los dos pedidos y utilizar los buffers. La auditoría comprueba
 su restitución y conservación, además de capacidad, calendarios y resumen. La
 configuración nativa debe coincidir por hash con la usada para calibrar; el
-binario y las entradas deben permanecer intactos. Este vínculo pertenece a esta
-réplica: el cargador general de predictores aún no valida un manifiesto propio.
+binario y las entradas deben permanecer intactos. El cargador general exige
+predictor.csv.manifest junto al CSV, con hashes SHA-256 de tabla, configuración
+efectiva y núcleo compilado. Conservar ambos archivos juntos. Cambiar geometría,
+integración, rampa o núcleo exige recalibrar; una tabla histórica sin manifiesto
+se conserva como evidencia y se rechaza para nuevas ejecuciones.
 
 Las métricas de smoke.json describen una sola realización. No calcular intervalos
 de confianza ni rankings A/B/C/D con ella. La paridad comprueba integración del

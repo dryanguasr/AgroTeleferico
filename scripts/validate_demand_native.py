@@ -290,6 +290,7 @@ def main():
         params, native = world.parent/'loop.params', world.parent/'gazebo'
         source_paths = [Path(__file__), binary, plugin, world, params]
         source_paths += [Path(inputs[key]) for key in ('demand', 'dispatch_config', 'predictor')]
+        source_paths += [Path(inputs['predictor']+'.manifest')]
         result['source_sha256'] = {str(path): sha256(path) for path in source_paths}
         result['partition'] = os.environ['GZ_PARTITION']
         with (out/'resources.jsonl').open('w') as resources:

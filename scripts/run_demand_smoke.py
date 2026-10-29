@@ -104,7 +104,7 @@ def main():
                             'up,0,0,500,0,8,20,20\ndown,0,70,500,1,8,20,20\n')
         run([str(binary), '--config', str(params), '--output', str(out/'calibration'), '--build-predictor'], 'calibration', 300)
         predictor = out/'calibration/predictor.csv'
-        bound = [params, dispatch, requests, predictor, binary, Path(__file__)]
+        bound = [params, dispatch, requests, predictor, Path(str(predictor)+'.manifest'), binary, Path(__file__)]
         result['input_sha256'] = {str(path): sha256(path) for path in bound}
         run([sys.executable, str(Path(__file__).with_name('validate_demand_native.py')),
              '--output', str(out/'native'), '--demand', str(requests), '--dispatch-config', str(dispatch),

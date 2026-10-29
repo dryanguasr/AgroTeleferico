@@ -288,7 +288,8 @@ def audit_campaign(campaign, output):
         if not condition:
             errors.append(message)
     try:
-        names = ('dataset.json', 'campaign.json', 'execution.json', 'config.json', 'loop.params', 'dispatch.params', 'predictor.csv')
+        names = ('dataset.json', 'campaign.json', 'execution.json', 'config.json', 'loop.params', 'dispatch.params', 'predictor.csv', 'predictor.csv.manifest')
+        names = tuple(name for name in names if name != 'predictor.csv.manifest' or (campaign/name).exists())
         documents = {name: read_json(campaign/name) for name in names if name.endswith('.json')}
         result['sha256'] = {name: digest(campaign/name) for name in names}
         result['sha256']['auditor'] = digest(__file__)
@@ -306,7 +307,7 @@ def audit_campaign(campaign, output):
         check(report['dataset_manifest_sha256'] == execution['dataset_manifest_sha256'] == result['sha256']['dataset.json'],
               'Campaign provenance does not match frozen input manifest')
         for name, value in dataset['frozen_files'].items():
-            check(name in ('loop.params', 'dispatch.params', 'predictor.csv') and result['sha256'].get(name) == value, f'Frozen {name} hash changed')
+            check(name in ('loop.params', 'dispatch.params', 'predictor.csv', 'predictor.csv.manifest') and result['sha256'].get(name) == value, f'Frozen {name} hash changed')
         check(config['dispatch']['capacity_kg'] == 10 and config['dispatch']['operator_period_s'] == 600
               and config['dispatch']['operator_open_s'] == 480 and config['dispatch']['buffer_unit_kg'] == 1
               and config['dispatch']['buffer_units_per_station'] == 10,

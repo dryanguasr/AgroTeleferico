@@ -27,7 +27,15 @@ aprobadas. La segunda fase incorpora una réplica nativa corta de demanda y su
 y auditoría independiente. La aceptación se registra en smoke.json y en la suite
 demand-native de CI. La línea de nueve postes continúa pausada.
 
-Las siguientes fases siguen pendientes: contratos de rampa y calibración; aceptación energética;
+La segunda fase se fusionó mediante el PR #4 en 4f755ee. La tercera fase
+exige maniobras al menos tan largas como payload_ramp, incluida la manipulación
+auxiliar, antes de crear registros de servicio. La rampa mantiene su perfil
+quíntico; su valor por defecto sigue siendo 2 s. Los predictores nuevos incluyen
+un manifiesto obligatorio que vincula tabla, configuración efectiva y núcleo.
+Las campañas copian y congelan también ese manifiesto; las evidencias anteriores
+siguen siendo legibles, pero necesitan nueva calibración para ejecutarse.
+
+Las siguientes fases siguen pendientes: aceptación energética;
 consolidación de supervisores; protección de main y retirada de ramas integradas.
 La aprobación de esta primera fase no cierra esos trabajos ni valida físicamente
 el prototipo. Las campañas históricas no se repiten por cambios documentales.

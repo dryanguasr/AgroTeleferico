@@ -1,5 +1,6 @@
 #pragma once
 #include "agro/loop.hpp"
+#include "agro/sha256.hpp"
 #include <filesystem>
 #include <functional>
 #include <map>
@@ -56,14 +57,34 @@ inline std::vector<Order> readOrders(const std::string &path,const Settings &c) 
     o.mass=number(a[5]);o.load=number(a[6]);o.unload=number(a[7]);
     require((origin==0||origin==1)&&o.known>=0&&o.known<=o.requested&&o.requested<c.horizon_s&&o.deadline>=o.requested,"invalid request chronology/origin");
     o.origin=int(origin);
-    require(o.mass>0&&o.mass<=c.capacity_kg&&o.load>=2&&o.unload>=2&&o.load<=c.operator_open_s&&o.unload<=c.operator_open_s,"invalid load or handling duration");out.push_back(o);
+    require(o.mass>0&&o.mass<=c.capacity_kg&&o.load>0&&o.unload>0&&o.load<=c.operator_open_s&&o.unload<=c.operator_open_s,"invalid load or handling duration");out.push_back(o);
   }return out;
+}
+// Sidecar is mandatory: old tables remain evidence and must be recalibrated.
+inline std::string fileBytes(const std::string &path) {
+  std::ifstream f(path,std::ios::binary);require(bool(f),"cannot open calibration input: "+path);
+  return std::string(std::istreambuf_iterator<char>(f),{});
+}
+inline std::string predictorManifest(const std::string &path,const Config &c) {
+#ifdef AGRO_CORE_ID
+  return "agro-predictor-v1\ncore_sha256 " AGRO_CORE_ID "\nconfig_sha256 "+agro::sha256(c.canonical())+
+    "\ntable_sha256 "+agro::sha256(fileBytes(path))+"\nmode central_only\nwind calm\ncells 363\n";
+#else
+  throw std::runtime_error("calibration requires a CMake build with core identity");
+#endif
+}
+inline void writePredictorManifest(const std::string &path,const Config &c) {
+  require(!std::filesystem::exists(path+".manifest"),"predictor manifest already exists");
+  std::ofstream f(path+".manifest",std::ios::binary);f<<predictorManifest(path,c);f.close();
+  require(bool(f),"cannot write predictor manifest");
 }
 struct Estimate {double positive=0,absorbed=0,duration=0;};
 class Predictor {
   std::map<std::tuple<std::string,int,int>,Estimate> table;
  public:
-  void load(const std::string &path) {
+  void load(const std::string &path,const Config &c) {
+    require(fileBytes(path+".manifest")==predictorManifest(path,c),"predictor calibration mismatch; recalibrate for this configuration/core/table");
+    table.clear();
     std::ifstream f(path);require(bool(f),"cannot open calibrated predictor");std::string line;std::getline(f,line);
     if(!line.empty()&&line.back()=='\r')line.pop_back();
     require(line=="leg_kind,up_kg,down_kg,positive_J,absorbed_J,duration_s","unexpected predictor columns");
@@ -284,7 +305,9 @@ class Engine:public Program {
  public:
   Engine(Simulation &simulation,const std::string &demand,const std::string &settings,const std::string &policy_name,const std::string &prediction,const std::string &output,bool sparse=false):s(simulation),cfg(Settings::load(settings)),compact(sparse),folder(output) {
     require(s.c.single_span&&s.carts.size()==2&&!s.hybrid&&!s.gust,"demand pilot requires two-carrier central_only calm model");
-    require(policy_name.size()==1&&policy_name[0]>='A'&&policy_name[0]<='D',"policy must be A/B/C/D");policy=policy_name[0]-'A';orders=readOrders(demand,cfg);predictor.load(prediction);
+    require(policy_name.size()==1&&policy_name[0]>='A'&&policy_name[0]<='D',"policy must be A/B/C/D");policy=policy_name[0]-'A';orders=readOrders(demand,cfg);predictor.load(prediction,s.c);
+    for(const auto &o:orders)require(o.load>=s.c.payload_ramp&&o.unload>=s.c.payload_ramp,"handling shorter than payload_ramp");
+    require(cfg.buffer_setup_s+cfg.buffer_per_unit_s>=s.c.payload_ramp,"auxiliary handling shorter than payload_ramp");
     for(int i=0;i<20;++i)modules.push_back({i,i<10?0:1,i<10?0:1,-1,0,false});
     std::filesystem::create_directories(folder);
     for(auto name:{"orders.csv","trips.csv","operations.csv","inventory.csv","demand_status.csv","demand_summary.json"})require(!std::filesystem::exists(folder/name),"demand output already exists");
@@ -386,7 +409,7 @@ class CalibrationProgram:public Program {
 };
 inline void buildPredictor(Config c,const std::string &output) {
   require(c.single_span&&c.carriers_per_lane==1,"predictor needs two-carrier topology");
-  std::filesystem::create_directories(output);auto path=std::filesystem::path(output)/"predictor.csv";require(!std::filesystem::exists(path),"predictor output already exists");
+  std::filesystem::create_directories(output);auto path=std::filesystem::path(output)/"predictor.csv";require(!std::filesystem::exists(path)&&!std::filesystem::exists(path.string()+".manifest"),"predictor output already exists");
   std::ofstream f(path);f<<"leg_kind,up_kg,down_kg,positive_J,absorbed_J,duration_s\n"<<std::setprecision(12);
   for(std::string kind:{"first","upper0","lower0"})for(int up=0;up<=10;++up)for(int down=0;down<=10;++down){Simulation sim(c,false,false);
     sim.q=kind=="first"?0:kind=="upper0"?sim.route.lane_length:2*sim.route.lane_length+pi*c.lane_half_width;
@@ -397,5 +420,6 @@ inline void buildPredictor(Config c,const std::string &output) {
     double stops=0;for(const auto &cart:sim.carts)stops+=cart.stops;require(stops==0,"predictor calibration activated ideal stops/governor");
     f<<kind<<','<<up<<','<<down<<','<<sim.drive_positive<<','<<sim.drive_absorbed<<','<<program.travelTime()<<'\n';sim.program=nullptr;
   }
+  f.close();require(bool(f),"cannot write predictor table");writePredictorManifest(path.string(),c);
 }
 }
