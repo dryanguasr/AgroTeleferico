@@ -1,5 +1,8 @@
 # Piloto de demanda bidireccional y buffers
 
+Para ejecutar una réplica corta y preparar una campaña nueva, seguir la
+[guía de reproducción](reproduccion_demanda.md).
+
 ## Diseño congelado
 
 Variante `revised_supports`, patio entre pisos (8,6 m horizontales, 3,2 m de

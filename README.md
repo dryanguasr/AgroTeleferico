@@ -105,6 +105,8 @@ histórico predeterminado.
 
 - [Diseño del experimento y ejecución de la campaña](docs/piloto_demanda.md)
   y [configuración reproducible](config/demand_pilot.json).
+- [Guía de reproducción y réplica nativa corta](docs/reproduccion_demanda.md):
+  instalación, ejecución protegida, paridad y auditoría de resultados.
 - [Especificación matemática, unidades y contratos vigentes](docs/modelo_vigente.md).
 - [Geometría y soportes del patio](docs/soportes_revisados.md).
 - [Correcciones del modelo y pruebas](docs/consolidacion_modelo.md)

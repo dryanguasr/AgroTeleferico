@@ -1,0 +1,5 @@
+{
+  "argv": ["python3", "scripts/run_demand_smoke.py", "--output", "results/demand_smoke_01", "--host-memory", "{host_memory}"],
+  "minimum_free_gib": 7,
+  "timeout_s": 600
+}
