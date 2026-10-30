@@ -9,7 +9,7 @@ import signal
 import subprocess
 import time
 
-from run_loop_guarded import read_host_memory, tree_rss
+from supervision import read_host_memory, tree_rss
 
 
 def process_identity(pid):

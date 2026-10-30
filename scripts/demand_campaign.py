@@ -484,7 +484,7 @@ def run_attempt(directory, command, memory, expected, settings, read_memory, rss
 
 
 def run_campaign(campaign, binary, memory, resume=False, limit=None, timeout=None):
-    from run_loop_guarded import read_host_memory, tree_rss
+    from supervision import read_host_memory, tree_rss
     campaign, binary, memory = Path(campaign).resolve(), Path(binary).resolve(), Path(memory).resolve()
     config, manifest = load_dataset(campaign)
     if set(manifest['frozen_files']) != {'loop.params', 'dispatch.params', 'predictor.csv', 'predictor.csv.manifest'}:

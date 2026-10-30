@@ -11,7 +11,7 @@ import threading
 import time
 
 from generate_ballasted import generate
-from run_loop_guarded import read_host_memory
+from supervision import read_host_memory
 from validate_demand_native import sha256, stop_owned
 from audit_demand_outputs import audit_run
 from audit_demand_energy import audit_energy

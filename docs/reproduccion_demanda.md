@@ -154,3 +154,19 @@ python3 scripts/audit_demand_energy.py --requests results/demand_smoke_01/reques
 Ejecutar también audit_demand_outputs.py para verificar inventarios y pedidos.
 Las campañas compactas conservan el estado inicial y final para esta auditoría;
 el máximo transitorio completo procede del núcleo, no del muestreo compacto.
+
+## Supervisión compartida
+
+Los comandos Windows run_guarded_demand.ps1, run_guarded_loop.ps1 y
+run_guarded_validation.ps1 delegan la admisión y el monitoreo a guard_common.ps1.
+Se mantienen las dos muestras separadas cinco segundos, los mínimos por tarea,
+la parada bajo 5 GiB y la reserva de 4 GiB. La muestra de memoria incluye un
+historial de 15 s para todas las modalidades. Las utilidades Python compartidas
+se instalan como supervision.py, sin importar ROS ni generadores de escenas.
+
+Una admisión rechazada conserva admission.json y supervisor.json sin iniciar
+WSL. Un fallo de monitoreo o una solicitud STOP_REQUESTED solicita parada y
+espera hasta 55 s al hijo. Si queda vivo, se conserva su PID y el fallo; la
+limpieza posterior debe usar identidad y ámbito registrados, nunca kill global.
+Reintentar siempre con RunName y salida nuevos. El resultado Windows es fallo
+ante parada preventiva o fallo de monitoreo aunque el proceso hijo salga cero.

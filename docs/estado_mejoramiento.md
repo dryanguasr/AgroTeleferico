@@ -41,7 +41,20 @@ independiente de telemetría e intercambio de masa y diagnóstico del máximo
 transitorio. Los criterios y su alcance se describen en piloto_demanda.md.
 Los balances transitorios incompletos siguen siendo una limitación del modelo.
 
-Las siguientes fases siguen pendientes:
-consolidación de supervisores; protección de main y retirada de ramas integradas.
+La cuarta fase se fusionó mediante el PR #6 en 42d4072. La quinta fase
+consolida los supervisores Windows en scripts/windows/guard_common.ps1 y las
+utilidades Python sin ROS en scripts/supervision.py. Los tres comandos Windows
+conservan sus argumentos, umbrales y destinos de resultados. La admisión se
+comprueba antes de iniciar WSL; los errores de admisión, monitoreo y arranque
+conservan supervisor.json. Una parada preventiva no puede terminar aprobada
+por una salida cero del hijo. Se conserva STOP_REQUESTED y la limpieza por
+identidad de procesos observados; no se usa limpieza global.
+
+La CI incorpora windows-supervisor con pruebas de ocho casos de admisión,
+fallo y cierre sin iniciar WSL ni simulaciones. Las cuatro suites Linux
+verifican instalación, ciclo de vida, réplica nativa y regresiones históricas.
+
+Quedan por completar las operaciones de protección de main y retirada de
+ramas integradas, conservando sus commits y referencias de recuperación.
 La aprobación de esta primera fase no cierra esos trabajos ni valida físicamente
 el prototipo. Las campañas históricas no se repiten por cambios documentales.
