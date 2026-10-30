@@ -378,7 +378,7 @@ def main():
                'scope': 'Historical AgroCableSystem ROS contract and process lifecycle; not structural or physical validation.'}
     try:
         sys.path.insert(0, str(ROOT/'scripts'))
-        from run_loop_guarded import read_host_memory, tree_rss
+        from supervision import read_host_memory, tree_rss
         sources = [Path(__file__), ROOT/'scripts/ros_interface.py', ROOT/'src/system.cpp', ROOT/'src/telemetry_bridge.cpp', ROOT/'launch/pilot.launch.py']
         write_json(out/'provenance.json', {'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
                                          'ros_domain_id': args.ros_domain_id, 'host_memory': str(args.host_memory.resolve())})

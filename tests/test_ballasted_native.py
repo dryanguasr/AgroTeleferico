@@ -22,7 +22,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 from generate_ballasted import generate
-from run_loop_guarded import read_host_memory, tree_rss
+from supervision import read_host_memory, tree_rss
 
 CSV_FILES = ('global.csv', 'carriers.csv', 'cables.csv', 'bases.csv', 'geometry.csv')
 WORLD_STEP = .02

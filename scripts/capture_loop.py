@@ -18,7 +18,7 @@ import xml.etree.ElementTree as ET
 from PIL import Image,ImageDraw
 from ament_index_python.packages import get_package_prefix
 from generate_loop import generate
-from run_loop_guarded import read_host_memory, tree_rss
+from supervision import read_host_memory, tree_rss
 from validate_demand_native import demand_inputs, configure_demand_world, in_video_window, validate_window
 
 

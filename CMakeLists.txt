@@ -77,7 +77,7 @@ execute_process(COMMAND git describe --always --dirty
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/revision.txt "${AGRO_REVISION}\n")
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/revision.txt DESTINATION share/${PROJECT_NAME})
 install(PROGRAMS scripts/generate_world.py scripts/ros_interface.py scripts/run_suite.py scripts/render_replay.py scripts/capture_scene.py scripts/capture_loop.py scripts/generate_loop.py scripts/run_loop_suite.py scripts/report_loop.py DESTINATION lib/${PROJECT_NAME})
-install(PROGRAMS scripts/run_loop_guarded.py scripts/compare_loop_backends.py scripts/collect_loop_native.py scripts/plot_loop_native.py scripts/verify_loop_capture.py scripts/compose_loop_pip.py DESTINATION lib/${PROJECT_NAME})
+install(PROGRAMS scripts/run_loop_guarded.py scripts/supervision.py scripts/compare_loop_backends.py scripts/collect_loop_native.py scripts/plot_loop_native.py scripts/verify_loop_capture.py scripts/compose_loop_pip.py DESTINATION lib/${PROJECT_NAME})
 install(PROGRAMS scripts/generate_ballasted.py scripts/check_ballasted.py scripts/run_ballasted_core.py DESTINATION lib/${PROJECT_NAME})
 install(PROGRAMS scripts/validate_demand_native.py scripts/compose_telemetry_hud.py DESTINATION lib/${PROJECT_NAME})
 install(PROGRAMS scripts/run_demand_smoke.py scripts/audit_demand_outputs.py scripts/audit_demand_energy.py DESTINATION lib/${PROJECT_NAME})

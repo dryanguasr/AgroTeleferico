@@ -136,7 +136,7 @@ def verify_capture(args):
     """Verify an existing live partial capture, then run a matching CLI prefix."""
     from ament_index_python.packages import get_package_prefix
     from compose_telemetry_hud import camera_times, probe, decode_strict
-    from run_loop_guarded import read_host_memory, tree_rss
+    from supervision import read_host_memory, tree_rss
     capture, out = args.capture.resolve(), args.output.resolve()
     out.mkdir(parents=True, exist_ok=False)
     prefix = Path(get_package_prefix('agro_teleferico'))
@@ -266,7 +266,7 @@ def main():
     out.mkdir(parents=True, exist_ok=False)
     from ament_index_python.packages import get_package_prefix
     from generate_ballasted import generate
-    from run_loop_guarded import read_host_memory, tree_rss
+    from supervision import read_host_memory, tree_rss
     prefix = Path(get_package_prefix('agro_teleferico'))
     binary, plugin = prefix/'lib/agro_teleferico/agro_loop_cli', prefix/'lib/libAgroLoopSystem.so'
     os.environ['GZ_SIM_SYSTEM_PLUGIN_PATH'] = str(prefix/'lib')

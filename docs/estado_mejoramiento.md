@@ -41,7 +41,34 @@ independiente de telemetría e intercambio de masa y diagnóstico del máximo
 transitorio. Los criterios y su alcance se describen en piloto_demanda.md.
 Los balances transitorios incompletos siguen siendo una limitación del modelo.
 
-Las siguientes fases siguen pendientes:
-consolidación de supervisores; protección de main y retirada de ramas integradas.
+La cuarta fase se fusionó mediante el PR #6 en 42d4072. La quinta fase
+consolida los supervisores Windows en scripts/windows/guard_common.ps1 y las
+utilidades Python sin ROS en scripts/supervision.py. Los tres comandos Windows
+conservan sus argumentos, umbrales y destinos de resultados. La admisión se
+comprueba antes de iniciar WSL; los errores de admisión, monitoreo y arranque
+conservan supervisor.json. Una parada preventiva no puede terminar aprobada
+por una salida cero del hijo. Se conserva STOP_REQUESTED y la limpieza por
+identidad de procesos observados; no se usa limpieza global.
+
+La CI incorpora windows-supervisor con pruebas de ocho casos de admisión,
+fallo y cierre sin iniciar WSL ni simulaciones. Las cuatro suites Linux
+verifican instalación, ciclo de vida, réplica nativa y regresiones históricas.
+
+La sexta fase activa protección de main: PR obligatorio, rama actualizada,
+los cinco checks anteriores ligados a GitHub Actions, conversaciones resueltas,
+protección para administradores y prohibición de force push y borrado de main.
+No se exige una revisión humana adicional: el número de aprobaciones es cero.
+
+Siete ramas históricas integradas se retiraron tras verificar su ascendencia y
+preservar cada cabeza en archive/20261029/<rama>. El tag
+paused/nine-posts-20261029 conserva explícitamente la línea pausada; no se
+repitieron capturas ni se promovió su evidencia parcial. La rama de esta entrega
+se archiva antes de fusionar su PR y se retira solo después de quedar integrada.
+Las próximas ramas de PR se borrarán automáticamente tras la fusión.
+
+Con esta entrega quedan cubiertas las seis fases del plan. El cierre se verifica
+con el PR de consolidación aprobado y fusionado, main protegido y sin PR abiertos
+del plan. El informe de ejecución y las respuestas de GitHub quedan conservados
+con las nuevas evidencias, sin modificar docs/evidence.
 La aprobación de esta primera fase no cierra esos trabajos ni valida físicamente
 el prototipo. Las campañas históricas no se repiten por cambios documentales.
