@@ -181,8 +181,12 @@ auxiliar neto cero presupone esa restitución.
 
 El máximo transitorio se registra como diagnóstico y no se somete al presupuesto
 terminal: el modelo conserva términos incompletos de acoplamiento y cambio de
-forma. En la réplica anterior se observaron aproximadamente 16,84 J transitorios
+forma. En la réplica anterior se observaron aproximadamente 17,19 J transitorios
 frente a 0,333 J finales. Aprobar este contrato no acredita el balance instantáneo,
 ni recuperación eléctrica o validación física. Esa limitación queda visible en
 los artefactos. Las evidencias anteriores carecen de esta aceptación y no se
 recertifican por modificar documentos; se conservan como resultados históricos.
+
+El acumulador wind_work_J incluye el trabajo aerodinámico por movimiento del carro
+en aire quieto. Por ello calma exige wind_m_s=0, no wind_work_J=0. La auditoría
+conserva ese trabajo con su signo en la reconstrucción del balance.

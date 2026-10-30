@@ -30,7 +30,7 @@ def audit_energy(requests, output, params):
               'scope': 'Terminal mechanical ledger; transient residual remains diagnostic',
               'criteria': {'absolute_J': ABS_J, 'relative': REL, 'terminal_delta_J': TERMINAL_J}}
     def check(value, message):
-        if not value:
+        if not value and message not in result['errors']:
             result['errors'].append(message)
     try:
         paths = [requests, params, output/'global.csv', output/'demand_summary.json']
@@ -48,7 +48,9 @@ def audit_energy(requests, output, params):
             check(row['time_s'] >= previous['time_s'], 'Telemetry time decreased')
             for key in counters:
                 check(row[key] >= -1e-8 and row[key]+1e-8 >= previous[key], 'Invalid cumulative work: '+key)
-            check(abs(row['wind_work_J']) <= 1e-8 and abs(row['local_positive_J']) <= 1e-8
+            # The wind ledger also contains aerodynamic drag from carrier motion
+            # in still air. Calm means ambient wind is zero, not zero drag work.
+            check(abs(row['wind_m_s']) <= 1e-8 and abs(row['local_positive_J']) <= 1e-8
                   and abs(row['local_absorbed_J']) <= 1e-8 and abs(row['stop_loss_J']) <= 1e-8,
                   'Energy audit requires calm central-only operation without ideal stops')
             work = (row['drive_positive_J']-row['drive_absorbed_J']+row['local_positive_J']

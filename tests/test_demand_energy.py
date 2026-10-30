@@ -14,7 +14,7 @@ class Energy(unittest.TestCase):
     def fixture(self, root):
         (root/'params').write_text('terrain 2 0 0 8.6 3.2\n')
         (root/'requests.csv').write_text('id,origin,mass_kg\nx,0,5\n')
-        keys = ['time_s', 'drive_positive_J', 'drive_absorbed_J', 'local_positive_J',
+        keys = ['time_s', 'wind_m_s', 'drive_positive_J', 'drive_absorbed_J', 'local_positive_J',
                 'local_absorbed_J', 'wind_work_J', 'loss_work_J', 'load_energy_J',
                 'stop_loss_J', 'energy_J', 'residual_J']
         first = dict.fromkeys(keys, 0.)
@@ -65,7 +65,7 @@ class Energy(unittest.TestCase):
                 elif case == 'counter':
                     rows[-1]['loss_work_J'] = -1
                 elif case == 'scope':
-                    rows[-1]['wind_work_J'] = 1
+                    rows[-1]['wind_m_s'] = 1
                 elif case == 'missing':
                     del summary['energy_acceptance_schema']
                 elif case == 'peak':
@@ -73,6 +73,14 @@ class Energy(unittest.TestCase):
                 elif case == 'truncated':
                     rows.pop()
                 self.assertFalse(self.audit(root, rows, summary)['passed'])
+
+    def test_still_air_drag_is_included_in_ledger(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            rows, summary = self.fixture(root)
+            rows[-1].update(wind_work_J=-.2, loss_work_J=2.84)
+            summary.update(wind_work_J=-.2, loss_work_J=2.84, energy_residual_budget_J=2.9284)
+            self.assertTrue(self.audit(root, rows, summary)['passed'])
 
 
 if __name__ == '__main__':
