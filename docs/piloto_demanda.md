@@ -144,3 +144,45 @@ Mantener ambos archivos juntos. Ante manifiesto ausente o diferente, recalibrar
 en una salida nueva con el binario y parámetros que se ejecutarán. No fabricar
 manifiestos para tablas antiguas ni modificar las evidencias publicadas.
 La línea de nueve postes permanece pausada.
+
+## Aceptación energética terminal v1
+
+El PR #5 de rampa/calibración se fusionó en 312f24f. La aceptación
+agro-demand-energy-v1 cubre el balance mecánico terminal del piloto en calma,
+central_only, con inventarios restituidos, carros vacíos y sin intervenciones
+ideales. Se fija un presupuesto numérico del piloto, revisable mediante otra
+versión del contrato, no mediante un ajuste por ejecución:
+
+- abs(residuo final) <= 0,5 J + 0,01 × (trabajo motor positivo + absorbido + pérdidas).
+- abs(E_final − E_inicial) <= 0,1 J y también la tolerancia de cierre configurada
+  si es más estricta. Permanecen vigentes los límites de reposo y restitución.
+- El intercambio de masa se contrasta con −g × altura × (kg subidos − kg bajados),
+  con presupuesto 0,5 J + 0,01 × g × abs(altura) × kg útiles entregados.
+
+El suelo absoluto evita una división por cero en servicios vacíos; el término
+relativo expresa un objetivo numérico del 1 % del trabajo contabilizado. El
+presupuesto no usa la energía potencial inicial, que depende del origen de alturas,
+ni suma energía eléctrica hipotética. Son criterios de regresión del modelo
+reducido y no límites físicos certificados.
+
+El núcleo marca completed_noncomparable y devuelve código 2 cuando entrega y
+restituye pero incumple el balance terminal. Añade a demand_summary.json la versión,
+energy_accepted, energy_residual_budget_J y peak_abs_energy_residual_J. La réplica
+corta exige además dos auditorías energéticas, una por backend, y conserva ambas.
+La auditoría reconstruye en cada muestra:
+
+E(t) − E(0) − [W_motor_positivo − W_motor_absorbido + W_local_positivo
+− W_local_absorbido + W_viento + W_carga − W_pérdidas − W_topes].
+
+Comprueba su coincidencia con el residuo registrado, la cobertura hasta el cierre,
+los acumuladores monótonos, la concordancia con el resumen y el intercambio de masa.
+Debe acompañarse de la auditoría operacional de pedidos e inventarios; el término
+auxiliar neto cero presupone esa restitución.
+
+El máximo transitorio se registra como diagnóstico y no se somete al presupuesto
+terminal: el modelo conserva términos incompletos de acoplamiento y cambio de
+forma. En la réplica anterior se observaron aproximadamente 16,84 J transitorios
+frente a 0,333 J finales. Aprobar este contrato no acredita el balance instantáneo,
+ni recuperación eléctrica o validación física. Esa limitación queda visible en
+los artefactos. Las evidencias anteriores carecen de esta aceptación y no se
+recertifican por modificar documentos; se conservan como resultados históricos.

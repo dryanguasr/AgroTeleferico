@@ -14,6 +14,7 @@ from generate_ballasted import generate
 from run_loop_guarded import read_host_memory
 from validate_demand_native import sha256, stop_owned
 from audit_demand_outputs import audit_run
+from audit_demand_energy import audit_energy
 
 
 def linux_sample():
@@ -112,14 +113,17 @@ def main():
         validation = json.loads((out/'native/validation.json').read_text())
         if sha256(out/'native/pilot/generated/loop.params') != sha256(params):
             raise RuntimeError('Calibration and native physics parameters differ')
-        audits = {}
+        audits, energy_audits = {}, {}
         for label, folder in [('gazebo', out/'native/pilot/generated/gazebo'), ('cli', out/'native/reference')]:
             audits[label] = audit_run(requests, folder, 'C')
+            energy_audits[label] = audit_energy(requests, folder, params)
+            (out/(label+'_energy_audit.json')).write_text(json.dumps(energy_audits[label], indent=2))
             (out/(label+'_audit.json')).write_text(json.dumps(audits[label], indent=2))
         summary = validation['demand_summary']
         result['checks'] = {
             'native_parity': validation['passed'],
             'independent_audits': all(a['passed'] for a in audits.values()),
+            'energy_acceptance': all(a['passed'] for a in energy_audits.values()),
             'two_deliveries': summary['orders_delivered'] == 2,
             'buffers_exercised': summary['buffer_moves_kg'] > 0,
             'inputs_unchanged': all(sha256(path) == digest for path, digest in result['input_sha256'].items()),
