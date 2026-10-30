@@ -120,3 +120,27 @@ hipótesis físicas de forma independiente.
 **Verificado:** la captura corta `demand_capture_probe_02` midió un pico RSS del árbol de 2,2213 GiB y la prueba CLI `demand_stress_guard_01`, 0,0233 GiB. **Inferido:** para esta configuración secuencial, se adopta admisión de 6 GiB para CLI, 7 GiB para Gazebo sin render y 8 GiB para captura de demanda sin GUI. Se mantienen dos muestras reales separadas por 5 s, vigilancia continua, parada preventiva bajo 5 GiB y reserva de 4 GiB. La GUI conserva 14 GiB. **Verificado en vídeos completos:** pico del árbol 2.2424 GiB; mínimo libre Windows 5.0281 GiB, sin activar la parada preventiva. Los registros previos conservan sus umbrales originales.
 
 **Ajuste posterior verificado:** la admisión de vídeo se calibró a 7,5 GiB tras un segundo bloqueo previo a iniciar Gazebo (segunda muestra: 7,88 GiB). Se conserva el pico medido de referencia de 2,2213 GiB, vigilancia continua, parada bajo 5 GiB y reserva de 4 GiB. Los valores de 8 GiB de los registros anteriores documentan sus umbrales originales.
+
+## Contratos de rampa y calibración
+
+La duración de cada carga y descarga debe ser al menos payload_ramp de la
+configuración física (2 s por defecto). Una operación auxiliar de una unidad
+también debe cubrir la rampa; los tiempos de manejo incluyen esa transferencia.
+La masa sigue el perfil quíntico durante la rampa y después permanece constante
+hasta terminar la operación. Se rechazan entradas incompatibles antes de abrir
+los registros de servicio.
+
+--build-predictor genera predictor.csv y predictor.csv.manifest. El manifiesto
+agro-predictor-v1 fija 363 celdas, modo central_only y calma, y contiene SHA-256
+de los bytes del CSV, la configuración efectiva completa (valores por defecto
+incluidos, representación numérica de 17 dígitos y orden fijo) y la identidad
+del núcleo. Esta identidad deriva de loop.hpp, demand.hpp, sha256.hpp y la
+identidad/configuración del compilador registrada por CMake. CLI, plugin y tests
+usan la misma identidad. Reordenar claves o añadir comentarios a los parámetros
+no cambia la configuración efectiva; cambiar un valor sí invalida la tabla.
+El manifiesto comprueba procedencia e integridad accidental, no autenticidad.
+
+Mantener ambos archivos juntos. Ante manifiesto ausente o diferente, recalibrar
+en una salida nueva con el binario y parámetros que se ejecutarán. No fabricar
+manifiestos para tablas antiguas ni modificar las evidencias publicadas.
+La línea de nueve postes permanece pausada.

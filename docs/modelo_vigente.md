@@ -147,7 +147,9 @@ no capacidades certificadas. La holgura al perfil no comprueba losas o barandas.
 
 La carga/descarga exige presencia de ambos carros y velocidades de línea y
 offset inferiores a 0,012 m/s; no exige igualdad matemática a cero. La rampa
-de masa dura 2 s. Los límites de carrera/velocidad relativa son topes y un
+de masa dura payload_ramp (2 s por defecto). En demanda cada maniobra útil o
+auxiliar debe cubrir al menos esa duración; las entradas incompatibles se
+rechazan antes de abrir los registros de servicio. Los límites de carrera/velocidad relativa son topes y un
 gobernador ideales, con intervenciones contadas. Su balance de impulsos no
 está físicamente cerrado.
 

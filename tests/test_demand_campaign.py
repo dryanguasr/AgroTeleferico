@@ -77,9 +77,10 @@ class DemandGeneration(unittest.TestCase):
             params, predictor = root/'physical.params', root/'table.csv'
             params.write_text('dt .002\n')
             predictor.write_text('up,down,positive\n0,0,0\n')
+            Path(str(predictor)+'.manifest').write_text('unit fixture')
             manifest = campaign.generate_dataset(root/'config.json', root/'out', params, predictor)
             self.assertEqual((manifest['dataset_count'], manifest['planned_runs']), (2, 8))
-            self.assertEqual(len(manifest['frozen_files']), 3)
+            self.assertEqual(len(manifest['frozen_files']), 4)
             campaign.load_dataset(root/'out')
             with self.assertRaises(FileExistsError):
                 campaign.generate_dataset(root/'config.json', root/'out', params, predictor)
@@ -152,6 +153,7 @@ class TerminalIntegrity(unittest.TestCase):
             campaign.write_json(root/'config.json', c)
             (root/'physical.params').write_text('dt .002\n')
             (root/'predictor.csv').write_text('up,down,positive\n0,0,0\n')
+            (root/'predictor.csv.manifest').write_text('unit fixture')
             (root/'binary').write_bytes(b'unit-test executable double')
             campaign.generate_dataset(root/'config.json', root/'campaign', root/'physical.params', root/'predictor.csv')
 

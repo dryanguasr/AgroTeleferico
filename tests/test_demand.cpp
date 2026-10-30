@@ -16,7 +16,39 @@ int main(){try{
   write(root/"orders.csv","id,known_s,requested_s,deadline_s,origin,mass_kg,load_s,unload_s\na,0,0,300,0,5,20,20\nb,0,100,400,1,5,20,20\n");
   {std::ofstream f(root/"predictor.csv");f<<"leg_kind,up_kg,down_kg,positive_J,absorbed_J,duration_s\n";
     for(std::string kind:{"first","upper0","lower0"})for(int u=0;u<=10;++u)for(int d=0;d<=10;++d)f<<kind<<','<<u<<','<<d<<','<<5+std::max(0,30*(u-d))<<','<<std::max(0,30*(d-u))<<','<<(kind=="first"?53.734:71.013)<<'\n';}
-  Predictor pred;pred.load((root/"predictor.csv").string());require(std::abs(pred.at("first",5.5,2.5).positive-95)<1e-10,"bilinear predictor interpolation");
+  writePredictorManifest((root/"predictor.csv").string(),configuration());
+  require(agro::sha256("")=="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","SHA256 empty vector");
+  require(agro::sha256("abc")=="ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad","SHA256 abc vector");
+  require(agro::sha256(std::string(1000,'a'))=="41edece42d63e8d9bf515a9ba6932e1c20cbc9f5a5d134645adb5db1b9737ea3","SHA256 multiple blocks");
+  auto rejects=[&](auto call,const std::string &why){bool caught=false;try{call();}catch(const std::exception&){caught=true;}require(caught,why);};
+  auto table=(root/"predictor.csv").string();auto original=read(table+".manifest");
+  rejects([&]{Config changed=configuration();changed.dt=.004;Predictor p;p.load(table,changed);},"dt mismatch accepted");
+  rejects([&]{Config changed=configuration();changed.payload_ramp=3;Predictor p;p.load(table,changed);},"ramp mismatch accepted");
+  rejects([&]{Config changed=configuration();changed.terrain[1].second+=.1;Predictor p;p.load(table,changed);},"geometry mismatch accepted");
+  write(table+".manifest",original+"tamper");rejects([&]{Predictor p;p.load(table,configuration());},"manifest tamper accepted");
+  auto wrongCore=original;wrongCore.replace(wrongCore.find("core_sha256 ")+12,64,std::string(64,'0'));
+  write(table+".manifest",wrongCore);rejects([&]{Predictor p;p.load(table,configuration());},"wrong core accepted");
+  write(table+".manifest",original);auto content=read(table);write(table,content+"\n");
+  rejects([&]{Predictor p;p.load(table,configuration());},"table tamper accepted");write(table,content);
+  std::filesystem::remove(table+".manifest");rejects([&]{Predictor p;p.load(table,configuration());},"legacy table accepted");write(table+".manifest",original);
+  auto ramp=configuration();ramp.payload_ramp=4;ramp.initial_dwell=6;ramp.station_dwell=8;
+  write(root/"ramp.csv",content);writePredictorManifest((root/"ramp.csv").string(),ramp);
+  write(root/"short.csv","id,known_s,requested_s,deadline_s,origin,mass_kg,load_s,unload_s\nx,0,0,300,0,5,2,20\n");
+  rejects([&]{Simulation sim(ramp,false,false);Engine e(sim,(root/"short.csv").string(),(root/"settings.params").string(),"A",(root/"ramp.csv").string(),(root/"rejected").string());},"short loading accepted");
+  write(root/"short.csv","id,known_s,requested_s,deadline_s,origin,mass_kg,load_s,unload_s\nx,0,0,300,0,5,20,2\n");
+  rejects([&]{Simulation sim(ramp,false,false);Engine e(sim,(root/"short.csv").string(),(root/"settings.params").string(),"A",(root/"ramp.csv").string(),(root/"rejected").string());},"short unloading accepted");
+  write(root/"short_aux.params","horizon_s 180\nmax_time_s 900\nbuffer_setup_s 0\nbuffer_per_unit_s 2\n");
+  rejects([&]{Simulation sim(ramp,false,false);Engine e(sim,(root/"orders.csv").string(),(root/"short_aux.params").string(),"C",(root/"ramp.csv").string(),(root/"rejected").string());},"short auxiliary handling accepted");
+  require(!std::filesystem::exists(root/"rejected"),"invalid contract created service output");
+  // Boundary: handling equals the configured ramp. Halfway mass is half the order.
+  write(root/"ramp_order.csv","id,known_s,requested_s,deadline_s,origin,mass_kg,load_s,unload_s\nx,0,0,300,0,5,4,4\n");
+  {Simulation sim(ramp,false,false);Engine e(sim,(root/"ramp_order.csv").string(),(root/"settings.params").string(),"A",(root/"ramp.csv").string(),(root/"ramp_run").string());
+    while(sim.t<2-1e-8)sim.step(sim.c.dt);
+    require(std::abs(sim.carts[0].payload-2.5)<.01,"configured ramp midpoint mismatch");
+    while(!sim.complete)sim.step(sim.c.dt);
+    e.finish();require(e.completed()&&e.loadedMass()==5&&e.unloadedMass()==5,"equal ramp service did not close");}
+
+  Predictor pred;pred.load((root/"predictor.csv").string(),configuration());require(std::abs(pred.at("first",5.5,2.5).positive-95)<1e-10,"bilinear predictor interpolation");
   reject=false;try{pred.at("first",10.1,0);}catch(...){reject=true;}require(reject,"calibration bounds must not extrapolate");
   for(std::string policy:{"A","B","C","D"}){Simulation sim(configuration(),false,false);double energy0=sim.energy0;Engine engine(sim,(root/"orders.csv").string(),(root/"settings.params").string(),policy,(root/"predictor.csv").string(),(root/policy).string(),true);
     while(!sim.complete)sim.step(sim.c.dt);
@@ -44,6 +76,7 @@ int main(){try{
   // mandatory order. More than one module needs >10 s of simultaneous handling.
   {std::ofstream f(root/"deadline_predictor.csv");f<<"leg_kind,up_kg,down_kg,positive_J,absorbed_J,duration_s\n";
     for(std::string kind:{"first","upper0","lower0"})for(int u=0;u<=10;++u)for(int d=0;d<=10;++d)f<<kind<<','<<u<<','<<d<<','<<(kind=="first"?5+std::max(0,30*(u-d)):5)<<",0,"<<(kind=="first"?53.734:71.013)<<'\n';}
+  writePredictorManifest((root/"deadline_predictor.csv").string(),configuration());
   write(root/"deadline.csv","id,known_s,requested_s,deadline_s,origin,mass_kg,load_s,unload_s\nurgent,0,0,75,0,5,10,10\noptional,0,100,400,1,5,80,10\n");
   {Simulation sim(configuration(),false,false);Engine engine(sim,(root/"deadline.csv").string(),(root/"settings.params").string(),"C",(root/"deadline_predictor.csv").string(),(root/"deadline").string(),true);
     while(sim.t<11)sim.step(sim.c.dt);

@@ -7,6 +7,7 @@
 #include <fstream>
 #include <iomanip>
 #include <limits>
+#include <locale>
 #include <numeric>
 #include <sstream>
 #include <stdexcept>
@@ -88,6 +89,77 @@ struct Config {
     require(initial_dwell>payload_ramp+1&&station_dwell>payload_ramp+2,"dwell too short for loading");
     require(profile_dx<=.1&&derivative_step>0&&derivative_step<=.1,"reference/differential resolution outside domain");
     require(station_start_offset>=0&&station_start_offset<station_tolerance*.8,"invalid station starting offset");
+  }
+  std::string canonical() const {
+    std::ostringstream f;f.imbue(std::locale::classic());f<<std::setprecision(17);
+    f<<"single_span "<<single_span<<"\n";
+    f<<"descending_payload "<<descending_payload<<"\n";
+    f<<"carriers_per_lane "<<carriers_per_lane<<"\n";
+    f<<"supports_per_segment "<<supports_per_segment<<"\n";
+    f<<"cable_segments "<<cable_segments<<"\n";
+    f<<"tractor_lift "<<tractor_lift<<"\n";
+    f<<"base_offset "<<base_offset<<"\n";
+    f<<"ballast_litres "<<ballast_litres<<"\n";
+    f<<"ballast_fill "<<ballast_fill<<"\n";
+    f<<"station_dry_mass "<<station_dry_mass<<"\n";
+    f<<"base_x "<<base_x<<"\n";
+    f<<"base_y "<<base_y<<"\n";
+    f<<"soil_mu "<<soil_mu<<"\n";
+    f<<"tractor_pretension "<<tractor_pretension<<"\n";
+    f<<"tank_bottom "<<tank_bottom<<"\n";
+    f<<"tank_height "<<tank_height<<"\n";
+    f<<"dry_cg_z "<<dry_cg_z<<"\n";
+    f<<"dt "<<dt<<"\n";
+    f<<"shape_period "<<shape_period<<"\n";
+    f<<"log_period "<<log_period<<"\n";
+    f<<"visual_period "<<visual_period<<"\n";
+    f<<"support_height "<<support_height<<"\n";
+    f<<"lane_half_width "<<lane_half_width<<"\n";
+    f<<"gauge "<<gauge<<"\n";
+    f<<"guide_half_length "<<guide_half_length<<"\n";
+    f<<"guide_lift "<<guide_lift<<"\n";
+    f<<"slack "<<slack<<"\n";
+    f<<"cable_EA "<<cable_EA<<"\n";
+    f<<"cable_kg_per_horizontal_m "<<cable_kg_per_horizontal_m<<"\n";
+    f<<"bogie_mass "<<bogie_mass<<"\n";
+    f<<"hanger_mass "<<hanger_mass<<"\n";
+    f<<"pallet_mass "<<pallet_mass<<"\n";
+    f<<"nominal_payload "<<nominal_payload<<"\n";
+    f<<"suspension "<<suspension<<"\n";
+    f<<"max_speed "<<max_speed<<"\n";
+    f<<"max_accel "<<max_accel<<"\n";
+    f<<"main_equivalent_mass "<<main_equivalent_mass<<"\n";
+    f<<"main_force_limit "<<main_force_limit<<"\n";
+    f<<"drive_radius "<<drive_radius<<"\n";
+    f<<"rolling_coefficient "<<rolling_coefficient<<"\n";
+    f<<"main_drag "<<main_drag<<"\n";
+    f<<"coupling_k "<<coupling_k<<"\n";
+    f<<"coupling_c "<<coupling_c<<"\n";
+    f<<"local_stroke "<<local_stroke<<"\n";
+    f<<"local_speed "<<local_speed<<"\n";
+    f<<"local_force_limit "<<local_force_limit<<"\n";
+    f<<"local_damping_gain "<<local_damping_gain<<"\n";
+    f<<"swing_damping "<<swing_damping<<"\n";
+    f<<"air_density "<<air_density<<"\n";
+    f<<"drag_coefficient "<<drag_coefficient<<"\n";
+    f<<"area_empty "<<area_empty<<"\n";
+    f<<"area_per_kg "<<area_per_kg<<"\n";
+    f<<"wind_speed "<<wind_speed<<"\n";
+    f<<"wind_duration "<<wind_duration<<"\n";
+    f<<"wind_bearing_deg "<<wind_bearing_deg<<"\n";
+    f<<"max_tension "<<max_tension<<"\n";
+    f<<"min_clearance "<<min_clearance<<"\n";
+    f<<"max_swing "<<max_swing<<"\n";
+    f<<"initial_dwell "<<initial_dwell<<"\n";
+    f<<"station_dwell "<<station_dwell<<"\n";
+    f<<"final_dwell "<<final_dwell<<"\n";
+    f<<"station_tolerance "<<station_tolerance<<"\n";
+    f<<"stop_speed "<<stop_speed<<"\n";
+    f<<"payload_ramp "<<payload_ramp<<"\n";
+    f<<"profile_dx "<<profile_dx<<"\n";
+    f<<"station_start_offset "<<station_start_offset<<"\n";
+    f<<"derivative_step "<<derivative_step<<"\n";
+    f<<"terrain "<<terrain.size();for(auto point:terrain)f<<" "<<point.first<<" "<<point.second;f<<"\n";return f.str();
   }
   // A generated SI key/value interchange file, not a second user configuration format.
   static Config load(const std::string &path) {
