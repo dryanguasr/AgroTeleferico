@@ -96,7 +96,7 @@ def audit_energy(requests, output, params):
                                 'terminal_delta_J': delta, 'sampled_peak_abs_residual_J': peak,
                                 'load_energy_expected_J': expected, 'load_energy_recorded_J': last['load_energy_J'],
                                 'load_energy_budget_J': exchange_budget, 'telemetry_rows': len(rows)}
-    except (OSError, ValueError, KeyError, IndexError, StopIteration) as exc:
+    except (OSError, ValueError, TypeError, KeyError, IndexError, StopIteration) as exc:
         result['errors'].append(str(exc))
     result['passed'] = not result['errors']
     return result
