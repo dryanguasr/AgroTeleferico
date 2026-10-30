@@ -87,6 +87,11 @@ int main(){try{
     sim.carts[0].stops=1; // Inject the observed diagnostic; do not pretend to validate its impulse physics.
     while(!sim.complete)sim.step(sim.c.dt);
     require(engine.completed()&&!engine.isComparable()&&engine.status()=="completed_noncomparable","a governor/stop intervention invalidates energy comparison");}
+  // Delivery and terminal state may close even when a ledger term is corrupted.
+  {Simulation sim(configuration(),false,false);Engine e(sim,(root/"empty.csv").string(),(root/"settings.params").string(),"A",table,(root/"bad_energy").string(),true);
+    sim.drive_work+=100;while(!sim.complete)sim.step(sim.c.dt);e.finish();
+    require(e.completed()&&!e.isComparable()&&e.status()=="completed_noncomparable","energy corruption accepted as comparable");
+    require(read(root/"bad_energy/demand_summary.json").find("\"energy_accepted\":false")!=std::string::npos,"energy rejection missing from summary");}
   auto runCase=[&](const std::string&name,const std::string&body,const std::string&policy,const std::string&prediction,double horizon=180){
     write(root/(name+".csv"),"id,known_s,requested_s,deadline_s,origin,mass_kg,load_s,unload_s\n"+body);
     write(root/(name+".params"),"horizon_s "+std::to_string(horizon)+"\nmax_time_s 1800\n");

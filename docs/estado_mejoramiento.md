@@ -35,7 +35,13 @@ un manifiesto obligatorio que vincula tabla, configuración efectiva y núcleo.
 Las campañas copian y congelan también ese manifiesto; las evidencias anteriores
 siguen siendo legibles, pero necesitan nueva calibración para ejecutarse.
 
-Las siguientes fases siguen pendientes: aceptación energética;
+La tercera fase se fusionó mediante el PR #5 en 312f24f. La cuarta fase añade
+aceptación del balance energético terminal (agro-demand-energy-v1), auditoría
+independiente de telemetría e intercambio de masa y diagnóstico del máximo
+transitorio. Los criterios y su alcance se describen en piloto_demanda.md.
+Los balances transitorios incompletos siguen siendo una limitación del modelo.
+
+Las siguientes fases siguen pendientes:
 consolidación de supervisores; protección de main y retirada de ramas integradas.
 La aprobación de esta primera fase no cierra esos trabajos ni valida físicamente
 el prototipo. Las campañas históricas no se repiten por cambios documentales.

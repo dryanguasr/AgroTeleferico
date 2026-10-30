@@ -112,7 +112,7 @@ class Engine:public Program {
   std::array<std::vector<int>,2> manifest_orders,manifest_aux;
   std::unique_ptr<Leg> leg;double leg_start=0,leg_origin=0,hold_q=0,leg_predicted=0,leg_positive=0,leg_absorbed=0;
   double wait_start=-1,settle_start=-1,restoration_start=-1,restoration_work=0,deliberate_wait=0,mandatory_wait=0,buffer_moves=0,predictor_error=0,last_status=-1,next_dispatch=-1;
-  double terminal_delta=0;int trip_count=0;std::string current_kind,status_value="interrupted";
+  double terminal_delta=0,peak_energy_residual=0;int trip_count=0;std::string current_kind,status_value="interrupted";
   double handling_time=0;std::array<double,2> operator_busy{0,0};bool any_action_active=false;
   std::filesystem::path folder;std::ofstream orderlog,triplog,oplog,invlog,statuslog;
   double next_decision=0;
@@ -344,11 +344,19 @@ class Engine:public Program {
     if(c.jobs[0].empty()&&c.jobs[1].empty()){s.stage=0;wait_start=-1;next_dispatch=-1;return;}
     if(dispatchNow(c,s.t)){planLoad(c);return;}s.stage=1;deliberate_wait+=h;
   }
+  // Numerical terminal ledger budget for the calm central-only demand pilot.
+  // Transient residual is reported separately: omitted shape-rate terms remain.
+  double energyBudget() const {return .5+.01*(s.drive_positive+s.drive_absorbed+s.loss_work);}
+  bool energyAccepted() const {
+    return std::isfinite(s.residual())&&std::isfinite(energyBudget())&&
+      std::abs(s.residual())<=energyBudget()&&std::abs(s.energy()-s.energy0)<=std::min(.1,cfg.terminal_energy_tolerance_J);
+  }
   void afterStep(Simulation &) override {
+    peak_energy_residual=std::max(peak_energy_residual,std::abs(s.residual()));
     if(settling){terminal_delta=s.energy()-s.energy0;bool at_rest=stopped()&&std::abs(s.v)<1e-4;
       for(const auto &a:s.carts)at_rest=at_rest&&std::abs(a.offset_speed)<1e-4&&std::abs(a.wx)<1e-3&&std::abs(a.wy)<1e-3;
       if(std::abs(terminal_delta)<=cfg.terminal_energy_tolerance_J&&s.t-settle_start>=2&&at_rest){double stops=0;for(const auto&a:s.carts)stops+=a.stops;
-        successful=true;comparable=stops==0;finished=true;status_value=comparable?"completed":"completed_noncomparable";s.complete=true;s.stage=6;}
+        successful=true;comparable=stops==0&&energyAccepted();finished=true;status_value=comparable?"completed":"completed_noncomparable";s.complete=true;s.stage=6;}
       else if(s.t-settle_start>=120){successful=true;comparable=false;finished=true;status_value="completed_noncomparable";s.complete=true;s.stage=6;}}
     if(s.t>=cfg.max_time_s-1e-8&&!finished){terminal_delta=s.energy()-s.energy0;finished=true;successful=allDelivered()&&stocksRestored()&&settling;comparable=false;status_value=successful?"completed_noncomparable":"failed";s.complete=true;s.stage=6;}
     validateConservation();record(s.complete);
@@ -391,6 +399,9 @@ class Engine:public Program {
     J("lateness_p95_s",p95);J("max_lateness_s",maximum);J("deliberate_wait_s",deliberate_wait);J("mandatory_wait_s",mandatory_wait);J("trips",trip_count);J("buffer_moves_kg",buffer_moves);
     J("handling_s",handling_time);J("operator_busy_lower_s",operator_busy[0]);J("operator_busy_upper_s",operator_busy[1]);
     J("restoration_positive_J",restoring?s.drive_positive-restoration_work:0);J("restoration_time_s",restoring?s.t-restoration_start:0);J("energy_delta_J",s.energy()-s.energy0);J("simulation_s",s.t);
+    f<<"\"energy_acceptance_schema\":\"agro-demand-energy-v1\",\n";
+    f<<"\"energy_accepted\":"<<((successful&&comparable&&energyAccepted())?"true":"false")<<",\n";
+    J("energy_residual_budget_J",energyBudget());J("peak_abs_energy_residual_J",peak_energy_residual);
     J("drive_positive_J",s.drive_positive);J("drive_absorbed_J",s.drive_absorbed);J("loss_work_J",s.loss_work);J("load_energy_J",s.load_energy);J("residual_J",s.residual());J("predictor_absolute_error_J",predictor_error);
 #undef J
     f<<"\"governor_or_stop_count\":"<<stops<<"\n}\n";for(auto*p:{&orderlog,&triplog,&oplog,&invlog,&statuslog})p->flush();

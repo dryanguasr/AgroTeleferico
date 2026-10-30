@@ -83,10 +83,14 @@ todos sus checks en true. El programa genera y conserva:
 | calibration/predictor.csv y predictor.csv.manifest | 363 celdas recalibradas con ese núcleo y esa configuración |
 | smoke.json | Hashes, procesos, aceptación y métricas de la réplica |
 | native/validation.json | Cierre comparable y seis CSV idénticos entre Gazebo y CLI |
+| gazebo_energy_audit.json y cli_energy_audit.json | Reconstrucción y aceptación energética terminal |
 | gazebo_audit.json y cli_audit.json | Auditorías independientes de pedidos, operaciones e inventarios |
 | calibration.log y validation.log | Diagnóstico, también cuando falle |
 
-Se exige entregar los dos pedidos y utilizar los buffers. La auditoría comprueba
+Se exige entregar los dos pedidos y utilizar los buffers. El check energy_acceptance
+debe ser true; aplica el contrato energético terminal descrito en piloto_demanda.md.
+El máximo residuo transitorio queda como diagnóstico, con los límites del modelo.
+Se conservan las dos auditorías energéticas. La auditoría comprueba
 su restitución y conservación, además de capacidad, calendarios y resumen. La
 configuración nativa debe coincidir por hash con la usada para calibrar; el
 binario y las entradas deben permanecer intactos. El cargador general exige
@@ -137,3 +141,16 @@ Los resultados publicados en docs/evidence se conservan inmutables. Los nuevos
 resultados se guardan en results/ y como artefactos de CI; una promoción a release
 requiere revisión de manifiestos y alcance. La suite demand-native de GitHub
 ejecuta la réplica corta desde el paquete instalado y adjunta sus resultados.
+
+Para auditar la energía de una ejecución completa en una salida nueva, desde el
+checkout (o usando el script instalado):
+
+```bash
+python3 scripts/audit_demand_energy.py --requests results/demand_smoke_01/requests.csv \
+  --params results/demand_smoke_01/preparation/generated/loop.params \
+  --run results/demand_smoke_01/native/reference --output results/energy_audit_new.json
+```
+
+Ejecutar también audit_demand_outputs.py para verificar inventarios y pedidos.
+Las campañas compactas conservan el estado inicial y final para esta auditoría;
+el máximo transitorio completo procede del núcleo, no del muestreo compacto.
