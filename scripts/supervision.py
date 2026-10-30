@@ -37,5 +37,3 @@ def tree_rss(pid):
             break
         selected = expanded
     return sum(rss for p, parent, rss in records if p in selected)/1024**2, sorted(selected)
-
-
